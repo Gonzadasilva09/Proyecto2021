@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\src.csproj": {}
+    "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\Program\\Program.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\src.csproj": {
+    "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\Program\\Program.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\src.csproj",
-        "projectName": "src",
-        "projectPath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\src.csproj",
+        "projectUniqueName": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\Program\\Program.csproj",
+        "projectName": "Program",
+        "projectPath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\Program\\Program.csproj",
         "packagesPath": "C:\\Users\\fede2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\obj\\",
+        "outputPath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\Program\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fede2\\AppData\\Roaming\\NuGet\\NuGet.Config"
