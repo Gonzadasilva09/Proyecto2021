@@ -1,15 +1,20 @@
 using System;
+using System.Collections.Generic;
 
 namespace Telegram
 {
     public class Emprendedores : User
     {
-        public Emprendedores(string name, string location, Rubro rubro) : base (name, location, rubro)
+
+        public List<Ratings> Listratings = new List<Ratings>();
+        public Emprendedores(string name, string location, string heading) : base (name, location, heading)
         {
-
         }
-
-        //public void AddRatings()
+        public void addRatings(Ratings rating){
+            Listratings.Add(rating);
+        }
+        
+        
         
     }
 }
