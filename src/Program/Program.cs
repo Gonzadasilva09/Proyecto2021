@@ -6,14 +6,12 @@ namespace Telegram
     {
         static void Main(string[] args)
         {
-            ListOfUnits lista = new ListOfUnits();
-            lista.AddUnit("Litros");
-            lista.AddUnit("Kilos");
-            lista.PrintList();
-            lista.Deleteunit("Litros");
-            lista.PrintList();
-            StoreOfOferts mat = new StoreOfOferts("Pañales sucios",12,0,"Av.Siempreviva");
-            Console.WriteLine($"{mat.Quantity} {mat.Unit} de {mat.Name} en {mat.Direction}");
+            Units Unidad = new Units("Unidades");
+            Units Kilos = new Units("Kilos");
+            Unidad.AddUnit(Kilos);
+            Unidad.PrintList();
+            StoreOfOferts mat = new StoreOfOferts("Pañales sucios",12,Kilos,"Av.Siempreviva");
+            Console.WriteLine($"{mat.Quantity}{mat.Unit} de {mat.Name} en {mat.Direction}");
         }
     }
 }

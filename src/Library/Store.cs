@@ -9,11 +9,11 @@ namespace Telegram
         public string Unit;
         public string Direction;
 
-        public StoreOfOferts(string name, int quantity, int unitnum, string direction)
+        public StoreOfOferts(string name, int quantity, Units units, string direction)
         {
             this.Name=name;
             this.Quantity=quantity;
-            this.Unit=ListOfUnits.Units[unitnum];
+            this.Unit=units.shortcut;
             this.Direction=direction;
         }
     }
