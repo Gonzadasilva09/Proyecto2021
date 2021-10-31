@@ -14,7 +14,7 @@ namespace Telegram
         {
             this.Name = name;
             this.Location = location;
-            this.rubro = rubro;
+            this.Rubro = rubro;
         }
     }
 }
