@@ -7,7 +7,7 @@ namespace Telegram
     {
 
         public List<Ratings> Listratings = new List<Ratings>();
-        public Emprendedores(string name, string location, string heading) : base (name, location, heading)
+        public Emprendedores(string name, string location, Rubro rubro) : base (name, location, rubro)
         {
         }
         public void addRatings(Ratings rating){
