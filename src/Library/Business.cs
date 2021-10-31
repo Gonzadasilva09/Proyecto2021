@@ -1,3 +1,4 @@
+
 namespace Telegram
 {
     public class Business : User
