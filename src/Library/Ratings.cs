@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace Telegram
 {
     public class Ratings{
 
-        
+        public static List<Ratings> Listratings = new List<Ratings>();
         public string Description{get;set;}
 
         public string Name{get;set;}
@@ -14,6 +15,11 @@ namespace Telegram
             this.Description = description;
             this.Name = name;
         }
+        public void addRatings(){
+            Listratings.Add(this);
+        }
+        
+
 
 
     }
