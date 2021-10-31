@@ -4,7 +4,7 @@ namespace Telegram
 {
     public class Emprendedores : User
     {
-        public Emprendedores(string name, string location, string heading) : base (name, location, heading)
+        public Emprendedores(string name, string location, Rubro rubro) : base (name, location, rubro)
         {
 
         }
