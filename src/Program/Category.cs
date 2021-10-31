@@ -1,11 +1,12 @@
+using System;
+using System.Collections.Generic;
+
 namespace Telegram 
 {
     public class Category
     {
 
-        public string name;
-
-        public string description;
+        public static List<Category> Category = new List<Category>();
         public Category (string name, string description)
         {
             this.Name = name;
@@ -15,6 +16,5 @@ namespace Telegram
         public string Name { get; set; }
 
         public string Description { get; set; }
-
     }
 }
