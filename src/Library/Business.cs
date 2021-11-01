@@ -20,7 +20,8 @@ namespace Telegram
         {
            Console.WriteLine("Ingrese su busqueda: ");
            string keyword = Console.ReadLine();
-           Catalogo.Instance.SearchOffers(keyword);
+           List<Offer> result = Catalogo.Instance.SearchOffers(keyword);
+           
         }
         
     }
