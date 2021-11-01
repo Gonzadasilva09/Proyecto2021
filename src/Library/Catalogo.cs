@@ -18,7 +18,7 @@ namespace Telegram
 
         public List<Offer> AllOffers = new List<Offer>();
 
-        public void SearchOffers(string keyword)
+        public List<Offer> SearchOffers(string keyword)
         {   
             List<Offer> Results = new List<Offer>();
             foreach (Offer offer in AllOffers)
@@ -36,11 +36,9 @@ namespace Telegram
                     Results.Add(offer);                
                 }
                 
-            }
-            foreach (Offer result in Results)
-            {
-                Console.WriteLine(result);
-            }
+            }      
+            return Results;
+
         }
 
     }
