@@ -14,7 +14,9 @@ namespace Telegram
             Listratings.Add(rating);
         }
         
-        
+        public void BuyOffers(){
+            
+        }
         
     }
 }
