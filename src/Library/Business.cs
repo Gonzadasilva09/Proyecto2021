@@ -23,6 +23,8 @@ namespace Telegram
            List<Offer> result = Catalogo.Instance.SearchOffers(keyword);
            return result;
         }
+
+        
         
     }
 }
