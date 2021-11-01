@@ -3,17 +3,18 @@ namespace Telegram
 {
     public class Offer 
     {
-        public Offer (Ratings ratings, Category category, string type)
+        public Offer (Ratings ratings, Category category, string type, string prodname, int prodquantity, Units produnit, string proddirection, int prodprice )
         {
             this.Ratings = ratings;
             this.Category = category;
             this.Type = type;
             this.Status = true;
-            this.Owner = null;
+            Materials product = new Materials(prodname,prodquantity,produnit,proddirection,prodprice);
+            this.Product = product;
 
         }
-
         public Ratings Ratings { get; set; }
+        public bool Recurrent { get; set; } = false;
 
         public Category Category { get; set; }
 
@@ -23,9 +24,10 @@ namespace Telegram
 
         public Emprendedores Owner{ get; set; }
 
-        public void printOffer(){
-            Console.WriteLine($"");
+        public Materials Product { get; set; }
+         public string printOffer(){
+            
+            return ;
         }
-
     }
 }
