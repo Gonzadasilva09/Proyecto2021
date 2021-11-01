@@ -13,6 +13,7 @@ namespace Telegram
             this.Name=name;
             this.shortcut=shortcutcreater();
         }
+
         private string shortcutcreater()
         {
             return this.Name[0].ToString();
