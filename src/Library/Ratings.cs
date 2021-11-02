@@ -15,10 +15,23 @@ namespace Telegram
             this.Description = description;
             this.Name = name;
         }
-        public void addRatings(){
+        public void AddRatings(){
             Listratings.Add(this);
         }
-        
+        public void DeleteRatings(Ratings ratings)
+        {
+            Listratings.Remove(ratings);
+        }
+        public void PrintList()
+        {
+            foreach(Ratings ratings in Listratings)
+            {
+                Console.WriteLine(ratings.Name);
+            }
+            Console.WriteLine("---------");
+        }
+
+        Marker
 
 
 

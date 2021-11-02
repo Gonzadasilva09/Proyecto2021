@@ -15,10 +15,23 @@ namespace Telegram
             this.Description = description;
             this.Name = name;
         }
-        public void addRubro(){
+        public void AddRubro(){
             Listrubro.Add(this);
 
         }
+        public void DeleteRubro(Rubro rubro)
+        {
+            Listrubro.Remove(rubro);
+        }
+        public void PrintList()
+        {
+            foreach(Rubro rubro in Listrubro)
+            {
+                Console.WriteLine(rubro.Name);
+            }
+            Console.WriteLine("---------");
+        }
+        MARKER
     }
 }
 
