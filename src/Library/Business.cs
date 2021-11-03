@@ -4,19 +4,46 @@ using System.Collections.Generic;
 
 namespace Telegram
 {
+    /// <summary>
+    /// Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
+    /// </summary>
     public class Business : User
     {
+        /// <summary>
+        /// Constructor de objetos de tipo Business
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="location"></param>
+        /// <param name="rubro"></param>
+        /// <returns></returns>
         public Business(string name, string location, Rubro rubro) : base (name, location, rubro)
         {
         }
-        
+        /// <summary>
+        /// Lista que contiene todas las ofertas hechas por la empresa.
+        /// </summary>
+        /// <typeparam name="Offer"></typeparam>
+        /// <returns></returns>
         public List<Offer> OffersMade = new List<Offer>();
+        /// <summary>
+        /// Metodo para que una empresa haga una oferta.
+        /// </summary>
+        /// <param name="ratings"></param>
+        /// <param name="category"></param>
+        /// <param name="type"></param>
+        /// <param name="prodname"></param>
+        /// <param name="prodquantity"></param>
+        /// <param name="produnit"></param>
+        /// <param name="proddirection"></param>
+        /// <param name="prodprice"></param>
         public void MakeOffer(Ratings ratings, Category category, string type, string prodname, int prodquantity, Units produnit, string proddirection, int prodprice)
         {
             Offer offer = new Offer(ratings,category,type,prodname,prodquantity,produnit,proddirection,prodprice);
             OffersMade.Add(offer);
         }
-        
+        /// <summary>
+        /// Metodo para buscar en el catalogo. 
+        /// </summary>
            public void Search(){
            
             Console.WriteLine("Ingrese lo que desea buscar:");
