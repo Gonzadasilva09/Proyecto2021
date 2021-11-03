@@ -11,7 +11,6 @@ namespace Telegram
         /// <summary>
         /// Lista que almacena todos los rubros disponibles.
         /// </summary>
-        /// <typeparam name="Rubro"></typeparam>
         /// <returns></returns>
          public static List<Rubro> Listrubro= new List<Rubro>();
         /// <summary>

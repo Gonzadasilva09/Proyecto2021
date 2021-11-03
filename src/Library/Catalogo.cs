@@ -25,7 +25,6 @@ namespace Telegram
         /// <summary>
         /// Lista que contiene todas las ofertas disponibles.
         /// </summary>
-        /// <typeparam name="Offer"></typeparam>
         /// <returns></returns>
 
         public List<Offer> AllOffers = new List<Offer>();
