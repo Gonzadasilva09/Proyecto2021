@@ -17,13 +17,33 @@ namespace Telegram
         
         public void BuyOffers(){
            
-            string eleccion="no";
-           
-            while(eleccion!="no"){
             Console.WriteLine("Ingrese lo que desea buscar:");
-            string keyword=Console.ReadLine();
-            
-            List<Offer> results = Catalogo.Instance.SearchOffers(keyword);
+            Console.WriteLine("Buscar por Habilitaciones - 1");
+            Console.WriteLine("Buscar por Categorias - 2");
+            int option = Convert.ToInt32(Console.ReadLine());
+            int num=0;
+            switch(option) 
+{
+                case 1:
+
+                    Console.WriteLine("Que habilitacion escoge");
+                    
+                    foreach (Ratings ratings in Ratings.Listratings)
+                    {
+                        Console.WriteLine($"{num} - {ratings.Name}");
+                        num++;
+                    }
+                    int option2 = Convert.ToInt32(Console.ReadLine());
+                    List<Offer> busqueda = Catalogo.Instance.SearchxRatings(Ratings.Listratings[option2]);
+                    
+                    break;
+                case 2:
+    
+                    break;
+                
+}
+
+            List<Offer> results = Catalogo.Instance.SearchxCategory(category);
             Console.WriteLine("Resultados:");
 
             int num=0;
