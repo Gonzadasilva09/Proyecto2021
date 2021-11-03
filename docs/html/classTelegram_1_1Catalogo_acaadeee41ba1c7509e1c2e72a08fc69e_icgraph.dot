@@ -1,0 +1,13 @@
+digraph "Telegram.Catalogo.SearchxCategory"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Telegram.Catalogo.Searchx\lCategory",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Metodo para buscar en el catalogo por categoria."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Telegram.Emprendedores.Buy\lOffers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTelegram_1_1Emprendedores.html#adc517e0c0b0296130bd9ba62fbdbb169",tooltip="Metodo para que un emprendedor pueda comprar una oferta."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Telegram.Business.Search",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTelegram_1_1Business.html#a10aa67295c202c74b10dc962579216e7",tooltip="Metodo para buscar en el catalogo."];
+}
