@@ -4,12 +4,13 @@ namespace Library.Test
 {
     public class Tests
     {
-        [SetUp]
+        [Test1]
         public void Setup()
         {
+
         }
 
-        [Test]
+        [Test2]
         public void Test1()
         {
             Assert.Pass();
