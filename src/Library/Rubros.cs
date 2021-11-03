@@ -31,7 +31,6 @@ namespace Telegram
             }
             Console.WriteLine("---------");
         }
-        MARKER
     }
 }
 
