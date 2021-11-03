@@ -11,13 +11,11 @@ namespace Telegram
         /// <summary>
         /// Lista que contiene las categorias de la oferta.
         /// </summary>
-        /// <typeparam name="Category"></typeparam>
         /// <returns></returns>
         public List<Category> categories = new List<Category>();
         /// <summary>
         /// Lista que contiene las habilitaciones de la oferta.
         /// </summary>
-        /// <typeparam name="Ratings"></typeparam>
         /// <returns></returns>
         public List<Ratings> Ratings = new List<Ratings>();
         /// <summary>

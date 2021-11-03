@@ -11,7 +11,6 @@ namespace Telegram
         /// <summary>
         /// Lista que contiene todas las habilitaciones disponibles.
         /// </summary>
-        /// <typeparam name="Ratings">Las habilitaciones en si.</typeparam>
         /// <returns></returns>
         public static List<Ratings> Listratings = new List<Ratings>();
         /// <summary>

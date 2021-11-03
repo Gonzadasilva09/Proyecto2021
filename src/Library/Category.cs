@@ -12,7 +12,6 @@ namespace Telegram
         /// <summary>
         /// Lista de las categorias existentes.
         /// </summary>
-        /// <typeparam name="Category"></typeparam>
         /// <returns></returns>
 
         public static List<Category> category = new List<Category>();

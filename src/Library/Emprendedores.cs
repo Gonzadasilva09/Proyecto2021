@@ -12,13 +12,11 @@ namespace Telegram
         /// <summary>
         /// Lista de habilitaciones que tiene el emprendedor.
         /// </summary>
-        /// <typeparam name="Ratings"></typeparam>
         /// <returns></returns>
         public List<Ratings> Listratings = new List<Ratings>();
         /// <summary>
         /// Lista de compras realizadas por el emprendedor.
         /// </summary>
-        /// <typeparam name="Offer"></typeparam>
         /// <returns></returns>
         public List<Offer> Purchased = new List<Offer>();
         /// <summary>
