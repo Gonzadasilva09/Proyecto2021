@@ -39,6 +39,14 @@ namespace Telegram
         public void addRatings(){
             Listratings.Add(this);
         }
+        /// <summary>
+        /// Metodo para elimitar habilitaciones de la lista.
+        /// </summary>
+        /// <param name="rating"></param>
+        public void Deleterating(Ratings rating)
+        {
+            Listratings.Remove(rating);
+        }
         
 
 

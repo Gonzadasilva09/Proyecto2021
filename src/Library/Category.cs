@@ -14,7 +14,7 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
 
-        public static List<Category> category = new List<Category>();
+        public static List<Category> categories = new List<Category>();
         /// <summary>
         /// Constructor de objetos tipo Category.
         /// </summary>
@@ -36,5 +36,14 @@ namespace Telegram
         /// <value></value>
 
         public string Description { get; set; }
+
+        /// <summary>
+        /// Metodo utilizado para añadir categorias a la lista.
+        /// </summary>
+        /// <param name="category"></param>
+        public void AddCategory(Category category)
+        {
+            categories.Add(category);
+        }
     }
 }

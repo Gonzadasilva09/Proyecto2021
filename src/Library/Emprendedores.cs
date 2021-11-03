@@ -90,13 +90,13 @@ namespace Telegram
 
                     Console.WriteLine("Que habilitacion escoge");
                     
-                    foreach (Category category in Category.category)
+                    foreach (Category category in Category.categories)
                     {
                         Console.WriteLine($"{num} - {category.Name}");
                         num++;
                     }
                     int opcion = Convert.ToInt32(Console.ReadLine());
-                    List<Offer> busqueda2 = Catalogo.Instance.SearchxCategory(Category.category[opcion]);
+                    List<Offer> busqueda2 = Catalogo.Instance.SearchxCategory(Category.categories[opcion]);
                     
                     int oferta2=0;
 

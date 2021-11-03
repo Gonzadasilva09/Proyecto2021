@@ -40,6 +40,14 @@ namespace Telegram
             Listrubro.Add(this);
 
         }
+        /// <summary>
+        /// Metodo para eliminar rubros de la lista.
+        /// </summary>
+        /// <param name="rubro"></param>
+        public void Deleterubro(Rubro rubro)
+        {
+            Listrubro.Remove(rubro);
+        }
     }
 }
 
