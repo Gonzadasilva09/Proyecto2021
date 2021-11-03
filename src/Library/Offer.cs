@@ -13,6 +13,9 @@ namespace Telegram
         public string Type { get; set; }
 
         public Materials Product { get; set; }
+        public bool status { get; set; }
+
+        public Emprendedores Owner { get; set; }
 
         public Offer (Ratings ratings, Category categories, string type, string prodname, int prodquantity, Units produnit, string proddirection,int prodprice )
         {
