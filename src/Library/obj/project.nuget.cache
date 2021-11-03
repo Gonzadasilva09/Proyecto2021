@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "2Pao09g8f3mgyENTK/N+e0m8RAFpIbuZRq41jrzUThO2fZi9XO+e0PAvVQeaM7S/1N5itX3u7Ar4PQXh/BYXGw==",
+  "dgSpecHash": "/H8QgqWOM5qTrg+y58mhDV56xjd6pWGrR5jfxGtXZGMCU4DbYgNULQp7HB3yp4NO0GyuPSw51CYZhr10Y1liTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\Library\\Library.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.codeanalysis.fxcopanalyzers\\2.9.3\\microsoft.codeanalysis.fxcopanalyzers.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.codeanalysis.versioncheckanalyzer\\2.9.3\\microsoft.codeanalysis.versioncheckanalyzer.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.codequality.analyzers\\2.9.3\\microsoft.codequality.analyzers.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.netcore.analyzers\\2.9.3\\microsoft.netcore.analyzers.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.netframework.analyzers\\2.9.3\\microsoft.netframework.analyzers.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
   "logs": []
 }
