@@ -5217,19 +5217,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nati\\.nuget\\packages\\": {}
+    "C:\\Users\\Franco De Stefano\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nati\\Documents\\GitHub\\PII_2021_2_Equipo11\\src\\test\\Library.Test\\Library.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Test\\Library.Test\\Library.Test.csproj",
       "projectName": "Library.Test",
-      "projectPath": "C:\\Users\\Nati\\Documents\\GitHub\\PII_2021_2_Equipo11\\src\\test\\Library.Test\\Library.Test.csproj",
-      "packagesPath": "C:\\Users\\Nati\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nati\\Documents\\GitHub\\PII_2021_2_Equipo11\\src\\test\\Library.Test\\obj\\",
+      "projectPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Test\\Library.Test\\Library.Test.csproj",
+      "packagesPath": "C:\\Users\\Franco De Stefano\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Test\\Library.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nati\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Franco De Stefano\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5241,8 +5241,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Nati\\Documents\\GitHub\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {
-              "projectPath": "C:\\Users\\Nati\\Documents\\GitHub\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj"
+            "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {
+              "projectPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj"
             }
           }
         }

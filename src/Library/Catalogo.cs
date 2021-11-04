@@ -40,7 +40,7 @@ namespace Telegram
             List<Offer> Results = new List<Offer>();
             foreach (Offer offer in AllOffers)
             {
-               foreach(Category categorie in offer.categories){
+               foreach(Category categorie in offer.Categories){
                    if(category.Name==categorie.Name){
                        Results.Add(offer);
                    }

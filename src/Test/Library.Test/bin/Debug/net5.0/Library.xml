@@ -190,7 +190,7 @@
             Clase que se encarga de controlar las ofertas.
             </summary>
         </member>
-        <member name="F:Telegram.Offer.categories">
+        <member name="F:Telegram.Offer.Categories">
             <summary>
             Lista que contiene las categorias de la oferta.
             </summary>

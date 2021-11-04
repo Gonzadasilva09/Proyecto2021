@@ -12,7 +12,7 @@ namespace Telegram
         /// Lista que contiene las categorias de la oferta.
         /// </summary>
         /// <returns></returns>
-        public List<Category> categories = new List<Category>();
+        public List<Category> Categories = new List<Category>();
         /// <summary>
         /// Lista que contiene las habilitaciones de la oferta.
         /// </summary>
@@ -57,12 +57,14 @@ namespace Telegram
         /// <param name="productunit"></param>
         /// <param name="productdirection"></param>
         /// <param name="productprice"></param>
-        public Offer (Ratings ratings, Category categories, string type, string productname, int productquantity, Units productunit, string productdirection,int productprice )
+        public Offer (Ratings rating, Category categories, string type, string productname, int productquantity, Units productunit, string productdirection,int productprice )
         {
             this.Type = type;
             Materials product = new Materials(productname,productquantity,productunit,productdirection,productprice);
             this.Product = product;
             Catalogo.Instance.AllOffers.Add(this);
+            Ratings.Add(rating);
+            Categories.Add(categories);
         }
         
         /// <summary>
@@ -88,7 +90,7 @@ namespace Telegram
         public string PrintCategories(){
            
             string categorias="";
-            foreach (Category Cate in this.categories)
+            foreach (Category Cate in this.Categories)
             {
                categorias=categorias+$"{Cate.Name} ,";
             }
@@ -115,7 +117,7 @@ namespace Telegram
         /// <param name="category"></param>
 
         public void addCategories(Category category){
-            categories.Add(category);
+            Categories.Add(category);
         }
 
         /// <summary>
