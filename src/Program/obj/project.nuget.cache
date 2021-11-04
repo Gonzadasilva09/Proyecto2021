@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "5alDDf/hH6rqj6DSddc3FnuYNhnxkYhzocGhYpLPwDJFMqfug+6jYg/v//+RrvFfYFbi3IhNbXHAzkbYNsP2/A==",
+  "dgSpecHash": "R+1q/FNgsM3Ob15hBo6JiO4uF82r2vrlzDpOtou38gy4gUU2V9VmY6S0pr+yJMY2tF/9na9D6G/9gDL1Ui+vjw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\Proyecto2021\\src\\Program\\Program.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\Program.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dasil\\.nuget\\packages\\microsoft.codeanalysis.fxcopanalyzers\\3.0.0\\microsoft.codeanalysis.fxcopanalyzers.3.0.0.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\microsoft.codeanalysis.versioncheckanalyzer\\3.0.0\\microsoft.codeanalysis.versioncheckanalyzer.3.0.0.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\microsoft.codequality.analyzers\\3.0.0\\microsoft.codequality.analyzers.3.0.0.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\microsoft.netcore.analyzers\\3.0.0\\microsoft.netcore.analyzers.3.0.0.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\microsoft.netframework.analyzers\\3.0.0\\microsoft.netframework.analyzers.3.0.0.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
   "logs": []
 }

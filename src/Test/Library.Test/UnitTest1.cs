@@ -1,13 +1,14 @@
 using NUnit.Framework;
+using Telegram;
 
 namespace Library.Test
 {
     public class Tests
     {
         [Test1]
-        public void Setup()
+        public void TestTelegramGonza()
         {
-
+            
         }
 
         [Test2]
