@@ -236,7 +236,7 @@
             <summary>
             Constructor de objetos de tipo oferta.
             </summary>
-            <param name="ratings"></param>
+            <param name="rating"></param>
             <param name="categories"></param>
             <param name="type"></param>
             <param name="productname"></param>
@@ -340,7 +340,7 @@
             <param name="description"></param>
             <param name="name"></param>
         </member>
-        <member name="M:Telegram.Rubro.addRubro">
+        <member name="M:Telegram.Rubro.AddRubro(Telegram.Rubro)">
             <summary>
             Añade rubros nuevos a la lista de rubros.
             </summary>

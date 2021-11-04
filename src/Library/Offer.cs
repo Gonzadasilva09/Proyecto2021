@@ -49,7 +49,7 @@ namespace Telegram
         /// <summary>
         /// Constructor de objetos de tipo oferta.
         /// </summary>
-        /// <param name="ratings"></param>
+        /// <param name="rating"></param>
         /// <param name="categories"></param>
         /// <param name="type"></param>
         /// <param name="productname"></param>

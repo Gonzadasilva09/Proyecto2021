@@ -3,6 +3,7 @@ using Telegram;
 
 namespace Library.Test
 {
+    [TestFixture]
     public class Tests
     {
         [Test]
@@ -60,6 +61,50 @@ namespace Library.Test
             Materials Madera= new Materials("Madera", 20, Kilos, "direction",400);
             Assert.AreEqual("K", Madera.Unit);
         }
-
+        [Test]
+        public void Test7()
+        {
+            Category Categoria = new Category("Materiales para reciclar","Reciclar");
+            Ratings Metales = new Ratings("Habilitacion para metales", "Metales");
+            Ratings Higiene = new Ratings("Cuidado con las medidas necesarias contra el covid", "Higiene");
+            Units Toneladas = new Units("Toneladas");
+            Offer Cuchillos = new Offer(Metales,Categoria,"Tipo", "Metal", 200, Toneladas, "dirección",2000);
+            Offer Metal = new Offer(Metales,Categoria,"Tipo", "Metal", 200, Toneladas, "dirección",2000);
+            Metal.addRatings(Higiene);
+            Assert.AreEqual(Cuchillos,Catalogo.Instance.SearchxRatings(Metales)[0]);
+        }
+        [Test]
+        public void Test8()
+        {
+            Category Categoria = new Category("Materiales para reciclar","Reciclar");
+            Ratings Metales = new Ratings("Metales para metales", "Metales");
+            Ratings Higiene = new Ratings("Cuidado con las medidas necesarias contra el covid", "Higiene");
+            Units Toneladas = new Units("Toneladas");
+            Offer Cuchillos = new Offer(Metales,Categoria,"Tipo", "Metal", 200, Toneladas, "dirección",2000);
+            Offer Metal = new Offer(Metales,Categoria,"Tipo", "Metal", 200, Toneladas, "dirección",2000);
+            Assert.AreEqual(null,Catalogo.Instance.SearchxRatings(Higiene)[0]);
+        }
+        [Test]
+        public void Test9()
+        {
+            Category Categoria = new Category("Materiales para reciclar","Reciclar");
+            Ratings Metales = new Ratings("Habilitacion para metales", "Metales");
+            Ratings Higiene = new Ratings("Cuidado con las medidas necesarias contra el covid", "Higiene");
+            Units Toneladas = new Units("Toneladas");
+            Offer Cuchillos = new Offer(Metales,Categoria,"Tipo", "Metal", 200, Toneladas, "dirección",2000);
+            Offer Metal = new Offer(Metales,Categoria,"Tipo", "Metal", 200, Toneladas, "dirección",2000);
+            Metal.addRatings(Higiene);
+            Assert.AreEqual(Metal,Catalogo.Instance.SearchxRatings(Higiene)[0]);
+        }
+        [Test]
+        public void Test10()
+        {
+            Category Categoria = new Category("Materiales para reciclar","Reciclar");
+            Ratings Metales = new Ratings("Habilitacion para metales", "Metales");
+            Units Toneladas = new Units("Toneladas");
+            Offer Cuchillos = new Offer(Metales,Categoria,"Tipo", "Metal", 200, Toneladas, "dirección",2000);
+            Offer Metal = new Offer(Metales,Categoria,"Tipo", "Metal", 200, Toneladas, "dirección",2000);
+            Assert.AreEqual(Metal,Catalogo.Instance.SearchxCategory(Categoria)[0]);
+        }
     }
 }

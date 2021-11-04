@@ -32,12 +32,13 @@ namespace Telegram
         {
             this.Description = description;
             this.Name = name;
+            Listrubro.Add(this);
         }
         /// <summary>
         /// Añade rubros nuevos a la lista de rubros.
         /// </summary>
-        public void addRubro(){
-            Listrubro.Add(this);
+        public void AddRubro(Rubro rubro){
+            Listrubro.Add(rubro);
 
         }
     }

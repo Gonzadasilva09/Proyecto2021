@@ -48,7 +48,7 @@ namespace Telegram
             int option = Convert.ToInt32(Console.ReadLine());
             int num=0;
             switch(option) 
-{
+            {
                 case 1:
 
                     Console.WriteLine("Que habilitacion escoge");
@@ -121,10 +121,9 @@ namespace Telegram
                         Console.WriteLine("Operacion cancelada");
                     }
                     break;              
-}
-
+            }
            
-            
+        
 
 
 
