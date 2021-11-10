@@ -1,11 +1,18 @@
 using NUnit.Framework;
 using Telegram;
+using System.Collections.Generic;
 
 namespace Library.Test
 {
     [TestFixture]
     public class Tests
     {
+        [SetUp]
+        public void Teardown()
+        {
+            Catalogo.Instance.AllOffers = new List<Offer>();
+        }
+
         [Test]
         public void Test1()
         {   
