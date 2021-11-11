@@ -6,31 +6,6 @@ namespace Telegram
     public class Materials
     {
         /// <summary>
-        /// Obtiene o establece el nombre del material.
-        /// </summary>
-        /// <value></value>
-        public string Name{ get; set;}
-        /// <summary>
-        /// Obtiene o establece la cantidad del material.
-        /// </summary>
-        /// <value></value>
-        public int Quantity{ get; set;}
-        /// <summary>
-        /// Obtiene o establece en que unidad de representa el material.
-        /// </summary>
-        /// <value></value>
-        public string Unit{ get; set;}
-        /// <summary>
-        /// Obtiene o establece donde se encuentra el material.
-        /// </summary>
-        /// <value></value>
-        public string Direction{ get; set;}
-        /// <summary>
-        /// Obtiene o establece el precio del material.
-        /// </summary>
-        /// <value></value>
-        public int Price{ get; set;}
-        /// <summary>
         /// Constructor de objetos de tipo material.
         /// </summary>
         /// <param name="name"></param>
@@ -46,5 +21,36 @@ namespace Telegram
             this.Direction=direction;
             this.Price=price;
         }
+
+        /// <summary>
+        /// Obtiene o establece el nombre del material.
+        /// </summary>
+        /// <value></value>
+        /// 
+        public string Name{ get; set; }
+
+        /// <summary>
+        /// Obtiene o establece la cantidad del material.
+        /// </summary>
+        /// <value></value>
+        public int Quantity{ get; set; }
+
+        /// <summary>
+        /// Obtiene o establece en que unidad de representa el material.
+        /// </summary>
+        /// <value></value>
+        public string Unit{ get; set; }
+
+        /// <summary>
+        /// Obtiene o establece donde se encuentra el material.
+        /// </summary>
+        /// <value></value>
+        public string Direction{ get; set; }
+        
+        /// <summary>
+        /// Obtiene o establece el precio del material.
+        /// </summary>
+        /// <value></value>
+        public int Price{ get; set; }
     }
 }

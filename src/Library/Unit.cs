@@ -58,14 +58,15 @@ namespace Telegram
         /// Metodo para eliminar unidades de la lista.
         /// </summary>
         /// <param name="unit"></param>
-        public void Deleteunit(Units unit)
+        public static void Deleteunit(Units unit)
         {
             Unitlist.Remove(unit);
         }
+
         /// <summary>
         /// Metodo para imprimir la lista en la consola.
         /// </summary>
-        public void PrintList()
+        public static void PrintList()
         {
             foreach(Units unit in Unitlist)
             {

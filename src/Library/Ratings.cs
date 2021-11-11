@@ -13,16 +13,19 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
         public static List<Ratings> Listratings = new List<Ratings>();
+        
         /// <summary>
         /// Obtiene o establece una descripcion de la habilitación.
         /// </summary>
         /// <value></value>
         public string Description{get;set;}
+        
         /// <summary>
         /// Obtiene o establece el nombre de una habilitacion.
         /// </summary>
         /// <value></value>
-        public string Name{get;set;}
+        public string Name{ get; set; }
+        
         /// <summary>
         /// Constructor de habilitaciones.
         /// </summary>

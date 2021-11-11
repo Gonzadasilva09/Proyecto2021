@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "LINWJzAb6enNOX+hOgnK6bhfPCG9r3n3BMvftblftdCVnZ1bAUxLzmD81ioS8/U4hN0KsH2TLYb0r+xbFrDAuw==",
+  "dgSpecHash": "/H8QgqWOM5qTrg+y58mhDV56xjd6pWGrR5jfxGtXZGMCU4DbYgNULQp7HB3yp4NO0GyuPSw51CYZhr10Y1liTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
+  "projectFilePath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Franco De Stefano\\.nuget\\packages\\microsoft.codeanalysis.fxcopanalyzers\\2.9.3\\microsoft.codeanalysis.fxcopanalyzers.2.9.3.nupkg.sha512",
-    "C:\\Users\\Franco De Stefano\\.nuget\\packages\\microsoft.codeanalysis.versioncheckanalyzer\\2.9.3\\microsoft.codeanalysis.versioncheckanalyzer.2.9.3.nupkg.sha512",
-    "C:\\Users\\Franco De Stefano\\.nuget\\packages\\microsoft.codequality.analyzers\\2.9.3\\microsoft.codequality.analyzers.2.9.3.nupkg.sha512",
-    "C:\\Users\\Franco De Stefano\\.nuget\\packages\\microsoft.netcore.analyzers\\2.9.3\\microsoft.netcore.analyzers.2.9.3.nupkg.sha512",
-    "C:\\Users\\Franco De Stefano\\.nuget\\packages\\microsoft.netframework.analyzers\\2.9.3\\microsoft.netframework.analyzers.2.9.3.nupkg.sha512",
-    "C:\\Users\\Franco De Stefano\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.codeanalysis.fxcopanalyzers\\2.9.3\\microsoft.codeanalysis.fxcopanalyzers.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.codeanalysis.versioncheckanalyzer\\2.9.3\\microsoft.codeanalysis.versioncheckanalyzer.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.codequality.analyzers\\2.9.3\\microsoft.codequality.analyzers.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.netcore.analyzers\\2.9.3\\microsoft.netcore.analyzers.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\microsoft.netframework.analyzers\\2.9.3\\microsoft.netframework.analyzers.2.9.3.nupkg.sha512",
+    "C:\\Users\\fede2\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
   ],
   "logs": []
 }

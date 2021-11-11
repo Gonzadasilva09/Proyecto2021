@@ -14,7 +14,7 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
         private readonly static Catalogo _instance = new Catalogo();
-        private Catalogo(){}
+        private Catalogo() {}
         public static Catalogo Instance
         {
             get
@@ -27,7 +27,7 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
 
-        public List<Offer> AllOffers = new List<Offer>();
+        public List<Offer> allOffers = new List<Offer>();
 
         /// <summary>
         /// Metodo para buscar en el catalogo por categoria.
@@ -36,18 +36,17 @@ namespace Telegram
         /// <returns></returns>
 
         public List<Offer> SearchxCategory(Category category)
-        {   
-            List<Offer> Results = new List<Offer>();
-            foreach (Offer offer in AllOffers)
+        {
+            List<Offer> results = new List<Offer>();
+            foreach (Offer offer in allOffers)
             {
-               foreach(Category categorie in offer.Categories){
-                   if(category.Name==categorie.Name){
-                       Results.Add(offer);
+               foreach(Category categorie in offer.Categories) {
+                   if(category.Name == categorie.Name) {
+                       results.Add(offer);
                    }
                }
-                
-            }      
-            return Results;
+            }
+            return results;
         }
         /// <summary>
         /// Metodo para buscar en el catalogo por habilitacion.
@@ -56,20 +55,16 @@ namespace Telegram
         /// <returns></returns>
         public List<Offer> SearchxRatings(Ratings ratings)
         {   
-            List<Offer> Results = new List<Offer>();
-            foreach (Offer offer in AllOffers)
+            List<Offer> results = new List<Offer>();
+            foreach (Offer offer in allOffers)
             {
-               foreach(Ratings habilitaciones in offer.Ratings){
-                   if(ratings.Name==habilitaciones.Name){
-                       Results.Add(offer);
+               foreach(Ratings habilitaciones in offer.Ratings) {
+                   if(ratings.Name == habilitaciones.Name) {
+                       results.Add(offer);
                    }
                }
-                
             }      
-            return Results;
+            return results;
         }
-
-        
-
     }
 }
