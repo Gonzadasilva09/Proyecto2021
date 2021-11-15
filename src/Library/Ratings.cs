@@ -35,6 +35,7 @@ namespace Telegram
 
             this.Description = description;
             this.Name = name;
+            Listratings.Add(this);
         }
         /// <summary>
         /// Metodo que añade habilitaciones nuevas a la lista.
@@ -42,9 +43,9 @@ namespace Telegram
         public void addRatings(){
             Listratings.Add(this);
         }
-        
-
-
-
+        public static void Deleterating(Ratings rating)
+        {
+            Listratings.Remove(rating);
+        }
     }
 }

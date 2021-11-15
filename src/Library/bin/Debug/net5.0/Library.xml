@@ -37,11 +37,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Business.Search">
-            <summary>
-            Metodo para buscar en el catalogo. 
-            </summary>        
-        </member>
         <member name="T:Telegram.Catalogo">
             <summary>
             Clase encargada de manejar el catalogo.
@@ -57,20 +52,6 @@
             <summary>
             Lista que contiene todas las ofertas disponibles.
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telegram.Catalogo.SearchxCategory(Telegram.Category)">
-            <summary>
-            Metodo para buscar en el catalogo por categoria.
-            </summary>
-            <param name="category"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Telegram.Catalogo.SearchxRatings(Telegram.Ratings)">
-            <summary>
-            Metodo para buscar en el catalogo por habilitacion.
-            </summary>
-            <param name="ratings"></param>
             <returns></returns>
         </member>
         <member name="T:Telegram.Category">
@@ -134,11 +115,6 @@
             Metodo para añadir habilitaciones a un emprendedor.
             </summary>
             <param name="rating"></param>
-        </member>
-        <member name="M:Telegram.Emprendedores.BuyOffers">
-            <summary>
-            Metodo para que un emprendedor pueda comprar una oferta.
-            </summary>        
         </member>
         <member name="T:Telegram.Materials">
             <summary>
@@ -246,12 +222,6 @@
             <param name="productdirection"></param>
             <param name="productprice"></param>
         </member>
-        <member name="M:Telegram.Offer.PrintOffer">
-            <summary>
-            Metodo que imprime una oferta en la consola.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Telegram.Offer.PrintCategories">
             <summary>
             Metodo que imprime las categorias de la oferta.
@@ -346,6 +316,26 @@
             Añade rubros nuevos a la lista de rubros.
             </summary>
         </member>
+        <member name="F:Telegram.Search._instance">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Search.SearchxCategory(Telegram.Category)">
+            <summary>
+            Metodo para buscar en el catalogo por categoria.
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Search.SearchxRatings(Telegram.Ratings)">
+            <summary>
+            Metodo para buscar en el catalogo por habilitacion.
+            </summary>
+            <param name="ratings"></param>
+            <returns></returns>
+        </member>
         <member name="T:Telegram.Units">
             <summary>
             Clase que se encarga de las unidades de magnitud para las ofertas.
@@ -392,11 +382,6 @@
             Metodo para eliminar unidades de la lista.
             </summary>
             <param name="unit"></param>
-        </member>
-        <member name="M:Telegram.Units.PrintList">
-            <summary>
-            Metodo para imprimir la lista en la consola.
-            </summary>
         </member>
         <member name="T:Telegram.User">
             <summary>

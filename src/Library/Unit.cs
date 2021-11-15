@@ -31,6 +31,7 @@ namespace Telegram
         {
             this.Name=name;
             this.shortcut=shortcutcreater();
+            Unitlist.Add(this);
         }
 
         private string shortcutcreater()
@@ -47,32 +48,12 @@ namespace Telegram
             return Unitlist[unitnum].shortcut;
         }
         /// <summary>
-        /// Metodo para añadir unidades a la lista.
-        /// </summary>
-        /// <param name="unit"></param>
-        public void AddUnit(Units unit)
-        {
-            Unitlist.Add(unit);
-        }
-        /// <summary>
         /// Metodo para eliminar unidades de la lista.
         /// </summary>
         /// <param name="unit"></param>
         public static void Deleteunit(Units unit)
         {
             Unitlist.Remove(unit);
-        }
-
-        /// <summary>
-        /// Metodo para imprimir la lista en la consola.
-        /// </summary>
-        public static void PrintList()
-        {
-            foreach(Units unit in Unitlist)
-            {
-                Console.WriteLine(unit.Name);
-            }
-            Console.WriteLine("------------------------------------------");
         }
     }
 }
