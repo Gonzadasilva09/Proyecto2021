@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace Telegram 
+namespace Telegram
 {
-
 /// <summary>
 /// Clase que se encarga de manejar las categorias.
 /// </summary>
@@ -20,21 +19,22 @@ namespace Telegram
         /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
-        public Category (string name, string description)
+        public Category(string name, string description)
         {
             this.Name = name;
             this.Description = description;
         }
+
         /// <summary>
         /// Obtiene o establece el nombre de una categoria.
         /// </summary>
         /// <value></value>
         public string Name { get; set; }
+        
         /// <summary>
         /// Obtiene o establece la descripcion de una categoria.
         /// </summary>
         /// <value></value>
-
         public string Description { get; set; }
     }
 }

@@ -18,12 +18,6 @@
             <param name="rubro"></param>
             <returns></returns>
         </member>
-        <member name="F:Telegram.Business.OffersMade">
-            <summary>
-            Lista que contiene todas las ofertas hechas por la empresa.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Telegram.Business.MakeOffer(Telegram.Ratings,Telegram.Category,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
             <summary>
             Metodo para que una empresa haga una oferta.
@@ -37,10 +31,16 @@
             <param name="proddirection"></param>
             <param name="prodprice"></param>
         </member>
+        <member name="F:Telegram.Business.offersMade">
+            <summary>
+            Lista que contiene todas las ofertas hechas por la empresa.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Telegram.Business.Search">
             <summary>
             Metodo para buscar en el catalogo. 
-            </summary>
+            </summary>        
         </member>
         <member name="T:Telegram.Catalogo">
             <summary>
@@ -53,7 +53,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="F:Telegram.Catalogo.AllOffers">
+        <member name="F:Telegram.Catalogo.allOffers">
             <summary>
             Lista que contiene todas las ofertas disponibles.
             </summary>
@@ -138,18 +138,29 @@
         <member name="M:Telegram.Emprendedores.BuyOffers">
             <summary>
             Metodo para que un emprendedor pueda comprar una oferta.
-            </summary>
+            </summary>        
         </member>
         <member name="T:Telegram.Materials">
             <summary>
             Clase encargada de manejar los materiales.
             </summary>
         </member>
+        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
+            <summary>
+            Constructor de objetos de tipo material.
+            </summary>
+            <param name="name"></param>
+            <param name="quantity"></param>
+            <param name="units"></param>
+            <param name="direction"></param>
+            <param name="price"></param>
+        </member>
         <member name="P:Telegram.Materials.Name">
             <summary>
             Obtiene o establece el nombre del material.
             </summary>
             <value></value>
+            
         </member>
         <member name="P:Telegram.Materials.Quantity">
             <summary>
@@ -174,16 +185,6 @@
             Obtiene o establece el precio del material.
             </summary>
             <value></value>
-        </member>
-        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
-            <summary>
-            Constructor de objetos de tipo material.
-            </summary>
-            <param name="name"></param>
-            <param name="quantity"></param>
-            <param name="units"></param>
-            <param name="direction"></param>
-            <param name="price"></param>
         </member>
         <member name="T:Telegram.Offer">
             <summary>
@@ -245,7 +246,7 @@
             <param name="productdirection"></param>
             <param name="productprice"></param>
         </member>
-        <member name="M:Telegram.Offer.printOffer">
+        <member name="M:Telegram.Offer.PrintOffer">
             <summary>
             Metodo que imprime una oferta en la consola.
             </summary>
@@ -263,15 +264,15 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Offer.addCategories(Telegram.Category)">
+        <member name="M:Telegram.Offer.AddCategories(Telegram.Category)">
             <summary>
             Metodo que añade categorias a la oferta.
             </summary>
             <param name="category"></param>
         </member>
-        <member name="M:Telegram.Offer.addRatings(Telegram.Ratings)">
+        <member name="M:Telegram.Offer.AddRatings(Telegram.Ratings)">
             <summary>
-            Metodo que añade habilitaciones a la empresa
+            Metodo que añade habilitaciones a la empresa.
             </summary>
             <param name="ratings"></param>
         </member>

@@ -20,11 +20,6 @@ namespace Telegram
         {
         }
         /// <summary>
-        /// Lista que contiene todas las ofertas hechas por la empresa.
-        /// </summary>
-        /// <returns></returns>
-        public List<Offer> OffersMade = new List<Offer>();
-        /// <summary>
         /// Metodo para que una empresa haga una oferta.
         /// </summary>
         /// <param name="ratings"></param>
@@ -38,18 +33,24 @@ namespace Telegram
         public void MakeOffer(Ratings ratings, Category category, string type, string prodname, int prodquantity, Units produnit, string proddirection, int prodprice)
         {
             Offer offer = new Offer(ratings,category,type,prodname,prodquantity,produnit,proddirection,prodprice);
-            OffersMade.Add(offer);
+            offersMade.Add(offer);
         }
         /// <summary>
-        /// Metodo para buscar en el catalogo. 
+        /// Lista que contiene todas las ofertas hechas por la empresa.
         /// </summary>
-           public void Search(){
-           
+        /// <returns></returns>
+        private List<Offer> offersMade = new List<Offer>();
+
+        /// <summary>
+        /// Metodo para buscar en el catalogo. 
+        /// </summary>        
+        public static void Search()
+        {
             Console.WriteLine("Ingrese lo que desea buscar:");
             Console.WriteLine("Buscar por Habilitaciones - 1");
             Console.WriteLine("Buscar por Categorias - 2");
             int option = Convert.ToInt32(Console.ReadLine());
-            int num=0;
+            int num = 0;
             switch(option) 
 {
                 case 1:
@@ -64,7 +65,7 @@ namespace Telegram
                     int option2 = Convert.ToInt32(Console.ReadLine());
                     List<Offer> busqueda = Catalogo.Instance.SearchxRatings(Ratings.Listratings[option2]);
                     
-                    int oferta=0;
+                    int oferta = 0;
 
                     foreach (Offer offer in busqueda)
                     {
@@ -74,7 +75,7 @@ namespace Telegram
 
                     Console.WriteLine("Ingrese su opcion...");
                     int option3 = Convert.ToInt32(Console.ReadLine());
-                    busqueda[oferta].printOffer();
+                    busqueda[oferta].PrintOffer();
                      
                     break;
 
@@ -90,7 +91,7 @@ namespace Telegram
                     int opcion = Convert.ToInt32(Console.ReadLine());
                     List<Offer> busqueda2 = Catalogo.Instance.SearchxCategory(Category.category[opcion]);
                     
-                    int oferta2=0;
+                    int oferta2 = 0;
 
                     foreach (Offer offer in busqueda2)
                     {
@@ -100,12 +101,9 @@ namespace Telegram
 
                     Console.WriteLine("Ingrese su opcion...");
                     int opcion2 = Convert.ToInt32(Console.ReadLine());
-                    busqueda2[oferta2].printOffer();
+                    busqueda2[oferta2].PrintOffer();
                     break;              
 }
         }
-
-
-        
     }
 }
