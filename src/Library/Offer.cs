@@ -72,23 +72,6 @@ namespace Telegram
             Ratings.Add(rating);
             Categories.Add(categories);
         }
-        
-        /// <summary>
-        /// Metodo que imprime una oferta en la consola.
-        /// </summary>
-        /// <returns></returns>
-        public string PrintOffer(){
-            string offer = $"Oferta de tipo {this.Type}, \n" +
-                            $"Pertenece a la/s categoria/s {this.PrintCategories()} \n" +
-                            $"Esta oferta contiene {this.Product.Quantity} {this.Product.Unit} de {this.Product.Name}\n" +
-                            $"Tiene un valor de {this.Product.Price}\n" +
-                            $"Requiere de las siguientes habilitaciones : {this.PrintRatings()}\n" +
-                            $"Y esta ubicado en {this.Product.Direction}";
-                           
-            
-            return offer;
-        }
-
         /// <summary>
         /// Metodo que imprime las categorias de la oferta.
         /// </summary>

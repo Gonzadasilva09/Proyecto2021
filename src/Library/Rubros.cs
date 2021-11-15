@@ -37,9 +37,9 @@ namespace Telegram
         /// <summary>
         /// Añade rubros nuevos a la lista de rubros.
         /// </summary>
-        public static void AddRubro(Rubro rubro){
-            Listrubro.Add(rubro);
-
+         public static void Deleterubro(Rubro rubro)
+        {
+            Listrubro.Remove(rubro);
         }
     }
 }
