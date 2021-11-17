@@ -8,22 +8,20 @@ namespace Telegram
     /// </summary>
     public class Ratings{
 
-        /// <summary>
-        /// Lista que contiene todas las habilitaciones disponibles.
-        /// </summary>
-        /// <typeparam name="Ratings">Las habilitaciones en si.</typeparam>
-        /// <returns></returns>
-        public static List<Ratings> Listratings = new List<Ratings>();
+        
+        
         /// <summary>
         /// Obtiene o establece una descripcion de la habilitación.
         /// </summary>
         /// <value></value>
         public string Description{get;set;}
+        
         /// <summary>
         /// Obtiene o establece el nombre de una habilitacion.
         /// </summary>
         /// <value></value>
-        public string Name{get;set;}
+        public string Name{ get; set; }
+        
         /// <summary>
         /// Constructor de habilitaciones.
         /// </summary>
@@ -33,16 +31,17 @@ namespace Telegram
 
             this.Description = description;
             this.Name = name;
+            Listas.Instance.listratings.Add(this);
         }
         /// <summary>
         /// Metodo que añade habilitaciones nuevas a la lista.
         /// </summary>
         public void addRatings(){
-            Listratings.Add(this);
+            Listas.Instance.listratings.Add(this);
         }
-        
-
-
-
+        public static void Deleterating(Ratings rating)
+        {
+            Listas.Instance.listratings.Remove(rating);
+        }
     }
 }

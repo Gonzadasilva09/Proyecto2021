@@ -1,3 +1,3 @@
-public class TelegramMsgAdapter : IMessege{
-    
-}
+//public class TelegramMsgAdapter : IMessege{
+
+//}

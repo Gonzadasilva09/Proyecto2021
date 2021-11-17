@@ -8,12 +8,7 @@ namespace Telegram
     /// </summary>
     public class Rubro
     {
-        /// <summary>
-        /// Lista que almacena todos los rubros disponibles.
-        /// </summary>
-        /// <typeparam name="Rubro"></typeparam>
-        /// <returns></returns>
-         public static List<Rubro> Listrubro= new List<Rubro>();
+        
         /// <summary>
         /// String que obtiene o establece la descripción de un rubro.
         /// </summary>
@@ -33,13 +28,14 @@ namespace Telegram
         {
             this.Description = description;
             this.Name = name;
+            Listas.Instance.listrubro.Add(this);
         }
         /// <summary>
         /// Añade rubros nuevos a la lista de rubros.
         /// </summary>
-        public void addRubro(){
-            Listrubro.Add(this);
-
+         public static void Deleterubro(Rubro rubro)
+        {
+            Listas.Instance.listrubro.Remove(rubro);
         }
     }
 }

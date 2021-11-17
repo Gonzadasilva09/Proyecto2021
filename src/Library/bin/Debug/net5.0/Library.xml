@@ -18,13 +18,6 @@
             <param name="rubro"></param>
             <returns></returns>
         </member>
-        <member name="F:Telegram.Business.OffersMade">
-            <summary>
-            Lista que contiene todas las ofertas hechas por la empresa.
-            </summary>
-            <typeparam name="Offer"></typeparam>
-            <returns></returns>
-        </member>
         <member name="M:Telegram.Business.MakeOffer(Telegram.Ratings,Telegram.Category,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
             <summary>
             Metodo para que una empresa haga una oferta.
@@ -38,10 +31,11 @@
             <param name="proddirection"></param>
             <param name="prodprice"></param>
         </member>
-        <member name="M:Telegram.Business.Search">
+        <member name="F:Telegram.Business.offersMade">
             <summary>
-            Metodo para buscar en el catalogo. 
+            Lista que contiene todas las ofertas hechas por la empresa.
             </summary>
+            <returns></returns>
         </member>
         <member name="T:Telegram.Catalogo">
             <summary>
@@ -54,25 +48,10 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="F:Telegram.Catalogo.AllOffers">
+        <member name="F:Telegram.Catalogo.allOffers">
             <summary>
             Lista que contiene todas las ofertas disponibles.
             </summary>
-            <typeparam name="Offer"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Telegram.Catalogo.SearchxCategory(Telegram.Category)">
-            <summary>
-            Metodo para buscar en el catalogo por categoria.
-            </summary>
-            <param name="category"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Telegram.Catalogo.SearchxRatings(Telegram.Ratings)">
-            <summary>
-            Metodo para buscar en el catalogo por habilitacion.
-            </summary>
-            <param name="ratings"></param>
             <returns></returns>
         </member>
         <member name="T:Telegram.Category">
@@ -84,7 +63,6 @@
             <summary>
             Lista de las categorias existentes.
             </summary>
-            <typeparam name="Category"></typeparam>
             <returns></returns>
         </member>
         <member name="M:Telegram.Category.#ctor(System.String,System.String)">
@@ -115,14 +93,12 @@
             <summary>
             Lista de habilitaciones que tiene el emprendedor.
             </summary>
-            <typeparam name="Ratings"></typeparam>
             <returns></returns>
         </member>
         <member name="F:Telegram.Emprendedores.Purchased">
             <summary>
             Lista de compras realizadas por el emprendedor.
             </summary>
-            <typeparam name="Offer"></typeparam>
             <returns></returns>
         </member>
         <member name="M:Telegram.Emprendedores.#ctor(System.String,System.String,Telegram.Rubro)">
@@ -140,21 +116,27 @@
             </summary>
             <param name="rating"></param>
         </member>
-        <member name="M:Telegram.Emprendedores.BuyOffers">
-            <summary>
-            Metodo para que un emprendedor pueda comprar una oferta.
-            </summary>
-        </member>
         <member name="T:Telegram.Materials">
             <summary>
             Clase encargada de manejar los materiales.
             </summary>
+        </member>
+        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
+            <summary>
+            Constructor de objetos de tipo material.
+            </summary>
+            <param name="name"></param>
+            <param name="quantity"></param>
+            <param name="units"></param>
+            <param name="direction"></param>
+            <param name="price"></param>
         </member>
         <member name="P:Telegram.Materials.Name">
             <summary>
             Obtiene o establece el nombre del material.
             </summary>
             <value></value>
+            
         </member>
         <member name="P:Telegram.Materials.Quantity">
             <summary>
@@ -180,33 +162,21 @@
             </summary>
             <value></value>
         </member>
-        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
-            <summary>
-            Constructor de objetos de tipo material.
-            </summary>
-            <param name="name"></param>
-            <param name="quantity"></param>
-            <param name="units"></param>
-            <param name="direction"></param>
-            <param name="price"></param>
-        </member>
         <member name="T:Telegram.Offer">
             <summary>
             Clase que se encarga de controlar las ofertas.
             </summary>
         </member>
-        <member name="F:Telegram.Offer.categories">
+        <member name="F:Telegram.Offer.Categories">
             <summary>
             Lista que contiene las categorias de la oferta.
             </summary>
-            <typeparam name="Category"></typeparam>
             <returns></returns>
         </member>
         <member name="F:Telegram.Offer.Ratings">
             <summary>
             Lista que contiene las habilitaciones de la oferta.
             </summary>
-            <typeparam name="Ratings"></typeparam>
             <returns></returns>
         </member>
         <member name="P:Telegram.Offer.Recurrent">
@@ -243,7 +213,7 @@
             <summary>
             Constructor de objetos de tipo oferta.
             </summary>
-            <param name="ratings"></param>
+            <param name="rating"></param>
             <param name="categories"></param>
             <param name="type"></param>
             <param name="productname"></param>
@@ -251,12 +221,6 @@
             <param name="productunit"></param>
             <param name="productdirection"></param>
             <param name="productprice"></param>
-        </member>
-        <member name="M:Telegram.Offer.printOffer">
-            <summary>
-            Metodo que imprime una oferta en la consola.
-            </summary>
-            <returns></returns>
         </member>
         <member name="M:Telegram.Offer.PrintCategories">
             <summary>
@@ -270,15 +234,15 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Offer.addCategories(Telegram.Category)">
+        <member name="M:Telegram.Offer.AddCategories(Telegram.Category)">
             <summary>
             Metodo que añade categorias a la oferta.
             </summary>
             <param name="category"></param>
         </member>
-        <member name="M:Telegram.Offer.addRatings(Telegram.Ratings)">
+        <member name="M:Telegram.Offer.AddRatings(Telegram.Ratings)">
             <summary>
-            Metodo que añade habilitaciones a la empresa
+            Metodo que añade habilitaciones a la empresa.
             </summary>
             <param name="ratings"></param>
         </member>
@@ -291,7 +255,6 @@
             <summary>
             Lista que contiene todas las habilitaciones disponibles.
             </summary>
-            <typeparam name="Ratings">Las habilitaciones en si.</typeparam>
             <returns></returns>
         </member>
         <member name="P:Telegram.Ratings.Description">
@@ -327,7 +290,6 @@
             <summary>
             Lista que almacena todos los rubros disponibles.
             </summary>
-            <typeparam name="Rubro"></typeparam>
             <returns></returns>
         </member>
         <member name="P:Telegram.Rubro.Description">
@@ -349,10 +311,30 @@
             <param name="description"></param>
             <param name="name"></param>
         </member>
-        <member name="M:Telegram.Rubro.addRubro">
+        <member name="M:Telegram.Rubro.AddRubro(Telegram.Rubro)">
             <summary>
             Añade rubros nuevos a la lista de rubros.
             </summary>
+        </member>
+        <member name="F:Telegram.Search._instance">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Search.SearchxCategory(Telegram.Category)">
+            <summary>
+            Metodo para buscar en el catalogo por categoria.
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Search.SearchxRatings(Telegram.Ratings)">
+            <summary>
+            Metodo para buscar en el catalogo por habilitacion.
+            </summary>
+            <param name="ratings"></param>
+            <returns></returns>
         </member>
         <member name="T:Telegram.Units">
             <summary>
@@ -363,7 +345,6 @@
             <summary>
             Lista que contiene todas las unidades disponibles para usar.
             </summary>
-            <typeparam name="Units"></typeparam>
             <returns></returns>
         </member>
         <member name="P:Telegram.Units.Name">
@@ -401,11 +382,6 @@
             Metodo para eliminar unidades de la lista.
             </summary>
             <param name="unit"></param>
-        </member>
-        <member name="M:Telegram.Units.PrintList">
-            <summary>
-            Metodo para imprimir la lista en la consola.
-            </summary>
         </member>
         <member name="T:Telegram.User">
             <summary>

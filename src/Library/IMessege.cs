@@ -1,4 +1,4 @@
-
+/*
 namespace Telegram{
 public interface IMessege
 {
@@ -11,4 +11,4 @@ public interface IMessege
     }
     
 }
-}
+}*/
