@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x/sbm750gYfTWKDIM8U6iBa6nwdUW3nGbT6kg0GLGskgh6pptUODRZrs29EynlvLy5+k5dY1yGRC98FNKpNYMg==",
+  "dgSpecHash": "Qh+W1SCBdNGsV1JQK18FPGPHPxE9ftuSddZKkLGcUvn0g3v7OU5BxS7/JuEX7pzb708R/7s1sqssHYxT2Foxyw==",
   "success": true,
   "projectFilePath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,17 @@
     "C:\\Users\\dasil\\.nuget\\packages\\microsoft.codequality.analyzers\\2.9.3\\microsoft.codequality.analyzers.2.9.3.nupkg.sha512",
     "C:\\Users\\dasil\\.nuget\\packages\\microsoft.netcore.analyzers\\2.9.3\\microsoft.netcore.analyzers.2.9.3.nupkg.sha512",
     "C:\\Users\\dasil\\.nuget\\packages\\microsoft.netframework.analyzers\\2.9.3\\microsoft.netframework.analyzers.2.9.3.nupkg.sha512",
-    "C:\\Users\\dasil\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.asyncex\\5.1.2\\nito.asyncex.5.1.2.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.asyncex.context\\5.1.2\\nito.asyncex.context.5.1.2.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.asyncex.coordination\\5.1.2\\nito.asyncex.coordination.5.1.2.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.asyncex.interop.waithandles\\5.1.2\\nito.asyncex.interop.waithandles.5.1.2.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.asyncex.oop\\5.1.2\\nito.asyncex.oop.5.1.2.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.asyncex.tasks\\5.1.2\\nito.asyncex.tasks.5.1.2.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.cancellation\\1.1.2\\nito.cancellation.1.1.2.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.collections.deque\\1.1.1\\nito.collections.deque.1.1.1.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\nito.disposables\\2.2.1\\nito.disposables.2.2.1.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512",
+    "C:\\Users\\dasil\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512"
   ],
   "logs": []
 }
