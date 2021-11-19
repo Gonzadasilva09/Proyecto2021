@@ -8,7 +8,7 @@ namespace Telegram
         private static BuyOffer buyoffer;
 
         private BuyOffer(){}
-       public static BuyOffer Instance
+        public static BuyOffer Instance
         {
             get
             {
