@@ -32,6 +32,6 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
 
-        public List<Offer> allOffers = new List<Offer>();
+        public List<Offer> AllOffers = new List<Offer>();
     }
 }

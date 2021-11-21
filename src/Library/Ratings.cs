@@ -27,21 +27,22 @@ namespace Telegram
         /// </summary>
         /// <param name="description"></param>
         /// <param name="name"></param>
-        public Ratings(string description, string name){
+        public Ratings(string name ,string description){
 
-            this.Description = description;
             this.Name = name;
-            Listas.Instance.listratings.Add(this);
+            this.Description = description;
+            
+            Listas.Instance.ListRatings.Add(this);
         }
         /// <summary>
         /// Metodo que añade habilitaciones nuevas a la lista.
         /// </summary>
-        public void addRatings(){
-            Listas.Instance.listratings.Add(this);
+        public void AddRatings(){
+            Listas.Instance.ListRatings.Add(this);
         }
-        public static void Deleterating(Ratings rating)
+        public static void DeleteRating(Ratings rating)
         {
-            Listas.Instance.listratings.Remove(rating);
+            Listas.Instance.ListRatings.Remove(rating);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Telegram
         /// Obtiene o establece el atributo que determina si la oferta esta disponible o no.
         /// </summary>
         /// <value></value>
-        public bool status { get; set; }
+        public bool status { get; set;} = true; //True es disponible para la compra
         
         /// <summary>
         /// Obtiene o establece el dueño de la ofterta.
@@ -58,14 +58,15 @@ namespace Telegram
         /// <param name="productunit"></param>
         /// <param name="productdirection"></param>
         /// <param name="productprice"></param>
-        public Offer (string location, Ratings rating, string type, string productname, int productquantity, Units productunit, string productdirection,int productprice, List<Category> categories)
+        public Offer (string location, Ratings rating, string type,bool recurrent, string productname, int productquantity, Units productunit, string productdirection,int productprice, List<Category> categories)
         {
+            this.Location=location;
+            Ratings.Add(rating);
             this.Type = type;
+            this.Recurrent = recurrent;//Agrego recurrencia al constructor
             Materials product = new Materials(productname,productquantity,productunit,productdirection,productprice,categories);
             this.Product = product;
-            Catalogo.Instance.allOffers.Add(this);
-            Ratings.Add(rating);
-            this.Location=location;
+            
         }
 
         /// <summary>

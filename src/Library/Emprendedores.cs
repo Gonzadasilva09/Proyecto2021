@@ -29,13 +29,14 @@ namespace Telegram
         /// <returns></returns>
         public Emprendedores(string name, string location, Rubro rubro) : base (name, location, rubro)
         {
+            listas.Instance.ListEmprendedores.Add(this);//inicialicé listas en la herencia
         }
 
         /// <summary>
         /// Metodo para añadir habilitaciones a un emprendedor.
         /// </summary>
         /// <param name="rating"></param>
-        public void addRatings(Ratings rating){
+        public void AddRatings(Ratings rating){
          
             Listratings.Add(rating);
         }

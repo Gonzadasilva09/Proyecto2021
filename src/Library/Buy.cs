@@ -22,7 +22,8 @@ namespace Telegram
         }
         public void Buy(Offer Offer, Emprendedores Emprendedor)
         {
-            Catalogo.Instance.allOffers.Remove(Offer);
+            Catalogo catalogo =Catalogo.Instance; // Agrego la creacion de un catalogo por si no esta creado antes
+            catalogo.Instance.AllOffers.
             Emprendedor.Purchased.Add(Offer);
             Offer.Owner=Emprendedor;
             Offer.status=false;

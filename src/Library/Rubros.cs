@@ -28,14 +28,14 @@ namespace Telegram
         {
             this.Description = description;
             this.Name = name;
-            Listas.Instance.listrubro.Add(this);
+            Listas.Instance.ListRubro.Add(this);
         }
         /// <summary>
         /// Añade rubros nuevos a la lista de rubros.
         /// </summary>
          public static void Deleterubro(Rubro rubro)
         {
-            Listas.Instance.listrubro.Remove(rubro);
+            Listas.Instance.ListRubro.Remove(rubro);
         }
     }
 }

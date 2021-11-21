@@ -32,11 +32,12 @@ namespace Telegram
 
         public static List<Offer> SearchxCategory(Category category)
         {
+            Catalogo catalogo =Catalogo.Instance;
             List<Offer> results = new List<Offer>();
-            foreach (Offer offer in Catalogo.Instance.allOffers)
+            foreach (Offer offer in Catalogo.Instance.AllOffers)
             {
                foreach(Category category1 in offer.Product.Categories) {
-                   if(category.Name == category1.Name) {
+                   if(Category.Name == category1.Name) {
                        results.Add(offer);
                    }
                }
@@ -50,11 +51,12 @@ namespace Telegram
         /// <returns></returns>
         public static List<Offer> SearchxRatings(Ratings ratings)
         {   
+            Catalogo catalogo =Catalogo.Instance;
             List<Offer> results = new List<Offer>();
-            foreach (Offer offer in Catalogo.Instance.allOffers)
+            foreach (Offer offer in Catalogo.Instance.AllOffers)
             {
                foreach(Ratings habilitaciones in offer.Ratings) {
-                   if(ratings.Name == habilitaciones.Name) {
+                   if(Ratings.Name == habilitaciones.Name) {
                        results.Add(offer);
                    }
                }
@@ -63,8 +65,9 @@ namespace Telegram
         }
         public static List<Offer> SearchxMaterial(string Name)
         {   
+            Catalogo catalogo =Catalogo.Instance;
             List<Offer> results = new List<Offer>();
-            foreach (Offer offer in Catalogo.Instance.allOffers)
+            foreach (Offer offer in Catalogo.Instance.AllOffers)
             {
                    if(Name == offer.Product.Name) 
                    {

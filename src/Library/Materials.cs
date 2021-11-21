@@ -23,7 +23,7 @@ namespace Telegram
             this.Unit=units.shortcut;
             this.Direction=direction;
             this.Price=price;
-            this.Categories = categories;
+            this.Categories =categories;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Telegram
             this.Name = name;
             this.Location = location;
             this.Rubro = rubro;
+            Listas listas =Listas.Instance;//inicializo aca las listas por las dudas y la meto aca porque la tendrian las clases en comun
         }
     }
 }
