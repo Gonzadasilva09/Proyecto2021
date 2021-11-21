@@ -8,13 +8,13 @@ namespace Library
     public class TelegramBot
     {
 
-        private const string TELEBRAM_BOT_TOKEN = "2121492551:AAFIkWzYEa9uZdCLkd73TZ9AFSjoPDXTvOU";
+        private const string TELEGRAM_BOT_TOKEN = "2121492551:AAFIkWzYEa9uZdCLkd73TZ9AFSjoPDXTvOU";
         private static TelegramBot instance;
         private ITelegramBotClient bot;
 
         private TelegramBot()
         {
-            this.bot = new TelegramBotClient(TELEBRAM_BOT_TOKEN);
+            this.bot = new TelegramBotClient(TELEGRAM_BOT_TOKEN);
         }
 
         public ITelegramBotClient Client
@@ -61,4 +61,4 @@ namespace Library
             }
         }
     }
-}*/
+}
