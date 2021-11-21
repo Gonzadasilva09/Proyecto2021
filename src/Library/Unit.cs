@@ -48,8 +48,7 @@ namespace Telegram
         /// <param name="unit"></param>
         public static void Deleteunit(Units unit)
         {
-            Listas listas = listas.Instance;
-            listas.Instance.UnitList.Remove(unit);
+            Listas.Instance.UnitList.Remove(unit);
         }
     }
 }

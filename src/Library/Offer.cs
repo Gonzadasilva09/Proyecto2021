@@ -39,7 +39,7 @@ namespace Telegram
         /// Obtiene o establece el atributo que determina si la oferta esta disponible o no.
         /// </summary>
         /// <value></value>
-        public bool status { get; set;} = true; //True es disponible para la compra
+        public bool Status { get; set;} = true; //True es disponible para la compra
         
         /// <summary>
         /// Obtiene o establece el dueño de la ofterta.

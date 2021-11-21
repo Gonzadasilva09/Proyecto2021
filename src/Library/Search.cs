@@ -56,20 +56,20 @@ namespace Telegram
             foreach (Offer offer in Catalogo.Instance.AllOffers)
             {
                foreach(Ratings habilitaciones in offer.Ratings) {
-                   if(Ratings.Name == habilitaciones.Name) {
+                   if(ratings.Name == habilitaciones.Name) {
                        results.Add(offer);
                    }
                }
             }      
             return results;
         }
-        public static List<Offer> SearchxMaterial(string Name)
+        public static List<Offer> SearchxMaterial(string name)
         {   
             Catalogo catalogo =Catalogo.Instance;
             List<Offer> results = new List<Offer>();
             foreach (Offer offer in Catalogo.Instance.AllOffers)
             {
-                   if(Name == offer.Product.Name) 
+                   if(name == offer.Product.Name) 
                    {
                        results.Add(offer);
                    }
