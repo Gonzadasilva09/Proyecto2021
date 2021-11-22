@@ -22,7 +22,7 @@ namespace Telegram
             
             Bot = new TelegramBotClient(TelegramToken);
             
-            handler1 = new HelloHandler(null);
+            handler1 = new StartHandler(null);
             
             var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes
@@ -58,7 +58,7 @@ namespace Telegram
 
                 private static async Task HandleMessageReceived(IMessege message)
         {
-            Console.WriteLine($"Received a message from {message.IdUser} saying: {message.Mensaje}");
+            Console.WriteLine($"Se recibio un mensaje de {message.IdUser} diciendo: {message.Mensaje}");
 
             string response = string.Empty;
 
@@ -70,9 +70,6 @@ namespace Telegram
             }
         }
 
-        /// <summary>
-        /// Manejo de excepciones. Por ahora simplemente la imprimimos en la consola.
-        /// </summary>
        public static Task HandleErrorAsync(Exception exception, CancellationToken cancellationToken)
         {
             Console.WriteLine(exception.Message);
