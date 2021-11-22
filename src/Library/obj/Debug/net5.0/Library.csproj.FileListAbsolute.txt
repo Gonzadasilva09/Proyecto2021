@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\Proyecto2021\src\Library\bin\Debug\net5.0\Library.deps.json
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\Proyecto2021\src\Library\bin\Debug\net5.0\Library.dll
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\Proyecto2021\src\Library\bin\Debug\net5.0\ref\Library.dll
@@ -10,6 +11,8 @@ C:\Users\fede2\OneDrive\Escritorio\Proyectos\Proyecto2021\src\Library\obj\Debug\
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\Proyecto2021\src\Library\obj\Debug\net5.0\Library.dll
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\Proyecto2021\src\Library\obj\Debug\net5.0\ref\Library.dll
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\Proyecto2021\src\Library\obj\Debug\net5.0\Library.pdb
+=======
+>>>>>>> 4a6fd8d52ed99d4584da84e7e7fc944fab6ab0e8
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.deps.json
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.dll
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\ref\Library.dll
@@ -23,3 +26,29 @@ C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.dll
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\ref\Library.dll
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.pdb
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.deps.json
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.dll
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\ref\Library.dll
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.pdb
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.xml
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.csproj.AssemblyReference.cache
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.AssemblyInfoInputs.cache
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.AssemblyInfo.cs
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.dll
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\ref\Library.dll
+C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.pdb
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.csproj.AssemblyReference.cache
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.AssemblyInfoInputs.cache
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.AssemblyInfo.cs
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.dll
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\ref\Library.dll
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\obj\Debug\net5.0\Library.pdb
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.deps.json
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.dll
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\ref\Library.dll
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.pdb
+C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Library\bin\Debug\net5.0\Library.xml

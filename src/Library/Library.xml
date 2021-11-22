@@ -4,5 +4,680 @@
         <name>Library</name>
     </assembly>
     <members>
+        <member name="M:Telegram.APILocation.#ctor">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Telegram.Business">
+            <summary>
+            Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
+            </summary>
+        </member>
+        <member name="M:Telegram.Business.#ctor(System.String,System.String,Telegram.Rubro)">
+            <summary>
+            Constructor de objetos de tipo Business
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="rubro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Business.MakeOffer(System.String,Telegram.Ratings,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32,System.Collections.Generic.List{Telegram.Category})">
+            <summary>
+            Metodo para que una empresa haga una oferta.
+            </summary>
+            <param name="ratings"></param>
+            <param name="category"></param>
+            <param name="type"></param>
+            <param name="prodname"></param>
+            <param name="prodquantity"></param>
+            <param name="produnit"></param>
+            <param name="proddirection"></param>
+            <param name="prodprice"></param>
+        </member>
+        <member name="F:Telegram.Business.offersMade">
+            <summary>
+            Lista que contiene todas las ofertas hechas por la empresa.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Telegram.Catalogo">
+            <summary>
+            Clase encargada de manejar el catalogo.
+            </summary>
+        </member>
+        <member name="M:Telegram.Catalogo.#ctor">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Catalogo.allOffers">
+            <summary>
+            Lista que contiene todas las ofertas disponibles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Telegram.Category">
+            <summary>
+            Clase que se encarga de manejar las categorias.
+            </summary>
+        </member>
+        <member name="M:Telegram.Category.#ctor(System.String,System.String)">
+            <summary>
+            Constructor de objetos tipo Category.
+            </summary>
+            <param name="name"></param>
+            <param name="description"></param>
+        </member>
+        <member name="P:Telegram.Category.Name">
+            <summary>
+            Obtiene o establece el nombre de una categoria.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Category.Description">
+            <summary>
+            Obtiene o establece la descripcion de una categoria.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Telegram.Emprendedores">
+            <summary>
+            Clase encargada de manejar los emprendedores, hereda de User.
+            </summary>
+        </member>
+        <member name="F:Telegram.Emprendedores.Listratings">
+            <summary>
+            Lista de habilitaciones que tiene el emprendedor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Emprendedores.Purchased">
+            <summary>
+            Lista de compras realizadas por el emprendedor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Emprendedores.#ctor(System.String,System.String,Telegram.Rubro)">
+            <summary>
+            Constructor de objetos de tipo Emprendedor.
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="rubro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Emprendedores.addRatings(Telegram.Ratings)">
+            <summary>
+            Metodo para añadir habilitaciones a un emprendedor.
+            </summary>
+            <param name="rating"></param>
+        </member>
+        <member name="T:Telegram.BaseHandler">
+            <summary>
+            Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una
+            cadena de "handlers" que pueden procesar o no el mensaje. Cada "handler" decide si procesa el mensaje, o si se lo
+            pasa al siguiente. Esta clase base implmementa la responsabilidad de recibir el mensaje y pasarlo al siguiente
+            "handler" en caso que el mensaje no sea procesado. La responsabilidad de decidir si el mensaje se procesa o no, y
+            de procesarlo, se delega a las clases sucesoras de esta clase base.
+            </summary>
+        </member>
+        <member name="P:Telegram.BaseHandler.Next">
+            <summary>
+            Obtiene el próximo "handler".
+            </summary>
+            <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
+        </member>
+        <member name="P:Telegram.BaseHandler.Keywords">
+            <summary>
+            Obtiene o asigna el conjunto de palabras clave que este "handler" puede procesar.
+            </summary>
+            <value>Un array de palabras clave.</value>
+        </member>
+        <member name="M:Telegram.BaseHandler.#ctor(Telegram.IHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.BaseHandler"/>.
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.BaseHandler.#ctor(System.String[],Telegram.IHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.BaseHandler"/> con una lista de comandos.
+            </summary>
+            <param name="keywords">La lista de comandos.</param>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.BaseHandler.InternalHandle(Telegram.Bot.Types.Message,System.String@)">
+            <summary>
+            Este método debe ser sobreescrito por las clases sucesores. La clase sucesora procesa el mensaje y retorna
+            true o no lo procesa y retorna false.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="responder">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario</returns>
+        </member>
+        <member name="M:Telegram.BaseHandler.InternalCancel">
+            <summary>
+            Este método puede ser sobreescrito en las clases sucesores que procesan varios mensajes cambiando de estado
+            entre mensajes deben sobreescribir este método para volver al estado inicial. En la clase base no hace nada.
+            </summary>
+        </member>
+        <member name="M:Telegram.BaseHandler.CanHandle(Telegram.Bot.Types.Message)">
+            <summary>
+            Determina si este "handler" puede procesar el mensaje. En la clase base se utiliza el array
+            <see cref="P:Telegram.BaseHandler.Keywords"/> para buscar el texto en el mensaje ignorando mayúsculas y minúsculas. Las
+            clases sucesores pueden sobreescribir este método para proveer otro mecanismo para determina si procesan o no
+            un mensaje.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <returns>true si el mensaje puede ser pocesado; false en caso contrario.</returns>
+        </member>
+        <member name="M:Telegram.BaseHandler.Handle(Telegram.Bot.Types.Message,System.String@)">
+            <summary>
+            Procesa el mensaje o la pasa al siguiente "handler" si existe.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
+        </member>
+        <member name="M:Telegram.BaseHandler.Cancel">
+            <summary>
+            Retorna este "handler" al estado inicial. En los "handler" sin estado no hace nada. Los "handlers" que
+            procesan varios mensajes cambiando de estado entre mensajes deben sobreescribir este método para volver al
+            estado inicial.
+            </summary>
+        </member>
+        <member name="T:Telegram.HelloHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="M:Telegram.HelloHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.HelloHandler"/>. Esta clase procesa el mensaje "hola".
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.HelloHandler.InternalHandle(Telegram.Bot.Types.Message,System.String@)">
+            <summary>
+            Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Telegram.IHandler" -->
+        <member name="P:Telegram.IHandler.Next">
+            <summary>
+            Obtiene el próximo "handler".
+            </summary>
+            <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
+        </member>
+        <member name="M:Telegram.IHandler.Handle(Telegram.Bot.Types.Message,System.String@)">
+            <summary>
+            Procesa el mensaje o la pasa al siguiente "handler" si existe.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
+        </member>
+        <member name="M:Telegram.IHandler.Cancel">
+            <summary>
+            Retorna este "handler" al estado inicial y cancela el próximo "handler" si existe. Es utilizado para que los
+            "handlers" que procesan varios mensajes cambiando de estado entre mensajes puedan volver al estado inicial en
+            caso de error por ejemplo.
+            </summary>
+        </member>
+        <member name="F:Telegram.Listas.listratings">
+            <summary>
+            Lista que contiene todas las habilitaciones disponibles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.listrubro">
+            <summary>
+            Lista que almacena todos los rubros disponibles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.unitlist">
+            <summary>
+            Lista que contiene todas las unidades disponibles para usar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Telegram.Distance">
+            <summary>
+            Representa la distancia entre las coordenas o las direcciones de origen y destino retornada en los métodos
+            <see cref="M:Telegram.LocationApiClient.GetDistanceAsync(Telegram.Location,Telegram.Location)"/> o
+            <see cref="M:Telegram.LocationApiClient.GetDistanceAsync(System.String,System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:Telegram.Distance.Found">
+            <summary>
+            Obtiene o establece un valor que indica si se encontraron o no las coordenas o las direcciones de origen y
+            destino.
+            </summary>
+            <value>true si se encontró la dirección; false en caso contrario.</value>
+        </member>
+        <member name="P:Telegram.Distance.TravelDistance">
+            <summary>
+            Obtiene o establece la distancia entre las coordenadas o las direcciones de origen y destino.
+            </summary>
+            <value>La distancia en metros.</value>
+        </member>
+        <member name="P:Telegram.Distance.TravelDuration">
+            <summary>
+            Obtiene o establece el tiempo que se demora en llegar de las coordenadas o de las direcciones de origen a las de destino.
+            </summary>
+            <value>El tiempo que se demora en minutos.</value>
+        </member>
+        <member name="T:Telegram.Location">
+            <summary>
+            Representa las coordenadas y otros datos de la ubicación de una dirección retornada en el método
+            <see cref="M:Telegram.LocationApiClient.GetLocationAsync(System.String,System.String,System.String,System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:Telegram.Location.Found">
+            <summary>
+            Obtiene o establece un valor que indica si se encontró o no la dirección. En ese caso son válidos los demás
+            valores. En caso contrario los demás valores son indeterminados.
+            </summary>
+            <value>true si se encontró la dirección; false en caso contrario.</value>
+        </member>
+        <member name="P:Telegram.Location.AddresLine">
+            <summary>
+            Obtiene o establece la dirección: calle y número, ruta y kilómetro, etc.
+            </summary>
+            <value>Por ejemplo, Avenida 8 de Octubre 2738.</value>
+        </member>
+        <member name="P:Telegram.Location.CountryRegion">
+            <summary>
+            Obtiene o establece el país.
+            </summary>
+            <value>Por ejemplo, Uruguay.</value>
+        </member>
+        <member name="P:Telegram.Location.FormattedAddress">
+            <summary>
+            Obtiene o establece la dirección completa, incluyendo ciudad, código postal, etc.
+            </summary>
+            <value>Por ejemplo, Avenida 8 de Octubre 2738, Montevideo, 11200, Uruguay.</value>
+        </member>
+        <member name="P:Telegram.Location.Locality">
+            <summary>
+            Obtiene o establece la localidad o ciudad.
+            </summary>
+            <value>Por ejemplo, Montevideo.</value>
+        </member>
+        <member name="P:Telegram.Location.PostalCode">
+            <summary>
+            Obtiene o establece el código postal.
+            </summary>
+            <value>Por ejemplo, 11200.</value>
+        </member>
+        <member name="P:Telegram.Location.Latitude">
+            <summary>
+            Obtiene o establece la latitud de la dirección.
+            </summary>
+            <value>El valor de la latitud en formato decimal.</value>
+        </member>
+        <member name="P:Telegram.Location.Longitude">
+            <summary>
+            Obtiene o establece la longitud de la dirección.
+            </summary>
+            <value>El valor de la longitud en formato decimal.</value>
+        </member>
+        <member name="T:Telegram.LocationApiClient">
+            <summary>
+            Un cliente de la API de localización.
+            </summary>
+        </member>
+        <member name="M:Telegram.LocationApiClient.GetLocationAsync(System.String,System.String,System.String,System.String)">
+            <summary>
+            Obtiene las coordenadas de una dirección.
+            </summary>
+            <param name="address">La dirección.</param>
+            <param name="city">La ciudad. Es opcional. El valor predeterminado es Montevideo.</param>
+            <param name="department">El departamento, estado, provincia, etc. Es opcional. El valor predeterminado es `ontevideo.</param>
+            <param name="country">El país. Es opcional. El valor predeterminado es Uruguay.</param>
+            <returns>Las coordenadas de la dirección.</returns>
+        </member>
+        <member name="M:Telegram.LocationApiClient.GetLocation(System.String,System.String,System.String,System.String)">
+            <inheritdoc cref="M:Telegram.LocationApiClient.GetLocationAsync(System.String,System.String,System.String,System.String)" />
+            <remarks>
+            Versión sincrónica.
+            </remarks>
+        </member>
+        <member name="M:Telegram.LocationApiClient.GetDistanceAsync(Telegram.Location,Telegram.Location)">
+            <summary>
+            Obtiene la distancia entre dos coordenadas.
+            </summary>
+            <param name="from">La coordenada de origen.</param>
+            <param name="to">La coordenada de destino.</param>
+            <returns>La distancia entre las dos coordenadas.</returns>
+        </member>
+        <member name="M:Telegram.LocationApiClient.GetDistance(Telegram.Location,Telegram.Location)">
+            <inheritdoc cref="M:Telegram.LocationApiClient.GetDistanceAsync(Telegram.Location,Telegram.Location)" />
+            <remarks>
+            Versión sincrónica.
+            </remarks>
+        </member>
+        <member name="M:Telegram.LocationApiClient.GetDistanceAsync(System.String,System.String)">
+            <summary>
+            Obtiene la distancia entre dos direcciones.
+            </summary>
+            <param name="from">La dirección de origen.</param>
+            <param name="to">La dirección de destino.</param>
+            <returns>La distancia entre las dos direcciones.</returns>
+        </member>
+        <member name="M:Telegram.LocationApiClient.GetDistance(System.String,System.String)">
+            <inheritdoc cref="M:Telegram.LocationApiClient.GetDistanceAsync(System.String,System.String)" />.
+            <remarks>
+            Versión sincrónica.
+            </remarks>
+        </member>
+        <member name="M:Telegram.LocationApiClient.DownloadMapAsync(System.Double,System.Double,System.String,System.Int32)">
+            <summary>
+            Descarga una mapa de una coordenada.
+            </summary>
+            <param name="latitude">La latitud de la coordenada.</param>
+            <param name="longitude">La longitud de la coordenada.</param>
+            <param name="path">La ruta del archivo donde guardar el mapa. El formato es PNG.</param>
+            <param name="zoomLevel">El nivel de zoom del mapa entre 1 y 20. Es opcional. El valor predeterminado es
+            15.</param>
+            <returns>
+            Una tarea que representa la operación asincrónica.
+            </returns>
+        </member>
+        <member name="M:Telegram.LocationApiClient.DownloadMap(System.Double,System.Double,System.String,System.Int32)">
+            <inheritdoc cref="M:Telegram.LocationApiClient.DownloadMapAsync(System.Double,System.Double,System.String,System.Int32)" />.
+            <remarks>
+            Versión sincrónica.
+            </remarks>
+        </member>
+        <member name="M:Telegram.LocationApiClient.DownloadRouteAsync(System.Double,System.Double,System.Double,System.Double,System.String)">
+            <summary>
+            Un mapa con una ruta entre dos coordenadas.
+            </summary>
+            <param name="fromLatitude">La latitud de la coordenada de origen.</param>
+            <param name="fromLongitude">La longitu de la coordenada de origen.</param>
+            <param name="toLatitude">La latitud de la coordenada de destino.</param>
+            <param name="toLongitude">La longitud de la coordenada de destino.</param>
+            <param name="path">La ruta del archivo donde guardar el mapa. Es formato es PNG.</param>
+            <returns>
+            Una tarea que representa la operación asincrónica.
+            </returns>
+        </member>
+        <member name="M:Telegram.LocationApiClient.DownloadRoute(System.Double,System.Double,System.Double,System.Double,System.String)">
+            <inheritdoc cref="M:Telegram.LocationApiClient.DownloadRouteAsync(System.Double,System.Double,System.Double,System.Double,System.String)" />
+            <remarks>
+            Versión sincrónica.
+            </remarks>
+        </member>
+        <member name="M:Telegram.LocationApiClient.Dispose">
+            <inheritdoc cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Telegram.LocationApiClient.Dispose(System.Boolean)">
+            <inheritdoc cref="T:System.IDisposable" />
+        </member>
+        <member name="T:Telegram.Materials">
+            <summary>
+            Clase encargada de manejar los materiales.
+            </summary>
+        </member>
+        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.String,System.Int32,System.Collections.Generic.List{Telegram.Category})">
+            <summary>
+            Constructor de objetos de tipo material.
+            </summary>
+            <param name="name"></param>
+            <param name="quantity"></param>
+            <param name="units"></param>
+            <param name="direction"></param>
+            <param name="price"></param>
+        </member>
+        <member name="P:Telegram.Materials.Categories">
+            <summary>
+            Obtiene o establece el nombre del material.
+            </summary>
+            <value></value>
+            
+        </member>
+        <member name="P:Telegram.Materials.Quantity">
+            <summary>
+            Obtiene o establece la cantidad del material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Materials.Unit">
+            <summary>
+            Obtiene o establece en que unidad de representa el material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Materials.Direction">
+            <summary>
+            Obtiene o establece donde se encuentra el material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Materials.Price">
+            <summary>
+            Obtiene o establece el precio del material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Telegram.Offer">
+            <summary>
+            Clase que se encarga de controlar las ofertas.
+            </summary>
+        </member>
+        <member name="F:Telegram.Offer.Ratings">
+            <summary>
+            Lista que contiene las habilitaciones de la oferta.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telegram.Offer.Recurrent">
+            <summary>
+            Atributo que determina si la oferta es recurrente o no, obtiene y establece el valor.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Offer.Type">
+            <summary>
+            Establece o obtiene el tipo de la oferta, que puede ser residuo o material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Offer.Product">
+            <summary>
+            Obtiene y establece el material ofrecido en la oferta.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Offer.status">
+            <summary>
+            Obtiene o establece el atributo que determina si la oferta esta disponible o no.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Offer.Owner">
+            <summary>
+            Obtiene o establece el dueño de la ofterta.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.Offer.#ctor(System.String,Telegram.Ratings,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32,System.Collections.Generic.List{Telegram.Category})">
+            <summary>
+            Constructor de objetos de tipo oferta.
+            </summary>
+            <param name="rating"></param>
+            <param name="categories"></param>
+            <param name="type"></param>
+            <param name="productname"></param>
+            <param name="productquantity"></param>
+            <param name="productunit"></param>
+            <param name="productdirection"></param>
+            <param name="productprice"></param>
+        </member>
+        <member name="M:Telegram.Offer.PrintRatings">
+            <summary>
+            Metodo que imprime las habilitaciones de la empresa.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Offer.AddRatings(Telegram.Ratings)">
+            <summary>
+            Metodo que añade habilitaciones a la empresa.
+            </summary>
+            <param name="ratings"></param>
+        </member>
+        <member name="T:Telegram.Ratings">
+            <summary>
+            Clase encargada de controlar las habilitaciones.
+            </summary>
+        </member>
+        <member name="P:Telegram.Ratings.Description">
+            <summary>
+            Obtiene o establece una descripcion de la habilitación.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Ratings.Name">
+            <summary>
+            Obtiene o establece el nombre de una habilitacion.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.Ratings.#ctor(System.String,System.String)">
+            <summary>
+            Constructor de habilitaciones.
+            </summary>
+            <param name="description"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Ratings.addRatings">
+            <summary>
+            Metodo que añade habilitaciones nuevas a la lista.
+            </summary>
+        </member>
+        <member name="T:Telegram.Rubro">
+            <summary>
+            Clase encargada de crear y obtener los distintos rubros disponibles.
+            </summary>
+        </member>
+        <member name="P:Telegram.Rubro.Description">
+            <summary>
+            String que obtiene o establece la descripción de un rubro.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Rubro.Name">
+            <summary>
+            String que obtiene o establece el nombre de un rubro.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.Rubro.#ctor(System.String,System.String)">
+            <summary>
+            Constructor de rubros.
+            </summary>
+            <param name="description"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Rubro.Deleterubro(Telegram.Rubro)">
+            <summary>
+            Añade rubros nuevos a la lista de rubros.
+            </summary>
+        </member>
+        <member name="M:Telegram.Search.#ctor">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Search.SearchxCategory(Telegram.Category)">
+            <summary>
+            Metodo para buscar en el catalogo por categoria.
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Search.SearchxRatings(Telegram.Ratings)">
+            <summary>
+            Metodo para buscar en el catalogo por habilitacion.
+            </summary>
+            <param name="ratings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telegram.Units">
+            <summary>
+            Clase que se encarga de las unidades de magnitud para las ofertas.
+            </summary>
+        </member>
+        <member name="P:Telegram.Units.Name">
+            <summary>
+            Obtiene el nombre de la unidad.
+            </summary>
+            <value></value>
+        </member>
+        <member name="F:Telegram.Units.shortcut">
+            <summary>
+            Abreviacion de la unidad.
+            </summary>
+        </member>
+        <member name="M:Telegram.Units.#ctor(System.String)">
+            <summary>
+            Constructor de los objetos Unit.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Units.shortcutget(System.Int32)">
+            <summary>
+            Transforma las unidades a su abreviacion.
+            </summary>
+            <param name="unitnum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Units.Deleteunit(Telegram.Units)">
+            <summary>
+            Metodo para eliminar unidades de la lista.
+            </summary>
+            <param name="unit"></param>
+        </member>
+        <member name="T:Telegram.User">
+            <summary>
+            La clase User es una clase abstracta para heredar caracteristicas a la clase Business y la clase Emprendedores.
+            </summary>
+        </member>
+        <member name="P:Telegram.User.Name">
+            <summary>
+            Obtiene o establece el nombre de un usuario.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.User.Location">
+            <summary>
+            Obtiene o establece la locacion de un usuario.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.User.Rubro">
+            <summary>
+            Obtiene o establece el rubro de un usuario.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.User.#ctor(System.String,System.String,Telegram.Rubro)">
+            <summary>
+            Constructor de la clase abstracta usuario.
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="rubro"></param>
+        </member>
     </members>
 </doc>

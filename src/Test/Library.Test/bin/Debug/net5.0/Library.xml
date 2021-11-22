@@ -4,5 +4,432 @@
         <name>Library</name>
     </assembly>
     <members>
+<<<<<<< HEAD
+=======
+        <member name="T:Telegram.Business">
+            <summary>
+            Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
+            </summary>
+        </member>
+        <member name="M:Telegram.Business.#ctor(System.String,System.String,Telegram.Rubro)">
+            <summary>
+            Constructor de objetos de tipo Business
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="rubro"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Business.OffersMade">
+            <summary>
+            Lista que contiene todas las ofertas hechas por la empresa.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Business.MakeOffer(Telegram.Ratings,Telegram.Category,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
+            <summary>
+            Metodo para que una empresa haga una oferta.
+            </summary>
+            <param name="ratings"></param>
+            <param name="category"></param>
+            <param name="type"></param>
+            <param name="prodname"></param>
+            <param name="prodquantity"></param>
+            <param name="produnit"></param>
+            <param name="proddirection"></param>
+            <param name="prodprice"></param>
+        </member>
+        <member name="M:Telegram.Business.Search">
+            <summary>
+            Metodo para buscar en el catalogo. 
+            </summary>
+        </member>
+        <member name="T:Telegram.Catalogo">
+            <summary>
+            Clase encargada de manejar el catalogo.
+            </summary>
+        </member>
+        <member name="F:Telegram.Catalogo._instance">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Catalogo.AllOffers">
+            <summary>
+            Lista que contiene todas las ofertas disponibles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Catalogo.SearchxCategory(Telegram.Category)">
+            <summary>
+            Metodo para buscar en el catalogo por categoria.
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Catalogo.SearchxRatings(Telegram.Ratings)">
+            <summary>
+            Metodo para buscar en el catalogo por habilitacion.
+            </summary>
+            <param name="ratings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telegram.Category">
+            <summary>
+            Clase que se encarga de manejar las categorias.
+            </summary>
+        </member>
+        <member name="F:Telegram.Category.category">
+            <summary>
+            Lista de las categorias existentes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Category.#ctor(System.String,System.String)">
+            <summary>
+            Constructor de objetos tipo Category.
+            </summary>
+            <param name="name"></param>
+            <param name="description"></param>
+        </member>
+        <member name="P:Telegram.Category.Name">
+            <summary>
+            Obtiene o establece el nombre de una categoria.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Category.Description">
+            <summary>
+            Obtiene o establece la descripcion de una categoria.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Telegram.Emprendedores">
+            <summary>
+            Clase encargada de manejar los emprendedores, hereda de User.
+            </summary>
+        </member>
+        <member name="F:Telegram.Emprendedores.Listratings">
+            <summary>
+            Lista de habilitaciones que tiene el emprendedor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Emprendedores.Purchased">
+            <summary>
+            Lista de compras realizadas por el emprendedor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Emprendedores.#ctor(System.String,System.String,Telegram.Rubro)">
+            <summary>
+            Constructor de objetos de tipo Emprendedor.
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="rubro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Emprendedores.addRatings(Telegram.Ratings)">
+            <summary>
+            Metodo para añadir habilitaciones a un emprendedor.
+            </summary>
+            <param name="rating"></param>
+        </member>
+        <member name="M:Telegram.Emprendedores.BuyOffers">
+            <summary>
+            Metodo para que un emprendedor pueda comprar una oferta.
+            </summary>
+        </member>
+        <member name="T:Telegram.Materials">
+            <summary>
+            Clase encargada de manejar los materiales.
+            </summary>
+        </member>
+        <member name="P:Telegram.Materials.Name">
+            <summary>
+            Obtiene o establece el nombre del material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Materials.Quantity">
+            <summary>
+            Obtiene o establece la cantidad del material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Materials.Unit">
+            <summary>
+            Obtiene o establece en que unidad de representa el material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Materials.Direction">
+            <summary>
+            Obtiene o establece donde se encuentra el material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Materials.Price">
+            <summary>
+            Obtiene o establece el precio del material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
+            <summary>
+            Constructor de objetos de tipo material.
+            </summary>
+            <param name="name"></param>
+            <param name="quantity"></param>
+            <param name="units"></param>
+            <param name="direction"></param>
+            <param name="price"></param>
+        </member>
+        <member name="T:Telegram.Offer">
+            <summary>
+            Clase que se encarga de controlar las ofertas.
+            </summary>
+        </member>
+        <member name="F:Telegram.Offer.Categories">
+            <summary>
+            Lista que contiene las categorias de la oferta.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Offer.Ratings">
+            <summary>
+            Lista que contiene las habilitaciones de la oferta.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telegram.Offer.Recurrent">
+            <summary>
+            Atributo que determina si la oferta es recurrente o no, obtiene y establece el valor.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Offer.Type">
+            <summary>
+            Establece o obtiene el tipo de la oferta, que puede ser residuo o material.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Offer.Product">
+            <summary>
+            Obtiene y establece el material ofrecido en la oferta.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Offer.status">
+            <summary>
+            Obtiene o establece el atributo que determina si la oferta esta disponible o no.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Offer.Owner">
+            <summary>
+            Obtiene o establece el dueño de la ofterta.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.Offer.#ctor(Telegram.Ratings,Telegram.Category,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32)">
+            <summary>
+            Constructor de objetos de tipo oferta.
+            </summary>
+            <param name="rating"></param>
+            <param name="categories"></param>
+            <param name="type"></param>
+            <param name="productname"></param>
+            <param name="productquantity"></param>
+            <param name="productunit"></param>
+            <param name="productdirection"></param>
+            <param name="productprice"></param>
+        </member>
+        <member name="M:Telegram.Offer.printOffer">
+            <summary>
+            Metodo que imprime una oferta en la consola.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Offer.PrintCategories">
+            <summary>
+            Metodo que imprime las categorias de la oferta.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Offer.PrintRatings">
+            <summary>
+            Metodo que imprime las habilitaciones de la empresa.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Offer.addCategories(Telegram.Category)">
+            <summary>
+            Metodo que añade categorias a la oferta.
+            </summary>
+            <param name="category"></param>
+        </member>
+        <member name="M:Telegram.Offer.addRatings(Telegram.Ratings)">
+            <summary>
+            Metodo que añade habilitaciones a la empresa
+            </summary>
+            <param name="ratings"></param>
+        </member>
+        <member name="T:Telegram.Ratings">
+            <summary>
+            Clase encargada de controlar las habilitaciones.
+            </summary>
+        </member>
+        <member name="F:Telegram.Ratings.Listratings">
+            <summary>
+            Lista que contiene todas las habilitaciones disponibles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telegram.Ratings.Description">
+            <summary>
+            Obtiene o establece una descripcion de la habilitación.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Ratings.Name">
+            <summary>
+            Obtiene o establece el nombre de una habilitacion.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.Ratings.#ctor(System.String,System.String)">
+            <summary>
+            Constructor de habilitaciones.
+            </summary>
+            <param name="description"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Ratings.addRatings">
+            <summary>
+            Metodo que añade habilitaciones nuevas a la lista.
+            </summary>
+        </member>
+        <member name="T:Telegram.Rubro">
+            <summary>
+            Clase encargada de crear y obtener los distintos rubros disponibles.
+            </summary>
+        </member>
+        <member name="F:Telegram.Rubro.Listrubro">
+            <summary>
+            Lista que almacena todos los rubros disponibles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telegram.Rubro.Description">
+            <summary>
+            String que obtiene o establece la descripción de un rubro.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Rubro.Name">
+            <summary>
+            String que obtiene o establece el nombre de un rubro.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.Rubro.#ctor(System.String,System.String)">
+            <summary>
+            Constructor de rubros.
+            </summary>
+            <param name="description"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Rubro.AddRubro(Telegram.Rubro)">
+            <summary>
+            Añade rubros nuevos a la lista de rubros.
+            </summary>
+        </member>
+        <member name="T:Telegram.Units">
+            <summary>
+            Clase que se encarga de las unidades de magnitud para las ofertas.
+            </summary>
+        </member>
+        <member name="F:Telegram.Units.Unitlist">
+            <summary>
+            Lista que contiene todas las unidades disponibles para usar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telegram.Units.Name">
+            <summary>
+            Obtiene el nombre de la unidad.
+            </summary>
+            <value></value>
+        </member>
+        <member name="F:Telegram.Units.shortcut">
+            <summary>
+            Abreviacion de la unidad.
+            </summary>
+        </member>
+        <member name="M:Telegram.Units.#ctor(System.String)">
+            <summary>
+            Constructor de los objetos Unit.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Units.shortcutget(System.Int32)">
+            <summary>
+            Transforma las unidades a su abreviacion.
+            </summary>
+            <param name="unitnum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Units.AddUnit(Telegram.Units)">
+            <summary>
+            Metodo para añadir unidades a la lista.
+            </summary>
+            <param name="unit"></param>
+        </member>
+        <member name="M:Telegram.Units.Deleteunit(Telegram.Units)">
+            <summary>
+            Metodo para eliminar unidades de la lista.
+            </summary>
+            <param name="unit"></param>
+        </member>
+        <member name="M:Telegram.Units.PrintList">
+            <summary>
+            Metodo para imprimir la lista en la consola.
+            </summary>
+        </member>
+        <member name="T:Telegram.User">
+            <summary>
+            La clase User es una clase abstracta para heredar caracteristicas a la clase Business y la clase Emprendedores.
+            </summary>
+        </member>
+        <member name="P:Telegram.User.Name">
+            <summary>
+            Obtiene o establece el nombre de un usuario.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.User.Location">
+            <summary>
+            Obtiene o establece la locacion de un usuario.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.User.Rubro">
+            <summary>
+            Obtiene o establece el rubro de un usuario.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.User.#ctor(System.String,System.String,Telegram.Rubro)">
+            <summary>
+            Constructor de la clase abstracta usuario.
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="rubro"></param>
+        </member>
+>>>>>>> 4a6fd8d52ed99d4584da84e7e7fc944fab6ab0e8
     </members>
 </doc>

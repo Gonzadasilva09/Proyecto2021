@@ -2,41 +2,52 @@ using System.Collections.Generic;
 using System;
 namespace Telegram
 {
+    /// <summary>
+    /// Clase que se encarga de las unidades de magnitud para las ofertas.
+    /// </summary>
     public class Units
     {
-        //Lo tiene que tocar solo el admin
-        public static List<Units> Unitlist = new List<Units>();
+
+        /// <summary>
+        /// Obtiene el nombre de la unidad.
+        /// </summary>
+        /// <value></value>
         public string Name{get;}
+        /// <summary>
+        /// Abreviacion de la unidad.
+        /// </summary>
         public string shortcut;
+        /// <summary>
+        /// Constructor de los objetos Unit.
+        /// </summary>
+        /// <param name="name"></param>
         public Units(string name)
         {
             this.Name=name;
             this.shortcut=shortcutcreater();
+            Listas.Instance.unitlist.Add(this);
         }
 
         private string shortcutcreater()
         {
             return this.Name[0].ToString();
         }
+        /// <summary>
+        /// Transforma las unidades a su abreviacion.
+        /// </summary>
+        /// <param name="unitnum"></param>
+        /// <returns></returns>
         public string shortcutget(int unitnum)
         {
-            return Unitlist[unitnum].shortcut;
+            return Listas.Instance.unitlist[unitnum].shortcut;
         }
-        public void AddUnit(Units unit)
+        /// <summary>
+        /// Metodo para eliminar unidades de la lista.
+        /// </summary>
+        /// <param name="unit"></param>
+        public static void Deleteunit(Units unit)
         {
-            Unitlist.Add(unit);
-        }
-        public void Deleteunit(Units unit)
-        {
-            Unitlist.Remove(unit);
-        }
-        public void PrintList()
-        {
-            foreach(Units unit in Unitlist)
-            {
-                Console.WriteLine(unit.Name);
-            }
-            Console.WriteLine("------------------------------------------");
+            Listas.Instance.unitlist.Remove(unit);
         }
     }
 }

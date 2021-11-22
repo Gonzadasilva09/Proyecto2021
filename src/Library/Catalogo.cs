@@ -4,50 +4,34 @@ using System.Collections.Generic;
 
 namespace Telegram
 {
+    /// <summary>
+    /// Clase encargada de manejar el catalogo.
+    /// </summary>
     public class Catalogo
     {
-        private readonly static Catalogo _instance = new Catalogo();
-        private Catalogo(){}
-        public static Catalogo Instance
+        private static Catalogo catalogo;
+        /// <summary>
+        /// Singleton para que solo exista una instancia del catalogo.
+        /// </summary>
+        /// <returns></returns>
+       private Catalogo(){}
+       public static Catalogo Instance
         {
             get
             {
-                return _instance;
+                if (catalogo == null)
+                {
+                    catalogo = new Catalogo();
+                }
+
+                return catalogo;
             }
         }
+        /// <summary>
+        /// Lista que contiene todas las ofertas disponibles.
+        /// </summary>
+        /// <returns></returns>
 
-        public List<Offer> AllOffers = new List<Offer>();
-
-        public List<Offer> SearchxCategory(Category category)
-        {   
-            List<Offer> Results = new List<Offer>();
-            foreach (Offer offer in AllOffers)
-            {
-               foreach(Category categorie in offer.categories){
-                   if(category.Name==categorie.Name){
-                       Results.Add(offer);
-                   }
-               }
-                
-            }      
-            return Results;
-        }
-        public List<Offer> SearchxRatings(Ratings ratings)
-        {   
-            List<Offer> Results = new List<Offer>();
-            foreach (Offer offer in AllOffers)
-            {
-               foreach(Ratings habilitaciones in offer.Ratings){
-                   if(ratings.Name==habilitaciones.Name){
-                       Results.Add(offer);
-                   }
-               }
-                
-            }      
-            return Results;
-        }
-
-        
-
+        public List<Offer> allOffers = new List<Offer>();
     }
 }

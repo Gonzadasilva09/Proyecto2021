@@ -4,6 +4,7 @@
         <name>Program</name>
     </assembly>
     <members>
+<<<<<<< HEAD
         <member name="T:ConsoleApplication.Program">
             <summary>
             Programa de consola de demostración.
@@ -14,5 +15,7 @@
             Punto de entrada al programa principal.
             </summary>
         </member>
+=======
+>>>>>>> 4a6fd8d52ed99d4584da84e7e7fc944fab6ab0e8
     </members>
 </doc>
