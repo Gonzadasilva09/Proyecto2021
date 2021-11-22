@@ -150,7 +150,7 @@
             <param name="keywords">La lista de comandos.</param>
             <param name="next">El próximo "handler".</param>
         </member>
-        <member name="M:Telegram.BaseHandler.InternalHandle(Telegram.Bot.Types.Message,System.String@)">
+        <member name="M:Telegram.BaseHandler.InternalHandle(Telegram.IMessege,System.String@)">
             <summary>
             Este método debe ser sobreescrito por las clases sucesores. La clase sucesora procesa el mensaje y retorna
             true o no lo procesa y retorna false.
@@ -165,7 +165,7 @@
             entre mensajes deben sobreescribir este método para volver al estado inicial. En la clase base no hace nada.
             </summary>
         </member>
-        <member name="M:Telegram.BaseHandler.CanHandle(Telegram.Bot.Types.Message)">
+        <member name="M:Telegram.BaseHandler.CanHandle(Telegram.IMessege)">
             <summary>
             Determina si este "handler" puede procesar el mensaje. En la clase base se utiliza el array
             <see cref="P:Telegram.BaseHandler.Keywords"/> para buscar el texto en el mensaje ignorando mayúsculas y minúsculas. Las
@@ -175,7 +175,7 @@
             <param name="message">El mensaje a procesar.</param>
             <returns>true si el mensaje puede ser pocesado; false en caso contrario.</returns>
         </member>
-        <member name="M:Telegram.BaseHandler.Handle(Telegram.Bot.Types.Message,System.String@)">
+        <member name="M:Telegram.BaseHandler.Handle(Telegram.IMessege,System.String@)">
             <summary>
             Procesa el mensaje o la pasa al siguiente "handler" si existe.
             </summary>
@@ -201,7 +201,7 @@
             </summary>
             <param name="next">El próximo "handler".</param>
         </member>
-        <member name="M:Telegram.HelloHandler.InternalHandle(Telegram.Bot.Types.Message,System.String@)">
+        <member name="M:Telegram.HelloHandler.InternalHandle(Telegram.IMessege,System.String@)">
             <summary>
             Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
             </summary>
@@ -216,7 +216,7 @@
             </summary>
             <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
         </member>
-        <member name="M:Telegram.IHandler.Handle(Telegram.Bot.Types.Message,System.String@)">
+        <member name="M:Telegram.IHandler.Handle(Telegram.IMessege,System.String@)">
             <summary>
             Procesa el mensaje o la pasa al siguiente "handler" si existe.
             </summary>

@@ -1,39 +1,85 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Telegram.Bot.Extensions.Polling;
 using Telegram.Bot;
-using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using Library;
 using Telegram.Bot.Types.Enums;
-using System.IO;
-using System.Text;
+using Library;
 
 
 namespace Telegram
 {
-    class Program
-    {
-        static void Main(string[] args)
+        public static class Program{
+
+        private static TelegramBotClient Bot;
+
+        private static string TelegramToken = "2121492551:AAFIkWzYEa9uZdCLkd73TZ9AFSjoPDXTvOU";
+
+        private static IHandler handler1;
+        static void Main()
         {
-            //Obtengo una instancia de TelegramBot
-            TelegramBot telegramBot = TelegramBot.Instance;
-            Console.WriteLine($"Hola soy el Bot de P2, mi nombre es {telegramBot.BotName} y tengo el Identificador {telegramBot.BotId}");
-
-            //Obtengo el cliente de Telegram
-            ITelegramBotClient bot = telegramBot.Client;
-
+            
+            Bot = new TelegramBotClient(TelegramToken);
+            
+            handler1 = new HelloHandler(null);
+            
+            var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes
-            bot.StartReceiving();
-
-            IHandler handler = new HelloHandler(null);
-
+            
+            Bot.StartReceiving(new DefaultUpdateHandler(HandleUpdateAsync, HandleErrorAsync),
+                cts.Token);
 
             Console.WriteLine("Presiona una tecla para terminar");
             Console.ReadKey();
 
             //Detengo la escucha de mensajes 
-            bot.StopReceiving();
+            Bot.StopReceiving();
+
+            
+
         }
-         
-      
-    }
+
+         public static async Task HandleUpdateAsync(Update update, CancellationToken cancellationToken)
+        {
+            try
+            {
+                // Sólo respondemos a mensajes de texto
+                if (update.Type == UpdateType.Message)
+                {
+                    await HandleMessageReceived(new TelegramAdapter(update.Message));
+                }
+            }
+            catch(Exception e)
+            {
+                await HandleErrorAsync(e, cancellationToken);
+            }
+        }
+
+                private static async Task HandleMessageReceived(IMessege message)
+        {
+            Console.WriteLine($"Received a message from {message.IdUser} saying: {message.Mensaje}");
+
+            string response = string.Empty;
+
+            handler1.Handle(message, out response);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                await Bot.SendTextMessageAsync(message.Idchat, response);
+            }
+        }
+
+        /// <summary>
+        /// Manejo de excepciones. Por ahora simplemente la imprimimos en la consola.
+        /// </summary>
+       public static Task HandleErrorAsync(Exception exception, CancellationToken cancellationToken)
+        {
+            Console.WriteLine(exception.Message);
+            return Task.CompletedTask;
+        }
+ 
+          
+     }
+    
 }

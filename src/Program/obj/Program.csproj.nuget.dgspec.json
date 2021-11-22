@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Program\\Program.csproj": {}
+    "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\Program.csproj": {}
   },
   "projects": {
     "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Program\\Program.csproj": {
+    "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\Program.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Program\\Program.csproj",
+        "projectUniqueName": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\Program.csproj",
         "projectName": "Program",
-        "projectPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Program\\Program.csproj",
+        "projectPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\Program.csproj",
         "packagesPath": "C:\\Users\\dasil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Program\\obj\\",
+        "outputPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dasil\\AppData\\Roaming\\NuGet\\NuGet.Config"

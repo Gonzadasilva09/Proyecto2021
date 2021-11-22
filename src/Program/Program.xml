@@ -4,5 +4,10 @@
         <name>Program</name>
     </assembly>
     <members>
+        <member name="M:Telegram.Program.HandleErrorAsync(System.Exception,System.Threading.CancellationToken)">
+            <summary>
+            Manejo de excepciones. Por ahora simplemente la imprimimos en la consola.
+            </summary>
+        </member>
     </members>
 </doc>
