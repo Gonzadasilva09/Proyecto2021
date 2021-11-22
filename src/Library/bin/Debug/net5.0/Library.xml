@@ -15,13 +15,14 @@
             Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
             </summary>
         </member>
-        <member name="M:Telegram.Business.#ctor(System.String,System.String,Telegram.Rubro)">
+        <member name="M:Telegram.Business.#ctor(System.String,System.String,Telegram.Rubro,System.String)">
             <summary>
             Constructor de objetos de tipo Business
             </summary>
             <param name="name"></param>
             <param name="location"></param>
             <param name="rubro"></param>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:Telegram.Business.MakeOffer(System.String,Telegram.Ratings,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32,System.Collections.Generic.List{Telegram.Category})">
@@ -101,13 +102,14 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Emprendedores.#ctor(System.String,System.String,Telegram.Rubro)">
+        <member name="M:Telegram.Emprendedores.#ctor(System.String,System.String,Telegram.Rubro,System.String)">
             <summary>
             Constructor de objetos de tipo Emprendedor.
             </summary>
             <param name="name"></param>
             <param name="location"></param>
             <param name="rubro"></param>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:Telegram.Emprendedores.addRatings(Telegram.Ratings)">
@@ -211,6 +213,25 @@
             "handlers" que procesan varios mensajes cambiando de estado entre mensajes puedan volver al estado inicial en
             caso de error por ejemplo.
             </summary>
+        </member>
+        <member name="T:Telegram.RegisterHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="M:Telegram.RegisterHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.RegisterHandler"/>. Esta clase procesa el mensaje "hola".
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.RegisterHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
         <member name="T:Telegram.StartHandler">
             <summary>
@@ -671,7 +692,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="M:Telegram.User.#ctor(System.String,System.String,Telegram.Rubro)">
+        <member name="M:Telegram.User.#ctor(System.String,System.String,Telegram.Rubro,System.String)">
             <summary>
             Constructor de la clase abstracta usuario.
             </summary>

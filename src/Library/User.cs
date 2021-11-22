@@ -13,6 +13,7 @@ namespace Telegram
         /// <value></value>
 
         public string Name {get; set;}
+        public string ID {get; set;}
         /// <summary>
         /// Obtiene o establece la locacion de un usuario.
         /// </summary>
@@ -30,11 +31,12 @@ namespace Telegram
         /// <param name="name"></param>
         /// <param name="location"></param>
         /// <param name="rubro"></param>
-        public User(string name, string location, Rubro rubro)
+        public User(string name, string location, Rubro rubro,string id)
         {
             this.Name = name;
             this.Location = location;
             this.Rubro = rubro;
+            this.ID = id;
         }
     }
 }

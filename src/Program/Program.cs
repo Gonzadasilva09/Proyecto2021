@@ -22,7 +22,7 @@ namespace Telegram
             
             Bot = new TelegramBotClient(TelegramToken);
             
-            handler1 = new StartHandler(null);
+            handler1 = new StartHandler(new RegisterHandler(null));
             
             var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes
