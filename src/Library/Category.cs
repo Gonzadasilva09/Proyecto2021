@@ -8,12 +8,7 @@ namespace Telegram
 /// </summary>
     public class Category
     {
-        /// <summary>
-        /// Lista de las categorias existentes.
-        /// </summary>
-        /// <returns></returns>
-
-        public static List<Category> category = new List<Category>();
+    
         /// <summary>
         /// Constructor de objetos tipo Category.
         /// </summary>
@@ -36,5 +31,7 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public string Description { get; set; }
+
+        
     }
 }

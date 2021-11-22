@@ -24,7 +24,9 @@ namespace Telegram
         {
             Catalogo.Instance.allOffers.Remove(Offer);
             Emprendedor.Purchased.Add(Offer);
-
+            Offer.Owner=Emprendedor;
+            Offer.status=false;
+            
         }
     }
 }

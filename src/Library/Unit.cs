@@ -8,12 +8,6 @@ namespace Telegram
     public class Units
     {
 
-        
-        /// <summary>
-        /// Lista que contiene todas las unidades disponibles para usar.
-        /// </summary>
-        /// <returns></returns>
-        public static List<Units> Unitlist = new List<Units>();
         /// <summary>
         /// Obtiene el nombre de la unidad.
         /// </summary>
@@ -31,7 +25,7 @@ namespace Telegram
         {
             this.Name=name;
             this.shortcut=shortcutcreater();
-            Unitlist.Add(this);
+            Listas.Instance.unitlist.Add(this);
         }
 
         private string shortcutcreater()
@@ -45,7 +39,7 @@ namespace Telegram
         /// <returns></returns>
         public string shortcutget(int unitnum)
         {
-            return Unitlist[unitnum].shortcut;
+            return Listas.Instance.unitlist[unitnum].shortcut;
         }
         /// <summary>
         /// Metodo para eliminar unidades de la lista.
@@ -53,7 +47,7 @@ namespace Telegram
         /// <param name="unit"></param>
         public static void Deleteunit(Units unit)
         {
-            Unitlist.Remove(unit);
+            Listas.Instance.unitlist.Remove(unit);
         }
     }
 }

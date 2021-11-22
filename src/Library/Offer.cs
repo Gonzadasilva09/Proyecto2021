@@ -11,12 +11,6 @@ namespace Telegram
     {
 
         /// <summary>
-        /// Lista que contiene las categorias de la oferta.
-        /// </summary>
-        /// <returns></returns>
-        public List<Category> Categories = new List<Category>();
-
-        /// <summary>
         /// Lista que contiene las habilitaciones de la oferta.
         /// </summary>
         /// <returns></returns>
@@ -27,6 +21,7 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public bool Recurrent { get; set; } = false;
+        public string Location { get; set; }
 
         /// <summary>
         /// Establece o obtiene el tipo de la oferta, que puede ser residuo o material.
@@ -63,29 +58,16 @@ namespace Telegram
         /// <param name="productunit"></param>
         /// <param name="productdirection"></param>
         /// <param name="productprice"></param>
-        public Offer (Ratings rating, Category categories, string type, string productname, int productquantity, Units productunit, string productdirection,int productprice )
+        public Offer (string location, Ratings rating, string type, string productname, int productquantity, Units productunit, string productdirection,int productprice, List<Category> categories)
         {
             this.Type = type;
-            Materials product = new Materials(productname,productquantity,productunit,productdirection,productprice);
+            Materials product = new Materials(productname,productquantity,productunit,productdirection,productprice,categories);
             this.Product = product;
             Catalogo.Instance.allOffers.Add(this);
             Ratings.Add(rating);
-            Categories.Add(categories);
+            this.Location=location;
         }
-        /// <summary>
-        /// Metodo que imprime las categorias de la oferta.
-        /// </summary>
-        /// <returns></returns>
-        public string PrintCategories()
-        {   
-            string categorias = string.Empty;
-            foreach (Category cate in this.Categories)
-            {
-               categorias = categorias + $"{cate.Name} ,";
-            }
-            return categorias;
 
-        }
         /// <summary>
         /// Metodo que imprime las habilitaciones de la empresa.
         /// </summary>
@@ -99,15 +81,7 @@ namespace Telegram
             }
             return habilitaciones;
         }
-
-        /// <summary>
-        /// Metodo que añade categorias a la oferta.
-        /// </summary>
-        /// <param name="category"></param>
-        public void AddCategories(Category category)
-        {
-            Categories.Add(category);
-        }
+    
 
         /// <summary>
         /// Metodo que añade habilitaciones a la empresa.

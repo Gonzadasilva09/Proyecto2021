@@ -30,9 +30,9 @@ namespace Telegram
         /// <param name="produnit"></param>
         /// <param name="proddirection"></param>
         /// <param name="prodprice"></param>
-        public void MakeOffer(Ratings ratings, Category category, string type, string prodname, int prodquantity, Units produnit, string proddirection, int prodprice)
+        public void MakeOffer(string location,Ratings ratings, string type, string prodname, int prodquantity, Units produnit, string proddirection, int prodprice,List<Category> categories)
         {
-            Offer offer = new Offer(ratings,category,type,prodname,prodquantity,produnit,proddirection,prodprice);
+            Offer offer = new Offer(location,ratings, type, prodname, prodquantity, produnit, proddirection, prodprice, categories);
             offersMade.Add(offer);
         }
         /// <summary>

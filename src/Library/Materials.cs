@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Telegram
 {
     /// <summary>
@@ -13,13 +16,14 @@ namespace Telegram
         /// <param name="units"></param>
         /// <param name="direction"></param>
         /// <param name="price"></param>
-        public Materials(string name, int quantity, Units units, string direction,int price)
+        public Materials(string name, int quantity, Units units, string direction,int price, List<Category> categories)
         {
             this.Name=name;
             this.Quantity=quantity;
             this.Unit=units.shortcut;
             this.Direction=direction;
             this.Price=price;
+            this.Categories = categories;
         }
 
         /// <summary>
@@ -27,6 +31,7 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         /// 
+        public List<Category> Categories{ get; set; }
         public string Name{ get; set; }
 
         /// <summary>
@@ -51,6 +56,8 @@ namespace Telegram
         /// Obtiene o establece el precio del material.
         /// </summary>
         /// <value></value>
-        public int Price{ get; set; }
+        public int Price{ get; set;}
+    
+
     }
 }
