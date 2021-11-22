@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Telegram.Bot.Types;
+using Library;
 
 namespace Telegram
 {
@@ -52,7 +53,7 @@ namespace Telegram
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="responder">La respuesta al mensaje procesado.</param>
         /// <returns>true si el mensaje fue procesado; false en caso contrario</returns>
-        protected virtual bool InternalHandle(Message message, out string responder)
+        protected virtual bool InternalHandle(IMessege message, out string responder)
         {
             throw new InvalidOperationException("Este método debe ser sobrescrito");
         }
@@ -74,7 +75,7 @@ namespace Telegram
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
         /// <returns>true si el mensaje puede ser pocesado; false en caso contrario.</returns>
-        protected virtual bool CanHandle(Message message)
+        protected virtual bool CanHandle(IMessege message)
         {
             // Cuando no hay palabras clave este método debe ser sobreescrito por las clases sucesoras y por lo tanto
             // este método no debería haberse invocado.
@@ -83,7 +84,7 @@ namespace Telegram
                 throw new InvalidOperationException("No hay palabras clave que puedan ser procesadas");
             }
 
-            return this.Keywords.Any(s => message.Text.Equals(s, StringComparison.InvariantCultureIgnoreCase));
+            return this.Keywords.Any(s => message.Mensaje.Equals(s, StringComparison.InvariantCultureIgnoreCase));
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Telegram
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="response">La respuesta al mensaje procesado.</param>
         /// <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
-        public IHandler Handle(Message message, out string response)
+        public IHandler Handle(IMessege message, out string response)
         {
             if (this.InternalHandle(message, out response))
             {
