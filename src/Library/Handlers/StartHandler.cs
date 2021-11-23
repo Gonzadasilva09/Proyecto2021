@@ -6,6 +6,7 @@ using Library;
 using Telegram.Bot.Types.Enums;
 using System.IO;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace Telegram
 {
@@ -20,7 +21,7 @@ namespace Telegram
         /// <param name="next">El próximo "handler".</param>
         public StartHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"Start"};
+            this.Keywords = new string[] {"/start"};
         }
 
         /// <summary>
@@ -31,19 +32,26 @@ namespace Telegram
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(IMessege message, out string response)
         {
+            
+
             if (message.Mensaje.ToLower().Equals("/Start") || message.Mensaje.ToLower().Equals("/start"))
-            {
+            {   
+                
+                
+                //Listas.Instance.HistorialUser[message.IdUser].Add("/start");
                 StringBuilder MensajeCompleto = new StringBuilder("Bienvenido al Bot del equipo 11...\n");
+                
+                
                 foreach (User user in Listas.Instance.listUser)
                 {
                     if (message.IdUser == user.ID) 
                     {
-                       MensajeCompleto.Append("Usted ya esta registrado, para ingresar ingrese el comando /Login\n");
+                       MensajeCompleto.Append("Usted ya esta registrado, para ingresar ejecute el comando /Login\n");
                        response = MensajeCompleto.ToString();
                         return true;
                     }
                 }
-                MensajeCompleto.Append("Usted no se a registrado por favor ejecutar el comando /Register\n");
+                MensajeCompleto.Append("Usted no se a registrado por favor ejecutar el comando /Signup \n");
                 response = MensajeCompleto.ToString();
                 return true;
             }

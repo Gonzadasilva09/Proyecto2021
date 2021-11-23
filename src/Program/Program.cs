@@ -19,6 +19,11 @@ namespace Telegram
         private static IHandler handler1;
         static void Main()
         {
+            Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
+            Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
+            Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
+            Rubro rubro3= new Rubro("el cuqui","POLITICA");
+            Rubro rubro4= new Rubro("parque roosvelt","SERVICIOS");
             
             Bot = new TelegramBotClient(TelegramToken);
             
@@ -37,7 +42,6 @@ namespace Telegram
             Bot.StopReceiving();
 
             
-
         }
 
          public static async Task HandleUpdateAsync(Update update, CancellationToken cancellationToken)

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 
 namespace Telegram{
     public class Listas{
@@ -37,6 +39,18 @@ namespace Telegram{
     public List<Units> unitlist = new List<Units>();
 
     public List<User> listUser = new List<User>();
+
+    public Dictionary<string, Collection<string>> HistorialUser = new Dictionary<string, Collection<string>>();
+
+    public void Accion(string ID){
+        
+        this.HistorialUser.Add(ID,new Collection<string>());
+
+    }
+
+
+
+
 
 }
 }
