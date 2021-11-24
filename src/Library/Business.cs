@@ -15,9 +15,11 @@ namespace Telegram
         /// <param name="name"></param>
         /// <param name="location"></param>
         /// <param name="rubro"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        public Business(string name, string location, Rubro rubro) : base (name, location, rubro)
+        public Business(string name, string location, Rubro rubro, string id) : base (name, location, rubro, id)
         {
+            Listas.Instance.listUser.Add(this);
         }
         /// <summary>
         /// Metodo para que una empresa haga una oferta.

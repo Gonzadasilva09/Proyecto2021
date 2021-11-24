@@ -26,9 +26,11 @@ namespace Telegram
         /// <param name="name"></param>
         /// <param name="location"></param>
         /// <param name="rubro"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        public Emprendedores(string name, string location, Rubro rubro) : base (name, location, rubro)
+        public Emprendedores(string name, string location, Rubro rubro, string id ) : base (name, location, rubro, id)
         {
+            Listas.Instance.listUser.Add(this);
         }
 
         /// <summary>

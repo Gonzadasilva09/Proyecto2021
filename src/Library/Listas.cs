@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 
 namespace Telegram{
     /// <summary>
@@ -45,6 +47,7 @@ namespace Telegram{
     /// </summary>
     /// <returns></returns>
     public List<Units> unitlist = new List<Units>();
+<<<<<<< HEAD
     /// <summary>
     /// Lista que contiene todos las empresas creadas.
     /// </summary>
@@ -55,5 +58,22 @@ namespace Telegram{
     /// </summary>
     /// <returns></returns>
     public List<Emprendedores> listEmprendedores = new List<Emprendedores>();
+=======
+
+    public List<User> listUser = new List<User>();
+
+    public Dictionary<string, Collection<string>> HistorialUser = new Dictionary<string, Collection<string>>();
+
+    public void Accion(string ID){
+        
+        this.HistorialUser.Add(ID,new Collection<string>());
+
+    }
+
+
+
+
+
+>>>>>>> f6408cf4d6f7fd85dac0cc7ce0c98e23b8a9a6d8
 }
 }
