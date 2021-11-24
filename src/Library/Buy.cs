@@ -32,10 +32,10 @@ namespace Telegram
         /// <returns></returns>
         public void Buy(Offer Offer, Emprendedores Emprendedor)
         {
-            Catalogo.Instance.allOffers.Remove(Offer);
+            Catalogo.Instance.AllOffers.Remove(Offer);
             Emprendedor.Purchased.Add(Offer);
             Offer.Owner=Emprendedor;
-            Offer.status=false;
+            Offer.Status=false;
             
         }
     }

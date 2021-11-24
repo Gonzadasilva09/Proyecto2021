@@ -46,24 +46,17 @@ namespace Telegram{
     /// Lista que contiene todas las unidades disponibles para usar.
     /// </summary>
     /// <returns></returns>
-    public List<Units> unitlist = new List<Units>();
-<<<<<<< HEAD
+    public List<Units> UnitList = new List<Units>();
     /// <summary>
-    /// Lista que contiene todos las empresas creadas.
+    /// 
     /// </summary>
     /// <returns></returns>
-    public List<Business> listBusinesses = new List<Business>();
+    public List<User> ListUser = new List<User>();
     /// <summary>
-    /// Lista que contiene todos los emprendedores creados.
+    /// Diccionario encargado de guardar las interacciones de los usuarios con el bot.
     /// </summary>
     /// <returns></returns>
-    public List<Emprendedores> listEmprendedores = new List<Emprendedores>();
-=======
-
-    public List<User> listUser = new List<User>();
-
     public Dictionary<string, Collection<string>> HistorialUser = new Dictionary<string, Collection<string>>();
-
     public void Accion(string ID){
         
         this.HistorialUser.Add(ID,new Collection<string>());
@@ -74,6 +67,5 @@ namespace Telegram{
 
 
 
->>>>>>> f6408cf4d6f7fd85dac0cc7ce0c98e23b8a9a6d8
 }
 }

@@ -42,7 +42,7 @@ namespace Telegram
                 StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
                 
                 
-                foreach (User user in Listas.Instance.listUser)
+                foreach (User user in Listas.Instance.ListUser)
                 {
                     if (message.IdUser == user.ID) 
                     {

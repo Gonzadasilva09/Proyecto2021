@@ -43,7 +43,7 @@ namespace Telegram
         /// Obtiene o establece el atributo que determina si la oferta esta disponible o no.
         /// </summary>
         /// <value></value>
-        public bool status { get; set; }
+        public bool Status { get; set; }
         
         /// <summary>
         /// Obtiene o establece el dueño de la ofterta.
@@ -68,7 +68,7 @@ namespace Telegram
             this.Type = type;
             Materials product = new Materials(productname,productquantity,productunit,productdirection,productprice,categories);
             this.Product = product;
-            Catalogo.Instance.allOffers.Add(this);
+            Catalogo.Instance.AllOffers.Add(this);
             Ratings.Add(rating);
             this.Location=location;
         }

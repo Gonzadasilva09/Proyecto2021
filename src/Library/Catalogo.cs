@@ -28,10 +28,9 @@ namespace Telegram
             }
         }
         /// <summary>
-        /// Lista que contiene todas las ofertas disponibles.
+        ///  Lista encargada de guardar las ofertas e interactuar con los usuarios.
         /// </summary>
         /// <returns></returns>
-
-        public List<Offer> allOffers = new List<Offer>();
+        public List<Offer> AllOffers = new List<Offer>();
     }
 }
