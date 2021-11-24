@@ -2,8 +2,14 @@ using System;
 using System.Collections.Generic;
 
 namespace Telegram{
+    /// <summary>
+    /// Clase encargada de guardar todas las listas independientes de otras clases con las cuales no interactuan directamente con los usuarios.
+    /// </summary>
     public class Listas{
         private static Listas listas;
+        /// <summary>
+        /// Singleton para que solo exista una instancia de las listas.
+        /// </summary>
         private Listas(){}
        public static Listas Instance
         {
@@ -17,6 +23,10 @@ namespace Telegram{
                 return listas;
             }
     }
+    /// <summary>
+    /// Lista que contiene todas las categorias disponibles.
+    /// </summary>
+    /// <returns></returns>
     public List<Category> listcategory = new List<Category>();
 
     /// <summary>
@@ -35,9 +45,15 @@ namespace Telegram{
     /// </summary>
     /// <returns></returns>
     public List<Units> unitlist = new List<Units>();
-
+    /// <summary>
+    /// Lista que contiene todos las empresas creadas.
+    /// </summary>
+    /// <returns></returns>
     public List<Business> listBusinesses = new List<Business>();
-
+    /// <summary>
+    /// Lista que contiene todos los emprendedores creados.
+    /// </summary>
+    /// <returns></returns>
     public List<Emprendedores> listEmprendedores = new List<Emprendedores>();
 }
 }

@@ -39,6 +39,9 @@ namespace Telegram
         public void addRatings(){
             Listas.Instance.listratings.Add(this);
         }
+        /// <summary>
+        /// Metodo que añade habilitaciones nuevas a la lista.
+        /// </summary>
         public static void Deleterating(Ratings rating)
         {
             Listas.Instance.listratings.Remove(rating);

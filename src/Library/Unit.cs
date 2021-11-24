@@ -27,6 +27,10 @@ namespace Telegram
             this.shortcut=shortcutcreater();
             Listas.Instance.unitlist.Add(this);
         }
+        /// <summary>
+        /// Creador de Abreviacion de unidad.
+        /// </summary>
+        /// <returns></returns>
 
         private string shortcutcreater()
         {

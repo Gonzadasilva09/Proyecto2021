@@ -16,6 +16,7 @@ namespace Telegram
         /// <param name="units"></param>
         /// <param name="direction"></param>
         /// <param name="price"></param>
+        /// <param name="categories"></param>
         public Materials(string name, int quantity, Units units, string direction,int price, List<Category> categories)
         {
             this.Name=name;
@@ -25,13 +26,17 @@ namespace Telegram
             this.Price=price;
             this.Categories = categories;
         }
-
+        /// <summary>
+        /// Lista que contiene las categorias del material.
+        /// </summary>
+        /// <value></value>
+        public List<Category> Categories{ get; set; }
         /// <summary>
         /// Obtiene o establece el nombre del material.
         /// </summary>
         /// <value></value>
         /// 
-        public List<Category> Categories{ get; set; }
+
         public string Name{ get; set; }
 
         /// <summary>

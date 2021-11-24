@@ -1,23 +1,16 @@
 using NUnit.Framework;
 using Telegram;
 using System.Collections.Generic;
-
+/*
 namespace Library.Test
 {
     [TestFixture]
     public class Tests
     {
-<<<<<<< HEAD
-        [Test1]
-        public void TestTelegramGonza()
-        {
-            
-=======
         [SetUp]
         public void Teardown()
         {
             Catalogo.Instance.AllOffers = new List<Offer>();
->>>>>>> 7bc541ebe80767f940e215d950692b6e324cdb25
         }
 
         [Test]
@@ -121,4 +114,4 @@ namespace Library.Test
             Assert.AreEqual(Metal,Catalogo.Instance.SearchxCategory(Categoria)[0]);
         }
     }
-}
+}*/

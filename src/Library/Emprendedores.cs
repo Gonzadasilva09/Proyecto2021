@@ -39,6 +39,10 @@ namespace Telegram
          
             Listratings.Add(rating);
         }
+        /// <summary>
+        /// Metodo encargado de efectuar la compra de parte del emprendedor.
+        /// </summary>
+        /// <param name="Offer"></param>
         public void Buy(Offer Offer){
            BuyOffer.Instance.Buy( Offer, this );
         }

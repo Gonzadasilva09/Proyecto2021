@@ -21,6 +21,10 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public bool Recurrent { get; set; } = false;
+        /// <summary>
+        /// Establece o obtiene el lugar donde se encuentra la oferta.
+        /// </summary>
+        /// <value></value>
         public string Location { get; set; }
 
         /// <summary>
@@ -50,6 +54,7 @@ namespace Telegram
         /// <summary>
         /// Constructor de objetos de tipo oferta.
         /// </summary>
+        /// <param name="location"></param>
         /// <param name="rating"></param>
         /// <param name="categories"></param>
         /// <param name="type"></param>
