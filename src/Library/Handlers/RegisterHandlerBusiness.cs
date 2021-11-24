@@ -14,10 +14,10 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class RegisterHandler : BaseHandler
+    public class RegisterHandlerEmprendedores : BaseHandler
     {
         
-        public RegisterHandler(BaseHandler next) : base(next)
+        public RegisterHandlerEmprendedores(BaseHandler next) : base(next)
         {
             this.Keywords = new string[] {"/signup"};
         }
@@ -49,7 +49,7 @@ namespace Telegram
             {
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder($"Su direccion  es {message.Mensaje}\n");
-                MensajeCompleto.Append("A continuacion indique cual es su rubro (/numero)...\n");
+                MensajeCompleto.Append("A continuacion seleccione su rubro...\n");
                 int num = 1;
                 foreach (Rubro rubro in Listas.Instance.listrubro)
                 {
@@ -68,7 +68,7 @@ namespace Telegram
                     string numero1= numero.ToString();
                     valores.Add(numero1);
                 }
-                int rubro = Int32.Parse(valores[1]);
+                int rubro = (Int32.Parse(valores[1]))-1;
                 StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.listrubro[rubro].Name}\n");
                 MensajeCompleto.Append("Su usuario a sido creado con exito\n");
         
@@ -78,6 +78,7 @@ namespace Telegram
                 MensajeCompleto.Append($"Rubro: {emprendedor.Rubro.Name}\n");
                 MensajeCompleto.Append($"ID de usuario: {emprendedor.ID}\n");
                 response = MensajeCompleto.ToString();
+                Listas.Instance.HistorialUser[message.IdUser].Clear();
                 return true;
             }  
     

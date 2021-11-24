@@ -214,6 +214,11 @@
             caso de error por ejemplo.
             </summary>
         </member>
+        <member name="T:Telegram.RegisterHandlerEmprendedores">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
         <member name="T:Telegram.RegisterHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".

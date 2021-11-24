@@ -24,7 +24,7 @@ namespace Telegram
             Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
             Rubro rubro3= new Rubro("el cuqui","POLITICA");
             Rubro rubro4= new Rubro("parque roosvelt","SERVICIOS");
-            
+
             Bot = new TelegramBotClient(TelegramToken);
             
             handler1 = new StartHandler(new RegisterHandler(null));

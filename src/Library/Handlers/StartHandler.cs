@@ -38,15 +38,16 @@ namespace Telegram
             {   
                 
                 
-                //Listas.Instance.HistorialUser[message.IdUser].Add("/start");
-                StringBuilder MensajeCompleto = new StringBuilder("Bienvenido al Bot del equipo 11...\n");
+                
+                StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
                 
                 
                 foreach (User user in Listas.Instance.listUser)
                 {
                     if (message.IdUser == user.ID) 
                     {
-                       MensajeCompleto.Append("Usted ya esta registrado, para ingresar ejecute el comando /Login\n");
+                        
+                       MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
                        response = MensajeCompleto.ToString();
                         return true;
                     }
