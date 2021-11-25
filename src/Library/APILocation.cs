@@ -2,6 +2,9 @@ using System;
 using System.Threading.Tasks;
 
 namespace Telegram{
+    /// <summary>
+    /// Clase encargada de interactuar con la ApiLocation
+    /// </summary>
     public class APILocation{
         private static APILocation location;
         /// <summary>
@@ -21,8 +24,11 @@ namespace Telegram{
                 return location;
             }
         }
-
-
+        /// <summary>
+        /// El metodo Route se ocupa de calcular una ruta entre dos direcciones, una tomada de un atributo de la oferta y otra de un atributo del emprendedor y crear un mapa en formato png, en base a esos datos y mostrarlo en la app que se este utilizando.
+        /// </summary>
+        /// <param name="offer"></param>
+        /// <param name="emprendedor"></param>
         public void Route(Offer offer, Emprendedores emprendedor){
            
             string addressInitial = emprendedor.Location;
@@ -36,6 +42,10 @@ namespace Telegram{
             client.DownloadRoute(locationInitial.Latitude, locationInitial.Longitude, locationFinal.Latitude, locationFinal.Longitude, @"src\Library\LocationApi\Ruta.png");
 
         }
+        /// <summary>
+        /// Envia mapa en formato Png a la plataforma donde se este utilizando el bot, donde se puede ver la direccion ingresada por el emprendedor cuando creo su perfil.
+        /// </summary>
+        /// <param name="emprendedor"></param>
         public void LocationEmprendedor(Emprendedores emprendedor){
            
             string addressEmprendedor = emprendedor.Location;
@@ -48,7 +58,10 @@ namespace Telegram{
            
 
         }
-
+        /// <summary>
+        /// Crea un mapa y lo envia a la app que se este utilizando donde se puede ver la direccion de la oferta obtenida en su creación.
+        /// </summary>
+        /// <param name="offer"></param>
          public void LocationOffer(Offer offer){
            
             string addressOffer = offer.Location;

@@ -21,6 +21,10 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public bool Recurrent { get; set; } = false;
+        /// <summary>
+        /// Establece o obtiene el lugar donde se encuentra la oferta.
+        /// </summary>
+        /// <value></value>
         public string Location { get; set; }
 
         /// <summary>
@@ -39,7 +43,7 @@ namespace Telegram
         /// Obtiene o establece el atributo que determina si la oferta esta disponible o no.
         /// </summary>
         /// <value></value>
-        public bool status { get; set; }
+        public bool Status { get; set; }
         
         /// <summary>
         /// Obtiene o establece el dueño de la ofterta.
@@ -50,6 +54,7 @@ namespace Telegram
         /// <summary>
         /// Constructor de objetos de tipo oferta.
         /// </summary>
+        /// <param name="location"></param>
         /// <param name="rating"></param>
         /// <param name="categories"></param>
         /// <param name="type"></param>
@@ -58,12 +63,12 @@ namespace Telegram
         /// <param name="productunit"></param>
         /// <param name="productdirection"></param>
         /// <param name="productprice"></param>
-        public Offer (string location, Ratings rating, string type, string productname, int productquantity, Units productunit, string productdirection,int productprice, List<Category> categories)
+        public Offer (string location, Ratings rating, string type, string productname, Units productunit, int productquantity,int productprice, Category categories)
         {
             this.Type = type;
-            Materials product = new Materials(productname,productquantity,productunit,productdirection,productprice,categories);
+            Materials product = new Materials(productname,productquantity,productunit,productprice,categories);
             this.Product = product;
-            Catalogo.Instance.allOffers.Add(this);
+            Catalogo.Instance.AllOffers.Add(this);
             Ratings.Add(rating);
             this.Location=location;
         }

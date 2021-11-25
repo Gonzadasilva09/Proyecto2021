@@ -30,17 +30,21 @@ namespace Telegram
         /// <returns></returns>
         public Emprendedores(string name, string location, Rubro rubro, string id ) : base (name, location, rubro, id)
         {
-            Listas.Instance.listUser.Add(this);
+            Listas.Instance.ListUser.Add(this);
         }
 
         /// <summary>
         /// Metodo para añadir habilitaciones a un emprendedor.
         /// </summary>
         /// <param name="rating"></param>
-        public void addRatings(Ratings rating){
+        public void AddRatings(Ratings rating){
          
             Listratings.Add(rating);
         }
+        /// <summary>
+        /// Metodo encargado de efectuar la compra de parte del emprendedor.
+        /// </summary>
+        /// <param name="Offer"></param>
         public void Buy(Offer Offer){
            BuyOffer.Instance.Buy( Offer, this );
         }

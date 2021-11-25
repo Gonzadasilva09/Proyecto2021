@@ -4,8 +4,14 @@ using System.Collections.ObjectModel;
 
 
 namespace Telegram{
+    /// <summary>
+    /// Clase encargada de guardar todas las listas independientes de otras clases con las cuales no interactuan directamente con los usuarios.
+    /// </summary>
     public class Listas{
         private static Listas listas;
+        /// <summary>
+        /// Singleton para que solo exista una instancia de las listas.
+        /// </summary>
         private Listas(){}
        public static Listas Instance
         {
@@ -19,6 +25,10 @@ namespace Telegram{
                 return listas;
             }
     }
+    /// <summary>
+    /// Lista que contiene todas las categorias disponibles.
+    /// </summary>
+    /// <returns></returns>
     public List<Category> listcategory = new List<Category>();
 
     /// <summary>
@@ -36,12 +46,17 @@ namespace Telegram{
     /// Lista que contiene todas las unidades disponibles para usar.
     /// </summary>
     /// <returns></returns>
-    public List<Units> unitlist = new List<Units>();
-
-    public List<User> listUser = new List<User>();
-
+    public List<Units> UnitList = new List<Units>();
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public List<User> ListUser = new List<User>();
+    /// <summary>
+    /// Diccionario encargado de guardar las interacciones de los usuarios con el bot.
+    /// </summary>
+    /// <returns></returns>
     public Dictionary<string, Collection<string>> HistorialUser = new Dictionary<string, Collection<string>>();
-
     public void Accion(string ID){
         
         this.HistorialUser.Add(ID,new Collection<string>());
