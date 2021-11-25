@@ -25,7 +25,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Business.MakeOffer(System.String,Telegram.Ratings,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32,System.Collections.Generic.List{Telegram.Category})">
+        <member name="M:Telegram.Business.MakeOffer(System.String,Telegram.Ratings,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32,Telegram.Category)">
             <summary>
             Metodo para que una empresa haga una oferta.
             </summary>
@@ -212,6 +212,11 @@
             Retorna este "handler" al estado inicial y cancela el próximo "handler" si existe. Es utilizado para que los
             "handlers" que procesan varios mensajes cambiando de estado entre mensajes puedan volver al estado inicial en
             caso de error por ejemplo.
+            </summary>
+        </member>
+        <member name="T:Telegram.OfferHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
             </summary>
         </member>
         <member name="T:Telegram.RegisterHandlerEmprendedores">
@@ -440,14 +445,13 @@
             Clase encargada de manejar los materiales.
             </summary>
         </member>
-        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.String,System.Int32,System.Collections.Generic.List{Telegram.Category})">
+        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.Int32,Telegram.Category)">
             <summary>
             Constructor de objetos de tipo material.
             </summary>
             <param name="name"></param>
             <param name="quantity"></param>
             <param name="units"></param>
-            <param name="direction"></param>
             <param name="price"></param>
         </member>
         <member name="P:Telegram.Materials.Categories">
@@ -522,7 +526,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="M:Telegram.Offer.#ctor(System.String,Telegram.Ratings,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32,System.Collections.Generic.List{Telegram.Category})">
+        <member name="M:Telegram.Offer.#ctor(System.String,Telegram.Ratings,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
             <summary>
             Constructor de objetos de tipo oferta.
             </summary>

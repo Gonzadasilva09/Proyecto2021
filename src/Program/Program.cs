@@ -25,9 +25,11 @@ namespace Telegram
             Rubro rubro3= new Rubro("el cuqui","POLITICA");
             Rubro rubro4= new Rubro("parque roosvelt","SERVICIOS");
 
+            Emprendedores fede = new Emprendedores("fede","mi casa",rubro3,"1964905204");
+
             Bot = new TelegramBotClient(TelegramToken);
             
-            handler1 = new StartHandler(new RegisterHandler(null));
+            handler1 = new StartHandler(new RegisterHandler(new OfferHandler(null)));
             
             var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes

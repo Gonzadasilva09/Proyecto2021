@@ -46,12 +46,14 @@ namespace Telegram
                 {
                     if (message.IdUser == user.ID) 
                     {
-                        
+                       Listas.Instance.Accion(message.IdUser);
                        MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
                        response = MensajeCompleto.ToString();
                         return true;
                     }
                 }
+                
+                Listas.Instance.Accion(message.IdUser);
                 MensajeCompleto.Append("Usted no se a registrado por favor ejecutar el comando /Signup \n");
                 response = MensajeCompleto.ToString();
                 return true;

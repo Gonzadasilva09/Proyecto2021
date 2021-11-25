@@ -14,14 +14,12 @@ namespace Telegram
         /// <param name="name"></param>
         /// <param name="quantity"></param>
         /// <param name="units"></param>
-        /// <param name="direction"></param>
         /// <param name="price"></param>
-        public Materials(string name, int quantity, Units units, string direction,int price, List<Category> categories)
+        public Materials(string name, int quantity, Units units,int price, Category categories)
         {
             this.Name=name;
             this.Quantity=quantity;
             this.Unit=units.shortcut;
-            this.Direction=direction;
             this.Price=price;
             this.Categories = categories;
         }
@@ -31,7 +29,7 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         /// 
-        public List<Category> Categories{ get; set; }
+        public Category Categories{ get; set; }
         public string Name{ get; set; }
 
         /// <summary>

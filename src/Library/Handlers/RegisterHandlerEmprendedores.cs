@@ -28,7 +28,6 @@ namespace Telegram
             
             if (message.Mensaje.ToLower().Equals("/signup"))
             {
-                Listas.Instance.Accion(message.IdUser);
                 Listas.Instance.HistorialUser[message.IdUser].Add("/signup");
 
                 StringBuilder MensajeCompleto = new StringBuilder("Desea registrarse como /Empresa o como /Emprendedor...\n");
@@ -53,7 +52,7 @@ namespace Telegram
                     response =MensajeCompleto.ToString();
                     return true;
                  }
-            }
+            }   
             if (Listas.Instance.HistorialUser[message.IdUser][1].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==2)
             {
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);

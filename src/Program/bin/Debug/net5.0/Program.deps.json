@@ -10,7 +10,9 @@
         "dependencies": {
           "Library": "1.0.0",
           "Microsoft.CodeAnalysis.FxCopAnalyzers": "3.0.0",
-          "StyleCop.Analyzers": "1.1.118"
+          "StyleCop.Analyzers": "1.1.118",
+          "Telegram.Bot": "15.5.1",
+          "Telegram.Bot.Extensions.Polling": "0.1.3"
         },
         "runtime": {
           "Program.dll": {}
