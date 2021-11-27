@@ -42,7 +42,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }
-            Console.WriteLine("start");
+            Console.WriteLine("start base");
             response = string.Empty;
             return false;
         }

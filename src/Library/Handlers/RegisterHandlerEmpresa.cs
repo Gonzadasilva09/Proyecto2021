@@ -26,9 +26,9 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             //try{
-             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser].Contains("/empresa") )
+             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser].Contains("/Empresa") )
              {
-                if (Listas.Instance.Tokens.Contains(message.Mensaje)|| Listas.Instance.Tokens.Contains(Listas.Instance.HistorialUser[message.IdUser][1]))
+                if (Listas.Instance.Tokens.Contains(message.Mensaje) || Listas.Instance.Tokens.Contains(Listas.Instance.HistorialUser[message.IdUser][1]))
                 {
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
                 {

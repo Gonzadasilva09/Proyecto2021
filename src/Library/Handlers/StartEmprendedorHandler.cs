@@ -13,13 +13,13 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class StartHandlerEmprendedor : BaseHandler
+    public class StartEmprendedorHandler : BaseHandler
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
-        public StartHandlerEmprendedor(BaseHandler next) : base(next)
+        public StartEmprendedorHandler(BaseHandler next) : base(next)
         {
             this.Keywords = new string[] {"/start"};
         }
@@ -42,14 +42,19 @@ namespace Telegram
                 {
                     if (message.IdUser == user.ID) 
                     {
-                    Listas.Instance.Accion(message.IdUser);
                     MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
+                    MensajeCompleto.Append($"/buscaroferta \n");
+                    MensajeCompleto.Append($"/historialcompra \n");
+                    MensajeCompleto.Append($"Si en cualquier momento lo desea puede usar: \n");
+                    MensajeCompleto.Append($"/cancelar \n");
+                    MensajeCompleto.Append($"Para cancelar cualquier acción \n");
+
                     response = MensajeCompleto.ToString();
                     return true;
                     }
                 }
             }
-            Console.WriteLine("start");
+            Console.WriteLine("start emprendedor");
             response = string.Empty;
             return false;
         }
