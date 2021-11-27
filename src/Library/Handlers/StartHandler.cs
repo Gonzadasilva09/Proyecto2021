@@ -35,19 +35,17 @@ namespace Telegram
             
             if (message.Mensaje.ToLower().Equals("/start"))
             {   
-                
-                
+            
                 StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
-                
                 
                 foreach (User user in Listas.Instance.ListUser)
                 {
                     if (message.IdUser == user.ID) 
                     {
-               
-                       MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
-                       response = MensajeCompleto.ToString();
-                        return true;
+                    Listas.Instance.Accion(message.IdUser);
+                    MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
+                    response = MensajeCompleto.ToString();
+                    return true;
                     }
                 }
                 Listas.Instance.Accion(message.IdUser);
@@ -55,7 +53,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }
-
+            Console.WriteLine("start");
             response = string.Empty;
             return false;
         }

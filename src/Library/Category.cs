@@ -18,6 +18,7 @@ namespace Telegram
         {
             this.Name = name;
             this.Description = description;
+            Listas.Instance.listcategory.Add(this);
         }
 
         /// <summary>
