@@ -47,6 +47,16 @@ namespace Telegram{
     /// </summary>
     /// <returns></returns>
     public List<Units> UnitList = new List<Units>();
+       /// <summary>
+    /// Lista que contiene todas las unidades disponibles para usar.
+    /// </summary>
+    /// <returns></returns>
+    public List<Business> Bussiness = new List<Business>();
+       /// <summary>
+    /// Lista que contiene todas las unidades disponibles para usar.
+    /// </summary>
+    /// <returns></returns>
+    public List<Emprendedores> Emprendedores = new List<Emprendedores>();
     /// <summary>
     /// 
     /// </summary>

@@ -49,7 +49,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Business.MakeOffer(System.String,Telegram.Ratings,System.String,System.String,System.Int32,Telegram.Units,System.String,System.Int32,Telegram.Category)">
+        <member name="M:Telegram.Business.MakeOffer(System.String,Telegram.Ratings,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
             <summary>
             Metodo para que una empresa haga una oferta.
             </summary>
@@ -320,6 +320,18 @@
             <returns></returns>
         </member>
         <member name="F:Telegram.Listas.UnitList">
+            <summary>
+            Lista que contiene todas las unidades disponibles para usar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.Bussiness">
+            <summary>
+            Lista que contiene todas las unidades disponibles para usar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.Emprendedores">
             <summary>
             Lista que contiene todas las unidades disponibles para usar.
             </summary>

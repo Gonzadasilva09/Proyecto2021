@@ -21,7 +21,7 @@ namespace Telegram
         {
             this.Name=name;
             this.Quantity=quantity;
-            this.Unit=units.shortcut;
+            this.Unit=units;
             this.Price=price;
             this.Categories = categories;
         }
@@ -48,7 +48,7 @@ namespace Telegram
         /// Obtiene o establece en que unidad de representa el material.
         /// </summary>
         /// <value></value>
-        public string Unit{ get; set; }
+        public Units Unit{ get; set; }
 
         
         /// <summary>

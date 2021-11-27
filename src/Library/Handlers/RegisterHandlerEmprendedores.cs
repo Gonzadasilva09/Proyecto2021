@@ -25,10 +25,9 @@ namespace Telegram
   
         protected override bool InternalHandle(IMessege message, out string response)
         {
-             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/signup") )
-             {
-                 
+            try{
                 
+        
                 if (message.Mensaje.ToLower().Equals("/signup"))
                 {
                     
@@ -88,7 +87,7 @@ namespace Telegram
                         string numero1= numero.ToString();
                         valores.Add(numero1);
                     }
-                    int rubro = (Int32.Parse(valores[1]))-1;
+                    int rubro = (Convert.ToInt32(valores[1]))-1;
                     StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.listrubro[rubro].Name}\n");
                     MensajeCompleto.Append("Su usuario a sido creado con exito\n");
             
@@ -96,14 +95,24 @@ namespace Telegram
                     MensajeCompleto.Append($"Nombre de usuario: {emprendedor.Name}\n");
                     MensajeCompleto.Append($"Direccion: {emprendedor.Location}\n");
                     MensajeCompleto.Append($"Rubro: {emprendedor.Rubro.Name}\n");
-                    MensajeCompleto.Append($"ID de usuario: {emprendedor.ID}\n");
+                    MensajeCompleto.Append($"ID de usuario: {emprendedor.ID}\n"); 
+                    Listas.Instance.HistorialUser.Remove(message.IdUser);
+                    Listas.Instance.Accion(message.IdUser);
                     response = MensajeCompleto.ToString();
-                    Listas.Instance.HistorialUser[message.IdUser].Clear();
                     return true;
-                }  
+                }
+
+        
+            }catch{
                 
-             }
+                
+                response = string.Empty;
+                return false;
+
+            }
+                
              
+            //Console.WriteLine("Choclo");
             response = string.Empty;
             return false;
         }
