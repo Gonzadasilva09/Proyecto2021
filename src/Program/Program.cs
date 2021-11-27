@@ -49,13 +49,13 @@ namespace Telegram
             Listas.Instance.Tokens.Add("TokenTest");
 
             Business empresa = new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");
-            Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");
+            //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");
 
             //Emprendedores gonza=new Emprendedores("Gonza", "Mi casa", rubro2,"1603877597");
 
             Bot = new TelegramBotClient(TelegramToken);
             
-            handler1 = new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new OfferHandler(null)))))));
+            handler1 = new CancelHandler(new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new OfferHandler(null))))))));
             
             var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes
