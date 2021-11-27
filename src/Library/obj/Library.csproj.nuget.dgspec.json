@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {}
+    "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {
+    "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
+        "projectUniqueName": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "c:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
+        "projectPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
         "packagesPath": "C:\\Users\\Franco De Stefano\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\obj\\",
+        "outputPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Franco De Stefano\\AppData\\Roaming\\NuGet\\NuGet.Config"

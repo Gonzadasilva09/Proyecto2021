@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 
 namespace Telegram
@@ -7,7 +9,7 @@ namespace Telegram
     /// <summary>
     /// Clase encargada de manejar el catalogo.
     /// </summary>
-    public class Catalogo
+    public class Catalogo : IJsonConvertibl
     {
         private static Catalogo catalogo;
         /// <summary>
@@ -31,6 +33,17 @@ namespace Telegram
         ///  Lista encargada de guardar las ofertas e interactuar con los usuarios.
         /// </summary>
         /// <returns></returns>
+        [JsonInclude]
         public List<Offer> AllOffers = new List<Offer>();
+        public string ConvertToJson()
+        {
+            JsonSerializerOptions options = new()
+            {
+                ReferenceHandler = MyReferenceHandler.Instance,
+                WriteIndented = true
+            };
+
+            return JsonSerializer.Serialize(AllOffers, options);
+        }
     }
 }

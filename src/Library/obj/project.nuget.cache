@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PjJGHvCos/aPMIVLOLwJ+YNTMN90n6ZUJMbiMgM5SXmp2ZgoVRa8PLUGmaDeE02mh0CDONY30ZQdQSfsCx0LIQ==",
+  "dgSpecHash": "zYOnOb6R68kw0nPREOJxpWaAmF4jEgR4t9T+cPCsgljYt0Rzqflz38m4d2WW5p6PwG45m+Qc/qk61gcxPTHNWg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
+  "projectFilePath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Franco De Stefano\\.nuget\\packages\\microsoft.codeanalysis.fxcopanalyzers\\2.9.3\\microsoft.codeanalysis.fxcopanalyzers.2.9.3.nupkg.sha512",
     "C:\\Users\\Franco De Stefano\\.nuget\\packages\\microsoft.codeanalysis.versioncheckanalyzer\\2.9.3\\microsoft.codeanalysis.versioncheckanalyzer.2.9.3.nupkg.sha512",

@@ -1,0 +1,52 @@
+{
+  "$id": "1",
+  "listcategory": {
+    "$id": "2",
+    "$values": []
+  },
+  "listratings": {
+    "$id": "3",
+    "$values": []
+  },
+  "listrubro": {
+    "$id": "4",
+    "$values": [
+      {
+        "$id": "5",
+        "Description": "Re tecnologicos tipo joel",
+        "Name": "TECNOLOGIA"
+      },
+      {
+        "$id": "6",
+        "Description": "autos y motos ruta 5",
+        "Name": "TRANSPORTE"
+      },
+      {
+        "$id": "7",
+        "Description": "la ucu pero con profes",
+        "Name": "EDUCACION"
+      },
+      {
+        "$id": "8",
+        "Description": "el cuqui",
+        "Name": "POLITICA"
+      },
+      {
+        "$id": "9",
+        "Description": "parque roosvelt",
+        "Name": "SERVICIOS"
+      }
+    ]
+  },
+  "UnitList": {
+    "$id": "10",
+    "$values": []
+  },
+  "ListUser": {
+    "$id": "11",
+    "$values": []
+  },
+  "HistorialUser": {
+    "$id": "12"
+  }
+}

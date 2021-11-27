@@ -6,6 +6,7 @@ using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Library;
+using System.Text.Json;
 
 
 namespace Telegram
@@ -19,11 +20,50 @@ namespace Telegram
         private static IHandler handler1;
         static void Main()
         {
-            Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
-            Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
-            Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
-            Rubro rubro3= new Rubro("el cuqui","POLITICA");
-            Rubro rubro4= new Rubro("parque roosvelt","SERVICIOS");
+            if (!System.IO.File.Exists(@"Listas.json"))
+            {
+                Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
+                Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
+                Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
+                Rubro rubro3= new Rubro("el cuqui","POLITICA");
+                Rubro rubro4= new Rubro("parque roosvelt","SERVICIOS");
+
+                string json0 = Listas.Instance.ConvertToJson();
+                Console.WriteLine(json0);
+                System.IO.File.WriteAllText(@"Listas.json", json0);//paso ofertas a json
+
+                string json = Catalogo.Instance.ConvertToJson();
+                Console.WriteLine(json);
+                System.IO.File.WriteAllText(@"Catalogo.json", json);//paso ofertas a json
+            }
+            else
+            {
+                Catalogo catalogo = Catalogo.Instance;
+
+                Listas lista = Listas.Instance;
+
+                string json =  System.IO.File.ReadAllText(@"Catalogo.json");
+                string json0 =  System.IO.File.ReadAllText(@"Listas.json");
+
+
+                JsonSerializerOptions options = new()
+                {
+                    ReferenceHandler = MyReferenceHandler.Instance,
+                    WriteIndented = true
+                };
+
+                JsonSerializerOptions optiones = new()
+                {
+                    ReferenceHandler = MyReferenceHandler.Instance,
+                    WriteIndented = true
+                };
+
+                Catalogo viejocatalogo = JsonSerializer.Deserialize<Catalogo>(json, options);
+                Console.WriteLine(viejocatalogo.ConvertToJson());
+
+                Listas viejalista = JsonSerializer.Deserialize<Listas>(json, optiones);
+                Console.WriteLine(viejocatalogo.ConvertToJson());
+            }
 
             Bot = new TelegramBotClient(TelegramToken);
             
