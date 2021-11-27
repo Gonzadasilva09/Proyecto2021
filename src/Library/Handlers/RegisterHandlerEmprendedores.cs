@@ -14,49 +14,22 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class RegisterHandler : BaseHandler
+    public class RegisterHandlerEmprendedores : BaseHandler
     {
         
-        public RegisterHandler(BaseHandler next) : base(next)
+        public RegisterHandlerEmprendedores(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/signup"};
+            this.Keywords = new string[] {"/emprendedor"};
         }
 
   
         protected override bool InternalHandle(IMessege message, out string response)
         {
             try{
-                
-        
-                if (message.Mensaje.ToLower().Equals("/signup"))
-                {
-                    
-                    Listas.Instance.HistorialUser[message.IdUser].Add("/signup");
-
-                    StringBuilder MensajeCompleto = new StringBuilder("Desea registrarse como /Empresa o como /Emprendedor...\n");
-
-                    response = MensajeCompleto.ToString();
-                    return true;
-                }
-        
-                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/signup") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
-                {
-                    Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    if (message.Mensaje.ToLower().Equals("/emprendedor"))
-                    {
-                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como emprendedor, por favor ingrese los siguientes datos que le solicitaremos\n");
-                        MensajeCompleto.Append("Ingrese su nombre de Usuario:\n");
-                        response =MensajeCompleto.ToString();
-                        return true;
-                    
-                    }else if(message.Mensaje.ToLower().Equals("/empresa")){
-                        
-                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como Empresa, ingrese por favor su token de verificacion...\n");
-                        response =MensajeCompleto.ToString();
-                        return true;
-                    }
-                }
-                if (Listas.Instance.HistorialUser[message.IdUser][1].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==2)
+             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") )
+             {
+                 
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder($"Su nombre de usuario es: {message.Mensaje}\n");
@@ -64,7 +37,7 @@ namespace Telegram
                     response = MensajeCompleto.ToString();
                     return true;
                 } 
-                if (Listas.Instance.HistorialUser[message.IdUser][1].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==3){
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==2){
                 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder($"Su direccion es la siguiente: {message.Mensaje}\n");
@@ -78,7 +51,7 @@ namespace Telegram
                     response = MensajeCompleto.ToString();
                     return true;
                 }  
-                if (Listas.Instance.HistorialUser[message.IdUser][1].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==4)
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==3)
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     List<string> valores = new List<string>();
@@ -91,7 +64,7 @@ namespace Telegram
                     StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.listrubro[rubro].Name}\n");
                     MensajeCompleto.Append("Su usuario a sido creado con exito\n");
             
-                    Emprendedores emprendedor = new Emprendedores(Listas.Instance.HistorialUser[message.IdUser][2],Listas.Instance.HistorialUser[message.IdUser][3],Listas.Instance.listrubro[rubro],message.IdUser);
+                    Emprendedores emprendedor = new Emprendedores(Listas.Instance.HistorialUser[message.IdUser][1],Listas.Instance.HistorialUser[message.IdUser][2],Listas.Instance.listrubro[rubro],message.IdUser);
                     MensajeCompleto.Append($"Nombre de usuario: {emprendedor.Name}\n");
                     MensajeCompleto.Append($"Direccion: {emprendedor.Location}\n");
                     MensajeCompleto.Append($"Rubro: {emprendedor.Rubro.Name}\n");
@@ -101,20 +74,17 @@ namespace Telegram
                     response = MensajeCompleto.ToString();
                     return true;
                 }
-
-        
-            }catch{
-                
-                
-                response = string.Empty;
-                return false;
-
             }
-                
-             
-            //Console.WriteLine("Choclo");
+            Console.WriteLine("register");
             response = string.Empty;
             return false;
+            }
+            catch
+            {
+            Console.WriteLine("register");
+            response = string.Empty;
+            return false;
+            }
         }
     }
 }

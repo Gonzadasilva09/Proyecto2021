@@ -72,6 +72,11 @@ namespace Telegram{
         this.HistorialUser.Add(ID,new Collection<string>());
 
     }
+    /// <summary>
+    /// Lista que contiene todas las unidades disponibles para usar.
+    /// </summary>
+    /// <returns></returns>
+    public List<string> Tokens = new List<string>();
 
 
 
