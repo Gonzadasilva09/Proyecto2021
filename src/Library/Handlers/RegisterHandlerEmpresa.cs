@@ -78,6 +78,7 @@ namespace Telegram
                     MensajeCompleto.Append($"Direccion: {business.Location}\n");
                     MensajeCompleto.Append($"Rubro: {business.Rubro.Name}\n");
                     MensajeCompleto.Append($"ID de usuario: {business.ID}\n");
+                    Listas.Instance.BusinessID.Add(message.IdUser);
                     response = MensajeCompleto.ToString();
                     Listas.Instance.HistorialUser[message.IdUser].Clear();
                     return true;
