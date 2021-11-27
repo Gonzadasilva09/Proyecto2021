@@ -33,10 +33,10 @@ namespace Telegram
         /// <param name="proddirection"></param>
         /// <param name="prodprice"></param>
         /// <param name="categories"></param>
-        public void MakeOffer(string location,Ratings ratings, string type, string prodname, int prodquantity, Units produnit, string proddirection, int prodprice,List<Category> categories)
+        public void MakeOffer(string location,Ratings ratings, string type, string prodname, int prodquantity, Units produnit, string proddirection, int prodprice,Category categories)
         {
             Catalogo catalogo = Catalogo.Instance;
-            Offer offer = new Offer(location,ratings, type, prodname, prodquantity, produnit, proddirection, prodprice, categories);
+            Offer offer = new Offer(location,ratings, type, prodname,produnit, prodquantity,  prodprice, categories);
             offersMade.Add(offer);
             catalogo.AllOffers.Add(offer);
         }

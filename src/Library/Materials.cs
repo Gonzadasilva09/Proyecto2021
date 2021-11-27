@@ -17,12 +17,11 @@ namespace Telegram
         /// <param name="direction"></param>
         /// <param name="price"></param>
         /// <param name="categories"></param>
-        public Materials(string name, int quantity, Units units, string direction,int price, List<Category> categories)
+        public Materials(string name, int quantity, Units units,int price, Category categories)
         {
             this.Name=name;
             this.Quantity=quantity;
             this.Unit=units.shortcut;
-            this.Direction=direction;
             this.Price=price;
             this.Categories = categories;
         }
@@ -30,7 +29,7 @@ namespace Telegram
         /// Lista que contiene las categorias del material.
         /// </summary>
         /// <value></value>
-        public List<Category> Categories{ get; set; }
+        public Category Categories{ get; set; }
         /// <summary>
         /// Obtiene o establece el nombre del material.
         /// </summary>
@@ -51,11 +50,6 @@ namespace Telegram
         /// <value></value>
         public string Unit{ get; set; }
 
-        /// <summary>
-        /// Obtiene o establece donde se encuentra el material.
-        /// </summary>
-        /// <value></value>
-        public string Direction{ get; set; }
         
         /// <summary>
         /// Obtiene o establece el precio del material.

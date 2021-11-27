@@ -20,13 +20,15 @@ namespace Telegram
         public OfferHandler(BaseHandler next) : base(next)
         {
             this.Keywords = new string[] {"/offer"};
-            Console.WriteLine("keyword sabelo");
+            
         }
          protected override bool InternalHandle(IMessege message, out string response)
         {
-            if(message.Mensaje.ToLower().Equals("/offer")){
+            if(this.CanHandle(message)){
+            
+            if(message.Mensaje.ToLower().Equals("/offer"))
+            {
                 
-                Console.WriteLine("keyword sabelo pa");
 
                 Listas.Instance.HistorialUser[message.IdUser].Add("/offer");
 
@@ -68,7 +70,7 @@ namespace Telegram
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Que unidad quiere que tenga su oferta?...\n");
                 int num = 1;
-                foreach (Units unit in Listas.Instance.unitlist )
+                foreach (Units unit in Listas.Instance.UnitList )
                 {
                     MensajeCompleto.Append($"/{num} - {unit.Name}\n");
                     num++;
@@ -133,13 +135,15 @@ namespace Telegram
                 int unid= (Int32.Parse(unit[1]))-1;
                 int cantidad=(Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][6]));
                 int  precio =(Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][7]));
-                Offer offer = new Offer(Listas.Instance.HistorialUser[message.IdUser][1],Listas.Instance.listratings[rati],Listas.Instance.HistorialUser[message.IdUser][3],Listas.Instance.HistorialUser[message.IdUser][4],Listas.Instance.unitlist[unid],cantidad,precio,Listas.Instance.listcategory[cate]);
+                Offer offer = new Offer(Listas.Instance.HistorialUser[message.IdUser][1],Listas.Instance.listratings[rati],Listas.Instance.HistorialUser[message.IdUser][3],Listas.Instance.HistorialUser[message.IdUser][4],Listas.Instance.UnitList[unid],cantidad,precio,Listas.Instance.listcategory[cate]);
                 StringBuilder MensajeCompleto = new StringBuilder($"Su oferta de {offer.Product.Name} a sido creada\n");
                 response = MensajeCompleto.ToString();
                 return true;
             }
+            
+            }
             response = string.Empty;
-            return true;
+            return false;
         }
     }
 }  
