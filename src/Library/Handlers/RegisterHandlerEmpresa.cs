@@ -14,22 +14,31 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class RegisterHandlerEmprendedores : BaseHandler
+    public class RegisterHandlerEmpresa : BaseHandler
     {
         
-        public RegisterHandlerEmprendedores(BaseHandler next) : base(next)
+        public RegisterHandlerEmpresa(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/emprendedor"};
+            this.Keywords = new string[] {"/empresa"};
         }
 
   
         protected override bool InternalHandle(IMessege message, out string response)
         {
             try{
-             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") )
+             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") )
              {
-                 
-                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
+                if (Listas.Instance.Tokens.Contains(message.Mensaje)|| Listas.Instance.Tokens.Contains(Listas.Instance.HistorialUser[message.IdUser][1]))
+                {
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
+                {
+                    Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                    StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como empresa, por favor ingrese los siguientes datos que le solicitaremos\n");
+                    MensajeCompleto.Append("Ingrese su nombre de Usuario:\n");
+                    response =MensajeCompleto.ToString();
+                    return true;
+                }
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") && Listas.Instance.HistorialUser[message.IdUser].Count==2)
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder($"Su nombre de usuario es: {message.Mensaje}\n");
@@ -37,7 +46,7 @@ namespace Telegram
                     response = MensajeCompleto.ToString();
                     return true;
                 } 
-                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==2){
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") && Listas.Instance.HistorialUser[message.IdUser].Count==3){
                 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder($"Su direccion es la siguiente: {message.Mensaje}\n");
@@ -51,7 +60,7 @@ namespace Telegram
                     response = MensajeCompleto.ToString();
                     return true;
                 }  
-                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==3)
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") && Listas.Instance.HistorialUser[message.IdUser].Count==4)
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     List<string> valores = new List<string>();
@@ -64,27 +73,39 @@ namespace Telegram
                     StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.listrubro[rubro].Name}\n");
                     MensajeCompleto.Append("Su usuario a sido creado con exito\n");
             
-                    Emprendedores emprendedor = new Emprendedores(Listas.Instance.HistorialUser[message.IdUser][1],Listas.Instance.HistorialUser[message.IdUser][2],Listas.Instance.listrubro[rubro],message.IdUser);
-                    MensajeCompleto.Append($"Nombre de usuario: {emprendedor.Name}\n");
-                    MensajeCompleto.Append($"Direccion: {emprendedor.Location}\n");
-                    MensajeCompleto.Append($"Rubro: {emprendedor.Rubro.Name}\n");
-                    MensajeCompleto.Append($"ID de usuario: {emprendedor.ID}\n");
+                    Business business = new Business(Listas.Instance.HistorialUser[message.IdUser][2],Listas.Instance.HistorialUser[message.IdUser][3],Listas.Instance.listrubro[rubro],message.IdUser);
+                    MensajeCompleto.Append($"Nombre de usuario: {business.Name}\n");
+                    MensajeCompleto.Append($"Direccion: {business.Location}\n");
+                    MensajeCompleto.Append($"Rubro: {business.Rubro.Name}\n");
+                    MensajeCompleto.Append($"ID de usuario: {business.ID}\n");
+                    Listas.Instance.Empresas.Add(business.ID);
                     response = MensajeCompleto.ToString();
                     Listas.Instance.HistorialUser[message.IdUser].Clear();
                     return true;
                 }  
                 
+            else
+            {
+                Listas.Instance.HistorialUser[message.IdUser].Clear();
+                StringBuilder MensajeCompleto = new StringBuilder($"Su Token no es valido");
+                response =MensajeCompleto.ToString();
+                return true;
             }
-            Console.WriteLine("register");
+            
+        }
+           
+        }
+          Console.WriteLine("Empresa");
             response = string.Empty;
             return false;
             }
             catch
             {
-            Console.WriteLine("register");
+             Console.WriteLine("Empresa");
             response = string.Empty;
             return false;
             }
-        }
+
+    }
     }
 }
