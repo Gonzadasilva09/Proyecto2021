@@ -25,8 +25,8 @@ namespace Telegram
   
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            try{
-             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") )
+            //try{
+             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser].Contains("/empresa") )
              {
                 if (Listas.Instance.Tokens.Contains(message.Mensaje)|| Listas.Instance.Tokens.Contains(Listas.Instance.HistorialUser[message.IdUser][1]))
                 {
@@ -97,13 +97,13 @@ namespace Telegram
           Console.WriteLine("Empresa");
             response = string.Empty;
             return false;
-            }
+           /* }
             catch
             {
              Console.WriteLine("Empresa");
             response = string.Empty;
             return false;
-            }
+            }*/
 
     }
     }

@@ -267,7 +267,17 @@
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
             </summary>
         </member>
-        <member name="T:Telegram.RegisterHandler">
+        <member name="T:Telegram.RegisterHandlerEmprendedores">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="T:Telegram.RegisterHandlerEmpresa">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="T:Telegram.SignUpHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
             </summary>
@@ -346,6 +356,12 @@
         <member name="F:Telegram.Listas.HistorialUser">
             <summary>
             Diccionario encargado de guardar las interacciones de los usuarios con el bot.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.Tokens">
+            <summary>
+            Lista que contiene todas las unidades disponibles para usar.
             </summary>
             <returns></returns>
         </member>

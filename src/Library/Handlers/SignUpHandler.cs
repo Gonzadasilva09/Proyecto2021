@@ -25,8 +25,8 @@ namespace Telegram
   
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            try{
-             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/signup") )
+            //try{
+             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser].Contains("/signup") )
              {
                  
                 
@@ -46,7 +46,7 @@ namespace Telegram
                     if (message.Mensaje.ToLower().Equals("/emprendedor"))
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Clear();
-                        Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                        Listas.Instance.HistorialUser[message.IdUser].Add("/emprendedor");
                         StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como emprendedor, por favor ingrese los siguientes datos que le solicitaremos\n");
                         MensajeCompleto.Append("Ingrese su nombre de Usuario:\n");
                         response =MensajeCompleto.ToString();
@@ -63,12 +63,12 @@ namespace Telegram
              }
             response = string.Empty;
             return false;
-            }
+           /* }
             catch
             {
             response = string.Empty;
             return false;
-            }
+            }*/
         }
     }
 }
