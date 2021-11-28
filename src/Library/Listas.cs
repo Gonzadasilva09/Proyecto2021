@@ -78,6 +78,8 @@ namespace Telegram{
     /// <returns></returns>
     public List<string> Tokens = new List<string>();
 
+    public List<string> BusinessID = new List<string>();
+
 
 
 

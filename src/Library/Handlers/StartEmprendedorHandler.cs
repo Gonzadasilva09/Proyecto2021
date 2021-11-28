@@ -13,13 +13,13 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class StartHandler : BaseHandler
+    public class StartEmprendedorHandler : BaseHandler
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
-        public StartHandler(BaseHandler next) : base(next)
+        public StartEmprendedorHandler(BaseHandler next) : base(next)
         {
             this.Keywords = new string[] {"/start"};
         }
@@ -33,16 +33,28 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.HistorialUser.ContainsKey(message.IdUser))
+            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessID.Contains(message.IdUser) )
             {   
             
                 StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
-                Listas.Instance.Accion(message.IdUser);
-                MensajeCompleto.Append("Usted no se a registrado por favor ejecutar el comando /registrarse \n");
-                response = MensajeCompleto.ToString();
-                return true;
+                
+                foreach (User user in Listas.Instance.ListUser)
+                {
+                    if (message.IdUser == user.ID) 
+                    {
+                    MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
+                    MensajeCompleto.Append($"/buscaroferta \n");
+                    MensajeCompleto.Append($"/historialcompra \n");
+                    MensajeCompleto.Append($"Si en cualquier momento lo desea puede usar: \n");
+                    MensajeCompleto.Append($"/cancelar \n");
+                    MensajeCompleto.Append($"Para cancelar cualquier acción \n");
+
+                    response = MensajeCompleto.ToString();
+                    return true;
+                    }
+                }
             }
-            Console.WriteLine("start base");
+            Console.WriteLine("start emprendedor");
             response = string.Empty;
             return false;
         }

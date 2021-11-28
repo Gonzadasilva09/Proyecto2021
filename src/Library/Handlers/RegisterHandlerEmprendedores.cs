@@ -25,10 +25,10 @@ namespace Telegram
   
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            try{
-             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") )
+           // try{
+             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser].Contains("/emprendedor") )
              {
-                 
+                Console.WriteLine($"{Listas.Instance.HistorialUser[message.IdUser][0]}, {Listas.Instance.HistorialUser[message.IdUser].Count}");
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
@@ -78,13 +78,13 @@ namespace Telegram
             Console.WriteLine("register");
             response = string.Empty;
             return false;
-            }
-            catch
+           // }
+           /* catch
             {
             Console.WriteLine("register");
             response = string.Empty;
             return false;
-            }
+            }*/
         }
     }
 }
