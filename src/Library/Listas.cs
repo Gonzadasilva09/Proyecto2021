@@ -54,12 +54,28 @@ namespace Telegram{
     /// <returns></returns>
     [JsonInclude]
     public List<Units> UnitList = new List<Units>();
+       /// <summary>
+    /// Lista que contiene todas las unidades disponibles para usar.
+    /// </summary>
+    /// <returns></returns>
+    public List<Business> Bussiness = new List<Business>();
+       /// <summary>
+    /// Lista que contiene todas las unidades disponibles para usar.
+    /// </summary>
+    /// <returns></returns>
+    public List<Emprendedores> Emprendedores = new List<Emprendedores>();
     /// <summary>
     /// 
     /// </summary>
     /// <returns></returns>
     [JsonInclude]
     public List<User> ListUser = new List<User>();
+    
+    /// <summary>
+    /// Lista que contiene todas las unidades disponibles para usar.
+    /// </summary>
+    /// <returns></returns>
+    public List<string> Tokens = new List<string>();
     /// <summary>
     /// Diccionario encargado de guardar las interacciones de los usuarios con el bot.
     /// </summary>

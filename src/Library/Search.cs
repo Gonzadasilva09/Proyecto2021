@@ -36,11 +36,10 @@ namespace Telegram
             List<Offer> results = new List<Offer>();
             foreach (Offer offer in Catalogo.Instance.AllOffers)
             {
-               foreach(Category category1 in offer.Product.Categories) {
-                   if(category.Name == category1.Name) {
+                   if(category.Name == offer.Product.Categories.Name) {
                        results.Add(offer);
                    }
-               }
+               
             }
             return results;
         }
