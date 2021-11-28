@@ -21,24 +21,24 @@ namespace Telegram
         
         public OfferHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/offer"};
+            this.Keywords = new string[] {"/oferta"};
             
         }
         protected override bool InternalHandle(IMessege message, out string response)
         {
          try{
 
-            if(message.Mensaje.ToLower().Equals("/offer"))
+            if(message.Mensaje.ToLower().Equals("/oferta"))
             {
         
-                Listas.Instance.HistorialUser[message.IdUser].Add("/offer");
+                Listas.Instance.HistorialUser[message.IdUser].Add("/oferta");
 
                 StringBuilder MensajeCompleto = new StringBuilder("Primero necesitamos la direccion de la oferta\n");
 
                 response = MensajeCompleto.ToString();
                 return true;
             }
-            if (Listas.Instance.HistorialUser[message.IdUser].Count==1 && Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/offer")){
+            if (Listas.Instance.HistorialUser[message.IdUser].Count==1 && Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/oferta")){
                 
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Que habilitaciones quiere que tenga su oferta?...\n");
@@ -51,7 +51,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }  
-             if (Listas.Instance.HistorialUser[message.IdUser].Count==2 && Listas.Instance.HistorialUser[message.IdUser][0]=="/offer"){
+             if (Listas.Instance.HistorialUser[message.IdUser].Count==2 && Listas.Instance.HistorialUser[message.IdUser][0]=="/oferta"){
 
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("De que tipo es su oferta?...\n");
@@ -60,7 +60,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }
-             if (Listas.Instance.HistorialUser[message.IdUser].Count==3 && Listas.Instance.HistorialUser[message.IdUser][0]=="/offer"){
+             if (Listas.Instance.HistorialUser[message.IdUser].Count==3 && Listas.Instance.HistorialUser[message.IdUser][0]=="/oferta"){
 
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Que producto desea vender?...\n");
@@ -68,7 +68,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }
-            if (Listas.Instance.HistorialUser[message.IdUser].Count==4 && Listas.Instance.HistorialUser[message.IdUser][0]=="/offer"){
+            if (Listas.Instance.HistorialUser[message.IdUser].Count==4 && Listas.Instance.HistorialUser[message.IdUser][0]=="/oferta"){
                 
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Que unidad quiere que tenga su oferta?...\n");
@@ -81,7 +81,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }  
-            if (Listas.Instance.HistorialUser[message.IdUser].Count==5 && Listas.Instance.HistorialUser[message.IdUser][0]=="/offer"){
+            if (Listas.Instance.HistorialUser[message.IdUser].Count==5 && Listas.Instance.HistorialUser[message.IdUser][0]=="/oferta"){
 
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Cuanto del producto va a vender?\n");
@@ -89,7 +89,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }
-             if (Listas.Instance.HistorialUser[message.IdUser].Count==6 && Listas.Instance.HistorialUser[message.IdUser][0]=="/offer"){
+             if (Listas.Instance.HistorialUser[message.IdUser].Count==6 && Listas.Instance.HistorialUser[message.IdUser][0]=="/oferta"){
 
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Ingrese el precio de la oferta en pesos uruguayos...\n");
@@ -98,7 +98,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }
-             if (Listas.Instance.HistorialUser[message.IdUser].Count==7 && Listas.Instance.HistorialUser[message.IdUser][0]=="/offer"){
+             if (Listas.Instance.HistorialUser[message.IdUser].Count==7 && Listas.Instance.HistorialUser[message.IdUser][0]=="/oferta"){
                 
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Que categoria quiere que tenga su oferta?...\n");
@@ -111,7 +111,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }
-            if (Listas.Instance.HistorialUser[message.IdUser].Count==8 && Listas.Instance.HistorialUser[message.IdUser][0]=="/offer"){
+            if (Listas.Instance.HistorialUser[message.IdUser].Count==8 && Listas.Instance.HistorialUser[message.IdUser][0]=="/oferta"){
                 
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                
