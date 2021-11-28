@@ -8,7 +8,7 @@ namespace Telegram
     /// <summary>
     /// Clase encargada de manejar los emprendedores, hereda de User.
     /// </summary>
-    public class Emprendedores : User
+    public class Emprendedores : User , IUser
     {
         /// <summary>
         /// Lista de habilitaciones que tiene el emprendedor.
@@ -33,6 +33,7 @@ namespace Telegram
         public Emprendedores(string name, string location, Rubro rubro, string id ) : base (name, location, rubro, id)
         {
             Listas.Instance.Listuser.Add(this);
+            Listas.Instance.Listemprendedores.Add(this);
         }
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace Telegram{
             {
                 Frasesarmadas+=$"{rat.Name}\n";
             }
+            Frasesarmadas+=$"\n Es una oferta de tipo {offer.Type}\n";
             Frasesarmadas+=$"\nY Pertence a la cateogoria {offer.Product.Categories}\n";
             return Frasesarmadas;
         }

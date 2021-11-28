@@ -18,9 +18,11 @@ namespace Telegram
 
         private static IHandler handler1;
         private static Listas lista = Listas.Instance;
+        private static Catalogo catalogo = Catalogo.Instance;
         static void Main()
         {
             lista.Cargarlistas();
+            catalogo.cargaroffer();
             Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
             Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
             Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
@@ -50,7 +52,7 @@ namespace Telegram
 
             Listas.Instance.Listtokens.Add("TokenTest");
 
-            Business empresa = new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");
+            //Business empresa = new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");
             //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");
 
             //Emprendedores gonza=new Emprendedores("Gonza", "Mi casa", rubro2,"1603877597");
@@ -68,6 +70,7 @@ namespace Telegram
             Console.WriteLine("Presiona una tecla para terminar");
             Console.Read();
             lista.Guardarlistas();
+            catalogo.Guardaroffer();
 
             //Detengo la escucha de mensajes 
             Bot.StopReceiving();
