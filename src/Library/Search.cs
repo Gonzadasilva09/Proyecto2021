@@ -6,15 +6,15 @@ namespace Telegram
     /// <summary>
     /// Clase encargada de buscar Materiales a travez de sus clasificaciones.
     /// </summary>
-       public class Search
+        public class Search
     {
+        private static Search search;
+        private Search(){}
         /// <summary>
         /// Inicializa la clase Search a travez de un singleton para que solo exista una instancia del catalogo ya que usaremos un catalogo para todas las ofertas.
         /// </summary>
         /// <returns></returns>
-        private static Search search;
-       private Search(){}
-       public static Search Instance
+        public static Search Instance
         {
             get
             {

@@ -59,7 +59,6 @@
             <param name="prodname"></param>
             <param name="prodquantity"></param>
             <param name="produnit"></param>
-            <param name="proddirection"></param>
             <param name="prodprice"></param>
             <param name="categories"></param>
         </member>
@@ -297,8 +296,6 @@
             </summary>
         </member>
         <member name="T:Telegram.SignUpHandler">
-<<<<<<< HEAD
-=======
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
             </summary>
@@ -323,7 +320,6 @@
             <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
         <member name="T:Telegram.StartEmprendedorHandler">
->>>>>>> 9cc88d31304dbfb139fd554741214fcc7f1ca4af
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
             </summary>
@@ -373,6 +369,17 @@
             Json utilizando JsonSerializer.Deserialize.
             </summary>
             <returns>El objeto convertido a texto en formato Json.</returns>
+        </member>
+        <member name="T:Telegram.Persistencia">
+            <summary>
+            Clase encargada de que los datos se guarden y puedan luego ser restaurados.
+            </summary>
+        </member>
+        <member name="P:Telegram.Persistencia.Instance">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Telegram.Listas">
             <summary>
@@ -438,11 +445,11 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="F:Telegram.Listas.Tokens">
+        <member name="M:Telegram.Listas.Accion(System.String)">
             <summary>
-            Lista que contiene todas las unidades disponibles para usar.
+            Metodo para agregar el id de los usuarios.
             </summary>
-            <returns></returns>
+            <param name="ID"></param>
         </member>
         <member name="T:Telegram.Distance">
             <summary>
@@ -894,6 +901,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Telegram.User.ID">
+            <summary>
+            Id del usuario.
+            </summary>
+            <value></value>
+        </member>
         <member name="P:Telegram.User.Location">
             <summary>
             Obtiene o establece la locacion de un usuario.
@@ -913,6 +926,7 @@
             <param name="name"></param>
             <param name="location"></param>
             <param name="rubro"></param>
+            <param name="id"></param>
         </member>
     </members>
 </doc>

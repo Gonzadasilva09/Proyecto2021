@@ -21,8 +21,6 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
         public List<Offer> Purchased = new List<Offer>();
-        [JsonConstructor]
-        public Emprendedores(){}
        
         /// <summary>
         /// Constructor de objetos de tipo Emprendedor.
@@ -34,7 +32,7 @@ namespace Telegram
         /// <returns></returns>
         public Emprendedores(string name, string location, Rubro rubro, string id ) : base (name, location, rubro, id)
         {
-            Listas.Instance.ListUser.Add(this);
+            Listas.Instance.Listuser.Add(this);
         }
 
         /// <summary>

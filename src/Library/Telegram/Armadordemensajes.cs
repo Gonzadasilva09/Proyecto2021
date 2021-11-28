@@ -86,7 +86,7 @@ namespace Telegram{
         {
             Listas listas= Listas.Instance;
             string Frasesarmadas=string.Empty;
-            foreach (Business empresa in listas.Bussiness)
+            foreach (Business empresa in listas.Listbussiness)
             {
                 Frasesarmadas+=$"{Veruser(empresa)}\n";
             }
@@ -97,7 +97,7 @@ namespace Telegram{
             Listas listas= Listas.Instance;
             string Frasesarmadas=string.Empty;
             Frasesarmadas+=$"Los siguientes usuarios estan registrados como Emprendedores\n";
-            foreach (Emprendedores emprendedor in listas.Emprendedores)
+            foreach (Emprendedores emprendedor in listas.Listemprendedores)
             {
                 Frasesarmadas+=$"{Veruser(emprendedor)}\n";
             }
@@ -117,7 +117,7 @@ namespace Telegram{
         {
             Listas listas= Listas.Instance;
             string Frasesarmadas=string.Empty;
-            foreach (Category category in listas.listcategory)
+            foreach (Category category in listas.Listcategory)
             {
                 Frasesarmadas+=$"{Vercategory(category)}\n";
             }
@@ -128,7 +128,7 @@ namespace Telegram{
         {
             Listas listas= Listas.Instance;
             string Frasesarmadas=string.Empty;
-            foreach (Ratings habilitaciones in listas.listratings)
+            foreach (Ratings habilitaciones in listas.Listratings)
             {
                 Frasesarmadas+=$"{Verrating(habilitaciones)}\n";
             }
@@ -138,7 +138,7 @@ namespace Telegram{
         {
             Listas listas= Listas.Instance;
             string Frasesarmadas=string.Empty;
-            foreach (Rubro rubro in listas.listrubro)
+            foreach (Rubro rubro in listas.Listrubro)
             {
                 Frasesarmadas+=$"{Verrubro(rubro)}\n";
             }
@@ -148,7 +148,7 @@ namespace Telegram{
         {
             Listas listas= Listas.Instance;
             string Frasesarmadas=string.Empty;
-            foreach (Units unidad in listas.UnitList)
+            foreach (Units unidad in listas.Listunit)
             {
                 Frasesarmadas+=$"{Verunit(unidad)}\n";
             }

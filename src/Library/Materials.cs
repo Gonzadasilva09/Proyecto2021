@@ -10,8 +10,6 @@ namespace Telegram
     /// </summary>
     public class Materials
     {
-        [JsonConstructor]
-        public Materials(){}
         /// <summary>
         /// Constructor de objetos de tipo material.
         /// </summary>

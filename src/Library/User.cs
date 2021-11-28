@@ -14,6 +14,10 @@ namespace Telegram
         /// <value></value>
 
         public string Name {get; set;}
+        /// <summary>
+        /// Id del usuario.
+        /// </summary>
+        /// <value></value>
         public string ID {get; set;}
         /// <summary>
         /// Obtiene o establece la locacion de un usuario.
@@ -25,15 +29,13 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public Rubro Rubro {get; set;}
-        [JsonConstructor]
-        public User(){}
-        
         /// <summary>
         /// Constructor de la clase abstracta usuario.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="location"></param>
         /// <param name="rubro"></param>
+        /// <param name="id"></param>
         public User(string name, string location, Rubro rubro,string id)
         {
             this.Name = name;

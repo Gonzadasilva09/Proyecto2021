@@ -52,9 +52,6 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public Emprendedores Owner { get; set; }
-        [JsonConstructor]
-        public Offer(){}
-        
         /// <summary>
         /// Constructor de objetos de tipo oferta.
         /// </summary>

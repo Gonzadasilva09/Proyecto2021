@@ -10,9 +10,6 @@ namespace Telegram
 /// </summary>
     public class Category
     {
-        [JsonConstructor]
-        public Category(){}
-    
         /// <summary>
         /// Constructor de objetos tipo Category.
         /// </summary>
@@ -22,7 +19,7 @@ namespace Telegram
         {
             this.Name = name;
             this.Description = description;
-            Listas.Instance.listcategory.Add(this);
+            Listas.Instance.Listcategory.Add(this);
         }
 
         /// <summary>

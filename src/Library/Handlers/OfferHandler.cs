@@ -43,7 +43,7 @@ namespace Telegram
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Que habilitaciones quiere que tenga su oferta?...\n");
                 int num = 1;
-                foreach (Ratings rating in Listas.Instance.listratings)
+                foreach (Ratings rating in Listas.Instance.Listratings)
                 {
                     MensajeCompleto.Append($"/{num} - {rating.Name}\n");
                     num++;
@@ -73,7 +73,7 @@ namespace Telegram
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Que unidad quiere que tenga su oferta?...\n");
                 int num = 1;
-                foreach (Units unit in Listas.Instance.UnitList )
+                foreach (Units unit in Listas.Instance.Listunit )
                 {
                     MensajeCompleto.Append($"/{num} - {unit.Name}\n");
                     num++;
@@ -103,7 +103,7 @@ namespace Telegram
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Que categoria quiere que tenga su oferta?...\n");
                 int num = 1;
-                foreach (Category category in Listas.Instance.listcategory)
+                foreach (Category category in Listas.Instance.Listcategory)
                 {
                     MensajeCompleto.Append($"/{num} - {category.Name}\n");
                     num++;
@@ -148,15 +148,15 @@ namespace Telegram
                 
                 Console.WriteLine("user null");
 
-                foreach (Business item in Listas.Instance.Bussiness)
+                foreach (Business item in Listas.Instance.Listbussiness)
                 {
                     if(message.IdUser==item.ID){
                         Business user = item;
                         Console.WriteLine("Entro a la ultima parte 2");
                             user.MakeOffer(Listas.Instance.HistorialUser[message.IdUser][1],
-                                            Listas.Instance.listratings[rati],Listas.Instance.HistorialUser[message.IdUser][3],
-                                            Listas.Instance.HistorialUser[message.IdUser][4],Listas.Instance.UnitList[unid],
-                                            cantidad,precio,Listas.Instance.listcategory[cate]);
+                                            Listas.Instance.Listratings[rati],Listas.Instance.HistorialUser[message.IdUser][3],
+                                            Listas.Instance.HistorialUser[message.IdUser][4],Listas.Instance.Listunit[unid],
+                                            cantidad,precio,Listas.Instance.Listcategory[cate]);
                             Console.WriteLine("Creo oferta");
                             StringBuilder MensajeCompleto = new StringBuilder($"Su oferta de {user.offersMade.Last().Product.Name} a sido creada...\n");
                             MensajeCompleto.Append($"Nombre del material publicado: {user.offersMade.Last().Product.Name}\n");
