@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json.Serialization;
 
 namespace Telegram
 {
@@ -24,6 +25,8 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public Rubro Rubro {get; set;}
+        [JsonConstructor]
+        public User(){}
         
         /// <summary>
         /// Constructor de la clase abstracta usuario.

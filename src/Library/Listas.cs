@@ -15,19 +15,21 @@ namespace Telegram{
         /// <summary>
         /// Singleton para que solo exista una instancia de las listas.
         /// </summary>
-        private Listas(){}
-       public static Listas Instance
+        [JsonConstructor]
+        public Listas(){}
+        private Listas(string nada){}
+         public static Listas Instance
         {
             get
             {
                 if (listas == null)
                 {
-                    listas = new Listas();
+                    listas = new Listas("nada");
                 }
 
                 return listas;
             }
-    }
+        }
     /// <summary>
     /// Lista que contiene todas las categorias disponibles.
     /// </summary>
@@ -54,15 +56,17 @@ namespace Telegram{
     /// <returns></returns>
     [JsonInclude]
     public List<Units> UnitList = new List<Units>();
-       /// <summary>
+    /// <summary>
     /// Lista que contiene todas las unidades disponibles para usar.
     /// </summary>
     /// <returns></returns>
+    [JsonInclude]
     public List<Business> Bussiness = new List<Business>();
-       /// <summary>
+    /// <summary>
     /// Lista que contiene todas las unidades disponibles para usar.
     /// </summary>
     /// <returns></returns>
+    [JsonInclude]
     public List<Emprendedores> Emprendedores = new List<Emprendedores>();
     /// <summary>
     /// 
@@ -70,11 +74,12 @@ namespace Telegram{
     /// <returns></returns>
     [JsonInclude]
     public List<User> ListUser = new List<User>();
-    
+
     /// <summary>
     /// Lista que contiene todas las unidades disponibles para usar.
     /// </summary>
     /// <returns></returns>
+    [JsonInclude]
     public List<string> Tokens = new List<string>();
     /// <summary>
     /// Diccionario encargado de guardar las interacciones de los usuarios con el bot.
@@ -97,6 +102,7 @@ namespace Telegram{
 
             return JsonSerializer.Serialize(this, options);
         }
+    
 
 
 

@@ -20,8 +20,9 @@ namespace Telegram
         private static IHandler handler1;
         static void Main()
         {
-            if (!System.IO.File.Exists(@"Listas.json"))
+            if (!System.IO.File.Exists(@"..\..\PII_2021_2_Equipo11\src\Program\Listas.json"))
             {
+                Listas lista = Listas.Instance;
                 Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
                 Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
                 Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
@@ -51,29 +52,18 @@ namespace Telegram
                 Business empresa= new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");
                 //Emprendedores gonza=new Emprendedores("Gonza", "Mi casa", rubro2,"1603877597");
 
-                string json0 = Listas.Instance.ConvertToJson();
+                string json0 = lista.ConvertToJson();
                 Console.WriteLine(json0);
-                System.IO.File.WriteAllText(@"Listas.json", json0);//paso ofertas a json
-
-                string json = Catalogo.Instance.ConvertToJson();
-                Console.WriteLine(json);
-                System.IO.File.WriteAllText(@"Catalogo.json", json);//paso ofertas a json
+                System.IO.File.WriteAllText(@"..\..\PII_2021_2_Equipo11\src\Program\Listas.json", json0);//paso ofertas a json
             }
             else
             {
-                Catalogo catalogo = Catalogo.Instance;
 
                 Listas lista = Listas.Instance;
 
-                string json =  System.IO.File.ReadAllText(@"Catalogo.json");
-                string json0 =  System.IO.File.ReadAllText(@"Listas.json");
+               
+                string json0 =  System.IO.File.ReadAllText(@"..\..\PII_2021_2_Equipo11\src\Program\Listas.json");
 
-
-                JsonSerializerOptions options = new()
-                {
-                    ReferenceHandler = MyReferenceHandler.Instance,
-                    WriteIndented = true
-                };
 
                 JsonSerializerOptions optiones = new()
                 {
@@ -81,13 +71,30 @@ namespace Telegram
                     WriteIndented = true
                 };
 
-                Catalogo viejocatalogo = JsonSerializer.Deserialize<Catalogo>(json, options);
-                Console.WriteLine(viejocatalogo.ConvertToJson());
+                Listas viejalista = JsonSerializer.Deserialize<Listas>(json0, optiones);
+                Console.WriteLine(viejalista.ConvertToJson());
+            }
+/*
+            if (!System.IO.File.Exists(@"..\..\PII_2021_2_Equipo11\src\Program\Catalogo.json"))
+            {
+                Catalogo catalogo = Catalogo.Instance;
+                string json = Catalogo.Instance.ConvertToJson();
+                Console.WriteLine(json);
+                System.IO.File.WriteAllText(@"..\..\PII_2021_2_Equipo11\src\Program\Catalogo.json", json);//paso ofertas a json
+            }
+            else
+            {
+                string json =  System.IO.File.ReadAllText(@"..\..\PII_2021_2_Equipo11\src\Program\Catalogo.json");
 
-                Listas viejalista = JsonSerializer.Deserialize<Listas>(json, optiones);
+                JsonSerializerOptions optiones = new()
+                {
+                    ReferenceHandler = MyReferenceHandler.Instance,
+                    WriteIndented = true
+                };
+                Catalogo viejocatalogo = JsonSerializer.Deserialize<Catalogo>(json, optiones);
                 Console.WriteLine(viejocatalogo.ConvertToJson());
             }
-
+*/
             Bot = new TelegramBotClient(TelegramToken);
             
             handler1 = new StartHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new OfferHandler(null)))));
@@ -142,8 +149,16 @@ namespace Telegram
             Console.WriteLine(exception.Message);
             return Task.CompletedTask;
         }
- 
-          
+        
+        /*static void Main()
+        {
+            Armadordemensajes armador = Armadordemensajes.Instance;
+            Ratings rating = new Ratings("sopa","sopa");
+            Units productunit=new Units("Kilos");
+            Category categories=new Category("Kilos","sopapa");
+            Offer oferta = new Offer ("donde menos te lo esperes", rating, "type", "mandanga",productunit,20,1000,categories);
+            Console.WriteLine(armador.MensajeArmadoBusquedaOferta(oferta));
+        }  */
      }
     
 }

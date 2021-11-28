@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Telegram
 {
@@ -8,13 +10,14 @@ namespace Telegram
     /// </summary>
     public class Materials
     {
+        [JsonConstructor]
+        public Materials(){}
         /// <summary>
         /// Constructor de objetos de tipo material.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="quantity"></param>
         /// <param name="units"></param>
-        /// <param name="direction"></param>
         /// <param name="price"></param>
         /// <param name="categories"></param>
         public Materials(string name, int quantity, Units units,int price, Category categories)
@@ -26,7 +29,7 @@ namespace Telegram
             this.Categories = categories;
         }
         /// <summary>
-        /// Lista que contiene las categorias del material.
+        /// Categorias del material.
         /// </summary>
         /// <value></value>
         public Category Categories{ get; set; }

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Telegram
 {
@@ -8,7 +10,8 @@ namespace Telegram
     /// </summary>
     public class Ratings{
 
-        
+        [JsonConstructor]
+        public Ratings(){}
         
         /// <summary>
         /// Obtiene o establece una descripcion de la habilitación.

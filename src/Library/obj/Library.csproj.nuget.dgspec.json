@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {}
   },
   "projects": {
@@ -13,22 +12,9 @@
         "projectPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
         "packagesPath": "C:\\Users\\Franco De Stefano\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\obj\\",
-=======
-    "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
-        "projectName": "Library",
-        "projectPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\dasil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Library\\obj\\",
->>>>>>> 2daf045921540e74d60a5bd28d90fec08ed09548
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dasil\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Franco De Stefano\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

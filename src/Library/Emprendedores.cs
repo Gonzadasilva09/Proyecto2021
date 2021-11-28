@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Telegram
 {
@@ -19,6 +21,8 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
         public List<Offer> Purchased = new List<Offer>();
+        [JsonConstructor]
+        public Emprendedores(){}
        
         /// <summary>
         /// Constructor de objetos de tipo Emprendedor.

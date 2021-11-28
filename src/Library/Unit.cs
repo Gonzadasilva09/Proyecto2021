@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace Telegram
 {
     /// <summary>
@@ -7,6 +9,9 @@ namespace Telegram
     /// </summary>
     public class Units
     {
+        [JsonConstructor]
+        public Units(){}
+        
 
         /// <summary>
         /// Obtiene el nombre de la unidad.

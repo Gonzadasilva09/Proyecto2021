@@ -2,51 +2,150 @@
   "$id": "1",
   "listcategory": {
     "$id": "2",
-    "$values": []
-  },
-  "listratings": {
-    "$id": "3",
-    "$values": []
-  },
-  "listrubro": {
-    "$id": "4",
     "$values": [
       {
+        "$id": "3",
+        "Name": "Tecnologia",
+        "Description": "descripcion"
+      },
+      {
+        "$id": "4",
+        "Name": "Materia Prima",
+        "Description": "descripcion"
+      },
+      {
         "$id": "5",
+        "Name": "Plasticos",
+        "Description": "descripcion"
+      },
+      {
+        "$id": "6",
+        "Name": "Papel y Carton",
+        "Description": "descripcion"
+      },
+      {
+        "$id": "7",
+        "Name": "Telas",
+        "Description": "descripcion"
+      },
+      {
+        "$id": "8",
+        "Name": "Viveres",
+        "Description": "descripcion"
+      },
+      {
+        "$id": "9",
+        "Name": "Biodegradables",
+        "Description": "descripcion"
+      },
+      {
+        "$id": "10",
+        "Name": "Desechos peligrosos",
+        "Description": "descripcion"
+      },
+      {
+        "$id": "11",
+        "Name": "Otros",
+        "Description": "descripcion"
+      }
+    ]
+  },
+  "listratings": {
+    "$id": "12",
+    "$values": [
+      {
+        "$id": "13",
+        "Description": "habilitacion importante",
+        "Name": "HABILITACION 1"
+      },
+      {
+        "$id": "14",
+        "Description": "habilitacion importante",
+        "Name": "HABILITACION 2"
+      },
+      {
+        "$id": "15",
+        "Description": "habilitacion importante",
+        "Name": "HABILITACION 3"
+      },
+      {
+        "$id": "16",
+        "Description": "habilitacion importante",
+        "Name": "HABILITACION 4"
+      },
+      {
+        "$id": "17",
+        "Description": "habilitacion importante",
+        "Name": "HABILITACION 5"
+      }
+    ]
+  },
+  "listrubro": {
+    "$id": "18",
+    "$values": [
+      {
+        "$id": "19",
         "Description": "Re tecnologicos tipo joel",
         "Name": "TECNOLOGIA"
       },
       {
-        "$id": "6",
+        "$id": "20",
         "Description": "autos y motos ruta 5",
         "Name": "TRANSPORTE"
       },
       {
-        "$id": "7",
+        "$id": "21",
         "Description": "la ucu pero con profes",
         "Name": "EDUCACION"
       },
       {
-        "$id": "8",
+        "$id": "22",
         "Description": "el cuqui",
         "Name": "POLITICA"
       },
       {
-        "$id": "9",
+        "$id": "23",
         "Description": "parque roosvelt",
         "Name": "SERVICIOS"
       }
     ]
   },
   "UnitList": {
-    "$id": "10",
-    "$values": []
+    "$id": "24",
+    "$values": [
+      {
+        "$id": "25",
+        "Name": "Unidad/es"
+      },
+      {
+        "$id": "26",
+        "Name": "Kilogramos"
+      },
+      {
+        "$id": "27",
+        "Name": "Litros"
+      },
+      {
+        "$id": "28",
+        "Name": "Metros"
+      }
+    ]
   },
   "ListUser": {
-    "$id": "11",
-    "$values": []
+    "$id": "29",
+    "$values": [
+      {
+        "$id": "30",
+        "Name": "Gonzalo Da Silva",
+        "ID": "1603877597",
+        "Location": "direccion",
+        "Rubro": {
+          "$ref": "21"
+        }
+      }
+    ]
   },
   "HistorialUser": {
-    "$id": "12"
+    "$id": "31"
   }
 }

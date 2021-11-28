@@ -267,7 +267,17 @@
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
             </summary>
         </member>
-        <member name="T:Telegram.RegisterHandler">
+        <member name="T:Telegram.RegisterHandlerEmprendedores">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="T:Telegram.RegisterHandlerEmpresa">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="T:Telegram.SignUpHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
             </summary>
@@ -338,9 +348,27 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="F:Telegram.Listas.Bussiness">
+            <summary>
+            Lista que contiene todas las unidades disponibles para usar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.Emprendedores">
+            <summary>
+            Lista que contiene todas las unidades disponibles para usar.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="F:Telegram.Listas.ListUser">
             <summary>
             
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.Tokens">
+            <summary>
+            Lista que contiene todas las unidades disponibles para usar.
             </summary>
             <returns></returns>
         </member>
@@ -536,13 +564,12 @@
             <param name="name"></param>
             <param name="quantity"></param>
             <param name="units"></param>
-            <param name="direction"></param>
             <param name="price"></param>
             <param name="categories"></param>
         </member>
         <member name="P:Telegram.Materials.Categories">
             <summary>
-            Lista que contiene las categorias del material.
+            Categorias del material.
             </summary>
             <value></value>
         </member>
@@ -629,7 +656,6 @@
             <param name="productname"></param>
             <param name="productquantity"></param>
             <param name="productunit"></param>
-            <param name="productdirection"></param>
             <param name="productprice"></param>
         </member>
         <member name="M:Telegram.Offer.PrintRatings">
@@ -737,6 +763,17 @@
             Metodo para buscar en el catalogo con el nombre del material.
             </summary>
             <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telegram.Armadordemensajes">
+            <summary>
+            Clase encargada de interactuar con la ApiLocation
+            </summary>
+        </member>
+        <member name="M:Telegram.Armadordemensajes.#ctor">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
             <returns></returns>
         </member>
         <member name="T:Telegram.Units">

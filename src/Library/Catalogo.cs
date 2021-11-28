@@ -16,8 +16,8 @@ namespace Telegram
         /// Singleton para que solo exista una instancia del catalogo.
         /// </summary>
         /// <returns></returns>
-       private Catalogo(){}
-       public static Catalogo Instance
+        private Catalogo(){}
+        public static Catalogo Instance
         {
             get
             {

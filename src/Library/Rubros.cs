@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Telegram
 {
@@ -8,6 +10,8 @@ namespace Telegram
     /// </summary>
     public class Rubro
     {
+        [JsonConstructor]
+        public Rubro(){}
         
         /// <summary>
         /// String que obtiene o establece la descripción de un rubro.

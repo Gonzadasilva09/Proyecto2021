@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 
 namespace Telegram
@@ -9,6 +11,8 @@ namespace Telegram
     /// </summary>
     public class Business : User
     {
+        [JsonConstructor]
+        public Business(){}
         /// <summary>
         /// Constructor de objetos de tipo Business.
         /// </summary>
