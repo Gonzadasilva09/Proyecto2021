@@ -104,6 +104,8 @@ namespace Telegram{
         }
     
 
+    public List<string> BusinessID = new List<string>();
+
 
 
 

@@ -13,15 +13,15 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class StartHandler : BaseHandler
+    public class CancelHandler : BaseHandler
     {
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
+        /// Inicializa una nueva instancia de la clase <see cref="CancelHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
-        public StartHandler(BaseHandler next) : base(next)
+        public CancelHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/start"};
+            this.Keywords = new string[] {"/cancelar"};
         }
 
         /// <summary>
@@ -33,16 +33,14 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.HistorialUser.ContainsKey(message.IdUser))
+            if (message.Mensaje.ToLower().Equals("/cancelar"))
             {   
-            
-                StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
-                Listas.Instance.Accion(message.IdUser);
-                MensajeCompleto.Append("Usted no se a registrado por favor ejecutar el comando /registrarse \n");
+                Listas.Instance.HistorialUser[message.IdUser].Clear();
+                StringBuilder MensajeCompleto = new StringBuilder("Se ha cancelado la operación actual.\n");
+                MensajeCompleto.Append("Para volver al menu principal utilize /start. \n");
                 response = MensajeCompleto.ToString();
                 return true;
             }
-            Console.WriteLine("start base");
             response = string.Empty;
             return false;
         }

@@ -19,21 +19,21 @@ namespace Telegram
         
         public SignUpHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/signup"};
+            this.Keywords = new string[] {"/registrarse"};
         }
 
   
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            try{
-             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/signup") )
+            //try{
+             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser].Contains("/registrarse") )
              {
                  
                 
-                if (message.Mensaje.ToLower().Equals("/signup"))
+                if (message.Mensaje.ToLower().Equals("/registrarse"))
                 {
                     
-                    Listas.Instance.HistorialUser[message.IdUser].Add("/signup");
+                    Listas.Instance.HistorialUser[message.IdUser].Add("/registrarse");
 
                     StringBuilder MensajeCompleto = new StringBuilder("Desea registrarse como /Empresa o como /Emprendedor...\n");
 
@@ -41,12 +41,12 @@ namespace Telegram
                     return true;
                 }
         
-                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/signup") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/registrarse") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
                 {
                     if (message.Mensaje.ToLower().Equals("/emprendedor"))
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Clear();
-                        Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                        Listas.Instance.HistorialUser[message.IdUser].Add("/emprendedor");
                         StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como emprendedor, por favor ingrese los siguientes datos que le solicitaremos\n");
                         MensajeCompleto.Append("Ingrese su nombre de Usuario:\n");
                         response =MensajeCompleto.ToString();
@@ -63,12 +63,12 @@ namespace Telegram
              }
             response = string.Empty;
             return false;
-            }
+           /* }
             catch
             {
             response = string.Empty;
             return false;
-            }
+            }*/
         }
     }
 }
