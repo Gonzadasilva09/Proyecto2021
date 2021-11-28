@@ -33,7 +33,7 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessID.Contains(message.IdUser) )
+            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser) )
             {   
             
                 StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
@@ -44,6 +44,7 @@ namespace Telegram
                     {
                     MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
                     MensajeCompleto.Append($"/buscaroferta \n");
+                    MensajeCompleto.Append($"/agregarhabilitacion \n");
                     MensajeCompleto.Append($"/historialcompra \n");
                     MensajeCompleto.Append($"Si en cualquier momento lo desea puede usar: \n");
                     MensajeCompleto.Append($"/cancelar \n");
@@ -54,7 +55,7 @@ namespace Telegram
                     }
                 }
             }
-            Console.WriteLine("start emprendedor");
+            Console.WriteLine("StartEmprendedorHandler");
             response = string.Empty;
             return false;
         }

@@ -80,6 +80,9 @@ namespace Telegram{
 
     public List<string> BusinessID = new List<string>();
 
+    public Dictionary<string, Emprendedores> EmprendedoresKey = new Dictionary<string, Emprendedores>();
+
+    public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
 
 
 

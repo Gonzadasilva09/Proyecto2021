@@ -62,6 +62,7 @@ namespace Telegram
                 }
              }
             response = string.Empty;
+            Console.WriteLine("SignUpHandler");
             return false;
            /* }
             catch

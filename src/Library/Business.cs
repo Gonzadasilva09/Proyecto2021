@@ -20,6 +20,7 @@ namespace Telegram
         public Business(string name, string location, Rubro rubro, string id) : base (name, location, rubro, id)
         {
             Listas.Instance.ListUser.Add(this);
+            Listas.Instance.Bussiness.Add(this);
         }
         /// <summary>
         /// Metodo para que una empresa haga una oferta.
@@ -33,10 +34,10 @@ namespace Telegram
         /// <param name="proddirection"></param>
         /// <param name="prodprice"></param>
         /// <param name="categories"></param>
-        public void MakeOffer(string location,Ratings ratings, string type, string prodname, Units produnit, int prodquantity, int prodprice,Category categories)
+        public void MakeOffer(string location, string type, string prodname, Units produnit, int prodquantity, int prodprice,Category categories)
         {
             
-            Offer offer = new Offer(location,ratings, type, prodname,produnit, prodquantity,  prodprice, categories);
+            Offer offer = new Offer(location, type, prodname,produnit, prodquantity,  prodprice, categories);
             offersMade.Add(offer);
             Catalogo.Instance.AllOffers.Add(offer);
         }

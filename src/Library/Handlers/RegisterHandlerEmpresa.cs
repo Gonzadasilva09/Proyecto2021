@@ -78,15 +78,17 @@ namespace Telegram
                     MensajeCompleto.Append($"Direccion: {business.Location}\n");
                     MensajeCompleto.Append($"Rubro: {business.Rubro.Name}\n");
                     MensajeCompleto.Append($"ID de usuario: {business.ID}\n");
-                    Listas.Instance.BusinessID.Add(message.IdUser);
+                    Listas.Instance.BusinessKey.Add(message.IdUser, business);
                     response = MensajeCompleto.ToString();
-                    Listas.Instance.HistorialUser[message.IdUser].Clear();
+                    Listas.Instance.HistorialUser.Remove(message.IdUser);
+                    Listas.Instance.Accion(message.IdUser);
                     return true;
                 }  
                 
             else
             {
-                Listas.Instance.HistorialUser[message.IdUser].Clear();
+                Listas.Instance.HistorialUser.Remove(message.IdUser);
+                Listas.Instance.Accion(message.IdUser);
                 StringBuilder MensajeCompleto = new StringBuilder($"Su Token no es valido");
                 response =MensajeCompleto.ToString();
                 return true;
@@ -95,7 +97,7 @@ namespace Telegram
         }
            
         }
-          Console.WriteLine("Empresa");
+          Console.WriteLine("RegisterEmpresaHandler");
             response = string.Empty;
             return false;
            /* }
