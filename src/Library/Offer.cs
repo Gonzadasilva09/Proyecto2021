@@ -63,13 +63,12 @@ namespace Telegram
         /// <param name="productunit"></param>
         /// <param name="productdirection"></param>
         /// <param name="productprice"></param>
-        public Offer (string location, Ratings rating, string type, string productname, Units productunit, int productquantity,int productprice, Category categories)
+        public Offer (string location, string type, string productname, Units productunit, int productquantity,int productprice, Category categories)
         {
             this.Type = type;
             Materials product = new Materials(productname,productquantity,productunit,productprice,categories);
             this.Product = product;
             Catalogo.Instance.AllOffers.Add(this);
-            Ratings.Add(rating);
             this.Location=location;
         }
 

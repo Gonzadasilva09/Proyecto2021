@@ -8,6 +8,7 @@ using Telegram.Bot.Types.Enums;
 using Library;
 
 
+
 namespace Telegram
 {
         public static class Program{
@@ -46,12 +47,26 @@ namespace Telegram
             Category categoria8= new Category("Desechos peligrosos","descripcion");
             Category categoria9= new Category("Otros","descripcion");
 
-            Listas.Instance.Tokens.Add("TokenTest");
+           
+            string hola="/3";
+            string hola2 = hola.Replace("/",string.Empty);
+            int num = (Convert.ToInt32(hola2))-1;
+            Console.WriteLine(hola2);
+            Console.WriteLine(num);
 
-            Business empresa = new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");
+
+            Listas.Instance.Tokens.Add("TokenTest");
+            
+
+           Business empresa = new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");
+           Listas.Instance.Accion("1603877597");
+           Listas.Instance.BusinessKey.Add("1603877597",empresa);
             //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");
 
-            //Emprendedores gonza=new Emprendedores("Gonza", "Mi casa", rubro2,"1603877597");
+            
+
+            //gonza.AddRatings(rati1);
+            //Console.WriteLine(gonza.Listratings[0].Name);
 
             Bot = new TelegramBotClient(TelegramToken);
             

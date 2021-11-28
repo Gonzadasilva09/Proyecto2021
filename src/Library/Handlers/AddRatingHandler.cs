@@ -67,7 +67,8 @@ namespace Telegram
                 }
                  if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count==3 && message.Mensaje == "/si"){
 
-                    Listas.Instance.HistorialUser[message.IdUser].Clear();
+                    Listas.Instance.HistorialUser.Remove(message.IdUser);
+                    Listas.Instance.Accion(message.IdUser);
                     Listas.Instance.HistorialUser[message.IdUser].Add("/agregarhabilitacion");
                     StringBuilder MensajeCompleto = new StringBuilder($"Se agregará una habilitación extra...\n");
                     MensajeCompleto.Append($"/Continuar\n");
@@ -76,7 +77,8 @@ namespace Telegram
                  }
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count==3 && message.Mensaje == "/no"){
 
-                    Listas.Instance.HistorialUser[message.IdUser].Clear();
+                    Listas.Instance.HistorialUser.Remove(message.IdUser);
+                    Listas.Instance.Accion(message.IdUser);
                     StringBuilder MensajeCompleto = new StringBuilder($"Se agregaron las habilitaciones deseadaas...\n");
                     MensajeCompleto.Append($"Utilize /start para volver al menú principal...\n");
                     response = MensajeCompleto.ToString();
