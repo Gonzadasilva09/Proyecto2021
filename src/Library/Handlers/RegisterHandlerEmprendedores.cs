@@ -70,12 +70,13 @@ namespace Telegram
                     MensajeCompleto.Append($"Rubro: {emprendedor.Rubro.Name}\n");
                     MensajeCompleto.Append($"ID de usuario: {emprendedor.ID}\n"); 
                     Listas.Instance.HistorialUser.Remove(message.IdUser);
+                    Listas.Instance.EmprendedoresKey.Add(message.IdUser, emprendedor);
                     Listas.Instance.Accion(message.IdUser);
                     response = MensajeCompleto.ToString();
                     return true;
                 }
             }
-            Console.WriteLine("register");
+            Console.WriteLine("RegisterEmprendedorHandler");
             response = string.Empty;
             return false;
            // }

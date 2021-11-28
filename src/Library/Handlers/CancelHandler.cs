@@ -41,6 +41,7 @@ namespace Telegram
                 response = MensajeCompleto.ToString();
                 return true;
             }
+            Console.WriteLine("CancelHandler");
             response = string.Empty;
             return false;
         }
