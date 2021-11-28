@@ -186,11 +186,12 @@ namespace Telegram
             }
             }catch{
                 
-               
+            Console.WriteLine("OfferHandler");
                 response = string.Empty;
                 return false;
 
             }
+            
             response = string.Empty;
             return false;
         

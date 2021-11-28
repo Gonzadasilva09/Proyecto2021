@@ -44,6 +44,7 @@ namespace Telegram
                     {
                     MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
                     MensajeCompleto.Append($"/buscaroferta \n");
+                    MensajeCompleto.Append($"/agregarhabilitacion \n");
                     MensajeCompleto.Append($"/historialcompra \n");
                     MensajeCompleto.Append($"Si en cualquier momento lo desea puede usar: \n");
                     MensajeCompleto.Append($"/cancelar \n");
@@ -54,7 +55,7 @@ namespace Telegram
                     }
                 }
             }
-            Console.WriteLine("start emprendedor");
+            Console.WriteLine("StartEmprendedorHandler");
             response = string.Empty;
             return false;
         }

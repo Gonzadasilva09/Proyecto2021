@@ -78,7 +78,7 @@ namespace Telegram
                     MensajeCompleto.Append($"Direccion: {business.Location}\n");
                     MensajeCompleto.Append($"Rubro: {business.Rubro.Name}\n");
                     MensajeCompleto.Append($"ID de usuario: {business.ID}\n");
-                    Listas.Instance.BusinessID.Add(message.IdUser);
+                    Listas.Instance.BusinessKey.Add(message.IdUser, business);
                     response = MensajeCompleto.ToString();
                     Listas.Instance.HistorialUser[message.IdUser].Clear();
                     return true;
@@ -95,7 +95,7 @@ namespace Telegram
         }
            
         }
-          Console.WriteLine("Empresa");
+          Console.WriteLine("RegisterEmpresaHandler");
             response = string.Empty;
             return false;
            /* }
