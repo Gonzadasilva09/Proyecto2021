@@ -13,15 +13,15 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class StartHandler : BaseHandler
+    public class AllOfferHandler : BaseHandler
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
-        public StartHandler(BaseHandler next) : base(next)
+        public AllOfferHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/start"};
+            this.Keywords = new string[] {"/1"};
         }
 
         /// <summary>
@@ -33,16 +33,24 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser) && !Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser))
+            if (this.CanHandle(message) && Listas.Instance.HistorialUser[message.Mensaje].Contains("/buscaroferta"))
             {   
-            
-                StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
-                Listas.Instance.Accion(message.IdUser);
-                MensajeCompleto.Append("Usted no se a registrado por favor ejecutar el comando /registrarse \n");
+                Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                StringBuilder MensajeCompleto = new StringBuilder("Las ofertas publicadas hasta la fecha son:\n");
+                int num=1;
+                foreach (Offer item in Catalogo.Instance.AllOffers)
+                {
+                    
+                    MensajeCompleto.Append($"/{num} - {item.Type} de {item.Product.Quantity} {item.Product.Unit} de {item.Product.Name} valorado en:{item.Product.Price}\n");
+                    MensajeCompleto.Append("---------------------------------\n");
+                    num++;
+                }
+
                 response = MensajeCompleto.ToString();
                 return true;
+
             }
-            Console.WriteLine("StartHandler");
+            Console.WriteLine("buscaroferta");
             response = string.Empty;
             return false;
         }

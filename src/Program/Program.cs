@@ -22,6 +22,7 @@ namespace Telegram
         private static Catalogo catalogo = Catalogo.Instance;
         static void Main()
         {
+           
             lista.Cargarlistas();
             catalogo.cargaroffer();
             string hola="/3";
@@ -31,10 +32,13 @@ namespace Telegram
             Console.WriteLine(num);
 
 
-            Listas.Instance.Tokens.Add("TokenTest");
+            Listas.Instance.Listtokens.Add("TokenTest");
+            foreach (Units item in Listas.Instance.Listunit)
+            {
+                Console.WriteLine(item.Name);
+            }
             
 
-           /*Business empresa = new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");*/
            /*Listas.Instance.Accion("1603877597");
            Listas.Instance.BusinessKey.Add("1603877597",empresa);*/
             //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");

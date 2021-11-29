@@ -23,6 +23,7 @@ namespace Telegram
         {
             Listas.Instance.Listuser.Add(this);
             Listas.Instance.Listbussiness.Add(this);
+            Listas.Instance.BusinessKey.Add(id,this);
         }
         /// <summary>
         /// Metodo para que una empresa haga una oferta.

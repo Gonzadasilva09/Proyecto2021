@@ -13,15 +13,15 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class StartHandler : BaseHandler
+    public class SearchHandler : BaseHandler
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
-        public StartHandler(BaseHandler next) : base(next)
+        public SearchHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/start"};
+            this.Keywords = new string[] {"/buscaroferta"};
         }
 
         /// <summary>
@@ -33,16 +33,21 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser) && !Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser))
+            if (this.CanHandle(message))
             {   
-            
-                StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
                 Listas.Instance.Accion(message.IdUser);
-                MensajeCompleto.Append("Usted no se a registrado por favor ejecutar el comando /registrarse \n");
+                Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                StringBuilder MensajeCompleto = new StringBuilder("Para buscar ofertas primero seleccione el tipo de busqueda...\n");
+                MensajeCompleto.Append("/1 Ver todas las ofertas \n");
+                MensajeCompleto.Append("/2 Buscar por categoria \n");
+                MensajeCompleto.Append("/3 Buscar por habilitaciones \n");
+                MensajeCompleto.Append("/4 Buscar por nombre \n");
+
                 response = MensajeCompleto.ToString();
                 return true;
+
             }
-            Console.WriteLine("StartHandler");
+            Console.WriteLine("buscaroferta");
             response = string.Empty;
             return false;
         }
