@@ -21,7 +21,7 @@ namespace Telegram
         /// <param name="next">El próximo "handler".</param>
         public StartEmprendedorHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/start"};
+            this.Keywords = new string[] { "/start" };
         }
 
         /// <summary>
@@ -32,30 +32,32 @@ namespace Telegram
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            
-            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser) )
-            {   
-            
+
+            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser))
+            {
+                if (!Listas.Instance.HistorialUser.ContainsKey(message.IdUser))
+                {
+                    Listas.Instance.Accion(message.IdUser);
+                }
                 StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
-                
+
                 foreach (User user in Listas.Instance.Listuser)
                 {
-                    if (message.IdUser == user.ID) 
+                    if (message.IdUser == user.ID)
                     {
-                    MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la funcion que desea realizar...  \n");
-                    MensajeCompleto.Append($"/buscaroferta \n");
-                    MensajeCompleto.Append($"/agregarhabilitacion \n");
-                    MensajeCompleto.Append($"/historialcompra \n");
-                    MensajeCompleto.Append($"Si en cualquier momento lo desea puede usar: \n");
-                    MensajeCompleto.Append($"/cancelar \n");
-                    MensajeCompleto.Append($"Para cancelar cualquier acción \n");
+                        MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la función que desee utilizar...  \n");
+                        MensajeCompleto.Append($"/buscaroferta \n");
+                        MensajeCompleto.Append($"/agregarhabilitacion \n");
+                        MensajeCompleto.Append($"/historialcompra \n");
+                        MensajeCompleto.Append($"Si en cualquier momento lo desea puede usar: \n");
+                        MensajeCompleto.Append($"/cancelar \n");
+                        MensajeCompleto.Append($"Para cancelar cualquier acción \n");
 
-                    response = MensajeCompleto.ToString();
-                    return true;
+                        response = MensajeCompleto.ToString();
+                        return true;
                     }
                 }
             }
-            Console.WriteLine("StartEmprendedorHandler");
             response = string.Empty;
             return false;
         }
