@@ -7,12 +7,12 @@ namespace Telegram{
     /// </summary>
     public class APILocation{
         private static APILocation location;
+        private APILocation(){}
         /// <summary>
         /// Singleton para que solo exista una instancia del catalogo.
         /// </summary>
         /// <returns></returns>
-       private APILocation(){}
-       public static APILocation Instance
+        public static APILocation Instance
         {
             get
             {

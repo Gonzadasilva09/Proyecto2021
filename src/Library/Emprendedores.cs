@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Telegram
 {
     /// <summary>
     /// Clase encargada de manejar los emprendedores, hereda de User.
     /// </summary>
-    public class Emprendedores : User
+    public class Emprendedores : User , IUser
     {
         /// <summary>
         /// Lista de habilitaciones que tiene el emprendedor.
@@ -30,7 +32,8 @@ namespace Telegram
         /// <returns></returns>
         public Emprendedores(string name, string location, Rubro rubro, string id ) : base (name, location, rubro, id)
         {
-            Listas.Instance.ListUser.Add(this);
+            Listas.Instance.Listuser.Add(this);
+            Listas.Instance.Listemprendedores.Add(this);
         }
 
         /// <summary>

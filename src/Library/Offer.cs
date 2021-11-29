@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic; 
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Telegram 
 {
@@ -50,18 +52,15 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public Emprendedores Owner { get; set; }
-        
         /// <summary>
         /// Constructor de objetos de tipo oferta.
         /// </summary>
         /// <param name="location"></param>
-        /// <param name="rating"></param>
         /// <param name="categories"></param>
         /// <param name="type"></param>
         /// <param name="productname"></param>
         /// <param name="productquantity"></param>
         /// <param name="productunit"></param>
-        /// <param name="productdirection"></param>
         /// <param name="productprice"></param>
         public Offer (string location, string type, string productname, Units productunit, int productquantity,int productprice, Category categories)
         {

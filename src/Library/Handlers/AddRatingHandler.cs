@@ -45,7 +45,7 @@ namespace Telegram
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder($"Seleccione sus habilitaciones\n");
                     int num = 1;
-                    foreach (Ratings rating in Listas.Instance.listratings)
+                    foreach (Ratings rating in Listas.Instance.Listratings)
                     {
                         MensajeCompleto.Append($" Ingrese {num} para añadir - {rating.Name}\n");
                         num++;
@@ -55,9 +55,9 @@ namespace Telegram
                     }
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count==2){
                    
-                    Listas.Instance.EmprendedoresKey[message.IdUser].AddRatings(Listas.Instance.listratings[Convert.ToInt32(message.Mensaje)]);
+                    Listas.Instance.EmprendedoresKey[message.IdUser].AddRatings(Listas.Instance.Listratings[Convert.ToInt32(message.Mensaje)]);
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder($"La habilitacion {Listas.Instance.listratings[Convert.ToInt32(message.Mensaje)].Name} se ha añadido a sus habilitaciones...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder($"La habilitacion {Listas.Instance.Listratings[Convert.ToInt32(message.Mensaje)].Name} se ha añadido a sus habilitaciones...\n");
                     MensajeCompleto.Append($"Desea agregar mas habilitaciones?...\n");
                     MensajeCompleto.Append($"/si\n");
                     MensajeCompleto.Append($"/no\n");

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace Telegram
 {
     /// <summary>
@@ -7,7 +9,6 @@ namespace Telegram
     /// </summary>
     public class Units
     {
-
         /// <summary>
         /// Obtiene el nombre de la unidad.
         /// </summary>
@@ -25,7 +26,7 @@ namespace Telegram
         {
             this.Name=name;
             this.shortcut=shortcutcreater();
-            Listas.Instance.UnitList.Add(this);
+            Listas.Instance.Listunit.Add(this);
         }
         /// <summary>
         /// Creador de Abreviacion de unidad.
@@ -43,7 +44,7 @@ namespace Telegram
         /// <returns></returns>
         public string shortcutget(int unitnum)
         {
-            return Listas.Instance.UnitList[unitnum].shortcut;
+            return Listas.Instance.Listunit[unitnum].shortcut;
         }
         /// <summary>
         /// Metodo para eliminar unidades de la lista.
@@ -51,7 +52,7 @@ namespace Telegram
         /// <param name="unit"></param>
         public static void Deleteunit(Units unit)
         {
-            Listas.Instance.UnitList.Remove(unit);
+            Listas.Instance.Listunit.Remove(unit);
         }
     }
 }

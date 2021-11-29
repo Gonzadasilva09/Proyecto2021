@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Telegram
 {
@@ -8,7 +10,6 @@ namespace Telegram
     /// </summary>
     public class Rubro
     {
-        
         /// <summary>
         /// String que obtiene o establece la descripción de un rubro.
         /// </summary>
@@ -28,14 +29,14 @@ namespace Telegram
         {
             this.Description = description;
             this.Name = name;
-            Listas.Instance.listrubro.Add(this);
+            Listas.Instance.Listrubro.Add(this);
         }
         /// <summary>
         /// Añade rubros nuevos a la lista de rubros.
         /// </summary>
          public static void Deleterubro(Rubro rubro)
         {
-            Listas.Instance.listrubro.Remove(rubro);
+            Listas.Instance.Listrubro.Remove(rubro);
         }
     }
 }

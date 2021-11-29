@@ -30,6 +30,40 @@ C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Pr
 C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\ref\Program.dll
 C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.pdb
 C:\Users\dasil\Programacion2\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.genruntimeconfig.cache
+<<<<<<< HEAD
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\ref\Program.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.pdb
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.csproj.AssemblyReference.cache
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.AssemblyInfoInputs.cache
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.AssemblyInfo.cs
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.csproj.CoreCompileInputs.cache
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.exe
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.deps.json
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.runtimeconfig.json
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.runtimeconfig.dev.json
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\ref\Program.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.pdb
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.xml
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Nito.AsyncEx.Context.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Nito.AsyncEx.Coordination.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Nito.AsyncEx.Interop.WaitHandles.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Nito.AsyncEx.Oop.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Nito.AsyncEx.Tasks.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Nito.Cancellation.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Nito.Collections.Deque.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Nito.Disposables.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Telegram.Bot.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Telegram.Bot.Extensions.Polling.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Library.dll
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Library.pdb
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Library.xml
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.csproj.CopyComplete
+C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.genruntimeconfig.cache
+=======
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.exe
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.deps.json
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Program\bin\Debug\net5.0\Program.runtimeconfig.json
@@ -62,3 +96,4 @@ C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Program\obj
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\ref\Program.dll
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.pdb
 C:\Users\fede2\OneDrive\Escritorio\Proyectos\PII_2021_2_Equipo11\src\Program\obj\Debug\net5.0\Program.genruntimeconfig.cache
+>>>>>>> 9cc88d31304dbfb139fd554741214fcc7f1ca4af

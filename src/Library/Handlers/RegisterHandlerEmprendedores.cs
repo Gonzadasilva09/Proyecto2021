@@ -43,7 +43,7 @@ namespace Telegram
                     StringBuilder MensajeCompleto = new StringBuilder($"Su direccion es la siguiente: {message.Mensaje}\n");
                     MensajeCompleto.Append("A continuacion seleccione su rubro..\n");
                     int num = 1;
-                    foreach (Rubro rubro in Listas.Instance.listrubro)
+                    foreach (Rubro rubro in Listas.Instance.Listrubro)
                     {
                         MensajeCompleto.Append($"/{num} - {rubro.Name}\n");
                         num++;
@@ -61,10 +61,10 @@ namespace Telegram
                         valores.Add(numero1);
                     }
                     int rubro = (Convert.ToInt32(valores[1]))-1;
-                    StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.listrubro[rubro].Name}\n");
+                    StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.Listrubro[rubro].Name}\n");
                     MensajeCompleto.Append("Su usuario a sido creado con exito\n");
             
-                    Emprendedores emprendedor = new Emprendedores(Listas.Instance.HistorialUser[message.IdUser][1],Listas.Instance.HistorialUser[message.IdUser][2],Listas.Instance.listrubro[rubro],message.IdUser);
+                    Emprendedores emprendedor = new Emprendedores(Listas.Instance.HistorialUser[message.IdUser][1],Listas.Instance.HistorialUser[message.IdUser][2],Listas.Instance.Listrubro[rubro],message.IdUser);
                     MensajeCompleto.Append($"Nombre de usuario: {emprendedor.Name}\n");
                     MensajeCompleto.Append($"Direccion: {emprendedor.Location}\n");
                     MensajeCompleto.Append($"Rubro: {emprendedor.Rubro.Name}\n");

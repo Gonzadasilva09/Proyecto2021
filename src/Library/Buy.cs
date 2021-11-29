@@ -9,12 +9,12 @@ namespace Telegram
     public class BuyOffer
     {
         private static BuyOffer buyoffer;
+        private BuyOffer(){}
         /// <summary>
-        /// Singleton para que solo exista una instancia del catalogo.
+        /// Singleton para que solo exista una instancia ocupada de comprar las ofertas.
         /// </summary>
         /// <returns></returns>
-        private BuyOffer(){}
-       public static BuyOffer Instance
+        public static BuyOffer Instance
         {
             get
             {

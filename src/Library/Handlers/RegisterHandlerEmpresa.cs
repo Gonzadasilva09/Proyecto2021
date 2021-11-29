@@ -28,7 +28,7 @@ namespace Telegram
             //try{
              if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser].Contains("/Empresa") )
              {
-                if (Listas.Instance.Tokens.Contains(message.Mensaje) || Listas.Instance.Tokens.Contains(Listas.Instance.HistorialUser[message.IdUser][1]))
+                if (Listas.Instance.Listtokens.Contains(message.Mensaje) || Listas.Instance.Listtokens.Contains(Listas.Instance.HistorialUser[message.IdUser][1]))
                 {
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") && Listas.Instance.HistorialUser[message.IdUser].Count==1)
                 {
@@ -52,7 +52,7 @@ namespace Telegram
                     StringBuilder MensajeCompleto = new StringBuilder($"Su direccion es la siguiente: {message.Mensaje}\n");
                     MensajeCompleto.Append("A continuacion seleccione su rubro..\n");
                     int num = 1;
-                    foreach (Rubro rubro in Listas.Instance.listrubro)
+                    foreach (Rubro rubro in Listas.Instance.Listrubro)
                     {
                         MensajeCompleto.Append($"/{num} - {rubro.Name}\n");
                         num++;
@@ -70,10 +70,10 @@ namespace Telegram
                         valores.Add(numero1);
                     }
                     int rubro = (Int32.Parse(valores[1]))-1;
-                    StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.listrubro[rubro].Name}\n");
+                    StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.Listrubro[rubro].Name}\n");
                     MensajeCompleto.Append("Su usuario a sido creado con exito\n");
             
-                    Business business = new Business(Listas.Instance.HistorialUser[message.IdUser][2],Listas.Instance.HistorialUser[message.IdUser][3],Listas.Instance.listrubro[rubro],message.IdUser);
+                    Business business = new Business(Listas.Instance.HistorialUser[message.IdUser][2],Listas.Instance.HistorialUser[message.IdUser][3],Listas.Instance.Listrubro[rubro],message.IdUser);
                     MensajeCompleto.Append($"Nombre de usuario: {business.Name}\n");
                     MensajeCompleto.Append($"Direccion: {business.Location}\n");
                     MensajeCompleto.Append($"Rubro: {business.Rubro.Name}\n");

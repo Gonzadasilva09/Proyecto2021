@@ -41,7 +41,7 @@ namespace Telegram
                         Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                         StringBuilder MensajeCompleto = new StringBuilder("Primero necesitaremos las habilitaciones de su empresa...\n");
                         int num = 1;
-                        foreach (Ratings rating in Listas.Instance.listratings)
+                        foreach (Ratings rating in Listas.Instance.Listratings)
                         {
                             MensajeCompleto.Append($"/{num} - {rating.Name}\n");
                             num++;
@@ -79,7 +79,7 @@ namespace Telegram
                         string ratings = message.Mensaje.Replace("/", string.Empty);
                         int rating = Int32.Parse(ratings)-1;
                         Listas.Instance.Utilities.Add(rating);
-                        StringBuilder MensajeCompleto = new StringBuilder($"La habilitacion {Listas.Instance.listratings[rating].Name} se ha añadido a las habilitaciones de la oferta...\n");
+                        StringBuilder MensajeCompleto = new StringBuilder($"La habilitacion {Listas.Instance.Listratings[rating].Name} se ha añadido a las habilitaciones de la oferta...\n");
                         MensajeCompleto.Append($"Desea agregar mas habilitaciones?...\n");
                         MensajeCompleto.Append($"/si\n");
                         MensajeCompleto.Append($"/no\n");
@@ -111,7 +111,7 @@ namespace Telegram
                         Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                         StringBuilder MensajeCompleto = new StringBuilder("Que unidad quiere que tenga su oferta?...\n");
                         int num = 1;
-                        foreach (Units unit in Listas.Instance.UnitList)
+                        foreach (Units unit in Listas.Instance.Listunit)
                         {
                             MensajeCompleto.Append($"/{num} - {unit.Name}\n");
                             num++;
@@ -145,7 +145,7 @@ namespace Telegram
                         Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                         StringBuilder MensajeCompleto = new StringBuilder("Que categoria quiere que tenga su oferta?...\n");
                         int num = 1;
-                        foreach (Category category in Listas.Instance.listcategory)
+                        foreach (Category category in Listas.Instance.Listcategory)
                         {
                             MensajeCompleto.Append($"/{num} - {category.Name}\n");
                             num++;
@@ -171,7 +171,7 @@ namespace Telegram
 
                         Console.WriteLine("Parse int");
 
-                        foreach (Business item in Listas.Instance.Bussiness)
+                        foreach (Business item in Listas.Instance.Listbussiness)
                         {
                             if (message.IdUser == item.ID)
                             {
@@ -185,14 +185,14 @@ namespace Telegram
                                 Console.WriteLine("2");
                                 user.MakeOffer(Listas.Instance.HistorialUser[message.IdUser][1],
                                                 Listas.Instance.HistorialUser[message.IdUser][2],
-                                                Listas.Instance.HistorialUser[message.IdUser][3], Listas.Instance.UnitList[unid],
-                                                cantidad, precio, Listas.Instance.listcategory[cate]);
+                                                Listas.Instance.HistorialUser[message.IdUser][3], Listas.Instance.Listunit[unid],
+                                                cantidad, precio, Listas.Instance.Listcategory[cate]);
 
 
                                 int ratingindex = 0;
                                 foreach (int num in Listas.Instance.Utilities)
                                 {
-                                    user.offersMade.Last().Ratings.Add(Listas.Instance.listratings[ratingindex]);
+                                    user.offersMade.Last().Ratings.Add(Listas.Instance.Listratings[ratingindex]);
                                     ratingindex++;
                                 }
                                 Listas.Instance.Utilities.Clear();

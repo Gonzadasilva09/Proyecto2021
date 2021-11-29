@@ -5281,19 +5281,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fede2\\.nuget\\packages\\": {}
+    "C:\\Users\\Franco De Stefano\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
-      "packagesPath": "C:\\Users\\fede2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fede2\\OneDrive\\Escritorio\\Proyectos\\PII_2021_2_Equipo11\\src\\Library\\obj\\",
+      "projectPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\Library.csproj",
+      "packagesPath": "C:\\Users\\Franco De Stefano\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fede2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Franco De Stefano\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5356,5 +5356,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Library\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
