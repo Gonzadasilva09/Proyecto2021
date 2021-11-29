@@ -1,12 +1,13 @@
 using System;
 using Telegram.Bot;
-using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using Library;
 using Telegram.Bot.Types.Enums;
 using System.IO;
 using System.Text;
-using System.Collections.ObjectModel;
+using Nito.AsyncEx;
+using System.Linq;
+using System.Threading.Tasks;
+using Telegram.Bot.Types.InputFiles;
 
 namespace Telegram
 {
@@ -15,6 +16,7 @@ namespace Telegram
     /// </summary>
     public class SeeOfferHandler : BaseHandler
     {
+         private TelegramBotClient bot;
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
@@ -40,25 +42,40 @@ namespace Telegram
                 int offer = Int32.Parse(oferta)-1;
                 
                 Offer offer1=Catalogo.Instance.AllOffers[offer];
-                string
-            
-                StringBuilder MensajeCompleto = new StringBuilder("Las ofertas publicadas hasta la fecha son:\n");
-                int num=1;
-                foreach (Offer item in Catalogo.Instance.AllOffers)
-                {
-                    
-                    MensajeCompleto.Append($"/{num} - {item.Type} de {item.Product.Quantity} {item.Product.Unit.Name} de {item.Product.Name} valorado en: {item.Product.Price}$\n");
-                    MensajeCompleto.Append("---------------------------------\n");
-                    num++;
-                }
+        
+                StringBuilder MensajeCompleto = new StringBuilder($"{Armadordemensajes.Instance.Veroferta(offer1)}\n");
+                MensajeCompleto.Append(" y su direccion es:");
+                APILocation.Instance.LocationOffer(offer1);
+                // await SendProfileImage(message);
+                
+                AsyncContext.Run(() => SendProfileImage(message));
+                
 
                 response = MensajeCompleto.ToString();
                 return true;
 
             }
-            Console.WriteLine("buscaroferta");
+            Console.WriteLine("Veroferta");
             response = string.Empty;
             return false;
+        }
+        private async Task SendProfileImage(IMessege message)
+        {
+            // Can be null during testing
+            if (bot != null)
+            {
+                await bot.SendChatActionAsync(message.Idchat, ChatAction.UploadPhoto);
+
+                const string filePath = @"profile.jpeg";
+                using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                var fileName = filePath.Split(Path.DirectorySeparatorChar).Last();
+
+                await bot.SendPhotoAsync(
+                    chatId: message.Idchat,
+                    photo: new InputOnlineFile(fileStream, fileName),
+                    caption: "Te ves bien!"
+                );
+            }
         }
     }
 }
