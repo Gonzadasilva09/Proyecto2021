@@ -49,7 +49,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Business.MakeOffer(System.String,Telegram.Ratings,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
+        <member name="M:Telegram.Business.MakeOffer(System.String,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
             <summary>
             Metodo para que una empresa haga una oferta.
             </summary>
@@ -709,7 +709,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="M:Telegram.Offer.#ctor(System.String,Telegram.Ratings,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
+        <member name="M:Telegram.Offer.#ctor(System.String,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
             <summary>
             Constructor de objetos de tipo oferta.
             </summary>
