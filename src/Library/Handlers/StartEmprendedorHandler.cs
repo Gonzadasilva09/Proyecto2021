@@ -33,7 +33,7 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
 
-            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser))
+            if (message.Mensaje.ToLower().Equals("/start") && Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser))
             {
                 if (!Listas.Instance.HistorialUser.ContainsKey(message.IdUser))
                 {

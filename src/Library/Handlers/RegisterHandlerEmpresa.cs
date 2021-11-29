@@ -31,7 +31,9 @@ namespace Telegram
 
                 if ((Listas.Instance.Listtokens.Contains(message.Mensaje)) || Listas.Instance.TokenVerified[message.IdUser])
                 {
+                    if (!Listas.Instance.TokenVerified.ContainsKey(message.IdUser)){
                     Listas.Instance.VerifyToken(message.IdUser, true);
+                    }
                     if (Listas.Instance.Listtokens.Contains(message.Mensaje) || Listas.Instance.Listtokens.Contains(Listas.Instance.HistorialUser[message.IdUser][1]))
                     {
                         if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") && Listas.Instance.HistorialUser[message.IdUser].Count == 1)
