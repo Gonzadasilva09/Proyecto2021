@@ -24,6 +24,8 @@ namespace Telegram
         static void Main()
         {
 
+            lista.Cargarlistas();
+            catalogo.cargaroffer();
 
 
             Listas.Instance.Listtokens.Add("TokenTest");
