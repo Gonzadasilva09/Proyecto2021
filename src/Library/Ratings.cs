@@ -14,23 +14,25 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public string Description{get;set;}
-        
+
         /// <summary>
         /// Obtiene o establece el nombre de una habilitacion.
         /// </summary>
         /// <value></value>
         public string Name{ get; set; }
-        
+
         /// <summary>
         /// Constructor de habilitaciones.
         /// </summary>
         /// <param name="description"></param>
         /// <param name="name"></param>
         public Ratings(string description, string name){
-
-            this.Description = description;
-            this.Name = name;
-            Listas.Instance.Listratings.Add(this);
+            if (Existeratingparacrear(name))
+            {
+                this.Description = description;
+                this.Name = name;
+                Listas.Instance.Listratings.Add(this);;
+            }
         }
         /// <summary>
         /// Metodo que añade habilitaciones nuevas a la lista.
@@ -44,6 +46,17 @@ namespace Telegram
         public static void Deleterating(Ratings rating)
         {
             Listas.Instance.Listratings.Remove(rating);
+        }
+        private bool Existeratingparacrear(string name)
+        {
+            foreach (Ratings ratings in Listas.Instance.Listratings)
+            {
+                if (ratings.Name == name)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
