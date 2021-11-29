@@ -28,17 +28,16 @@ namespace Telegram
         /// Metodo para que una empresa haga una oferta.
         /// </summary>
         /// <param name="location"></param>
-        /// <param name="ratings"></param>
         /// <param name="type"></param>
         /// <param name="prodname"></param>
         /// <param name="prodquantity"></param>
         /// <param name="produnit"></param>
         /// <param name="prodprice"></param>
         /// <param name="categories"></param>
-        public void MakeOffer(string location,Ratings ratings, string type, string prodname, Units produnit, int prodquantity, int prodprice,Category categories)
+        public void MakeOffer(string location, string type, string prodname, Units produnit, int prodquantity, int prodprice,Category categories)
         {
             
-            Offer offer = new Offer(location,ratings, type, prodname,produnit, prodquantity,  prodprice, categories);
+            Offer offer = new Offer(location, type, prodname,produnit, prodquantity,  prodprice, categories);
             offersMade.Add(offer);
             Catalogo.Instance.AllOffers.Add(offer);
         }

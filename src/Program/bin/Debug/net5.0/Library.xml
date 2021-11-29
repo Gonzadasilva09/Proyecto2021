@@ -49,12 +49,11 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Business.MakeOffer(System.String,Telegram.Ratings,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
+        <member name="M:Telegram.Business.MakeOffer(System.String,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
             <summary>
             Metodo para que una empresa haga una oferta.
             </summary>
             <param name="location"></param>
-            <param name="ratings"></param>
             <param name="type"></param>
             <param name="prodname"></param>
             <param name="prodquantity"></param>
@@ -174,6 +173,25 @@
             Metodo encargado de efectuar la compra de parte del emprendedor.
             </summary>
             <param name="Offer"></param>
+        </member>
+        <member name="T:Telegram.AddRatingHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="M:Telegram.AddRatingHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.AddRatingHandler"/>. Esta clase procesa el mensaje "hola".
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.AddRatingHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
         <member name="T:Telegram.BaseHandler">
             <summary>
@@ -460,6 +478,9 @@
             Metodo encargado de guardar toda la informacion almacenada en Listas. En los json correspondientes a cada sub-lista.
             </summary>
         </member>
+        <member name="F:Telegram.Listas.Tokens">
+            <returns></returns>
+        </member>
         <member name="M:Telegram.Listas.Cargarlistas">
             <summary>
             Metodo encargado de incorporar toda la informacion existente al finalizar la sesión anterior. En los json correspondientes a cada sub-lista.
@@ -732,12 +753,11 @@
             </summary>
             <value></value>
         </member>
-        <member name="M:Telegram.Offer.#ctor(System.String,Telegram.Ratings,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
+        <member name="M:Telegram.Offer.#ctor(System.String,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
             <summary>
             Constructor de objetos de tipo oferta.
             </summary>
             <param name="location"></param>
-            <param name="rating"></param>
             <param name="categories"></param>
             <param name="type"></param>
             <param name="productname"></param>

@@ -133,9 +133,17 @@ namespace Telegram{
     private void Serializaruser()
     {
         string json = JsonSerializer.Serialize<List<IUser>>(listas.Listuser);
-        Console.WriteLine(json);
+        /*Console.WriteLine(json);*/
         System.IO.File.WriteAllText(@"Usuarios.json", json);
     }
+    /// <returns></returns>
+    public List<string> Tokens = new List<string>();
+
+    public List<int> Utilities = new List<int>();
+
+    public Dictionary<string, Emprendedores> EmprendedoresKey = new Dictionary<string, Emprendedores>();
+
+    public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
 
     private void Serializarunit()
     {

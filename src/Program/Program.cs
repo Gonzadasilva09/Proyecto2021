@@ -8,6 +8,7 @@ using Telegram.Bot.Types.Enums;
 using Library;
 
 
+
 namespace Telegram
 {
         public static class Program{
@@ -23,43 +24,29 @@ namespace Telegram
         {
             lista.Cargarlistas();
             catalogo.cargaroffer();
-            Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
-            Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
-            Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
-            Rubro rubro3= new Rubro("el cuqui","POLITICA");
-            Rubro rubro4= new Rubro("parque roosvelt","SERVICIOS");
+            string hola="/3";
+            string hola2 = hola.Replace("/",string.Empty);
+            int num = (Convert.ToInt32(hola2))-1;
+            Console.WriteLine(hola2);
+            Console.WriteLine(num);
 
-            Ratings rati1= new Ratings("habilitacion importante","HABILITACION 1");
-            Ratings rati2= new Ratings("habilitacion importante","HABILITACION 2");
-            Ratings rati3= new Ratings("habilitacion importante","HABILITACION 3");
-            Ratings rati4= new Ratings("habilitacion importante","HABILITACION 4");
-            Ratings rati5= new Ratings("habilitacion importante","HABILITACION 5");
+
+            Listas.Instance.Tokens.Add("TokenTest");
             
-            Units unit3 = new Units("Unidad/es");
-            Units unit = new Units("Kilogramos");
-            Units unit2 = new Units("Litros");
-            Units unit4= new Units("Metros");
 
-            Category categoria= new Category("Tecnologia","descripcion"); 
-            Category categoria2= new Category("Materia Prima","descripcion");
-            Category categoria3= new Category("Plasticos","descripcion");
-            Category categoria4= new Category("Papel y Carton","descripcion");
-            Category categoria5= new Category("Telas","descripcion");
-            Category categoria6= new Category("Viveres","descripcion");
-            Category categoria7= new Category("Biodegradables","descripcion");
-            Category categoria8= new Category("Desechos peligrosos","descripcion");
-            Category categoria9= new Category("Otros","descripcion");
-
-            Listas.Instance.Listtokens.Add("TokenTest");
-
-            //Business empresa = new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");
+           /*Business empresa = new Business("Gonzalo Da Silva", "direccion",rubro2,"1603877597");*/
+           /*Listas.Instance.Accion("1603877597");
+           Listas.Instance.BusinessKey.Add("1603877597",empresa);*/
             //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");
 
-            //Emprendedores gonza=new Emprendedores("Gonza", "Mi casa", rubro2,"1603877597");
+            
+
+            //gonza.AddRatings(rati1);
+            //Console.WriteLine(gonza.Listratings[0].Name);
 
             Bot = new TelegramBotClient(TelegramToken);
             
-            handler1 = new CancelHandler(new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new OfferHandler(null))))))));
+            handler1 = new CancelHandler(new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new AddRatingHandler( new OfferHandler(null)))))))));
             
             var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes
