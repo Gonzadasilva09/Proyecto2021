@@ -51,10 +51,6 @@ namespace Telegram
             {
                 string json = System.IO.File.ReadAllText(@"Ofertas.json");
                 List<Offer> listavieja= JsonSerializer.Deserialize<List<Offer>>(json);
-                foreach (Offer offer in listavieja)
-                {
-                this.AllOffers.Add(offer);
-                }
             }
     }
     }

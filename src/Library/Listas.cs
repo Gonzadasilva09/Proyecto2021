@@ -80,9 +80,21 @@ namespace Telegram{
     /// Metodo para agregar el id de los usuarios.
     /// </summary>
     /// <param name="ID"></param>
+    
+    public Dictionary<string,Collection<int>> Utilities = new Dictionary<string,Collection<int>>();
+
+    public Dictionary<string, Emprendedores> EmprendedoresKey = new Dictionary<string, Emprendedores>();
+
+    public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
+    //public Dictionary<string, Admin> AdminKey = new Dictionary<string, Admin>();
     public void Accion(string ID){
         
         this.HistorialUser.Add(ID,new Collection<string>());
+
+    }
+    public void CrearUtilities(string ID){
+        
+        this.Utilities.Add(ID,new Collection<int>());
 
     }
     public List<string> BusinessID = new List<string>();
@@ -137,13 +149,7 @@ namespace Telegram{
         System.IO.File.WriteAllText(@"Usuarios.json", json);
     }
     /// <returns></returns>
-    public List<string> Tokens = new List<string>();
-
-    public List<int> Utilities = new List<int>();
-
-    public Dictionary<string, Emprendedores> EmprendedoresKey = new Dictionary<string, Emprendedores>();
-
-    public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
+    
 
     private void Serializarunit()
     {
@@ -177,10 +183,7 @@ namespace Telegram{
         {
             string json = System.IO.File.ReadAllText(@"Empresas.json");
             List<Business> listavieja= JsonSerializer.Deserialize<List<Business>>(json);
-            foreach (Business business in listavieja)
-            {
-            listas.Listbussiness.Add(business);
-            }
+        
         }
     }
     private void Deserializaremprendedores()
@@ -189,10 +192,7 @@ namespace Telegram{
         {
             string json = System.IO.File.ReadAllText(@"Emprendedores.json");
             List<Emprendedores> listavieja= JsonSerializer.Deserialize<List<Emprendedores>>(json);
-            foreach (Emprendedores emprendedores in listavieja)
-            {
-            listas.Listemprendedores.Add(emprendedores);
-            }
+         
         }
     }
     private void Deserializarrubros()
@@ -201,10 +201,7 @@ namespace Telegram{
         {
             string json = System.IO.File.ReadAllText(@"Rubros.json");
             List<Rubro> listavieja= JsonSerializer.Deserialize<List<Rubro>>(json);
-            foreach (Rubro rubro in listavieja)
-            {
-            listas.Listrubro.Add(rubro);
-            }
+       
         }
     }
     private void Deserializarratings()
@@ -213,10 +210,7 @@ namespace Telegram{
         {
             string json = System.IO.File.ReadAllText(@"Habilitaciones.json");
             List<Ratings> listavieja= JsonSerializer.Deserialize<List<Ratings>>(json);
-            foreach (Ratings habilitaciones in listavieja)
-            {
-            listas.Listratings.Add(habilitaciones);
-            }
+        
         }
     }
     private void Deserializartokens()
@@ -225,10 +219,7 @@ namespace Telegram{
         {
             string json = System.IO.File.ReadAllText(@"Tokens.json");
             List<string> listavieja= JsonSerializer.Deserialize<List<string>>(json);
-            foreach (string tokens in listavieja)
-            {
-            listas.Listtokens.Add(tokens);
-            }
+          
         }
     }
     private void Deserializaruser()
@@ -237,10 +228,7 @@ namespace Telegram{
         {
             string json = System.IO.File.ReadAllText(@"User.json");
             List<IUser> listavieja= JsonSerializer.Deserialize<List<IUser>>(json);
-            foreach (IUser usuarios in listavieja)
-            {
-            listas.Listuser.Add(usuarios);
-            }
+          
         }
     }
     private void Deserializarunit()
@@ -249,10 +237,7 @@ namespace Telegram{
         {
             string json = System.IO.File.ReadAllText(@"Unidades.json");
             List<Units> listavieja= JsonSerializer.Deserialize<List<Units>>(json);
-            foreach (Units units in listavieja)
-            {
-            listas.Listunit.Add(units);
-            }
+           
         }
     }
     private void Deserializarcategory()
@@ -260,11 +245,8 @@ namespace Telegram{
         if (System.IO.File.Exists(@"Categorias.json"))
         {
             string json = System.IO.File.ReadAllText(@"Categorias.json");
-            List<Business> listavieja= JsonSerializer.Deserialize<List<Business>>(json);
-            foreach (Business business in listavieja)
-            {
-            listas.Listbussiness.Add(business);
-            }
+            List<Category> listavieja= JsonSerializer.Deserialize<List<Category>>(json);
+           
         }
     }
 }

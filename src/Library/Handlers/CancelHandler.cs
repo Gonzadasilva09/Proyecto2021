@@ -21,7 +21,7 @@ namespace Telegram
         /// <param name="next">El próximo "handler".</param>
         public CancelHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/cancelar"};
+            this.Keywords = new string[] { "/cancelar" };
         }
 
         /// <summary>
@@ -32,9 +32,9 @@ namespace Telegram
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            
+
             if (message.Mensaje.ToLower().Equals("/cancelar"))
-            {   
+            {
                 Listas.Instance.HistorialUser[message.IdUser].Clear();
                 StringBuilder MensajeCompleto = new StringBuilder("Se ha cancelado la operación actual.\n");
                 MensajeCompleto.Append("Para volver al menu principal utilize /start. \n");
