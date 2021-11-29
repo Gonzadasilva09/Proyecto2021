@@ -34,7 +34,6 @@ namespace Telegram
                 {
 
                     Listas.Instance.HistorialUser[message.IdUser].Add("/crearoferta");
-                    Console.WriteLine("oferta");
                 }
 
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/crearoferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 1 && !(message.Mensaje == "/no"))
@@ -49,9 +48,6 @@ namespace Telegram
                     }
                     response = MensajeCompleto.ToString();
                     return true;
-                    /*StringBuilder MensajeCompleto = new StringBuilder("Primero necesitamos la direccion de la oferta\n");
-                    response = MensajeCompleto.ToString();
-                    return true;*/
                 }
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/crearoferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 2 && message.Mensaje == "/no")
                 {
@@ -59,10 +55,17 @@ namespace Telegram
                     if (Listas.Instance.HistorialUser[message.IdUser].Contains("/Continuar"))
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Remove("/Continuar");
+                        Listas.Instance.HistorialUser[message.IdUser].Add("Filler");
+                        Listas.Instance.HistorialUser[message.IdUser].Add("Filler");
                     }
+                    if (Listas.Instance.HistorialUser[message.IdUser].Count < 3)
+                    {
+                        while (Listas.Instance.HistorialUser[message.IdUser].Count < 3)
+                        {
+                            Listas.Instance.HistorialUser[message.IdUser].Add("Filler");
 
-                    Listas.Instance.HistorialUser[message.IdUser].Add("Filler");
-                    Listas.Instance.HistorialUser[message.IdUser].Add("Filler2");
+                        }
+                    }
                     StringBuilder MensajeCompleto = new StringBuilder("Ahora necesitamos la direccion de la oferta\n");
                     response = MensajeCompleto.ToString();
                     return true;
@@ -77,12 +80,23 @@ namespace Telegram
                     response = MensajeCompleto.ToString();
                     return true;
                 }
-                if (!(message.Mensaje == "/crearoferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 2 && Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/crearoferta") && !(message.Mensaje == "/no"))
+                if (Listas.Instance.PossibleRatings.Count < 1)
                 {
-                    Console.WriteLine("Pre Parse");
+                    int contador = 1;
+                    foreach (var rating in Listas.Instance.Listratings)
+                    {
+                        Listas.Instance.PossibleRatings.Add($"/{contador}");
+                        contador++;
+                    }
+                }
+                if (!(message.Mensaje == "/crearoferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 2 && Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/crearoferta") && Listas.Instance.PossibleRatings.Contains(message.Mensaje))
+                {
                     string ratings = message.Mensaje.Replace("/", string.Empty);
                     int rating = Int32.Parse(ratings) - 1;
-                    Listas.Instance.CrearUtilities(message.IdUser);
+                    if (!Listas.Instance.Utilities.ContainsKey(message.IdUser))
+                    {
+                        Listas.Instance.CrearUtilities(message.IdUser);
+                    }
                     Listas.Instance.Utilities[message.IdUser].Add(rating);
                     StringBuilder MensajeCompleto = new StringBuilder($"La habilitacion {Listas.Instance.Listratings[rating].Name} se ha añadido a las habilitaciones de la oferta...\n");
                     MensajeCompleto.Append($"Desea agregar mas habilitaciones?...\n");
@@ -160,21 +174,22 @@ namespace Telegram
                 }
                 if (Listas.Instance.HistorialUser[message.IdUser].Count == 9 && Listas.Instance.HistorialUser[message.IdUser][0] == "/crearoferta")
                 {
-                    Listas.Instance.HistorialUser[message.IdUser].Remove("Filler");
-                    Listas.Instance.HistorialUser[message.IdUser].Remove("Filler2");
+                    if (Listas.Instance.HistorialUser[message.IdUser].Contains("Filler"))
+                    {
+                        Listas.Instance.HistorialUser[message.IdUser].Remove("Filler");
+                    }
                     string category = message.Mensaje.Replace("/", string.Empty);
                     Listas.Instance.HistorialUser[message.IdUser].Add(category);
 
-                    int cantidad = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][5]));
-                    int precio = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][6]));
-                    int unid = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][4])) - 1;
-                    int cate = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][7])) - 1;
+                    int cantidad = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][6]));
+                    int precio = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][7]));
+                    int unid = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][5])) - 1;
+                    int cate = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][8])) - 1;
                     Console.WriteLine(cantidad);
                     Console.WriteLine(precio);
                     Console.WriteLine(unid);
                     Console.WriteLine(cate);
 
-                    Console.WriteLine("Parse int");
 
                     foreach (Business item in Listas.Instance.Listbussiness)
                     {
@@ -189,9 +204,9 @@ namespace Telegram
                             }
 
                             Console.WriteLine("2");
-                            user.MakeOffer(Listas.Instance.HistorialUser[message.IdUser][1],
-                                            Listas.Instance.HistorialUser[message.IdUser][2],
-                                            Listas.Instance.HistorialUser[message.IdUser][3], Listas.Instance.Listunit[unid],
+                            user.MakeOffer(Listas.Instance.HistorialUser[message.IdUser][2],
+                                            Listas.Instance.HistorialUser[message.IdUser][3],
+                                            Listas.Instance.HistorialUser[message.IdUser][4], Listas.Instance.Listunit[unid],
                                             cantidad, precio, Listas.Instance.Listcategory[cate]);
 
 
@@ -202,7 +217,6 @@ namespace Telegram
                                 ratingindex++;
                             }
                             Listas.Instance.Utilities.Clear();
-                            Console.WriteLine("Creo oferta");
                             StringBuilder MensajeCompleto = new StringBuilder($"Su oferta de {user.offersMade.Last().Product.Name} a sido creada...\n");
                             MensajeCompleto.Append($"Nombre del material publicado: {user.offersMade.Last().Product.Name}\n");
                             MensajeCompleto.Append($"Tipo de oferta: {user.offersMade.Last().Type}\n");
@@ -216,10 +230,11 @@ namespace Telegram
                             }
 
                             MensajeCompleto.Append($"\nY Pertence a la cateogoria: {user.offersMade.Last().Product.Categories.Name}\n");
+                            MensajeCompleto.Append("Para volver al menu principal utilize /start. \n");
+
 
                             Listas.Instance.HistorialUser.Remove(message.IdUser);
                             Listas.Instance.Accion(message.IdUser);
-                            Console.WriteLine("Funciono joya");
 
                             response = MensajeCompleto.ToString();
                             return true;
@@ -230,7 +245,6 @@ namespace Telegram
 
                 }
             }
-
             response = string.Empty;
             return false;
 
@@ -239,7 +253,6 @@ namespace Telegram
 
 
 
-        //Console.WriteLine("Offer");
 
     }
 }

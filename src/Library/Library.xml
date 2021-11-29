@@ -505,7 +505,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Listas.Accion(System.String)">
+        <member name="F:Telegram.Listas.Utilities">
             <summary>
             Metodo para agregar el id de los usuarios.
             </summary>
@@ -516,7 +516,7 @@
             Metodo encargado de guardar toda la informacion almacenada en Listas. En los json correspondientes a cada sub-lista.
             </summary>
         </member>
-        <member name="F:Telegram.Listas.Utilities">
+        <member name="M:Telegram.Listas.Serializarunit">
             <returns></returns>
         </member>
         <member name="M:Telegram.Listas.Cargarlistas">

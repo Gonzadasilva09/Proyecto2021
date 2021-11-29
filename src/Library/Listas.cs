@@ -28,6 +28,13 @@ namespace Telegram{
                 return listas;
             }
         }
+    public Dictionary<string,bool> TokenVerified = new Dictionary<string,bool>();
+     public void VerifyToken(string ID, bool tokenstatus){
+        
+        this.TokenVerified.Add(ID, tokenstatus);
+
+    }
+    
     /// <summary>
     /// Lista que contiene todas las categorias disponibles.
     /// </summary>
@@ -71,6 +78,8 @@ namespace Telegram{
     /// </summary>
     /// <returns></returns>
     public List<string> Listtokens = new List<string>();
+
+    public List<string> PossibleRatings = new List<string>();
     /// <summary>
     /// Diccionario encargado de guardar las interacciones de los usuarios con el bot.
     /// </summary>
@@ -249,5 +258,6 @@ namespace Telegram{
            
         }
     }
+
 }
 }

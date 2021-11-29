@@ -47,7 +47,7 @@ namespace Telegram
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Clear();
                         Listas.Instance.HistorialUser[message.IdUser].Add("/emprendedor");
-                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como emprendedor, por favor ingrese los siguientes datos que le solicitaremos\n");
+                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como emprendedor, por favor ingrese los siguientes datos...\n");
                         MensajeCompleto.Append("Ingrese su nombre de Usuario:\n");
                         response =MensajeCompleto.ToString();
                         return true;
@@ -62,14 +62,8 @@ namespace Telegram
                 }
              }
             response = string.Empty;
-            Console.WriteLine("SignUpHandler");
             return false;
-           /* }
-            catch
-            {
-            response = string.Empty;
-            return false;
-            }*/
+
         }
     }
 }

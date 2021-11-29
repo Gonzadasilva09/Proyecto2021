@@ -37,12 +37,14 @@ namespace Telegram
             {   
             
                 StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
+                if (!Listas.Instance.HistorialUser.ContainsKey(message.IdUser))
+                {
                 Listas.Instance.Accion(message.IdUser);
-                MensajeCompleto.Append("Usted no se a registrado por favor ejecutar el comando /registrarse \n");
+                }
+                MensajeCompleto.Append("Usted no está registrado, por favor ejecutar el comando /registrarse \n");
                 response = MensajeCompleto.ToString();
                 return true;
             }
-            Console.WriteLine("StartHandler");
             response = string.Empty;
             return false;
         }

@@ -85,7 +85,6 @@ namespace Telegram
                     return true;
                  }
             }
-            Console.WriteLine("AgregarHabilitacionHandler");
             response = string.Empty;
             return false;
         }
