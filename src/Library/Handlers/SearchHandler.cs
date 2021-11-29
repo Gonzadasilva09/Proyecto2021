@@ -35,7 +35,6 @@ namespace Telegram
             
             if (this.CanHandle(message))
             {   
-                Listas.Instance.Accion(message.IdUser);
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Para buscar ofertas primero seleccione el tipo de busqueda...\n");
                 MensajeCompleto.Append("/1 Ver todas las ofertas \n");

@@ -27,8 +27,14 @@ namespace Telegram
             lista.Cargarlistas();
             catalogo.cargaroffer();
 
+            Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
+            Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
+            Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
+            Rubro rubro3= new Rubro("el cuqui","POLITICA");
+            Rubro rubro4= new Rubro("parque roosvelt","SERVICIOS");
 
-            Listas.Instance.Listtokens.Add("TokenTest");
+
+            //Listas.Instance.Listtokens.Add("TokenTest");
             foreach (Units item in Listas.Instance.Listunit)
             {
                 Console.WriteLine(item.Name);
@@ -43,7 +49,7 @@ namespace Telegram
 
             Bot = new TelegramBotClient(TelegramToken);
 
-            handler1 = new CancelHandler(new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new AddRatingHandler(new OfferHandler(null)))))))));
+            handler1 = new CancelHandler(new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new AddRatingHandler(new OfferHandler(new SearchHandler(new AllOfferHandler(null)))))))))));
 
             var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes

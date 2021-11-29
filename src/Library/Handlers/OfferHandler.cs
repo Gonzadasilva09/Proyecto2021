@@ -55,8 +55,8 @@ namespace Telegram
                     if (Listas.Instance.HistorialUser[message.IdUser].Contains("/Continuar"))
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Remove("/Continuar");
-                        Listas.Instance.HistorialUser[message.IdUser].Add("Filler");
-                        Listas.Instance.HistorialUser[message.IdUser].Add("Filler");
+                        /*Listas.Instance.HistorialUser[message.IdUser].Add("Filler");
+                        Listas.Instance.HistorialUser[message.IdUser].Add("Filler");*/
                     }
                     if (Listas.Instance.HistorialUser[message.IdUser].Count < 3)
                     {
