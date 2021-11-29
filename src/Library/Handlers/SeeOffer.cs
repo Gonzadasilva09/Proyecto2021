@@ -13,15 +13,15 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class AllOfferHandler : BaseHandler
+    public class SeeOfferHandler : BaseHandler
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
-        public AllOfferHandler(BaseHandler next) : base(next)
+        public SeeOfferHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/1"};
+            this.Keywords = new string[] {"/veroferta"};
         }
 
         /// <summary>
@@ -33,9 +33,15 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (this.CanHandle(message) && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta"))
+            if (Listas.Instance.HistorialUser[message.IdUser].Contains("/todaslasofertas") && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta"))
             {   
-                Listas.Instance.HistorialUser[message.IdUser].Add("/todaslasofertas");
+                Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                string oferta=message.Mensaje.Replace("/",string.Empty);
+                int offer = Int32.Parse(oferta)-1;
+                
+                Offer offer1=Catalogo.Instance.AllOffers[offer];
+                string
+            
                 StringBuilder MensajeCompleto = new StringBuilder("Las ofertas publicadas hasta la fecha son:\n");
                 int num=1;
                 foreach (Offer item in Catalogo.Instance.AllOffers)
