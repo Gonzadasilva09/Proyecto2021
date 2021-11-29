@@ -40,7 +40,7 @@ namespace Telegram
             
             Offer offer = new Offer(location, type, prodname,produnit, prodquantity,  prodprice, categories);
             offersMade.Add(offer);
-            Catalogo.Instance.AllOffers.Add(offer);
+            
         }
         /// <summary>
         /// Lista que contiene todas las ofertas hechas por la empresa.

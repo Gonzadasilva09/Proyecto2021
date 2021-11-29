@@ -177,14 +177,15 @@ namespace Telegram{
     /// </summary>
     public void Cargarlistas()
     {
-        Deserializarbussiness();
-        Deserializaremprendedores();
+        
         Deserializarrubros();
         Deserializarratings();
         Deserializartokens();
         Deserializaruser();
         Deserializarunit();
         Deserializarcategory();
+        Deserializarbussiness();
+        Deserializaremprendedores();
     }
         private void Deserializarbussiness()
     {
@@ -228,6 +229,10 @@ namespace Telegram{
         {
             string json = System.IO.File.ReadAllText(@"Tokens.json");
             List<string> listavieja= JsonSerializer.Deserialize<List<string>>(json);
+            foreach (string token in listavieja)
+            {
+            listas.Listtokens.Add(token);
+            }
           
         }
     }

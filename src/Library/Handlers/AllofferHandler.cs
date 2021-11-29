@@ -33,7 +33,7 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (this.CanHandle(message) && Listas.Instance.HistorialUser[message.Mensaje].Contains("/buscaroferta"))
+            if (this.CanHandle(message) && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta"))
             {   
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Las ofertas publicadas hasta la fecha son:\n");
