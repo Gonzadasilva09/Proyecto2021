@@ -78,7 +78,7 @@ namespace Telegram{
     /// <returns></returns>
     public List<string> Tokens = new List<string>();
 
-    public List<string> BusinessID = new List<string>();
+    public List<int> Utilities = new List<int>();
 
     public Dictionary<string, Emprendedores> EmprendedoresKey = new Dictionary<string, Emprendedores>();
 
