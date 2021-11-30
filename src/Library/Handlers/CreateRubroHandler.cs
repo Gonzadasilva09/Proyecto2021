@@ -52,7 +52,7 @@ namespace Telegram
                 }
                 if (Listas.Instance.HistorialUser[message.IdUser].Count == 2)
                 {
-                    Listas.Instance.AdminKey[message.IdUser].CreateRubro(Listas.Instance.HistorialUser[message.IdUser][1], message.Mensaje);
+                    Listas.Instance.CreateRubro(Listas.Instance.HistorialUser[message.IdUser][1], message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder("El rubro ha sido creado");
                     Listas.Instance.HistorialUser.Remove(message.IdUser);
                     Listas.Instance.Accion(message.IdUser);
