@@ -50,7 +50,9 @@ namespace Telegram
 
                     Listas.Instance.HistorialUser[message.IdUser].Add("/registrarse");
 
-                    StringBuilder MensajeCompleto = new StringBuilder("Desea registrarse como /Empresa o como /Emprendedor...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Puede registrarse como:\n");
+                    MensajeCompleto.Append("/Empresa o /Emprendedor\n");
+                    MensajeCompleto.Append("Para poder registrarse como empresa necesitará un token, si no posee uno, contacte con un administrador para obtenerlo.\n");
 
                     response = MensajeCompleto.ToString();
                     return true;
@@ -62,7 +64,7 @@ namespace Telegram
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Clear();
                         Listas.Instance.HistorialUser[message.IdUser].Add("/emprendedor");
-                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como emprendedor, por favor ingrese los siguientes datos...\n");
+                        StringBuilder MensajeCompleto = new StringBuilder($"Será registrado como emprendedor\n\n\nPor favor complete los datos que se le pedirán a continuacion.\n");
                         MensajeCompleto.Append("Ingrese su nombre de Usuario:\n");
                         response = MensajeCompleto.ToString();
                         return true;
@@ -72,7 +74,7 @@ namespace Telegram
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Clear();
                         Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como Empresa, ingrese por favor su token de verificacion...\n");
+                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como Empresa\n\n\nIngrese su token de identificación.\n");
                         response = MensajeCompleto.ToString();
                         return true;
                     }

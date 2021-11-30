@@ -4,6 +4,48 @@
         <name>Library</name>
     </assembly>
     <members>
+        <member name="T:Telegram.Admin">
+            <summary>
+            Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
+            </summary>
+        </member>
+        <member name="M:Telegram.Admin.#ctor(System.String,System.String,Telegram.Rubro,System.String)">
+            <summary>
+            Constructor de objetos de tipo Admin.
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="rubro"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Admin.CreateToken(System.String)">
+            <summary>
+            Metodo de admin para crear un token.
+            </summary>
+            <param name="token"></param>
+        </member>
+        <member name="M:Telegram.Admin.CreateRating(System.String,System.String)">
+            <summary>
+            Metodo de admin para crear nuevas habilitaciones.
+            </summary>
+            <param name="descripcion"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Admin.CreateRubro(System.String,System.String)">
+            <summary>
+            Metodo de admin para crear nuevos rubros.
+            </summary>
+            <param name="descripcion"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Admin.CreateCategory(System.String,System.String)">
+            <summary>
+            Metodo de admin para crear nuevas categorias.
+            </summary>
+            <param name="name"></param>
+            <param name="descripcion"></param>
+        </member>
         <member name="T:Telegram.APILocation">
             <summary>
             Clase encargada de interactuar con la ApiLocation
@@ -49,7 +91,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Telegram.Business.MakeOffer(System.String,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
+        <member name="M:Telegram.Business.MakeOffer(System.String,System.String,System.String,Telegram.Units,System.Int32,System.String,Telegram.Category)">
             <summary>
             Metodo para que una empresa haga una oferta.
             </summary>
@@ -305,6 +347,82 @@
             <param name="response">La respuesta al mensaje procesado.</param>
             <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
+        <member name="T:Telegram.CreateCategoryHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que utiliza el comando "/createcategoria", este handler permite al admin crear nuevas categorias.
+            </summary>
+        </member>
+        <member name="M:Telegram.CreateCategoryHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.StartHandler"/>. Esta clase procesa el mensaje "/Crearcaategoria"
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.CreateCategoryHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "/crearcategoria" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
+        <member name="T:Telegram.CreateRatingHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que utiliza el comando "/crearhabilitacion", este handler permite al admin crear nuevos ratings.
+            </summary>
+        </member>
+        <member name="M:Telegram.CreateRatingHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.StartHandler"/>. Esta clase procesa el mensaje "/crearhabilitacion"
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.CreateRatingHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "/crearhabilitacion" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
+        <member name="T:Telegram.CreateRubroHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que utiliza el comando "/createrubro", este handler permite al admin crear nuevos rubros.
+            </summary>
+        </member>
+        <member name="M:Telegram.CreateRubroHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.StartHandler"/>. Esta clase procesa el mensaje "/Crearcaategoria"
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.CreateRubroHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "/crearrubro" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
+        <member name="T:Telegram.CreateTokenHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que utiliza el comando "/creartoken", este handler permite al admin crear nuevos tokens.
+            </summary>
+        </member>
+        <member name="M:Telegram.CreateTokenHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.StartHandler"/>. Esta clase procesa el mensaje "/crearetoken"
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.CreateTokenHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "/start" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "T:Telegram.IHandler" -->
         <member name="P:Telegram.IHandler.Next">
             <summary>
@@ -463,6 +581,25 @@
             <param name="response">La respuesta al mensaje procesado.</param>
             <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
+        <member name="T:Telegram.StartAdminHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que utiliza el comando "/start", este handler se dedica a mostrar el menu a usuarios de tipo admin.
+            </summary>
+        </member>
+        <member name="M:Telegram.StartAdminHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.StartHandler"/>. Esta clase procesa el mensaje "/start"
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.StartAdminHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "/start" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
         <member name="T:Telegram.StartEmpresaHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que utiliza el comando "/start", este handler se dedica a mostrar el menu a usuarios de tipo empresa.
@@ -589,6 +726,18 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="F:Telegram.Listas.Listadmin">
+            <summary>
+            Lista que contiene todoas los admins creados.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.Listemprendedores">
+            <summary>
+            Lista que contiene todos los emprendedores creados.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="F:Telegram.Listas.Listratings">
             <summary>
             Lista que contiene todas las habilitaciones disponibles.
@@ -610,12 +759,6 @@
         <member name="F:Telegram.Listas.Listbussiness">
             <summary>
             Lista que contiene todas las empresas creadas.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="F:Telegram.Listas.Listemprendedores">
-            <summary>
-            Lista que contiene todos los emprendedores creados.
             </summary>
             <returns></returns>
         </member>
@@ -650,6 +793,13 @@
             </summary>
             <param name="ID"></param>
         </member>
+        <!-- Badly formed XML comment ignored for member "F:Telegram.Listas.AdminKey" -->
+        <member name="M:Telegram.Listas.Accion(System.String)">
+            <summary>
+            Metodo para agregar el id de los usuarios al diccionario HistorialUser.
+            </summary>
+            <param name="ID"></param>
+        </member>
         <member name="F:Telegram.Listas.EmprendedoresKey">
             <summary>
             Diccionario utilizado para almacenar instancias de emprendedor asociadas a cierta ID.
@@ -663,14 +813,8 @@
             Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
             </summary>
             <typeparam name="string"></typeparam>
-            <typeparam name="Emprendedores"></typeparam>
+            <typeparam name="Business"></typeparam>
             <returns></returns>
-        </member>
-        <member name="M:Telegram.Listas.Accion(System.String)">
-            <summary>
-            Metodo para agregar el id de los usuarios al diccionario HistorialUser.
-            </summary>
-            <param name="ID"></param>
         </member>
         <member name="M:Telegram.Listas.CrearUtilities(System.String)">
             <summary>
@@ -682,9 +826,6 @@
             <summary>
             Metodo encargado de guardar toda la informacion almacenada en Listas. En los json correspondientes a cada sub-lista.
             </summary>
-        </member>
-        <member name="M:Telegram.Listas.Serializarunit">
-            <returns></returns>
         </member>
         <member name="M:Telegram.Listas.Cargarlistas">
             <summary>
@@ -870,7 +1011,7 @@
             Clase encargada de manejar los materiales.
             </summary>
         </member>
-        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.Int32,Telegram.Category)">
+        <member name="M:Telegram.Materials.#ctor(System.String,System.Int32,Telegram.Units,System.String,Telegram.Category)">
             <summary>
             Constructor de objetos de tipo material.
             </summary>
@@ -958,7 +1099,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="M:Telegram.Offer.#ctor(System.String,System.String,System.String,Telegram.Units,System.Int32,System.Int32,Telegram.Category)">
+        <member name="M:Telegram.Offer.#ctor(System.String,System.String,System.String,Telegram.Units,System.Int32,System.String,Telegram.Category)">
             <summary>
             Constructor de objetos de tipo oferta.
             </summary>

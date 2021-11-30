@@ -48,6 +48,17 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
         public List<Category> Listcategory = new List<Category>();
+        /// <summary>
+        /// Lista que contiene todoas los admins creados.
+        /// </summary>
+        /// <returns></returns>
+        public List<Admin> Listadmin = new List<Admin>();
+        /// <summary>
+        /// Lista que contiene todos los emprendedores creados.
+        /// </summary>
+        /// <returns></returns>
+        public List<Emprendedores> Listemprendedores = new List<Emprendedores>();
+
 
         /// <summary>
         /// Lista que contiene todas las habilitaciones disponibles.
@@ -70,11 +81,6 @@ namespace Telegram
         /// </summary>
         /// <returns></returns>
         public List<Business> Listbussiness = new List<Business>();
-        /// <summary>
-        /// Lista que contiene todos los emprendedores creados.
-        /// </summary>
-        /// <returns></returns>
-        public List<Emprendedores> Listemprendedores = new List<Emprendedores>();
         /// <summary>
         /// Lista que contiene toddos los usuarios creados.
         /// </summary>
@@ -103,7 +109,24 @@ namespace Telegram
         /// <param name="ID"></param>
 
         public Dictionary<string, Collection<int>> Utilities = new Dictionary<string, Collection<int>>();
+        /// Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
+        /// </summary>
+        /// <typeparam name="string"></typeparam>
+        /// <typeparam name="Emprendedores"></typeparam>
+        /// <returns></returns>
 
+        public Dictionary<string, Admin> AdminKey = new Dictionary<string, Admin>();
+
+        /// <summary>
+        /// Metodo para agregar el id de los usuarios al diccionario HistorialUser.
+        /// </summary>
+        /// <param name="ID"></param>
+
+        public void Accion(string ID)
+        {
+
+            this.HistorialUser.Add(ID, new Collection<string>());
+        }
         /// <summary>
         /// Diccionario utilizado para almacenar instancias de emprendedor asociadas a cierta ID.
         /// </summary>
@@ -115,22 +138,10 @@ namespace Telegram
         /// Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
         /// </summary>
         /// <typeparam name="string"></typeparam>
-        /// <typeparam name="Emprendedores"></typeparam>
+        /// <typeparam name="Business"></typeparam>
         /// <returns></returns>
-
         public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
 
-        /// <summary>
-        /// Metodo para agregar el id de los usuarios al diccionario HistorialUser.
-        /// </summary>
-        /// <param name="ID"></param>
-
-        public void Accion(string ID)
-        {
-
-            this.HistorialUser.Add(ID, new Collection<string>());
-
-        }
         /// <summary>
         /// Metodo para agregar el id de los usuarios al diccionario Utilities.
         /// </summary>
@@ -145,146 +156,163 @@ namespace Telegram
         /// Metodo encargado de guardar toda la informacion almacenada en Listas. En los json correspondientes a cada sub-lista.
         /// </summary>
         public void Guardarlistas()
-    {
-        Serializarbussiness();
-        Serializaremprendedores();
-        Serializarrubros();
-        Serializarratings();
-        Serializartokens();
-        Serializaruser();
-        Serializarunit();
-        Serializarcategory();
-    }
-    private void Serializarbussiness()
-    {
-        string json = JsonSerializer.Serialize<List<Business>>(listas.Listbussiness);
-        System.IO.File.WriteAllText(@"Empresas.json", json);
-    }
-    private void Serializaremprendedores()
-    {
-        string json = JsonSerializer.Serialize<List<Emprendedores>>(listas.Listemprendedores);
-        System.IO.File.WriteAllText(@"Emprendedores.json", json);
-    }
-    private void Serializarrubros()
-    {
-        string json = JsonSerializer.Serialize<List<Rubro>>(listas.Listrubro);
-        System.IO.File.WriteAllText(@"Rubros.json", json);
-    }
-    private void Serializarratings()
-    {
-        string json = JsonSerializer.Serialize<List<Ratings>>(listas.Listratings);
-        System.IO.File.WriteAllText(@"Habilitaciones.json", json);
-    }
-    private void Serializartokens()
-    {
-        string json = JsonSerializer.Serialize<List<string>>(listas.Listtokens);
-        System.IO.File.WriteAllText(@"Tokens.json", json);
-    }
-    private void Serializaruser()
-    {
-        string json = JsonSerializer.Serialize<List<IUser>>(listas.Listuser);
-        System.IO.File.WriteAllText(@"Usuarios.json", json);
-    }
-    private void Serializarunit()
-    {
-        string json = JsonSerializer.Serialize<List<Units>>(listas.Listunit);
-        System.IO.File.WriteAllText(@"Unidades.json", json);
-    }
-    private void Serializarcategory()
-    {
-        string json = JsonSerializer.Serialize<List<Category>>(listas.Listcategory);
-        System.IO.File.WriteAllText(@"Categorias.json", json);
-    }
-    /// <summary>
-    /// Metodo encargado de incorporar toda la informacion existente al finalizar la sesión anterior. En los json correspondientes a cada sub-lista.
-    /// </summary>
-    public void Cargarlistas()
-    {
-        
-        Deserializarrubros();
-        Deserializarratings();
-        Deserializartokens();
-        Deserializaruser();
-        Deserializarunit();
-        Deserializarcategory();
-        Deserializarbussiness();
-        Deserializaremprendedores();
-    }
-        private void Deserializarbussiness()
-    {
-        if (System.IO.File.Exists(@"Empresas.json"))
         {
-            string json = System.IO.File.ReadAllText(@"Empresas.json");
-            List<Business> listavieja= JsonSerializer.Deserialize<List<Business>>(json);
-        
+            Serializarbussiness();
+            Serializaremprendedores();
+            Serializaradmins();
+            Serializarrubros();
+            Serializarratings();
+            Serializartokens();
+            Serializaruser();
+            Serializarunit();
+            Serializarcategory();
+            
         }
-    }
-    private void Deserializaremprendedores()
-    {
-        if (System.IO.File.Exists(@"Emprendedores.json"))
+        private void Serializarbussiness()
         {
-            string json = System.IO.File.ReadAllText(@"Emprendedores.json");
-            List<Emprendedores> listavieja= JsonSerializer.Deserialize<List<Emprendedores>>(json);
-         
+            string json = JsonSerializer.Serialize<List<Business>>(listas.Listbussiness);
+            System.IO.File.WriteAllText(@"Empresas.json", json);
         }
-    }
-    private void Deserializarrubros()
-    {
-        if (System.IO.File.Exists(@"Rubros.json"))
+        private void Serializaremprendedores()
         {
-            string json = System.IO.File.ReadAllText(@"Rubros.json");
-            List<Rubro> listavieja= JsonSerializer.Deserialize<List<Rubro>>(json);
-       
+            string json = JsonSerializer.Serialize<List<Emprendedores>>(listas.Listemprendedores);
+            System.IO.File.WriteAllText(@"Emprendedores.json", json);
         }
-    }
-    private void Deserializarratings()
-    {
-        if (System.IO.File.Exists(@"Habilitaciones.json"))
+        private void Serializarrubros()
         {
-            string json = System.IO.File.ReadAllText(@"Habilitaciones.json");
-            List<Ratings> listavieja= JsonSerializer.Deserialize<List<Ratings>>(json);
-        
+            string json = JsonSerializer.Serialize<List<Rubro>>(listas.Listrubro);
+            System.IO.File.WriteAllText(@"Rubros.json", json);
         }
-    }
-    private void Deserializartokens()
-    {
-        if (System.IO.File.Exists(@"Tokens.json"))
+        private void Serializarratings()
         {
-            string json = System.IO.File.ReadAllText(@"Tokens.json");
-            List<string> listavieja= JsonSerializer.Deserialize<List<string>>(json);
-            foreach (string token in listavieja)
-            {
-            listas.Listtokens.Add(token);
-            }
-          
+            string json = JsonSerializer.Serialize<List<Ratings>>(listas.Listratings);
+            System.IO.File.WriteAllText(@"Habilitaciones.json", json);
         }
-    }
-    private void Deserializaruser()
-    {
-        if (System.IO.File.Exists(@"User.json"))
+        private void Serializartokens()
         {
-            string json = System.IO.File.ReadAllText(@"User.json");
-            List<IUser> listavieja= JsonSerializer.Deserialize<List<IUser>>(json);
-          
+            string json = JsonSerializer.Serialize<List<string>>(listas.Listtokens);
+            System.IO.File.WriteAllText(@"Tokens.json", json);
         }
-    }
-    private void Deserializarunit()
-    {
-        if (System.IO.File.Exists(@"Unidades.json"))
+        private void Serializaruser()
         {
-            string json = System.IO.File.ReadAllText(@"Unidades.json");
-            List<Units> listavieja= JsonSerializer.Deserialize<List<Units>>(json);
+            string json = JsonSerializer.Serialize<List<IUser>>(listas.Listuser);
+            System.IO.File.WriteAllText(@"Usuarios.json", json);
         }
-    }
-    private void Deserializarcategory()
-    {
-        if (System.IO.File.Exists(@"Categorias.json"))
+        private void Serializarunit()
         {
-            string json = System.IO.File.ReadAllText(@"Categorias.json");
-            List<Category> listavieja= JsonSerializer.Deserialize<List<Category>>(json);
-           
+            string json = JsonSerializer.Serialize<List<Units>>(listas.Listunit);
+            System.IO.File.WriteAllText(@"Unidades.json", json);
         }
-    }
+        private void Serializarcategory()
+        {
+            string json = JsonSerializer.Serialize<List<Category>>(listas.Listcategory);
+            System.IO.File.WriteAllText(@"Categorias.json", json);
+        }
+        private void Serializaradmins()
+        {
+            string json = JsonSerializer.Serialize<List<Admin>>(listas.Listadmin);
+            System.IO.File.WriteAllText(@"Admin.json", json);
+        }
+        /// <summary>
+        /// Metodo encargado de incorporar toda la informacion existente al finalizar la sesión anterior. En los json correspondientes a cada sub-lista.
+        /// </summary>
+        public void Cargarlistas()
+        {
 
-}
+            Deserializarrubros();
+            Deserializarratings();
+            Deserializartokens();
+            Deserializaruser();
+            Deserializarunit();
+            Deserializarcategory();
+            Deserializarbussiness();
+            Deserializaremprendedores();
+            Deserializaradmin();
+        }
+        private void Deserializarbussiness()
+        {
+            if (System.IO.File.Exists(@"Empresas.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"Empresas.json");
+                List<Business> listavieja = JsonSerializer.Deserialize<List<Business>>(json);
+
+            }
+        }
+        private void Deserializaremprendedores()
+        {
+            if (System.IO.File.Exists(@"Emprendedores.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"Emprendedores.json");
+                List<Emprendedores> listavieja = JsonSerializer.Deserialize<List<Emprendedores>>(json);
+
+            }
+        }
+        private void Deserializarrubros()
+        {
+            if (System.IO.File.Exists(@"Rubros.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"Rubros.json");
+                List<Rubro> listavieja = JsonSerializer.Deserialize<List<Rubro>>(json);
+
+            }
+        }
+        private void Deserializarratings()
+        {
+            if (System.IO.File.Exists(@"Habilitaciones.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"Habilitaciones.json");
+                List<Ratings> listavieja = JsonSerializer.Deserialize<List<Ratings>>(json);
+
+            }
+        }
+        private void Deserializartokens()
+        {
+            if (System.IO.File.Exists(@"Tokens.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"Tokens.json");
+                List<string> listavieja = JsonSerializer.Deserialize<List<string>>(json);
+                foreach (string token in listavieja)
+                {
+                    listas.Listtokens.Add(token);
+                }
+
+            }
+        }
+        private void Deserializaruser()
+        {
+            if (System.IO.File.Exists(@"User.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"User.json");
+                List<IUser> listavieja = JsonSerializer.Deserialize<List<IUser>>(json);
+
+            }
+        }
+        private void Deserializarunit()
+        {
+            if (System.IO.File.Exists(@"Unidades.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"Unidades.json");
+                List<Units> listavieja = JsonSerializer.Deserialize<List<Units>>(json);
+            }
+        }
+        private void Deserializarcategory()
+        {
+            if (System.IO.File.Exists(@"Categorias.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"Categorias.json");
+                List<Category> listavieja = JsonSerializer.Deserialize<List<Category>>(json);
+
+            }
+        }
+        private void Deserializaradmin()
+        {
+            if (System.IO.File.Exists(@"Admin.json"))
+            {
+                string json = System.IO.File.ReadAllText(@"Admin.json");
+                List<Admin> listavieja = JsonSerializer.Deserialize<List<Admin>>(json);
+
+            }
+        }
+
+    }
 }
