@@ -39,16 +39,7 @@ namespace Telegram
         /// </summary>
         public void Guardaroffer()
         {
-            string result = "[";
-
-            foreach (Offer offer in this.AllOffers)
-             {
-               result = result + offer.ConvertToJson() + ",";
-            }
-
-            result = result.Remove(result.Length - 1);
-            result = result + "]";
-                
+            string result=JsonSerializer.Serialize<List<Offer>>(AllOffers);
             System.IO.File.WriteAllText(@"Ofertas.json", result);
         }
         /// <summary>
