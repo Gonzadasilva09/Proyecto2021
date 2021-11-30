@@ -163,7 +163,7 @@ namespace Telegram
                 {
 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese el precio de la oferta ({Precio} {$ o USD})\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese el precio de la oferta\n({Precio} {$ o USD})\n");
 
 
                     response = MensajeCompleto.ToString();
@@ -230,16 +230,16 @@ namespace Telegram
                             StringBuilder MensajeCompleto = new StringBuilder($"Su oferta a sido creada...\n");
                             MensajeCompleto.Append($"Nombre del material publicado: {user.offersMade.Last().Product.Name}\n");
                             MensajeCompleto.Append($"Tipo de oferta: {user.offersMade.Last().Type}\n");
-                            MensajeCompleto.Append($"Cantidad de la unidad: {user.offersMade.Last().Product.Quantity} {user.offersMade.Last().Product.Unit.Name}\n");
+                            MensajeCompleto.Append($"Cantidad del producto: {user.offersMade.Last().Product.Quantity} {user.offersMade.Last().Product.Unit.Name}\n");
                             MensajeCompleto.Append($"A un precio de valoracion de: {user.offersMade.Last().Product.Price}$\n");
                             MensajeCompleto.Append($"Esta ubicado en: {user.offersMade.Last().Location}\n");
-                            MensajeCompleto.Append($"Las habilitacion/es necesaria/s para adquirir este {user.offersMade.Last().Type} son: \n");
+                            MensajeCompleto.Append($"Las habilitacion/es necesaria/s para adquirir esta oferta de tipo {user.offersMade.Last().Type} son: \n");
                             foreach (Ratings rat in user.offersMade.Last().Ratings)
                             {
-                                MensajeCompleto.Append($"{rat.Name}, ");
+                                MensajeCompleto.Append($"/ {rat.Name} / ");
                             }
 
-                            MensajeCompleto.Append($"\nY Pertence a la cateogoria: {user.offersMade.Last().Product.Categories.Name}\n");
+                            MensajeCompleto.Append($"\nY Pertence a la categoría: {user.offersMade.Last().Product.Categories.Name}\n");
                             MensajeCompleto.Append("Para volver al menu principal utilize /start. \n");
 
 

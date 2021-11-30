@@ -36,7 +36,6 @@ namespace Telegram
         {
             if (this.CanHandle(message) || Listas.Instance.HistorialUser[message.IdUser].Contains("/emprendedor"))
             {
-                Console.WriteLine($"{Listas.Instance.HistorialUser[message.IdUser][0]}, {Listas.Instance.HistorialUser[message.IdUser].Count}");
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count == 1)
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
@@ -70,8 +69,7 @@ namespace Telegram
                         valores.Add(numero1);
                     }
                     int rubro = (Convert.ToInt32(valores[1])) - 1;
-                    StringBuilder MensajeCompleto = new StringBuilder($"Su rubro asignado será: {Listas.Instance.Listrubro[rubro].Name}\n");
-                    MensajeCompleto.Append("Su usuario a sido creado con éxito\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Su usuario a sido creado con exito\n");
 
                     Emprendedores emprendedor = new Emprendedores(Listas.Instance.HistorialUser[message.IdUser][1], Listas.Instance.HistorialUser[message.IdUser][2], Listas.Instance.Listrubro[rubro], message.IdUser);
                     MensajeCompleto.Append($"Nombre de usuario: {emprendedor.Name}\n");

@@ -1,8 +1,13 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
+      "C:\\Users\\fede2\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\fede2\\.nuget\\packages"
+=======
       "C:\\Users\\dasil\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\dasil\\.nuget\\packages"
+>>>>>>> afe0ed12d2e19d835bdae4c91e623861f777b3fb
     ]
   }
 }

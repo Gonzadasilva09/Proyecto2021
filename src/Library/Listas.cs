@@ -69,6 +69,11 @@ namespace Telegram{
     /// <returns></returns>
     public List<Business> Listbussiness = new List<Business>();
     /// <summary>
+    /// Lista que contiene todoas los admins creados.
+    /// </summary>
+    /// <returns></returns>
+    public List<Admin> Listadmin = new List<Admin>();
+    /// <summary>
     /// Lista que contiene todos los emprendedores creados.
     /// </summary>
     /// <returns></returns>
@@ -117,6 +122,14 @@ namespace Telegram{
 /// <returns></returns>
 
     public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
+
+    /// Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
+/// </summary>
+/// <typeparam name="string"></typeparam>
+/// <typeparam name="Emprendedores"></typeparam>
+/// <returns></returns>
+
+    public Dictionary<string, Admin> AdminKey = new Dictionary<string, Admin>();
 
       /// <summary>
     /// Metodo para agregar el id de los usuarios al diccionario HistorialUser.
