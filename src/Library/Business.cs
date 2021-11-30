@@ -9,7 +9,7 @@ namespace Telegram
     /// <summary>
     /// Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
     /// </summary>
-    public class Business : User , IUser
+    public class Business : User, IUser
     {
         /// <summary>
         /// Constructor de objetos de tipo Business.

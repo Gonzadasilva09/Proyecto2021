@@ -1,1 +1,1 @@
-]
+[{"Recurrent":false,"Location":"Av. Gral. Rivera 2572","Type":"Recurrente","Product":{"Categories":{"Name":"Tecnologia","Description":"descripcion"},"Name":"Langostas","Quantity":200,"Unit":{"Name":"Kilos"},"Price":2000},"Status":false,"Owner":null},{"Recurrent":false,"Location":"Av. Mariscal Francisco Solano L\u00F3pez 1431","Type":"Recurrente","Product":{"Categories":{"Name":"Materia Prima","Description":"descripcion"},"Name":"Salame","Quantity":10,"Unit":{"Name":"Kilos"},"Price":1000},"Status":false,"Owner":null}]

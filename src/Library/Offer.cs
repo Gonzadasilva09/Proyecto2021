@@ -11,7 +11,6 @@ namespace Telegram
     /// </summary>
     public class Offer : IJsonConvertibl
     {
-
         /// <summary>
         /// Lista que contiene las habilitaciones de la oferta.
         /// </summary>

@@ -7,7 +7,7 @@ namespace Telegram
     /// La clase User es una clase abstracta para heredar caracteristicas a la clase Business y la clase Emprendedores.
     /// </summary>
     public abstract class User
-    {
+        {
         /// <summary>
         /// Obtiene o establece el nombre de un usuario.
         /// </summary>
