@@ -26,6 +26,9 @@ namespace Telegram
 
             lista.Cargarlistas();
             catalogo.cargaroffer();
+
+            Rubro rubro= new Rubro("Admin","Admin");
+            Admin admin = new Admin("Fede", "Oficina del admin", rubro, "1964905204");
             /*Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
             Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
             Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
@@ -67,7 +70,7 @@ namespace Telegram
 
             Bot = new TelegramBotClient(TelegramToken);
 
-            handler1 = new CancelHandler(new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new AddRatingHandler(new OfferHandler(new SearchHandler(new AllOfferHandler(new SeeOfferHandler(null))))))))))));
+            handler1 = new CancelHandler(new StartHandler(new StartAdminHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new AddRatingHandler(new CreateCategoryHandler(new CreateRatingHandler(new CreateRubroHandler(new CreateTokenHandler(new OfferHandler(new SearchHandler(new AllOfferHandler(new SeeOfferHandler(null)))))))))))))))));
 
             var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes
