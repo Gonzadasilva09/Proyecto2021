@@ -8,18 +8,17 @@ namespace Telegram
 /// <summary>
 /// Clase que se encarga de manejar las categorias.
 /// </summary>
-    public class Category
+    public class Category: Elemento
     {
         /// <summary>
         /// Constructor de objetos tipo Category.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
-        public Category(string name, string description)
+        public Category(string description, string name): base(name, description)
         {
-            this.Name = name;
-            this.Description = description;
-            if (Existecategoriaparacrear(name))
+
+            if (doesthismetodexists(name))
             {
                 Listas.Instance.Listcategory.Add(this);
             }
@@ -36,17 +35,6 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public string Description { get; set; }
-        private bool Existecategoriaparacrear(string name)
-        {
-            foreach (Category category in Listas.Instance.Listcategory)
-            {
-                if (category.Name == name)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
 
 
     }
