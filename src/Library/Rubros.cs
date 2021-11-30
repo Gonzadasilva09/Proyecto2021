@@ -8,7 +8,7 @@ namespace Telegram
     /// <summary>
     /// Clase encargada de crear y obtener los distintos rubros disponibles.
     /// </summary>
-    public class Rubro
+    public class Rubro: Elemento
     {
         /// <summary>
         /// String que obtiene o establece la descripción de un rubro.
@@ -25,34 +25,14 @@ namespace Telegram
         /// </summary>
         /// <param name="description"></param>
         /// <param name="name"></param>
-        public Rubro(string description, string name)
+        public Rubro(string description, string name): base(description,name)
         {
-            this.Description = description;
-            this.Name = name;
-            if (Existerubroparacrear(name))
+            if (doesthismetodexists(name))
             {
                 
                 Listas.Instance.Listrubro.Add(this);
             }
 
-        }
-        /// <summary>
-        /// Añade rubros nuevos a la lista de rubros.
-        /// </summary>
-        public static void Deleterubro(Rubro rubro)
-        {
-            Listas.Instance.Listrubro.Remove(rubro);
-        }
-        private bool Existerubroparacrear(string name)
-        {
-            foreach (Rubro item in Listas.Instance.Listrubro)
-            {
-                if (item.Name == name)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }

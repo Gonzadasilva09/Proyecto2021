@@ -177,6 +177,35 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:Telegram.Elemento">
+            <summary>
+            Clase encargada de controlar las habilitaciones.
+            </summary>
+        </member>
+        <member name="P:Telegram.Elemento.Description">
+            <summary>
+            Obtiene o establece una descripcion de la habilitación.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telegram.Elemento.Name">
+            <summary>
+            Obtiene o establece el nombre de una habilitacion.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Telegram.Elemento.#ctor(System.String,System.String)">
+            <summary>
+            Constructor de habilitaciones.
+            </summary>
+            <param name="description"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Telegram.Elemento.doesthismetodexists(System.String)">
+            <summary>
+            Metodo que añade habilitaciones nuevas a la lista.
+            </summary>
+        </member>
         <member name="T:Telegram.Emprendedores">
             <summary>
             Clase encargada de manejar los emprendedores, hereda de User.
@@ -417,7 +446,7 @@
         </member>
         <member name="M:Telegram.CreateTokenHandler.InternalHandle(Telegram.IMessege,System.String@)">
             <summary>
-            Procesa el mensaje "/start" y retorna true; retorna false en caso contrario.
+            Procesa el mensaje "/createtoken" y retorna true; retorna false en caso contrario.
             </summary>
             <param name="message">El mensaje a procesar.</param>
             <param name="response">La respuesta al mensaje procesado.</param>
@@ -1147,16 +1176,6 @@
             <param name="description"></param>
             <param name="name"></param>
         </member>
-        <member name="M:Telegram.Ratings.addRatings">
-            <summary>
-            Metodo que añade habilitaciones nuevas a la lista.
-            </summary>
-        </member>
-        <member name="M:Telegram.Ratings.Deleterating(Telegram.Ratings)">
-            <summary>
-            Metodo que añade habilitaciones nuevas a la lista.
-            </summary>
-        </member>
         <member name="T:Telegram.Rubro">
             <summary>
             Clase encargada de crear y obtener los distintos rubros disponibles.
@@ -1180,11 +1199,6 @@
             </summary>
             <param name="description"></param>
             <param name="name"></param>
-        </member>
-        <member name="M:Telegram.Rubro.Deleterubro(Telegram.Rubro)">
-            <summary>
-            Añade rubros nuevos a la lista de rubros.
-            </summary>
         </member>
         <member name="T:Telegram.Search">
             <summary>
