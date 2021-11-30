@@ -24,9 +24,9 @@ namespace Telegram
         /// <param name="name"></param>
         public Units(string name)
         {
+            this.Name = name;
             if (Existeunidadparacrear(name))
             {
-                this.Name = name;
                 Listas.Instance.Listunit.Add(this);
             }
         }

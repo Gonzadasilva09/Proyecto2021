@@ -17,10 +17,10 @@ namespace Telegram
         /// <param name="description"></param>
         public Category(string name, string description)
         {
+            this.Name = name;
+            this.Description = description;
             if (Existecategoriaparacrear(name))
             {
-                this.Name = name;
-                this.Description = description;
                 Listas.Instance.Listcategory.Add(this);
             }
         }

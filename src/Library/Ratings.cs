@@ -27,10 +27,11 @@ namespace Telegram
         /// <param name="description"></param>
         /// <param name="name"></param>
         public Ratings(string description, string name){
+            this.Description = description;
+            this.Name = name;
             if (Existeratingparacrear(name))
             {
-                this.Description = description;
-                this.Name = name;
+                
                 Listas.Instance.Listratings.Add(this);;
             }
         }

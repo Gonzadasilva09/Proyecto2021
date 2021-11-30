@@ -25,19 +25,43 @@ namespace Telegram
         {
 
             lista.Cargarlistas();
-            //catalogo.cargaroffer();
+            catalogo.cargaroffer();
+            /*Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
+            Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
+            Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
+            Rubro rubro3= new Rubro("el cuqui","POLITICA");
+            Rubro rubro4= new Rubro("parque roosvelt","SERVICIOS");
 
+            Ratings rati1= new Ratings("habilitacion importante","HABILITACION 1");
+            Ratings rati2= new Ratings("habilitacion importante","HABILITACION 2");
+            Ratings rati3= new Ratings("habilitacion importante","HABILITACION 3");
+            Ratings rati4= new Ratings("habilitacion importante","HABILITACION 4");
+            Ratings rati5= new Ratings("habilitacion importante","HABILITACION 5");
 
-            //Listas.Instance.Listtokens.Add("TokenTest");
+            Units unit3 = new Units("Unidad/es");
+            Units unit = new Units("Kilogramos");
+            Units unit2 = new Units("Litros");
+            Units unit4= new Units("Metros");
+
+            Category categoria= new Category("Tecnologia","descripcion"); 
+            Category categoria2= new Category("Materia Prima","descripcion");
+            Category categoria3= new Category("Plasticos","descripcion");
+            Category categoria4= new Category("Papel y Carton","descripcion");
+            Category categoria5= new Category("Telas","descripcion");
+            Category categoria6= new Category("Viveres","descripcion");
+            Category categoria7= new Category("Biodegradables","descripcion");
+            Category categoria8= new Category("Desechos peligrosos","descripcion");
+            Category categoria9= new Category("Otros","descripcion");
             foreach (Units item in Listas.Instance.Listunit)
             {
                 Console.WriteLine(item.Name);
-            }
+            }*/
 
 
             /*Listas.Instance.Accion("1603877597");
             Listas.Instance.BusinessKey.Add("1603877597",empresa);*/
             //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");
+            lista.Listtokens.Add("TokenTest");
 
 
 
