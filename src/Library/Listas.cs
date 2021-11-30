@@ -36,12 +36,6 @@ namespace Telegram
         /// <typeparam name="bool"></typeparam>
         /// <returns></returns>
         public Dictionary<string, bool> TokenVerified = new Dictionary<string, bool>();
-        public void VerifyToken(string ID, bool tokenstatus)
-        {
-
-            this.TokenVerified.Add(ID, tokenstatus);
-
-        }
 
         /// <summary>
         /// Lista que contiene todas las categorias disponibles.
@@ -142,6 +136,13 @@ namespace Telegram
         /// <returns></returns>
         public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
 
+
+        public void VerifyToken(string ID, bool tokenstatus)
+        {
+
+            this.TokenVerified.Add(ID, tokenstatus);
+
+        }
         /// <summary>
         /// Metodo para agregar el id de los usuarios al diccionario Utilities.
         /// </summary>
@@ -150,6 +151,36 @@ namespace Telegram
         {
 
             this.Utilities.Add(ID, new Collection<int>());
+
+        }
+        /// <summary>
+        /// Metodo de admin para crear nuevas habilitaciones.
+        /// </summary>
+        /// <param name="descripcion"></param>
+        /// <param name="name"></param>
+        public void CreateRating(string descripcion, string name)
+        {
+            Ratings rating = new Ratings(descripcion, name);
+
+        }
+        /// <summary>
+        /// Metodo de admin para crear nuevos rubros.
+        /// </summary>
+        /// <param name="descripcion"></param>
+        /// <param name="name"></param>
+        public void CreateRubro(string descripcion, string name)
+        {
+            Rubro Rubro = new Rubro(descripcion, name);
+
+        }
+        /// <summary>
+        /// Metodo de admin para crear nuevas categorias.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="descripcion"></param>
+        public void CreateCategory(string name, string descripcion)
+        {
+            Category Category = new Category(name, descripcion);
 
         }
         /// <summary>
@@ -166,7 +197,7 @@ namespace Telegram
             Serializaruser();
             Serializarunit();
             Serializarcategory();
-            
+
         }
         private void Serializarbussiness()
         {

@@ -52,7 +52,7 @@ namespace Telegram
                 }
                 if (Listas.Instance.HistorialUser[message.IdUser].Count == 2)
                 {
-                    Listas.Instance.AdminKey[message.IdUser].CreateCategory(Listas.Instance.HistorialUser[message.IdUser][1], message.Mensaje);
+                    Listas.Instance.CreateCategory(Listas.Instance.HistorialUser[message.IdUser][1], message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder("La categoria ha sido creada.");
                     Listas.Instance.HistorialUser.Remove(message.IdUser);
                     Listas.Instance.Accion(message.IdUser);
