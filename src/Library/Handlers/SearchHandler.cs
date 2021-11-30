@@ -11,30 +11,30 @@ using System.Collections.ObjectModel;
 namespace Telegram
 {
     /// <summary>
-    /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+    /// Un "handler" del patrón Chain of Responsibility que implementa el comando "/buscaroferta".
     /// </summary>
     public class SearchHandler : BaseHandler
     {
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
+        /// Inicializa una nueva instancia de la clase <see cref="SearchHandler"/>. Esta clase procesa el mensaje "/buscaroferta".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
         public SearchHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/buscaroferta"};
+            this.Keywords = new string[] { "/buscaroferta" };
         }
 
         /// <summary>
-        /// Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
+        /// Procesa el mensaje "/buscaroferta" y retorna true; retorna false en caso contrario.
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="response">La respuesta al mensaje procesado.</param>
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            
+
             if (this.CanHandle(message))
-            {   
+            {
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 StringBuilder MensajeCompleto = new StringBuilder("Para buscar ofertas primero seleccione el tipo de busqueda...\n");
                 MensajeCompleto.Append("/1 Ver todas las ofertas \n");

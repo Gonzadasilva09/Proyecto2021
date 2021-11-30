@@ -28,6 +28,12 @@ namespace Telegram{
                 return listas;
             }
         }
+        /// <summary>
+        /// Diccionario que almacena si el token ingresado por el usuario ha sido verificado o no.
+        /// </summary>
+        /// <typeparam name="string"></typeparam>
+        /// <typeparam name="bool"></typeparam>
+        /// <returns></returns>
     public Dictionary<string,bool> TokenVerified = new Dictionary<string,bool>();
      public void VerifyToken(string ID, bool tokenstatus){
         
@@ -47,7 +53,7 @@ namespace Telegram{
     /// <returns></returns>
     public List<Ratings> Listratings = new List<Ratings>();
     /// <summary>
-    /// Lista que almacena todos los rubros disponibles.
+    /// Lista que contiene todos los rubros disponibles.
     /// </summary>
     /// <returns></returns>
     public  List<Rubro> Listrubro= new List<Rubro>();
@@ -58,27 +64,31 @@ namespace Telegram{
     /// <returns></returns>
     public List<Units> Listunit = new List<Units>();
     /// <summary>
-    /// Lista que contiene todas las unidades disponibles para usar.
+    /// Lista que contiene todas las empresas creadas.
     /// </summary>
     /// <returns></returns>
     public List<Business> Listbussiness = new List<Business>();
     /// <summary>
-    /// Lista que contiene todas las unidades disponibles para usar.
+    /// Lista que contiene todos los emprendedores creados.
     /// </summary>
     /// <returns></returns>
     public List<Emprendedores> Listemprendedores = new List<Emprendedores>();
     /// <summary>
-    /// 
+    /// Lista que contiene toddos los usuarios creados.
     /// </summary>
     /// <returns></returns>
     public List<IUser> Listuser = new List<IUser>();
 
     /// <summary>
-    /// Lista que contiene todas las unidades disponibles para usar.
+    /// Lista que contiene todos los tokens de verificación.
     /// </summary>
     /// <returns></returns>
     public List<string> Listtokens = new List<string>();
-
+/// <summary>
+/// Lista que contiene todas las posiciones de las habilitaciones en formato /(posición) para uso en handlers.
+/// </summary>
+/// <typeparam name="string"></typeparam>
+/// <returns></returns>
     public List<string> PossibleRatings = new List<string>();
     /// <summary>
     /// Diccionario encargado de guardar las interacciones de los usuarios con el bot.
@@ -86,27 +96,47 @@ namespace Telegram{
     /// <returns></returns>
     public Dictionary<string, Collection<string>> HistorialUser = new Dictionary<string, Collection<string>>();
     /// <summary>
-    /// Metodo para agregar el id de los usuarios.
+    /// Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
     /// </summary>
     /// <param name="ID"></param>
     
     public Dictionary<string,Collection<int>> Utilities = new Dictionary<string,Collection<int>>();
 
+/// <summary>
+/// Diccionario utilizado para almacenar instancias de emprendedor asociadas a cierta ID.
+/// </summary>
+/// <typeparam name="string"></typeparam>
+/// <typeparam name="Emprendedores"></typeparam>
+/// <returns></returns>
     public Dictionary<string, Emprendedores> EmprendedoresKey = new Dictionary<string, Emprendedores>();
+    /// <summary>
+/// Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
+/// </summary>
+/// <typeparam name="string"></typeparam>
+/// <typeparam name="Emprendedores"></typeparam>
+/// <returns></returns>
 
     public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
-    //public Dictionary<string, Admin> AdminKey = new Dictionary<string, Admin>();
+
+      /// <summary>
+    /// Metodo para agregar el id de los usuarios al diccionario HistorialUser.
+    /// </summary>
+    /// <param name="ID"></param>
+    
     public void Accion(string ID){
         
         this.HistorialUser.Add(ID,new Collection<string>());
 
     }
+    /// <summary>
+    /// Metodo para agregar el id de los usuarios al diccionario Utilities.
+    /// </summary>
+    /// <param name="ID"></param>
     public void CrearUtilities(string ID){
         
         this.Utilities.Add(ID,new Collection<int>());
 
     }
-    public List<string> BusinessID = new List<string>();
     /// <summary>
     /// Metodo encargado de guardar toda la informacion almacenada en Listas. En los json correspondientes a cada sub-lista.
     /// </summary>
