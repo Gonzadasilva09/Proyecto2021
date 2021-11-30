@@ -50,7 +50,17 @@ namespace Telegram
 
                     Listas.Instance.HistorialUser[message.IdUser].Add("/registrarse");
 
-                    StringBuilder MensajeCompleto = new StringBuilder("Desea registrarse como /Empresa o como /Emprendedor...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("En caso de poseer un token de identificación, utilize el comando\n");
+                    MensajeCompleto.Append("/Empresa:\n");
+                    MensajeCompleto.Append("Para registrarse como empresa, contacte a un administrador en caso de necesitar uno.\n");
+                    MensajeCompleto.Append("En otro caso utilize\n");
+                    MensajeCompleto.Append("/Emprendedor\n");
+                    MensajeCompleto.Append("Para registrarse como emprendedor.\n");
+
+
+
+
+
 
                     response = MensajeCompleto.ToString();
                     return true;
@@ -62,7 +72,7 @@ namespace Telegram
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Clear();
                         Listas.Instance.HistorialUser[message.IdUser].Add("/emprendedor");
-                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como emprendedor, por favor ingrese los siguientes datos...\n");
+                        StringBuilder MensajeCompleto = new StringBuilder($"Será registrado como emprendedor\n\n\n Por favor complete los datos que se le pedirán a continuacion.\n");
                         MensajeCompleto.Append("Ingrese su nombre de Usuario:\n");
                         response = MensajeCompleto.ToString();
                         return true;
@@ -72,7 +82,7 @@ namespace Telegram
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Clear();
                         Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como Empresa, ingrese por favor su token de verificacion...\n");
+                        StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como Empresa\n\n\n Por favor ingrese su token de identificación.\n");
                         response = MensajeCompleto.ToString();
                         return true;
                     }
