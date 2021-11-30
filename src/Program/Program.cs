@@ -25,7 +25,8 @@ namespace Telegram
         {
 
             lista.Cargarlistas();
-            //catalogo.cargaroffer();
+            
+            catalogo.cargaroffer();
             Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
             Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
             Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
@@ -66,10 +67,18 @@ namespace Telegram
             
 
 
+            foreach (Units item in Listas.Instance.Listunit)
+            {
+                Console.WriteLine(item.Name);
+            }
 
           
 
             
+            /*Listas.Instance.Accion("1603877597");
+            Listas.Instance.BusinessKey.Add("1603877597",empresa);*/
+            //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");
+            lista.Listtokens.Add("TokenTest");
 
 
 

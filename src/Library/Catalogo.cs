@@ -39,8 +39,17 @@ namespace Telegram
         /// </summary>
         public void Guardaroffer()
         {
-            string json = JsonSerializer.Serialize<List<Offer>>(catalogo.AllOffers);
-            System.IO.File.WriteAllText(@"Ofertas.json", json);
+            string result = "[";
+
+            foreach (Offer offer in this.AllOffers)
+             {
+               result = result + offer.ConvertToJson() + ",";
+            }
+
+            result = result.Remove(result.Length - 1);
+            result = result + "]";
+                
+            System.IO.File.WriteAllText(@"Ofertas.json", result);
         }
         /// <summary>
         /// Metodo encargado de incorporar las ofertas existentes al finalizar la sesión anterior.
@@ -51,6 +60,10 @@ namespace Telegram
             {
                 string json = System.IO.File.ReadAllText(@"Ofertas.json");
                 List<Offer> listavieja= JsonSerializer.Deserialize<List<Offer>>(json);
+                foreach (Offer offer in listavieja)
+                {
+                    AllOffers.Add(offer);
+                }
             }
     }
     }
