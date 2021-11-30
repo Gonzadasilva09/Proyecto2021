@@ -470,6 +470,14 @@
             Singleton para que solo exista una instancia de las listas.
             </summary>
         </member>
+        <member name="F:Telegram.Listas.TokenVerified">
+            <summary>
+            Diccionario que almacena si el token ingresado por el usuario ha sido verificado o no.
+            </summary>
+            <typeparam name="string"></typeparam>
+            <typeparam name="bool"></typeparam>
+            <returns></returns>
+        </member>
         <member name="F:Telegram.Listas.Listcategory">
             <summary>
             Lista que contiene todas las categorias disponibles.
@@ -484,7 +492,7 @@
         </member>
         <member name="F:Telegram.Listas.Listrubro">
             <summary>
-            Lista que almacena todos los rubros disponibles.
+            Lista que contiene todos los rubros disponibles.
             </summary>
             <returns></returns>
         </member>
@@ -496,26 +504,33 @@
         </member>
         <member name="F:Telegram.Listas.Listbussiness">
             <summary>
-            Lista que contiene todas las unidades disponibles para usar.
+            Lista que contiene todas las empresas creadas.
             </summary>
             <returns></returns>
         </member>
         <member name="F:Telegram.Listas.Listemprendedores">
             <summary>
-            Lista que contiene todas las unidades disponibles para usar.
+            Lista que contiene todos los emprendedores creados.
             </summary>
             <returns></returns>
         </member>
         <member name="F:Telegram.Listas.Listuser">
             <summary>
-            
+            Lista que contiene toddos los usuarios creados.
             </summary>
             <returns></returns>
         </member>
         <member name="F:Telegram.Listas.Listtokens">
             <summary>
-            Lista que contiene todas las unidades disponibles para usar.
+            Lista que contiene todos los tokens de verificación.
             </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.PossibleRatings">
+            <summary>
+            Lista que contiene todas las posiciones de las habilitaciones en formato /(posición) para uso en handlers.
+            </summary>
+            <typeparam name="string"></typeparam>
             <returns></returns>
         </member>
         <member name="F:Telegram.Listas.HistorialUser">
@@ -526,7 +541,35 @@
         </member>
         <member name="F:Telegram.Listas.Utilities">
             <summary>
-            Metodo para agregar el id de los usuarios.
+            Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
+            </summary>
+            <param name="ID"></param>
+        </member>
+        <member name="F:Telegram.Listas.EmprendedoresKey">
+            <summary>
+            Diccionario utilizado para almacenar instancias de emprendedor asociadas a cierta ID.
+            </summary>
+            <typeparam name="string"></typeparam>
+            <typeparam name="Emprendedores"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.BusinessKey">
+            <summary>
+            Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
+            </summary>
+            <typeparam name="string"></typeparam>
+            <typeparam name="Emprendedores"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Listas.Accion(System.String)">
+            <summary>
+            Metodo para agregar el id de los usuarios al diccionario HistorialUser.
+            </summary>
+            <param name="ID"></param>
+        </member>
+        <member name="M:Telegram.Listas.CrearUtilities(System.String)">
+            <summary>
+            Metodo para agregar el id de los usuarios al diccionario Utilities.
             </summary>
             <param name="ID"></param>
         </member>

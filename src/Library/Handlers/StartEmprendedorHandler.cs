@@ -11,12 +11,12 @@ using System.Collections.ObjectModel;
 namespace Telegram
 {
     /// <summary>
-    /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+    /// Un "handler" del patrón Chain of Responsibility que utiliza el comando /start, este handler es una variacion del StartHandler dedicada a Emprendedor.
     /// </summary>
     public class StartEmprendedorHandler : BaseHandler
     {
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
+        /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje /start.
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
         public StartEmprendedorHandler(BaseHandler next) : base(next)
@@ -25,7 +25,7 @@ namespace Telegram
         }
 
         /// <summary>
-        /// Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
+        /// Procesa el mensaje "/start" y retorna true; retorna false en caso contrario.
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="response">La respuesta al mensaje procesado.</param>
