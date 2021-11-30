@@ -10,9 +10,25 @@ namespace Telegram
     /// </summary>
     public interface IUser
     {
+        /// <summary>
+        /// Atributo de nombre para los usuarios.
+        /// </summary>
+        /// <value></value>
         string Name{get;set;}
+        /// <summary>
+        /// Atributo de locación para los usuarios.
+        /// </summary>
+        /// <value></value>
         string Location{get;set;}
+        /// <summary>
+        /// Atributo de rubro para los usuarios.
+        /// </summary>
+        /// <value></value>
         Rubro Rubro{get;set;}
+        /// <summary>
+        /// Atributo de ID para los usuarios.
+        /// </summary>
+        /// <value></value>
         string ID{get;set;}
     }
 }

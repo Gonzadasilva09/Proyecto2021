@@ -12,16 +12,25 @@ using System.Collections.Generic;
 namespace Telegram
 {
     /// <summary>
-    /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+    /// Un "handler" del patrón Chain of Responsibility que implementa el comando "/emprendedor", es el handler encargado de crear nuevos emprendedores.
     /// </summary>
     public class RegisterHandlerEmprendedores : BaseHandler
     {
 
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="RegisterHandlerEmprendedores"/>. Esta clase procesa el mensaje "/emprendedor".
+        /// </summary>
+        /// <param name="next">El próximo "handler".</param>
         public RegisterHandlerEmprendedores(BaseHandler next) : base(next)
         {
             this.Keywords = new string[] { "/emprendedor" };
         }
-
+        /// <summary>
+        /// Procesa el mensaje "/emprendedor" y retorna true; retorna false en caso contrario.
+        /// </summary>
+        /// <param name="message">El mensaje a procesar.</param>
+        /// <param name="response">La respuesta al mensaje procesado.</param>
+        /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
 
         protected override bool InternalHandle(IMessege message, out string response)
         {

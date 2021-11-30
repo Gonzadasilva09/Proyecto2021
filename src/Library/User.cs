@@ -42,6 +42,7 @@ namespace Telegram
             this.Location = location;
             this.Rubro = rubro;
             this.ID = id;
-        }
+        } 
     }
+
 }
