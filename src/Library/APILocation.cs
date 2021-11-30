@@ -39,7 +39,7 @@ namespace Telegram{
             Location locationFinal = client.GetLocation(addressFinal);
             
             Distance distance = client.GetDistance(addressInitial, addressFinal);
-            client.DownloadRoute(locationInitial.Latitude, locationInitial.Longitude, locationFinal.Latitude, locationFinal.Longitude, @"src\Library\LocationApi\Ruta.png");
+            client.DownloadRoute(locationInitial.Latitude, locationInitial.Longitude, locationFinal.Latitude, locationFinal.Longitude, @"Ruta.png");
 
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Telegram{
            
             Location locationEmprendedor = client.GetLocation(addressEmprendedor);
             
-            client.DownloadMap(locationEmprendedor.Latitude, locationEmprendedor.Longitude, @"src\Library\LocationApi\Emprendedorlocation.png");
+            client.DownloadMap(locationEmprendedor.Latitude, locationEmprendedor.Longitude, @"ubicacion2.png");
            
 
         }
@@ -70,7 +70,7 @@ namespace Telegram{
            
             Location locationOffer = client.GetLocation(addressOffer);
             
-            client.DownloadMap(locationOffer.Latitude, locationOffer.Longitude, @$"src\Library\LocationApi\{offer.Location}.png");
+            client.DownloadMap(locationOffer.Latitude, locationOffer.Longitude, @"ubicacion.png");
 
         }
     }

@@ -61,10 +61,6 @@ namespace Telegram
 
 
 
-
-
-
-
                         response = MensajeCompleto.ToString();
                         return true;
                     }

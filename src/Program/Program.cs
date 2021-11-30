@@ -25,6 +25,7 @@ namespace Telegram
         {
 
             lista.Cargarlistas();
+            
             catalogo.cargaroffer();
 
             Rubro rubro= new Rubro("Admin","Admin");
@@ -55,12 +56,28 @@ namespace Telegram
             Category categoria7= new Category("Biodegradables","descripcion");
             Category categoria8= new Category("Desechos peligrosos","descripcion");
             Category categoria9= new Category("Otros","descripcion");
+
+            Business empresa=new Business("Gonza","8 de octubre 2738",rubro,"1603877597");
+            //Listas.Instance.BusinessKey.Add("1603877597",empresa);
+            
+
+
+            Listas.Instance.Listtokens.Add("TokenTest");
             foreach (Units item in Listas.Instance.Listunit)
             {
                 Console.WriteLine(item.Name);
-            }*/
+            }
+            
 
 
+            foreach (Units item in Listas.Instance.Listunit)
+            {
+                Console.WriteLine(item.Name);
+            }
+
+          
+
+            
             /*Listas.Instance.Accion("1603877597");
             Listas.Instance.BusinessKey.Add("1603877597",empresa);*/
             //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");

@@ -14,16 +14,16 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class SeeOfferHandler : BaseHandler
+    public class PhotoRouteHandler : BaseHandler
     {
-         private TelegramBotClient bot;
+        private TelegramBotClient bot;
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
-        public SeeOfferHandler(BaseHandler next) : base(next)
+        public PhotoRouteHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/veroferta"};
+            this.Keywords = new string[] { "/VerDireccion" };
         }
 
         /// <summary>
@@ -34,35 +34,47 @@ namespace Telegram
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            
-            if (Listas.Instance.HistorialUser[message.IdUser].Contains("/todaslasofertas") && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta") && Listas.Instance.HistorialUser[message.IdUser].Count==2)
-            {   
-                Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                string oferta=message.Mensaje.Replace("/",string.Empty);
-                int offer = Int32.Parse(oferta)-1;
-                
-                Offer offer1=Catalogo.Instance.AllOffers[offer];
-        
-                StringBuilder MensajeCompleto = new StringBuilder($"{Armadordemensajes.Instance.Veroferta(offer1)}\n");
-                MensajeCompleto.Append("/VerDireccion");
-               
-                response = MensajeCompleto.ToString();
-                return true;
+            if (this.CanHandle(message))
+            {
+                if (Listas.Instance.HistorialUser[message.IdUser].Contains("/todaslasofertas") && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 3)
+                {
+                    Console.WriteLine("handler direccion");
 
+                    Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+
+                    string oferta = Listas.Instance.HistorialUser[message.IdUser][2].Replace("/", string.Empty);
+                    int offer = Int32.Parse(oferta) - 1;
+                    Console.WriteLine("handler direccion2");
+
+                    foreach (Emprendedores item in Listas.Instance.Listemprendedores)
+                    {
+                        if (message.IdUser == item.ID)
+                        {
+                            Console.WriteLine("handler direccion3");
+                            APILocation.Instance.Route(Catalogo.Instance.AllOffers[offer], item);
+                        }
+                    }
+                    AsyncContext.Run(() => SendProfileImage(message));
+                    Console.WriteLine("handler direccion4");
+
+                    StringBuilder MensajeCompleto = new StringBuilder("Ubicacion de la oferta con ruta trazada");
+                    response = string.Empty;
+                    return true;
+                }
             }
-            
+
             Console.WriteLine("Ver oferta");
             response = string.Empty;
             return false;
         }
-       /* private async Task SendProfileImage(IMessege message)
+        private async Task SendProfileImage(IMessege message)
         {
             // Can be null during testing
-           /* if (bot != null)
+            if (bot != null)
             {
                 await bot.SendChatActionAsync(message.Idchat, ChatAction.UploadPhoto);
 
-                const string filePath = @"profile.jpeg";
+                const string filePath = @"src\Program\Ruta.png";
                 using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
                 var fileName = filePath.Split(Path.DirectorySeparatorChar).Last();
 
@@ -71,6 +83,7 @@ namespace Telegram
                     photo: new InputOnlineFile(fileStream, fileName),
                     caption: "Te ves bien!"
                 );
-            }*/
+            }
         }
     }
+}
