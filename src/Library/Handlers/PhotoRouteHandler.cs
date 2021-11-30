@@ -54,7 +54,9 @@ namespace Telegram
                             APILocation.Instance.Route(Catalogo.Instance.AllOffers[offer], item);
                         }
                     }
-                    AsyncContext.Run(() => SendProfileImage(message));
+
+
+                    AsyncContext.Run(() => message.SendPhoto("Usted se encuentra en el punto A y la oferta seleccionada en el punto B", @"Ruta.png"));
                     Console.WriteLine("handler direccion4");
 
                     StringBuilder MensajeCompleto = new StringBuilder("Ubicacion de la oferta con ruta trazada");
@@ -67,23 +69,8 @@ namespace Telegram
             response = string.Empty;
             return false;
         }
-        private async Task SendProfileImage(IMessege message)
-        {
-            // Can be null during testing
-            if (bot != null)
-            {
-                await bot.SendChatActionAsync(message.Idchat, ChatAction.UploadPhoto);
 
-                const string filePath = @"src\Program\Ruta.png";
-                using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-                var fileName = filePath.Split(Path.DirectorySeparatorChar).Last();
-
-                await bot.SendPhotoAsync(
-                    chatId: message.Idchat,
-                    photo: new InputOnlineFile(fileStream, fileName),
-                    caption: "Te ves bien!"
-                );
-            }
-        }
     }
 }
+
+

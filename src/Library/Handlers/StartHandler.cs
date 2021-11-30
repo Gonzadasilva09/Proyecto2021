@@ -39,7 +39,7 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
 
-            if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser) && !Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser))
+            if (message.Mensaje.ToLower().Equals("/start")  && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser) && !Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser))
             {
 
                 StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
