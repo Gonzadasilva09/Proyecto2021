@@ -45,9 +45,12 @@ namespace Telegram
                 {
                     if (message.IdUser == user.ID)
                     {
-                        MensajeCompleto.Append($"Bienvenido {user.Name}, ingrese la función que desee utilizar...  \n");
+                        MensajeCompleto.Append($"Bienvenido {user.Name}\n Ingrese la función que desee utilizar...  \n");
+                        MensajeCompleto.Append($"Si desea buscar entre las ofertas disponibles ingrese: \n");
                         MensajeCompleto.Append($"/buscaroferta \n");
+                        MensajeCompleto.Append($"Si desea agregar habilitaciones a su usuario ingrese: \n");
                         MensajeCompleto.Append($"/agregarhabilitacion \n");
+                        MensajeCompleto.Append($"Si desea ver las compras realizadas ingrese \n");
                         MensajeCompleto.Append($"/historialcompra \n");
                         MensajeCompleto.Append($"Si en cualquier momento lo desea puede usar: \n");
                         MensajeCompleto.Append($"/cancelar \n");

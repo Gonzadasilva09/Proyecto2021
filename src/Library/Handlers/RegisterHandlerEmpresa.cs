@@ -50,7 +50,7 @@ namespace Telegram
                             if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/empresa") && Listas.Instance.HistorialUser[message.IdUser].Count == 1)
                             {
                                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                                StringBuilder MensajeCompleto = new StringBuilder($"Se registrara como empresa, por favor ingrese los siguientes datos que le solicitaremos\n");
+                                StringBuilder MensajeCompleto = new StringBuilder($"Token Aceptado\n\n\n Por favor complete los datos que se le pedirán a continuacion.\n");
                                 MensajeCompleto.Append("Ingrese su nombre de Usuario:\n");
                                 response = MensajeCompleto.ToString();
                                 return true;

@@ -47,7 +47,7 @@ namespace Telegram
                 {
                     Listas.Instance.Accion(message.IdUser);
                 }
-                MensajeCompleto.Append("Usted no está registrado, por favor ejecutar el comando /registrarse \n");
+                MensajeCompleto.Append("Usted no está registrado\n Ingrese el comando /registrarse para comenzar.\n");
                 response = MensajeCompleto.ToString();
                 return true;
             }

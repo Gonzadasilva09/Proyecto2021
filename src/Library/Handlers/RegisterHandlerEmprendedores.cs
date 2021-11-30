@@ -40,8 +40,8 @@ namespace Telegram
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/emprendedor") && Listas.Instance.HistorialUser[message.IdUser].Count == 1)
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder($"Su nombre de usuario es: {message.Mensaje}\n");
-                    MensajeCompleto.Append("A continuacion ingrese su ubicacion (calle y numero)...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder($"Su nombre de usuario será: {message.Mensaje}\n");
+                    MensajeCompleto.Append("Ingrese su ubicación (calle y numero).\n");
                     response = MensajeCompleto.ToString();
                     return true;
                 }
@@ -49,8 +49,8 @@ namespace Telegram
                 {
 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder($"Su direccion es la siguiente: {message.Mensaje}\n");
-                    MensajeCompleto.Append("A continuacion seleccione su rubro..\n");
+                    StringBuilder MensajeCompleto = new StringBuilder($"Su direccion será la siguiente: {message.Mensaje}\n");
+                    MensajeCompleto.Append("Ingrese su rubro correspondiente.\n");
                     int num = 1;
                     foreach (Rubro rubro in Listas.Instance.Listrubro)
                     {
@@ -70,8 +70,8 @@ namespace Telegram
                         valores.Add(numero1);
                     }
                     int rubro = (Convert.ToInt32(valores[1])) - 1;
-                    StringBuilder MensajeCompleto = new StringBuilder($"Su rubro a sido asignado: {Listas.Instance.Listrubro[rubro].Name}\n");
-                    MensajeCompleto.Append("Su usuario a sido creado con exito\n");
+                    StringBuilder MensajeCompleto = new StringBuilder($"Su rubro asignado será: {Listas.Instance.Listrubro[rubro].Name}\n");
+                    MensajeCompleto.Append("Su usuario a sido creado con éxito\n");
 
                     Emprendedores emprendedor = new Emprendedores(Listas.Instance.HistorialUser[message.IdUser][1], Listas.Instance.HistorialUser[message.IdUser][2], Listas.Instance.Listrubro[rubro], message.IdUser);
                     MensajeCompleto.Append($"Nombre de usuario: {emprendedor.Name}\n");

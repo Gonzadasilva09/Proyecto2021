@@ -49,7 +49,9 @@ namespace Telegram
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/crearoferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 1 && !(message.Mensaje == "/no"))
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder("Primero necesitaremos las habilitaciones de su empresa...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Se creará una nueva oferta\n\n\n");
+                    MensajeCompleto.Append($"Ingrese las habilitaciónes que tendrá su oferta.\n");
+
                     int num = 1;
                     foreach (Ratings rating in Listas.Instance.Listratings)
                     {
@@ -61,7 +63,6 @@ namespace Telegram
                 }
                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/crearoferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 2 && message.Mensaje == "/no")
                 {
-                    Console.WriteLine("/no enter");
                     if (Listas.Instance.HistorialUser[message.IdUser].Contains("/Continuar"))
                     {
                         Listas.Instance.HistorialUser[message.IdUser].Remove("/Continuar");
@@ -76,7 +77,7 @@ namespace Telegram
 
                         }
                     }
-                    StringBuilder MensajeCompleto = new StringBuilder("Ahora necesitamos la direccion de la oferta\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese la dirección de retiro de su oferta\n");
                     response = MensajeCompleto.ToString();
                     return true;
                 }
@@ -85,7 +86,7 @@ namespace Telegram
                     Listas.Instance.HistorialUser.Remove(message.IdUser);
                     Listas.Instance.Accion(message.IdUser);
                     Listas.Instance.HistorialUser[message.IdUser].Add("/crearoferta");
-                    StringBuilder MensajeCompleto = new StringBuilder($"Se agregará una habilitación extra...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder($"Se agregará una habilitación extra.\n");
                     MensajeCompleto.Append($"/Continuar\n");
                     response = MensajeCompleto.ToString();
                     return true;
@@ -108,7 +109,7 @@ namespace Telegram
                         Listas.Instance.CrearUtilities(message.IdUser);
                     }
                     Listas.Instance.Utilities[message.IdUser].Add(rating);
-                    StringBuilder MensajeCompleto = new StringBuilder($"La habilitacion {Listas.Instance.Listratings[rating].Name} se ha añadido a las habilitaciones de la oferta...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder($"La habilitacion {Listas.Instance.Listratings[rating].Name} se ha añadido a las habilitaciones de la oferta.\n");
                     MensajeCompleto.Append($"Desea agregar mas habilitaciones?...\n");
                     MensajeCompleto.Append($"/si\n");
                     MensajeCompleto.Append($"/no\n");
@@ -118,7 +119,7 @@ namespace Telegram
                 if (Listas.Instance.HistorialUser[message.IdUser].Count == 3 && Listas.Instance.HistorialUser[message.IdUser][0] == "/crearoferta" && !(message.Mensaje == "/no"))
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder("De que tipo es su oferta?...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese de que tipo es su oferta\n");
                     MensajeCompleto.Append("/Reciclado \n");
                     MensajeCompleto.Append("/Residuo");
                     response = MensajeCompleto.ToString();
@@ -129,7 +130,7 @@ namespace Telegram
 
                     string type = message.Mensaje.Replace("/", string.Empty);
                     Listas.Instance.HistorialUser[message.IdUser].Add(type);
-                    StringBuilder MensajeCompleto = new StringBuilder("Que producto desea vender?...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese el nombre del producto que va a vender.\n");
 
                     response = MensajeCompleto.ToString();
                     return true;
@@ -138,7 +139,7 @@ namespace Telegram
                 {
 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder("Que unidad quiere que tenga su oferta?...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese en que tipo de unidad de cuantificará su oferta.\n");
                     int num = 1;
                     foreach (Units unit in Listas.Instance.Listunit)
                     {
@@ -153,7 +154,7 @@ namespace Telegram
 
                     string unit = message.Mensaje.Replace("/", string.Empty);
                     Listas.Instance.HistorialUser[message.IdUser].Add(unit);
-                    StringBuilder MensajeCompleto = new StringBuilder("Cuanto del producto va a vender?\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese la cantidad del producto que va a vender.\n");
 
                     response = MensajeCompleto.ToString();
                     return true;
@@ -162,7 +163,7 @@ namespace Telegram
                 {
 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese el precio de la oferta en pesos uruguayos...\n");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese el precio de la oferta ({Precio} {$ o USD})\n");
 
 
                     response = MensajeCompleto.ToString();
@@ -192,11 +193,10 @@ namespace Telegram
                     Listas.Instance.HistorialUser[message.IdUser].Add(category);
 
                     int cantidad = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][6]));
-                    int precio = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][7]));
                     int unid = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][5])) - 1;
                     int cate = (Int32.Parse(Listas.Instance.HistorialUser[message.IdUser][8])) - 1;
                     Console.WriteLine(cantidad);
-                    Console.WriteLine(precio);
+                    
                     Console.WriteLine(unid);
                     Console.WriteLine(cate);
 
@@ -217,7 +217,7 @@ namespace Telegram
                             user.MakeOffer(Listas.Instance.HistorialUser[message.IdUser][2],
                                             Listas.Instance.HistorialUser[message.IdUser][3],
                                             Listas.Instance.HistorialUser[message.IdUser][4], Listas.Instance.Listunit[unid],
-                                            cantidad, precio, Listas.Instance.Listcategory[cate]);
+                                            cantidad, Listas.Instance.HistorialUser[message.IdUser][7], Listas.Instance.Listcategory[cate]);
 
 
                             int ratingindex = 0;
@@ -227,16 +227,16 @@ namespace Telegram
                                 ratingindex++;
                             }
                             Listas.Instance.Utilities.Clear();
-                            StringBuilder MensajeCompleto = new StringBuilder($"Su oferta de {user.offersMade.Last().Product.Name} a sido creada...\n");
+                            StringBuilder MensajeCompleto = new StringBuilder($"Su oferta a sido creada...\n");
                             MensajeCompleto.Append($"Nombre del material publicado: {user.offersMade.Last().Product.Name}\n");
                             MensajeCompleto.Append($"Tipo de oferta: {user.offersMade.Last().Type}\n");
                             MensajeCompleto.Append($"Cantidad de la unidad: {user.offersMade.Last().Product.Quantity} {user.offersMade.Last().Product.Unit.Name}\n");
-                            MensajeCompleto.Append($"A un precio de valoracion de: {user.offersMade.Last().Product.Price}$ pesos uruguayos \n");
+                            MensajeCompleto.Append($"A un precio de valoracion de: {user.offersMade.Last().Product.Price}$\n");
                             MensajeCompleto.Append($"Esta ubicado en: {user.offersMade.Last().Location}\n");
                             MensajeCompleto.Append($"Las habilitacion/es necesaria/s para adquirir este {user.offersMade.Last().Type} son: \n");
                             foreach (Ratings rat in user.offersMade.Last().Ratings)
                             {
-                                MensajeCompleto.Append($"{rat.Name}");
+                                MensajeCompleto.Append($"{rat.Name}, ");
                             }
 
                             MensajeCompleto.Append($"\nY Pertence a la cateogoria: {user.offersMade.Last().Product.Categories.Name}\n");

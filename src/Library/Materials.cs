@@ -20,7 +20,7 @@ namespace Telegram
         /// <param name="units"></param>
         /// <param name="price"></param>
         /// <param name="categories"></param>
-        public Materials(string name, int quantity, Units units,int price, Category categories)
+        public Materials(string name, int quantity, Units units,string price, Category categories)
         {
             this.Name=name;
             this.Quantity=quantity;
@@ -58,7 +58,7 @@ namespace Telegram
         /// Obtiene o establece el precio del material.
         /// </summary>
         /// <value></value>
-        public int Price{ get; set;}
+        public string Price{ get; set;}
         public string ConvertToJson()
         {
             JsonSerializerOptions options = new()
