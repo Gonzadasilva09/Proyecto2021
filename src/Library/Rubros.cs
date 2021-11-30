@@ -27,10 +27,11 @@ namespace Telegram
         /// <param name="name"></param>
         public Rubro(string description, string name)
         {
+            this.Description = description;
+            this.Name = name;
             if (Existerubroparacrear(name))
             {
-                this.Description = description;
-                this.Name = name;
+                
                 Listas.Instance.Listrubro.Add(this);
             }
 

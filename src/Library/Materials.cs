@@ -8,8 +8,10 @@ namespace Telegram
     /// <summary>
     /// Clase encargada de manejar los materiales.
     /// </summary>
-    public class Materials
+    public class Materials : IJsonConvertibl
     {
+        [JsonConstructor]
+        public Materials(){}
         /// <summary>
         /// Constructor de objetos de tipo material.
         /// </summary>
@@ -57,6 +59,15 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public int Price{ get; set;}
+        public string ConvertToJson()
+        {
+            JsonSerializerOptions options = new()
+            {
+                ReferenceHandler = MyReferenceHandler.Instance,
+                WriteIndented = true
+            };
+            return JsonSerializer.Serialize(this, options);
+        }
     
 
     }

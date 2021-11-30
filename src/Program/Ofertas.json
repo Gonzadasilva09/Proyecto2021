@@ -1,1 +1,45 @@
-[{"Recurrent":false,"Location":"8 de octubre 2738","Type":"Residuo","Product":{"Categories":{"Name":"Tecnologia","Description":"descripcion"},"Name":"Computadoras","Quantity":10,"Unit":{"Name":"Unidad/es"},"Price":2300},"Status":false,"Owner":null}]
+[{
+  "$id": "1",
+  "Recurrent": false,
+  "Location": "Tres cruces",
+  "Type": "Residuo",
+  "Product": {
+    "$id": "2",
+    "Categories": {
+      "$id": "3",
+      "Name": "Plasticos",
+      "Description": "descripcion"
+    },
+    "Name": "Tapitas plasticas",
+    "Quantity": 10,
+    "Unit": {
+      "$id": "4",
+      "Name": "Kilogramos"
+    },
+    "Price": 2100
+  },
+  "Status": false,
+  "Owner": null
+},{
+  "$id": "5",
+  "Recurrent": false,
+  "Location": "Mi casa 123",
+  "Type": "Residuo",
+  "Product": {
+    "$id": "6",
+    "Categories": {
+      "$id": "7",
+      "Name": "Biodegradables",
+      "Description": "descripcion"
+    },
+    "Name": "Muchas cosas",
+    "Quantity": 123,
+    "Unit": {
+      "$id": "8",
+      "Name": "Kilogramos"
+    },
+    "Price": 3456
+  },
+  "Status": false,
+  "Owner": null
+}]
