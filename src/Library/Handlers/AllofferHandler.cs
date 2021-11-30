@@ -33,15 +33,15 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (this.CanHandle(message) && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta"))
+            if (this.CanHandle(message) && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta") && Listas.Instance.HistorialUser[message.IdUser].Count ==1)
             {   
-                Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                Listas.Instance.HistorialUser[message.IdUser].Add("/todaslasofertas");
                 StringBuilder MensajeCompleto = new StringBuilder("Las ofertas publicadas hasta la fecha son:\n");
                 int num=1;
                 foreach (Offer item in Catalogo.Instance.AllOffers)
                 {
                     
-                    MensajeCompleto.Append($"/{num} - {item.Type} de {item.Product.Quantity} {item.Product.Unit} de {item.Product.Name} valorado en:{item.Product.Price}\n");
+                    MensajeCompleto.Append($"/{num} - {item.Type} de {item.Product.Quantity} {item.Product.Unit.Name} de {item.Product.Name} valorado en: {item.Product.Price}$\n");
                     MensajeCompleto.Append("---------------------------------\n");
                     num++;
                 }

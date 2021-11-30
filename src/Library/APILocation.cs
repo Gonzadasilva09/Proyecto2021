@@ -70,7 +70,7 @@ namespace Telegram{
            
             Location locationOffer = client.GetLocation(addressOffer);
             
-            client.DownloadMap(locationOffer.Latitude, locationOffer.Longitude, @"src\Library\LocationApi\offerlocation.png");
+            client.DownloadMap(locationOffer.Latitude, locationOffer.Longitude, @$"src\Library\LocationApi\{offer.Location}.png");
 
         }
     }

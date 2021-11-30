@@ -24,9 +24,11 @@ namespace Telegram
         /// <param name="name"></param>
         public Units(string name)
         {
-            this.Name=name;
-            this.shortcut=shortcutcreater();
-            Listas.Instance.Listunit.Add(this);
+            this.Name = name;
+            if (Existeunidadparacrear(name))
+            {
+                Listas.Instance.Listunit.Add(this);
+            }
         }
         /// <summary>
         /// Creador de Abreviacion de unidad.
@@ -54,5 +56,17 @@ namespace Telegram
         {
             Listas.Instance.Listunit.Remove(unit);
         }
+        private bool Existeunidadparacrear(string name)
+        {
+            foreach (Units units in Listas.Instance.Listunit)
+            {
+                if (units.Name == name)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }

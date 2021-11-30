@@ -9,7 +9,7 @@ namespace Telegram
     /// <summary>
     /// Clase que se encarga de controlar las ofertas.
     /// </summary>
-    public class Offer 
+    public class Offer : IJsonConvertibl
     {
 
         /// <summary>
@@ -52,6 +52,8 @@ namespace Telegram
         /// </summary>
         /// <value></value>
         public Emprendedores Owner { get; set; }
+        [JsonConstructor]
+        public Offer(){}
         /// <summary>
         /// Constructor de objetos de tipo oferta.
         /// </summary>
@@ -64,12 +66,23 @@ namespace Telegram
         /// <param name="productprice"></param>
         public Offer (string location, string type, string productname, Units productunit, int productquantity,int productprice, Category categories)
         {
+            Catalogo catalogo= Catalogo.Instance;
             this.Type = type;
             Materials product = new Materials(productname,productquantity,productunit,productprice,categories);
             this.Product = product;
-            Catalogo.Instance.AllOffers.Add(this);
+            catalogo.AllOffers.Add(this);
             this.Location=location;
         }
+        public string ConvertToJson()
+        {
+            JsonSerializerOptions options = new()
+            {
+                ReferenceHandler = MyReferenceHandler.Instance,
+                WriteIndented = true
+            };
+            return JsonSerializer.Serialize(this, options);
+        }
+
 
         /// <summary>
         /// Metodo que imprime las habilitaciones de la empresa.
