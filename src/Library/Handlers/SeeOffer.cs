@@ -45,6 +45,8 @@ namespace Telegram
         
                 StringBuilder MensajeCompleto = new StringBuilder($"{Armadordemensajes.Instance.Veroferta(offer1)}\n");
                 MensajeCompleto.Append("/VerDireccion");
+
+                
                
                 response = MensajeCompleto.ToString();
                 return true;
@@ -55,22 +57,6 @@ namespace Telegram
             response = string.Empty;
             return false;
         }
-       /* private async Task SendProfileImage(IMessege message)
-        {
-            // Can be null during testing
-           /* if (bot != null)
-            {
-                await bot.SendChatActionAsync(message.Idchat, ChatAction.UploadPhoto);
-
-                const string filePath = @"profile.jpeg";
-                using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-                var fileName = filePath.Split(Path.DirectorySeparatorChar).Last();
-
-                await bot.SendPhotoAsync(
-                    chatId: message.Idchat,
-                    photo: new InputOnlineFile(fileStream, fileName),
-                    caption: "Te ves bien!"
-                );
-            }*/
+      
         }
     }

@@ -40,7 +40,7 @@ namespace Telegram
         /// <param name="name"></param>
         public void CreateRating(string descripcion,string name){
              Ratings rating = new Ratings(descripcion,name);
-             Listas.Instance.Listratings.Add(rating);
+            
         }
         /// <summary>
         /// Metodo de admin para crear nuevos rubros.
@@ -49,7 +49,7 @@ namespace Telegram
         /// <param name="name"></param>
          public void CreateRubro(string descripcion,string name){
              Rubro Rubro = new Rubro(descripcion,name);
-             Listas.Instance.Listrubro.Add(Rubro);
+             
         }
         /// <summary>
         /// Metodo de admin para crear nuevas categorias.
@@ -58,7 +58,7 @@ namespace Telegram
         /// <param name="descripcion"></param>
         public void CreateCategory(string name,string descripcion){
              Category Category = new Category(name,descripcion);
-             Listas.Instance.Listcategory.Add(Category);
+            
         }
 
     }
