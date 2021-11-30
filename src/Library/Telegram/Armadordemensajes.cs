@@ -39,10 +39,11 @@ namespace Telegram{
             Frasesarmadas+=$"Sus habilitaciones son:\n";
             foreach (Ratings rat in offer.Ratings)
             {
-                Frasesarmadas+=$"{rat.Name}\n";
+                Frasesarmadas+=$"{rat.Name}";
             }
-            Frasesarmadas+=$"\n Es una oferta de tipo {offer.Type}\n";
-            Frasesarmadas+=$"\nY Pertence a la cateogoria {offer.Product.Categories}\n";
+            Frasesarmadas+=$"\nEs una oferta de tipo {offer.Type}\n";
+            Frasesarmadas+=$"\nY Pertence a la cateogoria {offer.Product.Categories.Name}\n";
+            Frasesarmadas+=$"\nY se encuentra en la direccion: {offer.Location}";
             return Frasesarmadas;
         }
         public string Vercategory(Category category)

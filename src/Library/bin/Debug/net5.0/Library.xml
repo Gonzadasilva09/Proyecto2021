@@ -332,6 +332,25 @@
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
             </summary>
         </member>
+        <member name="T:Telegram.PhotoRouteHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="M:Telegram.PhotoRouteHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.StartHandler"/>. Esta clase procesa el mensaje "hola".
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.PhotoRouteHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
         <member name="T:Telegram.RegisterHandlerEmprendedores">
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
