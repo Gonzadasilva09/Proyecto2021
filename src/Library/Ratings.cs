@@ -9,6 +9,7 @@ namespace Telegram
     /// Clase encargada de controlar las habilitaciones.
     /// </summary>
     public class Ratings{
+
         /// <summary>
         /// Obtiene o establece una descripcion de la habilitación.
         /// </summary>

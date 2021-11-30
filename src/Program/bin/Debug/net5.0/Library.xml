@@ -342,7 +342,6 @@
         <member name="M:Telegram.CancelHandler.InternalHandle(Telegram.IMessege,System.String@)">
             <summary>
             Procesa el mensaje "/cancelar" y retorna true; retorna false en caso contrario.
-<<<<<<< HEAD
             </summary>
             <param name="message">El mensaje a procesar.</param>
             <param name="response">La respuesta al mensaje procesado.</param>
@@ -419,8 +418,6 @@
         <member name="M:Telegram.CreateTokenHandler.InternalHandle(Telegram.IMessege,System.String@)">
             <summary>
             Procesa el mensaje "/start" y retorna true; retorna false en caso contrario.
-=======
->>>>>>> afe0ed12d2e19d835bdae4c91e623861f777b3fb
             </summary>
             <param name="message">El mensaje a procesar.</param>
             <param name="response">La respuesta al mensaje procesado.</param>
@@ -462,8 +459,6 @@
         <member name="M:Telegram.OfferHandler.InternalHandle(Telegram.IMessege,System.String@)">
             <summary>
             Procesa el mensaje "/crearoferta" y retorna true; retorna false en caso contrario.
-<<<<<<< HEAD
-=======
             </summary>
             <param name="message">El mensaje a procesar.</param>
             <param name="response">La respuesta al mensaje procesado.</param>
@@ -472,11 +467,7 @@
         <member name="T:Telegram.PhotoRouteHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
->>>>>>> afe0ed12d2e19d835bdae4c91e623861f777b3fb
             </summary>
-            <param name="message">El mensaje a procesar.</param>
-            <param name="response">La respuesta al mensaje procesado.</param>
-            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
         <member name="M:Telegram.PhotoRouteHandler.#ctor(Telegram.BaseHandler)">
             <summary>
@@ -500,7 +491,6 @@
         <member name="M:Telegram.RegisterHandlerEmprendedores.#ctor(Telegram.BaseHandler)">
             <summary>
             Inicializa una nueva instancia de la clase <see cref="T:Telegram.RegisterHandlerEmprendedores"/>. Esta clase procesa el mensaje "/emprendedor".
-<<<<<<< HEAD
             </summary>
             <param name="next">El próximo "handler".</param>
         </member>
@@ -508,15 +498,6 @@
             <summary>
             Procesa el mensaje "/emprendedor" y retorna true; retorna false en caso contrario.
             </summary>
-=======
-            </summary>
-            <param name="next">El próximo "handler".</param>
-        </member>
-        <member name="M:Telegram.RegisterHandlerEmprendedores.InternalHandle(Telegram.IMessege,System.String@)">
-            <summary>
-            Procesa el mensaje "/emprendedor" y retorna true; retorna false en caso contrario.
-            </summary>
->>>>>>> afe0ed12d2e19d835bdae4c91e623861f777b3fb
             <param name="message">El mensaje a procesar.</param>
             <param name="response">La respuesta al mensaje procesado.</param>
             <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
@@ -600,7 +581,6 @@
             <param name="response">La respuesta al mensaje procesado.</param>
             <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
-<<<<<<< HEAD
         <member name="T:Telegram.StartAdminHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que utiliza el comando "/start", este handler se dedica a mostrar el menu a usuarios de tipo admin.
@@ -620,8 +600,6 @@
             <param name="response">La respuesta al mensaje procesado.</param>
             <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
-=======
->>>>>>> afe0ed12d2e19d835bdae4c91e623861f777b3fb
         <member name="T:Telegram.StartEmpresaHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que utiliza el comando "/start", este handler se dedica a mostrar el menu a usuarios de tipo empresa.
@@ -748,6 +726,18 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="F:Telegram.Listas.Listadmin">
+            <summary>
+            Lista que contiene todoas los admins creados.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Telegram.Listas.Listemprendedores">
+            <summary>
+            Lista que contiene todos los emprendedores creados.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="F:Telegram.Listas.Listratings">
             <summary>
             Lista que contiene todas las habilitaciones disponibles.
@@ -769,18 +759,6 @@
         <member name="F:Telegram.Listas.Listbussiness">
             <summary>
             Lista que contiene todas las empresas creadas.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="F:Telegram.Listas.Listadmin">
-            <summary>
-            Lista que contiene todoas los admins creados.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="F:Telegram.Listas.Listemprendedores">
-            <summary>
-            Lista que contiene todos los emprendedores creados.
             </summary>
             <returns></returns>
         </member>
@@ -815,6 +793,13 @@
             </summary>
             <param name="ID"></param>
         </member>
+        <!-- Badly formed XML comment ignored for member "F:Telegram.Listas.AdminKey" -->
+        <member name="M:Telegram.Listas.Accion(System.String)">
+            <summary>
+            Metodo para agregar el id de los usuarios al diccionario HistorialUser.
+            </summary>
+            <param name="ID"></param>
+        </member>
         <member name="F:Telegram.Listas.EmprendedoresKey">
             <summary>
             Diccionario utilizado para almacenar instancias de emprendedor asociadas a cierta ID.
@@ -828,15 +813,8 @@
             Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
             </summary>
             <typeparam name="string"></typeparam>
-            <typeparam name="Emprendedores"></typeparam>
+            <typeparam name="Business"></typeparam>
             <returns></returns>
-        </member>
-        <!-- Badly formed XML comment ignored for member "F:Telegram.Listas.AdminKey" -->
-        <member name="M:Telegram.Listas.Accion(System.String)">
-            <summary>
-            Metodo para agregar el id de los usuarios al diccionario HistorialUser.
-            </summary>
-            <param name="ID"></param>
         </member>
         <member name="M:Telegram.Listas.CrearUtilities(System.String)">
             <summary>
@@ -848,9 +826,6 @@
             <summary>
             Metodo encargado de guardar toda la informacion almacenada en Listas. En los json correspondientes a cada sub-lista.
             </summary>
-        </member>
-        <member name="M:Telegram.Listas.Serializarunit">
-            <returns></returns>
         </member>
         <member name="M:Telegram.Listas.Cargarlistas">
             <summary>
