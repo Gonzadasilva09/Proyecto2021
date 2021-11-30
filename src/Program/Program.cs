@@ -25,8 +25,9 @@ namespace Telegram
         {
 
             lista.Cargarlistas();
+            
             catalogo.cargaroffer();
-            /*Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
+            Rubro rubro= new Rubro("Re tecnologicos tipo joel","TECNOLOGIA");
             Rubro rubro1= new Rubro("autos y motos ruta 5","TRANSPORTE");
             Rubro rubro2= new Rubro("la ucu pero con profes","EDUCACION");
             Rubro rubro3= new Rubro("el cuqui","POLITICA");
@@ -52,12 +53,28 @@ namespace Telegram
             Category categoria7= new Category("Biodegradables","descripcion");
             Category categoria8= new Category("Desechos peligrosos","descripcion");
             Category categoria9= new Category("Otros","descripcion");
+
+            Business empresa=new Business("Gonza","8 de octubre 2738",rubro,"1603877597");
+            //Listas.Instance.BusinessKey.Add("1603877597",empresa);
+            
+
+
+            Listas.Instance.Listtokens.Add("TokenTest");
             foreach (Units item in Listas.Instance.Listunit)
             {
                 Console.WriteLine(item.Name);
-            }*/
+            }
+            
 
 
+            foreach (Units item in Listas.Instance.Listunit)
+            {
+                Console.WriteLine(item.Name);
+            }
+
+          
+
+            
             /*Listas.Instance.Accion("1603877597");
             Listas.Instance.BusinessKey.Add("1603877597",empresa);*/
             //Business empresa2 = new Business("fede", "direccion",rubro2,"1964905204");
@@ -67,7 +84,7 @@ namespace Telegram
 
             Bot = new TelegramBotClient(TelegramToken);
 
-            handler1 = new CancelHandler(new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new AddRatingHandler(new OfferHandler(new SearchHandler(new AllOfferHandler(new SeeOfferHandler(null))))))))))));
+            handler1 = new CancelHandler(new StartHandler(new StartEmprendedorHandler(new StartEmpresaHandler(new SignUpHandler(new RegisterHandlerEmpresa(new RegisterHandlerEmprendedores(new AddRatingHandler(new OfferHandler(new SearchHandler(new AllOfferHandler(new SeeOfferHandler(new PhotoRouteHandler(null)))))))))))));
 
             var cts = new CancellationTokenSource();
             //Inicio la escucha de mensajes

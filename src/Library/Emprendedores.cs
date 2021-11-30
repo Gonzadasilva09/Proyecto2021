@@ -34,7 +34,7 @@ namespace Telegram
         {
             Listas.Instance.Listuser.Add(this);
             Listas.Instance.Listemprendedores.Add(this);
-            Listas.Instance.EmprendedoresKey.Add(id,this);
+            
             
         }
 
