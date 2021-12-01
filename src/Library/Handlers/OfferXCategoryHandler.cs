@@ -59,7 +59,14 @@ namespace Telegram
                 Category category = Listas.Instance.Listcategory[Int32.Parse(categoria) - 1];
 
                 List<Offer> Results = Search.Instance.SearchxCategory(category);
-                Listas.Instance.CrearResultados(message.IdUser,Results);
+                
+                if(!Listas.Instance.Resultados.ContainsKey(message.IdUser)){
+                    Listas.Instance.CrearResultados(message.IdUser,Results);
+                } else {
+                    Listas.Instance.Resultados.Remove(message.IdUser);
+                    Listas.Instance.CrearResultados(message.IdUser,Results);
+
+                }
 
                 int num = 1;
                 foreach (Offer item in Results)
@@ -69,6 +76,7 @@ namespace Telegram
                     num++;
 
                 }
+                
 
                response = MensajeCompleto.ToString();
                 return true;

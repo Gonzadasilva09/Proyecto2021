@@ -44,7 +44,8 @@ namespace Telegram
                 Offer offer1=Catalogo.Instance.AllOffers[offer];
         
                 StringBuilder MensajeCompleto = new StringBuilder($"{Armadordemensajes.Instance.Veroferta(offer1)}\n");
-                MensajeCompleto.Append("/VerUbicacion");
+                MensajeCompleto.Append("/VerUbicacion\n");
+                MensajeCompleto.Append("/Compraroferta");
 
                 
                
@@ -61,7 +62,8 @@ namespace Telegram
                 Offer offer1=Listas.Instance.Resultados[message.IdUser][offer];
         
                 StringBuilder MensajeCompleto = new StringBuilder($"{Armadordemensajes.Instance.Veroferta(offer1)}\n");
-                MensajeCompleto.Append("/VerUbicacion");
+                MensajeCompleto.Append("/VerUbicacion\n");
+                MensajeCompleto.Append("/Compraroferta");
 
                 
                
