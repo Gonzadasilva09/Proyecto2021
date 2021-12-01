@@ -807,7 +807,7 @@
             <summary>
             Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
             </summary>
-            <param name="ID"></param>
+            <returns></returns>
         </member>
         <member name="F:Telegram.Listas.Resultados">
             <summary>
@@ -1238,17 +1238,6 @@
             <param name="Name"></param>
             <returns></returns>
         </member>
-        <member name="T:Telegram.Armadordemensajes">
-            <summary>
-            Clase encargada de interactuar con la ApiLocation
-            </summary>
-        </member>
-        <member name="M:Telegram.Armadordemensajes.#ctor">
-            <summary>
-            Singleton para que solo exista una instancia del catalogo.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:Telegram.Units">
             <summary>
             Clase que se encarga de las unidades de magnitud para las ofertas, esta clase cumple expert ya que contiene toda la información necesaria para cumplir su función.
@@ -1261,9 +1250,6 @@
             <value></value>
         </member>
         <member name="M:Telegram.Units.#ctor(System.String)">
-            <summary>
-            Abreviacion de la unidad.
-            </summary>
             <summary>
             Constructor de los objetos Unit.
             </summary>
@@ -1312,6 +1298,17 @@
             <param name="location"></param>
             <param name="rubro"></param>
             <param name="id"></param>
+        </member>
+        <member name="T:Telegram.Armadordemensajes">
+            <summary>
+            Clase encargada de interactuar con la ApiLocation
+            </summary>
+        </member>
+        <member name="M:Telegram.Armadordemensajes.#ctor">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

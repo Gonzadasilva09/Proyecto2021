@@ -27,10 +27,10 @@ namespace Telegram
             Listas.Instance.AdminKey.Add(id,this);
         }
 
-/// <summary>
-/// Metodo de admin para crear un token.
-/// </summary>
-/// <param name="token"></param>
+        /// <summary>
+        /// Metodo de admin para crear un token.
+        /// </summary>
+        /// <param name="token"></param>
         public void CreateToken(string token){
             Listas.Instance.Listtokens.Add(token);
         }

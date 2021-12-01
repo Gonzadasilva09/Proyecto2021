@@ -15,9 +15,6 @@ namespace Telegram
         /// <value></value>
         public string Name{get;}
         /// <summary>
-        /// Abreviacion de la unidad.
-        /// </summary>
-        /// <summary>
         /// Constructor de los objetos Unit.
         /// </summary>
         /// <param name="name"></param>

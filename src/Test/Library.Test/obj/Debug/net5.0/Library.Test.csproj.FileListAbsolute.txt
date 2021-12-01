@@ -208,3 +208,13 @@ C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Library.xml
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\obj\Debug\net5.0\Library.Test.csproj.CopyComplete
 C:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\obj\Debug\net5.0\Library.Test.genruntimeconfig.cache
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Nito.AsyncEx.Context.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Nito.AsyncEx.Coordination.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Nito.AsyncEx.Interop.WaitHandles.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Nito.AsyncEx.Oop.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Nito.AsyncEx.Tasks.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Nito.Cancellation.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Nito.Collections.Deque.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Nito.Disposables.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Telegram.Bot.dll
+c:\Users\Franco De Stefano\Documents\Semestre 2\Programacion 2\Trabajo Final\PII_2021_2_Equipo11\src\Test\Library.Test\bin\Debug\net5.0\Telegram.Bot.Extensions.Polling.dll
