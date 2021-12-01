@@ -31,7 +31,7 @@ namespace Telegram
             catalogo.cargaroffer();
             lista.Listrubro.Remove(rubro);
             
-           /* Admin admin = new Admin("Fede", "Oficina del admin", rubro, "1964905204");
+           Admin admin = new Admin("Fede", "Oficina del admin", rubro, "1964905204");
 
             Rubro rubro1= new Rubro("Especializados en hardware y software","TECNOLOGIA");
             Rubro rubro2= new Rubro("Especialistas en transportar materiales","TRANSPORTE");
@@ -62,14 +62,21 @@ namespace Telegram
             Category categoria9= new Category("Otros","descripcion");
             Listas.Instance.Listtokens.Add("TokenTest");
             
-
+            foreach(Category category in lista.Listcategory)  
+            {
+                Console.WriteLine(category.Name);
+            }
             
             Offer offer = new Offer ("Av. Gral. Rivera 2572","Recurrente","Langostas",unit,200,"2000USD",categoria);
             Offer offer1 = new Offer ("Av. Mariscal Francisco Solano López 1431","Recurrente","Salame",unit,10,"1000$",categoria2);
             Business empresa = new Business("Panaderia Suiza","Av. Costanera 194",rubro4,"12312321");
             Business empresa1 = new Business("Restorán García","Av. Alfredo Arocena 1587",rubro1,"1234");
             Emprendedores emprendedor1 = new Emprendedores("DESEM","Blvr. España 2183",rubro5,"4134134");
-            Emprendedores emprendedor2 = new Emprendedores("Asociación Empretec Uruguay","Av. Italia 6101 ",rubro5,"41123213");*/       
+            Emprendedores emprendedor2 = new Emprendedores("Asociación Empretec Uruguay","Av. Italia 6101 ",rubro5,"41123213");   
+            foreach(Category category in lista.Listcategory)  
+            {
+                Console.WriteLine(category.Name);
+            }
             
 
             Bot = new TelegramBotClient(TelegramToken);

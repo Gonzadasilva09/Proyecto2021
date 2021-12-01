@@ -8,6 +8,8 @@ namespace Telegram
 {
     /// <summary>
     /// Clase encargada de manejar el catalogo.
+    /// Esta clase es un singleton, es la encargada de contener todas las ofertas hechas por usuarios, y por lo tanto se necesita una instancia unica.
+    /// Esta clase cumple con Expert, su unica responsabilidad es la de contener objetos de tipo offer.
     /// </summary>
     public class Catalogo
     {

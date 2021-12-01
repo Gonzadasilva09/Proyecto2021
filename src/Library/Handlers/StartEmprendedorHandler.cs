@@ -12,6 +12,7 @@ namespace Telegram
 {
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que utiliza el comando /start, este handler es una variacion del StartHandler dedicada a Emprendedor.
+    /// Esta clase aplica polimorfismo, responde al comando "/start" solamente si el usuario es de tipo emprendedor.
     /// </summary>
     public class StartEmprendedorHandler : BaseHandler
     {
@@ -41,11 +42,8 @@ namespace Telegram
                 }
                 StringBuilder MensajeCompleto = new StringBuilder("Bot realizado por el equipo numero 11 de Programacion II\n");
 
-                foreach (User user in Listas.Instance.Listuser)
-                {
-                    if (message.IdUser == user.ID)
-                    {
-                        MensajeCompleto.Append($"Bienvenido {user.Name}\n Ingrese la función que desee utilizar...  \n");
+
+                        MensajeCompleto.Append($"Bienvenido {Listas.Instance.EmprendedoresKey[message.IdUser].Name}\n Ingrese la función que desee utilizar...  \n");
                         MensajeCompleto.Append($"Si desea buscar entre las ofertas disponibles ingrese: \n");
                         MensajeCompleto.Append($"/buscaroferta \n");
                         MensajeCompleto.Append($"Si desea agregar habilitaciones a su usuario ingrese: \n");
@@ -58,8 +56,6 @@ namespace Telegram
 
                         response = MensajeCompleto.ToString();
                         return true;
-                    }
-                }
             }
             response = string.Empty;
             return false;
