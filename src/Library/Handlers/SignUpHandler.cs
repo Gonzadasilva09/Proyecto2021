@@ -12,7 +12,7 @@ using System.Collections.Generic;
 namespace Telegram
 {
     /// <summary>
-    /// Debido a las diferencias entre registrarse como una empresa o como un emprendedor, decidimos aplicar polimorfismo, este handler se encarga de mandar al usuario al handler apropiado, ya se RegisterEmpresaHandler o RegisterEmprendedorHandler.
+    /// Debido a las diferencias entre registrarse como una empresa o como un emprendedor, decidimos aplicar polimorfismo, este handler se encarga de mandar al usuario al handler apropiado, ya sea RegisterEmpresaHandler o RegisterEmprendedorHandler.
     /// </summary>
 
 

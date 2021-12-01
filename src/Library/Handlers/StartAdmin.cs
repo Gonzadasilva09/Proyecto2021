@@ -12,6 +12,7 @@ namespace Telegram
 {
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que utiliza el comando "/start", este handler se dedica a mostrar el menu a usuarios de tipo admin.
+    /// Esta clase aplica polimorfismo, responde al comando "/start" solamente si el usuario es de tipo admin.
     /// </summary>
     public class StartAdminHandler : BaseHandler
     {
@@ -42,10 +43,6 @@ namespace Telegram
                 {
                     Listas.Instance.Accion(message.IdUser);
                 }
-                foreach (User user in Listas.Instance.Listuser)
-                {
-                    if (message.IdUser == user.ID)
-                    {
                         MensajeCompleto.Append($"Bienvenido Administrador\n Ingrese la función que desee utilizar...  \n");
                         MensajeCompleto.Append($"Si desea agregar un nuevo token ingrese:\n");
                         MensajeCompleto.Append($"/creartoken \n");
@@ -65,8 +62,6 @@ namespace Telegram
 
                         response = MensajeCompleto.ToString();
                         return true;
-                    }
-                }
             }
             response = string.Empty;
             return false;

@@ -7,7 +7,8 @@ namespace Telegram
 {
 
     /// <summary>
-    /// Clase que se encarga de controlar las ofertas.
+    /// Clase que se encarga de controlar las ofertas, en esta clase utilizamos creator ya que offer utiliza de manera muy cercana a materials.
+    /// Cumple con SRP ya que tiene la unica responsabilidad de crear ofertas.
     /// </summary>
     public class Offer : IJsonConvertibl
     {
@@ -65,11 +66,15 @@ namespace Telegram
         /// <param name="productprice"></param>
         public Offer (string location, string type, string productname, Units productunit, int productquantity,string productprice, Category categories)
         {
-            Catalogo catalogo= Catalogo.Instance;
+
             this.Type = type;
             Materials product = new Materials(productname,productquantity,productunit,productprice,categories);
             this.Product = product;
-            catalogo.AllOffers.Add(this);
+            /// <summary>
+            /// Esto rompe con SRP, pero no tuvimos otra alternativa, sin esto la persistencia no funciona y no hubo tiempo de pensar en una alternativa.
+            /// </summary>
+            /// <returns></returns>
+            Catalogo.Instance.AllOffers.Add(this);
             this.Location=location;
         }
         public string ConvertToJson()
@@ -81,32 +86,6 @@ namespace Telegram
             };
             return JsonSerializer.Serialize(this, options);
         }
-
-
-        /// <summary>
-        /// Metodo que imprime las habilitaciones de la empresa.
-        /// </summary>
-        /// <returns></returns>
-         public string PrintRatings()
-         {  
-            string habilitaciones = string.Empty;
-            foreach (Ratings rat in this.Ratings)
-            {
-               habilitaciones = habilitaciones + $"{rat.Name} ,";
-            }
-            return habilitaciones;
-        }
-    
-
-        /// <summary>
-        /// Metodo que añade habilitaciones a la empresa.
-        /// </summary>
-        /// <param name="ratings"></param>
-        public void AddRatings(Ratings ratings)
-        {
-            Ratings.Add(ratings);
-        }
-
 
     }
 }

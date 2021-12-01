@@ -13,6 +13,8 @@ namespace Telegram
 {
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "/emprendedor", es el handler encargado de crear nuevos emprendedores.
+    /// Se aplica SRP, la unica responsabilidad de este handler es crear nuevos emprendedores.
+    /// 
     /// </summary>
     public class RegisterHandlerEmprendedores : BaseHandler
     {
@@ -71,11 +73,11 @@ namespace Telegram
                     int rubro = (Convert.ToInt32(valores[1])) - 1;
                     StringBuilder MensajeCompleto = new StringBuilder("Su usuario a sido creado con exito\n");
 
-                    Emprendedores emprendedor = new Emprendedores(Listas.Instance.HistorialUser[message.IdUser][1], Listas.Instance.HistorialUser[message.IdUser][2], Listas.Instance.Listrubro[rubro], message.IdUser);
-                    MensajeCompleto.Append($"Nombre de usuario: {emprendedor.Name}\n");
-                    MensajeCompleto.Append($"Direccion: {emprendedor.Location}\n");
-                    MensajeCompleto.Append($"Rubro: {emprendedor.Rubro.Name}\n");
-                    MensajeCompleto.Append($"ID de usuario: {emprendedor.ID}\n");
+                    Listas.Instance.CreateEmprendedor(Listas.Instance.HistorialUser[message.IdUser][1], Listas.Instance.HistorialUser[message.IdUser][2], Listas.Instance.Listrubro[rubro], message.IdUser);
+                    MensajeCompleto.Append($"Nombre de usuario: {Listas.Instance.EmprendedoresKey[message.IdUser].Name}\n");
+                    MensajeCompleto.Append($"Direccion: {Listas.Instance.EmprendedoresKey[message.IdUser].Location}\n");
+                    MensajeCompleto.Append($"Rubro: {Listas.Instance.EmprendedoresKey[message.IdUser].Rubro.Name}\n");
+                    MensajeCompleto.Append($"ID de usuario: {Listas.Instance.EmprendedoresKey[message.IdUser].ID}\n");
                     MensajeCompleto.Append("Para volver al menu principal utilize /start. \n");
 
                     Listas.Instance.HistorialUser.Remove(message.IdUser);
