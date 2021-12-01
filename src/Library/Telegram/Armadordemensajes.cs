@@ -71,7 +71,6 @@ namespace Telegram{
         {
             string Frasesarmadas=string.Empty;
             Frasesarmadas+=$"El nombre de la unidad es {units.Name}\n";
-            Frasesarmadas+=$"Su sigla es {units.shortcut}\n";
             return Frasesarmadas;
         }
         public string Vercatalogo()

@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace Telegram
 {
     /// <summary>
-    /// Clase que se encarga de las unidades de magnitud para las ofertas.
+    /// Clase que se encarga de las unidades de magnitud para las ofertas, esta clase cumple expert ya que contiene toda la información necesaria para cumplir su función.
     /// </summary>
     public class Units
     {
@@ -17,7 +17,6 @@ namespace Telegram
         /// <summary>
         /// Abreviacion de la unidad.
         /// </summary>
-        public string shortcut;
         /// <summary>
         /// Constructor de los objetos Unit.
         /// </summary>
@@ -25,28 +24,14 @@ namespace Telegram
         public Units(string name)
         {
             this.Name = name;
+            /// <summary>
+            /// Esto rompe con SRP, pero no tuvimos otra alternativa, sin esto la persistencia no funciona y no hubo tiempo de pensar en una alternativa.
+            /// </summary>
+            /// <returns></returns>
             if (Existeunidadparacrear(name))
             {
                 Listas.Instance.Listunit.Add(this);
             }
-        }
-        /// <summary>
-        /// Creador de Abreviacion de unidad.
-        /// </summary>
-        /// <returns></returns>
-
-        private string shortcutcreater()
-        {
-            return this.Name[0].ToString();
-        }
-        /// <summary>
-        /// Transforma las unidades a su abreviacion.
-        /// </summary>
-        /// <param name="unitnum"></param>
-        /// <returns></returns>
-        public string shortcutget(int unitnum)
-        {
-            return Listas.Instance.Listunit[unitnum].shortcut;
         }
         /// <summary>
         /// Metodo para eliminar unidades de la lista.

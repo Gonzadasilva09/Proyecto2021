@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace Telegram
 {
     /// <summary>
-    /// Clase especializada en comprar ofertas.
+    /// Clase especializada en comprar ofertas, esta clase es un singleton, solamente es necesaria una instancia de dicha clase para procesar las compras realizadas por los usuarios.
+    /// Esta clase cumple con SRP, su unica responsabilidad es proesar compras realizadas por los usuarios.
     /// </summary>
     public class BuyOffer
     {

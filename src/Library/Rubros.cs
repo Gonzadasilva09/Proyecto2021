@@ -6,7 +6,8 @@ using System.Text.Json.Serialization;
 namespace Telegram
 {
     /// <summary>
-    /// Clase encargada de crear y obtener los distintos rubros disponibles.
+    /// Clase encargada de crear y obtener los distintos rubros disponibles, esta clase cumple con expert ya que contiene toda la información necesaria para cumplir su función
+    /// En un principio era parte del plan hacer una clase abstracta "Elemento" y que Rubros, Ratings y Categories heredaran de la misma para cumplir con LSP, pero debido a problemas con la persistencia esto no fue posible.
     /// </summary>
     public class Rubro
     {
@@ -25,25 +26,23 @@ namespace Telegram
         /// </summary>
         /// <param name="description"></param>
         /// <param name="name"></param>
+        
         public Rubro(string description, string name)
         {
             this.Description = description;
             this.Name = name;
-            if (Existerubroparacrear(name))
+             /// <summary>
+            /// Esto rompe con SRP, pero no tuvimos otra alternativa, sin esto la persistencia no funciona y no hubo tiempo de pensar en una alternativa.
+            /// </summary>
+            /// <returns></returns>
+            if (doesthisobjectexists(name))
             {
                 
                 Listas.Instance.Listrubro.Add(this);
             }
 
         }
-        /// <summary>
-        /// Añade rubros nuevos a la lista de rubros.
-        /// </summary>
-        public static void Deleterubro(Rubro rubro)
-        {
-            Listas.Instance.Listrubro.Remove(rubro);
-        }
-        private bool Existerubroparacrear(string name)
+        private bool doesthisobjectexists(string name)
         {
             foreach (Rubro item in Listas.Instance.Listrubro)
             {

@@ -12,6 +12,8 @@ namespace Telegram
 {
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que utiliza el comando "/start", este handler se dedica a mostrar el menu a usuarios de tipo empresa.
+    /// Esta clase aplica polimorfismo, responde al comando "/start" solamente si el usuario es de tipo empresa.
+    /// 
     /// </summary>
     public class StartEmpresaHandler : BaseHandler
     {
@@ -42,11 +44,7 @@ namespace Telegram
                 {
                     Listas.Instance.Accion(message.IdUser);
                 }
-                foreach (User user in Listas.Instance.Listuser)
-                {
-                    if (message.IdUser == user.ID)
-                    {
-                        MensajeCompleto.Append($"Bienvenido {user.Name}\n Ingrese la función que desee utilizar...  \n");
+                        MensajeCompleto.Append($"Bienvenido {Listas.Instance.BusinessKey[message.IdUser].Name}\n Ingrese la función que desee utilizar...  \n");
                         MensajeCompleto.Append($"Si desea publicar una nueva oferta ingrese:\n");
                         MensajeCompleto.Append($"/crearoferta \n");
                         MensajeCompleto.Append($"Si desea eliminar una de sus publicaciónes ingrese:\n");
@@ -63,8 +61,6 @@ namespace Telegram
 
                         response = MensajeCompleto.ToString();
                         return true;
-                    }
-                }
             }
             response = string.Empty;
             return false;

@@ -8,8 +8,11 @@ namespace Telegram
 {
     /// <summary>
     /// Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
+    /// Esta clase cumple con Expert, conoce todos los datos requeridos para cumplir sus responsabilidades.
+    /// El patrón SRP no se cumple en esta clase, ya que tiene la responsabilidad de conocerse a si misma y de crear ofertas, por falta de tiempo no ha sido posible solucionarlo.
+    /// El patrón Creator no se cumple correctamente en esta clase, ninguno de los requisitos se cumple para que Business cree ofertas.
     /// </summary>
-    public class Business : User, IUser
+    public class Business : User
     {
         /// <summary>
         /// Constructor de objetos de tipo Business.
@@ -21,7 +24,6 @@ namespace Telegram
         /// <returns></returns>
         public Business(string name, string location, Rubro rubro, string id) : base (name, location, rubro, id)
         {
-            Listas.Instance.Listuser.Add(this);
             Listas.Instance.Listbussiness.Add(this);
             Listas.Instance.BusinessKey.Add(id,this);
         }
