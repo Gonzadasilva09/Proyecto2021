@@ -38,7 +38,6 @@ namespace Telegram
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(IMessege message, out string response)
         {
-
             if (message.Mensaje.ToLower().Equals("/start") && !Listas.Instance.BusinessKey.ContainsKey(message.IdUser) && !Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser))
             {
 

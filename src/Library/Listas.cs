@@ -13,7 +13,7 @@ namespace Telegram
     public class Listas
     {
         private static Listas listas;
-        private Listas() { }
+        private Listas(){}
         /// <summary>
         /// Singleton para que solo exista una instancia de las listas.
         /// </summary>
@@ -106,7 +106,7 @@ namespace Telegram
         /// <summary>
         /// Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
         /// </summary>
-        /// <param name="ID"></param>
+        /// <returns></returns>
 
         public Dictionary<string, Collection<int>> Utilities = new Dictionary<string, Collection<int>>();
         /// Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.

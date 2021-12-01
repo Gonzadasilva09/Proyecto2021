@@ -15,10 +15,6 @@ namespace Telegram
         /// <value></value>
         public string Name{get;}
         /// <summary>
-        /// Abreviacion de la unidad.
-        /// </summary>
-        public string shortcut;
-        /// <summary>
         /// Constructor de los objetos Unit.
         /// </summary>
         /// <param name="name"></param>
@@ -29,25 +25,7 @@ namespace Telegram
             {
                 Listas.Instance.Listunit.Add(this);
             }
-        }
-        /// <summary>
-        /// Creador de Abreviacion de unidad.
-        /// </summary>
-        /// <returns></returns>
-
-        private string shortcutcreater()
-        {
-            return this.Name[0].ToString();
-        }
-        /// <summary>
-        /// Transforma las unidades a su abreviacion.
-        /// </summary>
-        /// <param name="unitnum"></param>
-        /// <returns></returns>
-        public string shortcutget(int unitnum)
-        {
-            return Listas.Instance.Listunit[unitnum].shortcut;
-        }
+        }   
         /// <summary>
         /// Metodo para eliminar unidades de la lista.
         /// </summary>

@@ -791,7 +791,7 @@
             <summary>
             Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
             </summary>
-            <param name="ID"></param>
+            <returns></returns>
         </member>
         <!-- Badly formed XML comment ignored for member "F:Telegram.Listas.AdminKey" -->
         <member name="M:Telegram.Listas.Accion(System.String)">
@@ -1240,29 +1240,11 @@
             </summary>
             <value></value>
         </member>
-        <member name="F:Telegram.Units.shortcut">
-            <summary>
-            Abreviacion de la unidad.
-            </summary>
-        </member>
         <member name="M:Telegram.Units.#ctor(System.String)">
             <summary>
             Constructor de los objetos Unit.
             </summary>
             <param name="name"></param>
-        </member>
-        <member name="M:Telegram.Units.shortcutcreater">
-            <summary>
-            Creador de Abreviacion de unidad.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telegram.Units.shortcutget(System.Int32)">
-            <summary>
-            Transforma las unidades a su abreviacion.
-            </summary>
-            <param name="unitnum"></param>
-            <returns></returns>
         </member>
         <member name="M:Telegram.Units.Deleteunit(Telegram.Units)">
             <summary>
