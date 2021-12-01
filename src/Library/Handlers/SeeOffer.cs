@@ -35,7 +35,7 @@ namespace Telegram
         protected override bool InternalHandle(IMessege message, out string response)
         {
             
-            if (Listas.Instance.HistorialUser[message.IdUser].Contains("/todaslasofertas") && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta") && Listas.Instance.HistorialUser[message.IdUser].Count==2)
+            if (Listas.Instance.HistorialUser[message.IdUser].Contains("/todaslasofertas") && Listas.Instance.HistorialUser[message.IdUser].Count==2)
             {   
                 Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                 string oferta=message.Mensaje.Replace("/",string.Empty);
@@ -44,7 +44,24 @@ namespace Telegram
                 Offer offer1=Catalogo.Instance.AllOffers[offer];
         
                 StringBuilder MensajeCompleto = new StringBuilder($"{Armadordemensajes.Instance.Veroferta(offer1)}\n");
-                MensajeCompleto.Append("/VerDireccion");
+                MensajeCompleto.Append("/VerUbicacion");
+
+                
+               
+                response = MensajeCompleto.ToString();
+                return true;
+
+            }
+            if (Listas.Instance.HistorialUser[message.IdUser].Contains("/ofertasxcategoria") && Listas.Instance.HistorialUser[message.IdUser].Count==3)
+            {   
+                Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                string oferta=message.Mensaje.Replace("/",string.Empty);
+                int offer = Int32.Parse(oferta)-1;
+                
+                Offer offer1=Listas.Instance.Resultados[message.IdUser][offer];
+        
+                StringBuilder MensajeCompleto = new StringBuilder($"{Armadordemensajes.Instance.Veroferta(offer1)}\n");
+                MensajeCompleto.Append("/VerUbicacion");
 
                 
                

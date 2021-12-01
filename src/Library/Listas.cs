@@ -100,6 +100,12 @@ namespace Telegram
         /// <param name="ID"></param>
 
         public Dictionary<string, Collection<int>> Utilities = new Dictionary<string, Collection<int>>();
+        /// <summary>
+        /// Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
+        /// </summary>
+        /// <param name="ID"></param>
+
+        public Dictionary<string, List<Offer>> Resultados = new Dictionary<string, List<Offer>>();
         /// Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
         /// </summary>
         /// <typeparam name="string"></typeparam>
@@ -159,6 +165,14 @@ namespace Telegram
 
         }
         /// <summary>
+        /// Metodo para agregar Los resultados de busqueda.
+        /// </summary>
+        /// <param name="ID"></param>
+        public void CrearResultados(string ID,List<Offer> Results)
+        {
+
+            this.Resultados.Add(ID,Results);
+        }
         /// Metodo de admin para crear nuevas habilitaciones.
         /// </summary>
         /// <param name="descripcion"></param>
@@ -282,10 +296,7 @@ namespace Telegram
             {
                 string json = System.IO.File.ReadAllText(@"Rubros.json");
                 List<Rubro> listavieja = JsonSerializer.Deserialize<List<Rubro>>(json);
-                foreach (Rubro rubro in listavieja)
-                {
-                    this.Listrubro.Add(rubro);
-                }
+                
 
             }
         }
