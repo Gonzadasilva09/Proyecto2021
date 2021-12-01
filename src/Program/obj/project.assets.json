@@ -5519,11 +5519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\Program.csproj",
+      "projectUniqueName": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Program\\Program.csproj",
       "projectName": "Program",
-      "projectPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\Program.csproj",
+      "projectPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Program\\Program.csproj",
       "packagesPath": "C:\\Users\\dasil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\program\\obj\\",
+      "outputPath": "C:\\Users\\dasil\\Programacion2\\PII_2021_2_Equipo11\\src\\Program\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dasil\\AppData\\Roaming\\NuGet\\NuGet.Config"

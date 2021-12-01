@@ -826,7 +826,7 @@
             <summary>
             Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
             </summary>
-            <param name="ID"></param>
+            <returns></returns>
         </member>
         <member name="F:Telegram.Listas.Resultados">
             <summary>
@@ -1280,9 +1280,6 @@
             <value></value>
         </member>
         <member name="M:Telegram.Units.#ctor(System.String)">
-            <summary>
-            Abreviacion de la unidad.
-            </summary>
             <summary>
             Constructor de los objetos Unit.
             </summary>

@@ -51,9 +51,7 @@ namespace Telegram
         /// Obtiene o establece en que unidad de representa el material.
         /// </summary>
         /// <value></value>
-        public Units Unit{ get; set; }
-
-        
+        public Units Unit{ get; set; }     
         /// <summary>
         /// Obtiene o establece el precio del material.
         /// </summary>
