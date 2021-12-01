@@ -38,7 +38,7 @@ namespace Telegram
                 if (message.Mensaje.ToLower().Equals("/crearrubro"))
                 {
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese el nombre del rubro que desea agregar.");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese la descripción del rubro que desea agregar.");
                     response = MensajeCompleto.ToString();
                     return true;
                 }
@@ -46,14 +46,14 @@ namespace Telegram
                 {
 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese la descripción del rubro que desea agregar.");
+                    StringBuilder MensajeCompleto = new StringBuilder("Ingrese el nombre del rubro que desea agregar.");
                     response = MensajeCompleto.ToString();
                     return true;
                 }
                 if (Listas.Instance.HistorialUser[message.IdUser].Count == 2)
                 {
-                    Listas.Instance.AdminKey[message.IdUser].CreateRubro(Listas.Instance.HistorialUser[message.IdUser][1], message.Mensaje);
-                    StringBuilder MensajeCompleto = new StringBuilder("El rubro ha sido creada.");
+                    Listas.Instance.CreateRubro(Listas.Instance.HistorialUser[message.IdUser][1], message.Mensaje);
+                    StringBuilder MensajeCompleto = new StringBuilder("El rubro ha sido creado");
                     Listas.Instance.HistorialUser.Remove(message.IdUser);
                     Listas.Instance.Accion(message.IdUser);
                     response = MensajeCompleto.ToString();

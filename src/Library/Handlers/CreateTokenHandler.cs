@@ -25,7 +25,7 @@ namespace Telegram
         }
 
         /// <summary>
-        /// Procesa el mensaje "/start" y retorna true; retorna false en caso contrario.
+        /// Procesa el mensaje "/createtoken" y retorna true; retorna false en caso contrario.
         /// </summary>
         /// <param name="message">El mensaje a procesar.</param>
         /// <param name="response">La respuesta al mensaje procesado.</param>

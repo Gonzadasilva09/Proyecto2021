@@ -5,9 +5,10 @@ using System.Text.Json.Serialization;
 
 namespace Telegram
 {
-/// <summary>
-/// Clase que se encarga de manejar las categorias.
-/// </summary>
+    /// <summary>
+    /// Clase que se encarga de manejar las categorias, esta clase cumple con expert ya que contiene toda la información necesaria para cumplir con su función
+    /// En un principio era parte del plan hacer una clase abstracta "Elemento" y que Rubros, Ratings y Categories heredaran de la misma para cumplir con LSP, pero debido a problemas con la persistencia esto no fue posible.
+    /// </summary>
     public class Category
     {
         /// <summary>
@@ -19,6 +20,10 @@ namespace Telegram
         {
             this.Name = name;
             this.Description = description;
+            /// <summary>
+            /// Esto rompe con SRP, pero no tuvimos otra alternativa, sin esto la persistencia no funciona y no hubo tiempo de pensar en una alternativa.
+            /// </summary>
+            /// <returns></returns>
             if (Existecategoriaparacrear(name))
             {
                 Listas.Instance.Listcategory.Add(this);

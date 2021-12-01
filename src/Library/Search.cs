@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace Telegram
 {
     /// <summary>
-    /// Clase encargada de buscar Materiales a travez de sus clasificaciones.
+    /// Clase encargada de buscar Materiales a travez de sus clasificaciones, esta clase utiliza el patrón singleton, esta clase es la encargada de gestionar todos los procesos de busqueda, por lo tanto una sola instancia de ella es necesaria.
+    /// Esta clase cumple con SRP, su unica responsabilidad es buscar ofertas entre las listas.
     /// </summary>
         public class Search
     {
@@ -31,7 +32,7 @@ namespace Telegram
         /// </summary>
         /// <param name="category"></param>
         /// <returns></returns>
-        public static List<Offer> SearchxCategory(Category category)
+        public  List<Offer> SearchxCategory(Category category)
         {
             List<Offer> results = new List<Offer>();
             foreach (Offer offer in Catalogo.Instance.AllOffers)
@@ -48,7 +49,7 @@ namespace Telegram
         /// </summary>
         /// <param name="ratings"></param>
         /// <returns></returns>
-        public static List<Offer> SearchxRatings(Ratings ratings)
+        public  List<Offer> SearchxRatings(Ratings ratings)
         {   
             List<Offer> results = new List<Offer>();
             foreach (Offer offer in Catalogo.Instance.AllOffers)
@@ -66,7 +67,7 @@ namespace Telegram
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public static List<Offer> SearchxMaterial(string Name)
+        public List<Offer> SearchxMaterial(string Name)
         {   
             List<Offer> results = new List<Offer>();
             foreach (Offer offer in Catalogo.Instance.AllOffers)

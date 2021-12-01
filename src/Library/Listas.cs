@@ -9,6 +9,9 @@ namespace Telegram
 {
     /// <summary>
     /// Clase encargada de guardar todas las listas independientes de otras clases con las cuales no interactuan directamente con los usuarios.
+    /// Esta clase es un singleton, necesitamos una clase contenedora de las instancias de otros objetos, y solamente es necesaria una unica instancia.
+    /// Esta clase tambien utiliza creator, para crear multiples objetos como empresas o emprendedores, esto se debe a que Listas contiene instancias de las mismas.
+    /// 
     /// </summary>
     public class Listas
     {
@@ -36,12 +39,6 @@ namespace Telegram
         /// <typeparam name="bool"></typeparam>
         /// <returns></returns>
         public Dictionary<string, bool> TokenVerified = new Dictionary<string, bool>();
-        public void VerifyToken(string ID, bool tokenstatus)
-        {
-
-            this.TokenVerified.Add(ID, tokenstatus);
-
-        }
 
         /// <summary>
         /// Lista que contiene todas las categorias disponibles.
@@ -82,12 +79,6 @@ namespace Telegram
         /// <returns></returns>
         public List<Business> Listbussiness = new List<Business>();
         /// <summary>
-        /// Lista que contiene toddos los usuarios creados.
-        /// </summary>
-        /// <returns></returns>
-        public List<IUser> Listuser = new List<IUser>();
-
-        /// <summary>
         /// Lista que contiene todos los tokens de verificación.
         /// </summary>
         /// <returns></returns>
@@ -109,6 +100,12 @@ namespace Telegram
         /// <returns></returns>
 
         public Dictionary<string, Collection<int>> Utilities = new Dictionary<string, Collection<int>>();
+        /// <summary>
+        /// Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
+        /// </summary>
+        /// <param name="ID"></param>
+
+        public Dictionary<string, List<Offer>> Resultados = new Dictionary<string, List<Offer>>();
         /// Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
         /// </summary>
         /// <typeparam name="string"></typeparam>
@@ -142,6 +139,21 @@ namespace Telegram
         /// <returns></returns>
         public Dictionary<string, Business> BusinessKey = new Dictionary<string, Business>();
 
+
+        public void VerifyToken(string ID, bool tokenstatus)
+        {
+
+            this.TokenVerified.Add(ID, tokenstatus);
+
+        }
+
+        public void CreateEmprendedor(string name, string location, Rubro rubro, string id){
+            Emprendedores emprendedor = new Emprendedores(name, location, rubro,id);
+        }
+
+        public void CreateBusiness(string name, string location, Rubro rubro, string id){
+            Business business = new Business(name, location, rubro,id);
+        }
         /// <summary>
         /// Metodo para agregar el id de los usuarios al diccionario Utilities.
         /// </summary>
@@ -150,6 +162,44 @@ namespace Telegram
         {
 
             this.Utilities.Add(ID, new Collection<int>());
+
+        }
+        /// <summary>
+        /// Metodo para agregar Los resultados de busqueda.
+        /// </summary>
+        /// <param name="ID"></param>
+        public void CrearResultados(string ID,List<Offer> Results)
+        {
+
+            this.Resultados.Add(ID,Results);
+        }
+        /// Metodo de admin para crear nuevas habilitaciones.
+        /// </summary>
+        /// <param name="descripcion"></param>
+        /// <param name="name"></param>
+        public void CreateRating(string descripcion, string name)
+        {
+            Ratings rating = new Ratings(descripcion, name);
+
+        }
+        /// <summary>
+        /// Metodo de admin para crear nuevos rubros.
+        /// </summary>
+        /// <param name="descripcion"></param>
+        /// <param name="name"></param>
+        public void CreateRubro(string descripcion, string name)
+        {
+            Rubro Rubro = new Rubro(descripcion, name);
+
+        }
+        /// <summary>
+        /// Metodo de admin para crear nuevas categorias.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="descripcion"></param>
+        public void CreateCategory(string name, string descripcion)
+        {
+            Category Category = new Category(name, descripcion);
 
         }
         /// <summary>
@@ -163,10 +213,9 @@ namespace Telegram
             Serializarrubros();
             Serializarratings();
             Serializartokens();
-            Serializaruser();
             Serializarunit();
             Serializarcategory();
-            
+
         }
         private void Serializarbussiness()
         {
@@ -193,11 +242,6 @@ namespace Telegram
             string json = JsonSerializer.Serialize<List<string>>(listas.Listtokens);
             System.IO.File.WriteAllText(@"Tokens.json", json);
         }
-        private void Serializaruser()
-        {
-            string json = JsonSerializer.Serialize<List<IUser>>(listas.Listuser);
-            System.IO.File.WriteAllText(@"Usuarios.json", json);
-        }
         private void Serializarunit()
         {
             string json = JsonSerializer.Serialize<List<Units>>(listas.Listunit);
@@ -222,7 +266,6 @@ namespace Telegram
             Deserializarrubros();
             Deserializarratings();
             Deserializartokens();
-            Deserializaruser();
             Deserializarunit();
             Deserializarcategory();
             Deserializarbussiness();
@@ -253,6 +296,7 @@ namespace Telegram
             {
                 string json = System.IO.File.ReadAllText(@"Rubros.json");
                 List<Rubro> listavieja = JsonSerializer.Deserialize<List<Rubro>>(json);
+                
 
             }
         }
@@ -275,15 +319,6 @@ namespace Telegram
                 {
                     listas.Listtokens.Add(token);
                 }
-
-            }
-        }
-        private void Deserializaruser()
-        {
-            if (System.IO.File.Exists(@"User.json"))
-            {
-                string json = System.IO.File.ReadAllText(@"User.json");
-                List<IUser> listavieja = JsonSerializer.Deserialize<List<IUser>>(json);
 
             }
         }

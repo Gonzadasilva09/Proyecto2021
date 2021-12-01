@@ -99,12 +99,5 @@
     "C:\\Users\\Franco De Stefano\\.nuget\\packages\\telegram.bot\\15.5.1\\telegram.bot.15.5.1.nupkg.sha512",
     "C:\\Users\\Franco De Stefano\\.nuget\\packages\\telegram.bot.extensions.polling\\0.1.3\\telegram.bot.extensions.polling.0.1.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Franco De Stefano\\Documents\\Semestre 2\\Programacion 2\\Trabajo Final\\PII_2021_2_Equipo11\\src\\Program\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

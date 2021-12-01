@@ -67,12 +67,6 @@ namespace Telegram{
             Frasesarmadas+=$"{rubro.Description}\n";
             return Frasesarmadas;
         }
-        public string Verunit(Units units)
-        {
-            string Frasesarmadas=string.Empty;
-            Frasesarmadas+=$"El nombre de la unidad es {units.Name}\n";
-            return Frasesarmadas;
-        }
         public string Vercatalogo()
         {
             Catalogo catalogo = Catalogo.Instance;
@@ -142,16 +136,6 @@ namespace Telegram{
             foreach (Rubro rubro in listas.Listrubro)
             {
                 Frasesarmadas+=$"{Verrubro(rubro)}\n";
-            }
-            return Frasesarmadas;
-        }
-        public string Verlistaunit()
-        {
-            Listas listas= Listas.Instance;
-            string Frasesarmadas=string.Empty;
-            foreach (Units unidad in listas.Listunit)
-            {
-                Frasesarmadas+=$"{Verunit(unidad)}\n";
             }
             return Frasesarmadas;
         }

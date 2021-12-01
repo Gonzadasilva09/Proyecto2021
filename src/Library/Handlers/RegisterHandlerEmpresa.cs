@@ -13,6 +13,7 @@ namespace Telegram
 {
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "/empresa", es el encargado de crear nuevas empresas.
+    /// Se aplica SRP, la unica responsabilidad de este handler es crear nuevas empresas.
     /// </summary>
     public class RegisterHandlerEmpresa : BaseHandler
     {
@@ -90,11 +91,11 @@ namespace Telegram
                                 int rubro = (Int32.Parse(valores[1])) - 1;
                                 StringBuilder MensajeCompleto = new StringBuilder("Su usuario a sido creado con exito\n");
 
-                                Business business = new Business(Listas.Instance.HistorialUser[message.IdUser][2], Listas.Instance.HistorialUser[message.IdUser][3], Listas.Instance.Listrubro[rubro], message.IdUser);
-                                MensajeCompleto.Append($"Nombre de usuario: {business.Name}\n");
-                                MensajeCompleto.Append($"Direccion: {business.Location}\n");
-                                MensajeCompleto.Append($"Rubro: {business.Rubro.Name}\n");
-                                MensajeCompleto.Append($"ID de usuario: {business.ID}\n");
+                                Listas.Instance.CreateBusiness(Listas.Instance.HistorialUser[message.IdUser][2], Listas.Instance.HistorialUser[message.IdUser][3], Listas.Instance.Listrubro[rubro], message.IdUser);
+                                MensajeCompleto.Append($"Nombre de usuario: {Listas.Instance.BusinessKey[message.IdUser].Name}\n");
+                                MensajeCompleto.Append($"Direccion: {Listas.Instance.BusinessKey[message.IdUser].Location}\n");
+                                MensajeCompleto.Append($"Rubro: {Listas.Instance.BusinessKey[message.IdUser].Rubro.Name}\n");
+                                MensajeCompleto.Append($"ID de usuario: {Listas.Instance.BusinessKey[message.IdUser].ID}\n");
                                 MensajeCompleto.Append("Para volver al menu principal utilize /start. \n");
                                 response = MensajeCompleto.ToString();
                                 Listas.Instance.HistorialUser.Remove(message.IdUser);

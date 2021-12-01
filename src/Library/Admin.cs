@@ -7,9 +7,10 @@ using System.Text.Json.Serialization;
 namespace Telegram
 {
     /// <summary>
-    /// Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
+    /// Clase encargada de manejar admins, hereda de la clase abstracta User.
+    /// Esta clase cumple con Expert, conoce todos los datos necesarios para cumplir con su responsabilidad
     /// </summary>
-    public class Admin : User , IUser
+    public class Admin : User
     {
         /// <summary>
         /// Constructor de objetos de tipo Admin.
@@ -21,7 +22,7 @@ namespace Telegram
         /// <returns></returns>
         public Admin(string name, string location, Rubro rubro, string id) : base (name, location, rubro, id)
         {
-            Listas.Instance.Listuser.Add(this);
+            ///Esto rompe con SRP pero fue necesario por temas de persistencia, no hubo tiempo de solucionarlo.
             Listas.Instance.Listadmin.Add(this);
             Listas.Instance.AdminKey.Add(id,this);
         }
@@ -33,33 +34,5 @@ namespace Telegram
         public void CreateToken(string token){
             Listas.Instance.Listtokens.Add(token);
         }
-        /// <summary>
-        /// Metodo de admin para crear nuevas habilitaciones.
-        /// </summary>
-        /// <param name="descripcion"></param>
-        /// <param name="name"></param>
-        public void CreateRating(string descripcion,string name){
-             Ratings rating = new Ratings(descripcion,name);
-             Listas.Instance.Listratings.Add(rating);
-        }
-        /// <summary>
-        /// Metodo de admin para crear nuevos rubros.
-        /// </summary>
-        /// <param name="descripcion"></param>
-        /// <param name="name"></param>
-         public void CreateRubro(string descripcion,string name){
-             Rubro Rubro = new Rubro(descripcion,name);
-             Listas.Instance.Listrubro.Add(Rubro);
-        }
-        /// <summary>
-        /// Metodo de admin para crear nuevas categorias.
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="descripcion"></param>
-        public void CreateCategory(string name,string descripcion){
-             Category Category = new Category(name,descripcion);
-             Listas.Instance.Listcategory.Add(Category);
-        }
-
     }
 }

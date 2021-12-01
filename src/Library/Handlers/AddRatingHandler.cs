@@ -21,7 +21,7 @@ namespace Telegram
         /// <param name="next">El próximo "handler".</param>
         public AddRatingHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] {"/AgregarHabilitacion"};
+            this.Keywords = new string[] { "/AgregarHabilitacion" };
         }
 
         /// <summary>
@@ -32,15 +32,17 @@ namespace Telegram
         /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         protected override bool InternalHandle(IMessege message, out string response)
         {
-            
-            if ((message.Mensaje.ToLower().Equals("/agregarhabilitacion") && Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser)) || (Listas.Instance.HistorialUser[message.IdUser].Contains("/agregarhabilitacion") && Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser) ))
-            {   
-                if (!Listas.Instance.HistorialUser[message.IdUser].Contains("/agregarhabilitacion")){
+
+            if ((message.Mensaje.ToLower().Equals("/agregarhabilitacion") && Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser)) || (Listas.Instance.HistorialUser[message.IdUser].Contains("/agregarhabilitacion") && Listas.Instance.EmprendedoresKey.ContainsKey(message.IdUser)))
+            {
+                if (!Listas.Instance.HistorialUser[message.IdUser].Contains("/agregarhabilitacion"))
+                {
 
                     Listas.Instance.HistorialUser[message.IdUser].Add("/agregarhabilitacion");
                 }
 
-                if (Listas.Instance.HistorialUser[message.IdUser].Contains("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count==1){
+                if (Listas.Instance.HistorialUser[message.IdUser].Contains("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count == 1)
+                {
 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder($"Seleccione sus habilitaciones\n");
@@ -52,9 +54,10 @@ namespace Telegram
                     }
                     response = MensajeCompleto.ToString();
                     return true;
-                    }
-                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count==2){
-                   
+                }
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count == 2)
+                {
+
                     Listas.Instance.EmprendedoresKey[message.IdUser].AddRatings(Listas.Instance.Listratings[Convert.ToInt32(message.Mensaje)]);
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
                     StringBuilder MensajeCompleto = new StringBuilder($"La habilitacion {Listas.Instance.Listratings[Convert.ToInt32(message.Mensaje)].Name} se ha añadido a sus habilitaciones...\n");
@@ -65,7 +68,8 @@ namespace Telegram
                     return true;
 
                 }
-                 if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count==3 && message.Mensaje == "/si"){
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count == 3 && message.Mensaje == "/si")
+                {
 
                     Listas.Instance.HistorialUser.Remove(message.IdUser);
                     Listas.Instance.Accion(message.IdUser);
@@ -74,8 +78,9 @@ namespace Telegram
                     MensajeCompleto.Append($"/Continuar\n");
                     response = MensajeCompleto.ToString();
                     return true;
-                 }
-                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count==3 && message.Mensaje == "/no"){
+                }
+                if (Listas.Instance.HistorialUser[message.IdUser][0].ToLower().Equals("/agregarhabilitacion") && Listas.Instance.HistorialUser[message.IdUser].Count == 3 && message.Mensaje == "/no")
+                {
 
                     Listas.Instance.HistorialUser.Remove(message.IdUser);
                     Listas.Instance.Accion(message.IdUser);
@@ -83,7 +88,7 @@ namespace Telegram
                     MensajeCompleto.Append($"Utilize /start para volver al menú principal...\n");
                     response = MensajeCompleto.ToString();
                     return true;
-                 }
+                }
             }
             response = string.Empty;
             return false;
