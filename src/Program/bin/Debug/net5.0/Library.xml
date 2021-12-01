@@ -312,6 +312,25 @@
             estado inicial.
             </summary>
         </member>
+        <member name="T:Telegram.BuyOfferHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
+            </summary>
+        </member>
+        <member name="M:Telegram.BuyOfferHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.StartHandler"/>. Esta clase procesa el mensaje "hola".
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.BuyOfferHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje "hola" y retorna true; retorna false en caso contrario.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
         <member name="T:Telegram.CancelHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "/cancelar", se utiliza para cancelar la operación actual.
@@ -1238,6 +1257,17 @@
             <param name="Name"></param>
             <returns></returns>
         </member>
+        <member name="T:Telegram.Armadordemensajes">
+            <summary>
+            Clase encargada de interactuar con la ApiLocation
+            </summary>
+        </member>
+        <member name="M:Telegram.Armadordemensajes.#ctor">
+            <summary>
+            Singleton para que solo exista una instancia del catalogo.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Telegram.Units">
             <summary>
             Clase que se encarga de las unidades de magnitud para las ofertas, esta clase cumple expert ya que contiene toda la información necesaria para cumplir su función.
@@ -1298,17 +1328,6 @@
             <param name="location"></param>
             <param name="rubro"></param>
             <param name="id"></param>
-        </member>
-        <member name="T:Telegram.Armadordemensajes">
-            <summary>
-            Clase encargada de interactuar con la ApiLocation
-            </summary>
-        </member>
-        <member name="M:Telegram.Armadordemensajes.#ctor">
-            <summary>
-            Singleton para que solo exista una instancia del catalogo.
-            </summary>
-            <returns></returns>
         </member>
     </members>
 </doc>

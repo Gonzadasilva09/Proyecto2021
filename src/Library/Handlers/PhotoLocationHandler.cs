@@ -65,6 +65,35 @@ namespace Telegram
                     response = MensajeCompleto.ToString();
                     return true;
                 }
+                 if (Listas.Instance.HistorialUser[message.IdUser].Contains("/ofertasxcategoria") && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 4)
+                {
+                    Console.WriteLine("handler direccion");
+
+                    Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
+                    string oferta=Listas.Instance.HistorialUser[message.IdUser][3].Replace("/",string.Empty);
+                    int offer = Int32.Parse(oferta)-1;
+                
+                    Offer offer1=Listas.Instance.Resultados[message.IdUser][offer];
+
+                    foreach (Emprendedores item in Listas.Instance.Listemprendedores)
+                    {
+                        if (message.IdUser == item.ID)
+                        {
+                            Console.WriteLine("handler direccion3");
+                            APILocation.Instance.LocationOffer(Catalogo.Instance.AllOffers[offer]);
+                        }
+                    }
+
+                    AsyncContext.Run(() => message.SendPhoto("Ubicacion de la oferta seleccionada", @"ubicacion.png"));
+                    Console.WriteLine("handler direccion4");
+
+                    StringBuilder MensajeCompleto = new StringBuilder("\n");
+
+                    MensajeCompleto.Append("/TrazarRutaHaciaOferta");
+                    
+                    response = MensajeCompleto.ToString();
+                    return true;
+                }
             }
 
             Console.WriteLine("Ver oferta");
