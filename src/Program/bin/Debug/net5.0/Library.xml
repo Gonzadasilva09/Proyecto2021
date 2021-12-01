@@ -6,7 +6,8 @@
     <members>
         <member name="T:Telegram.Admin">
             <summary>
-            Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
+            Clase encargada de manejar admins, hereda de la clase abstracta User.
+            Esta clase cumple con Expert, conoce todos los datos necesarios para cumplir con su responsabilidad
             </summary>
         </member>
         <member name="M:Telegram.Admin.#ctor(System.String,System.String,Telegram.Rubro,System.String)">
@@ -58,6 +59,9 @@
         <member name="T:Telegram.Business">
             <summary>
             Clase encargada de manejar a las empresas, hereda de la clase abstracta User.
+            Esta clase cumple con Expert, conoce todos los datos requeridos para cumplir sus responsabilidades.
+            El patrón SRP no se cumple en esta clase, ya que tiene la responsabilidad de conocerse a si misma y de crear ofertas, por falta de tiempo no ha sido posible solucionarlo.
+            El patrón Creator no se cumple correctamente en esta clase, ninguno de los requisitos se cumple para que Business cree ofertas.
             </summary>
         </member>
         <member name="M:Telegram.Business.#ctor(System.String,System.String,Telegram.Rubro,System.String)">
@@ -90,7 +94,8 @@
         </member>
         <member name="T:Telegram.BuyOffer">
             <summary>
-            Clase especializada en comprar ofertas.
+            Clase especializada en comprar ofertas, esta clase es un singleton, solamente es necesaria una instancia de dicha clase para procesar las compras realizadas por los usuarios.
+            Esta clase cumple con SRP, su unica responsabilidad es proesar compras realizadas por los usuarios.
             </summary>
         </member>
         <member name="P:Telegram.BuyOffer.Instance">
@@ -108,6 +113,8 @@
         <member name="T:Telegram.Catalogo">
             <summary>
             Clase encargada de manejar el catalogo.
+            Esta clase es un singleton, es la encargada de contener todas las ofertas hechas por usuarios, y por lo tanto se necesita una instancia unica.
+            Esta clase cumple con Expert, su unica responsabilidad es la de contener objetos de tipo offer.
             </summary>
         </member>
         <member name="P:Telegram.Catalogo.Instance">
@@ -134,7 +141,8 @@
         </member>
         <member name="T:Telegram.Category">
             <summary>
-            Clase que se encarga de manejar las categorias.
+            Clase que se encarga de manejar las categorias, esta clase cumple con expert ya que contiene toda la información necesaria para cumplir con su función
+            En un principio era parte del plan hacer una clase abstracta "Elemento" y que Rubros, Ratings y Categories heredaran de la misma para cumplir con LSP, pero debido a problemas con la persistencia esto no fue posible.
             </summary>
         </member>
         <member name="M:Telegram.Category.#ctor(System.String,System.String)">
@@ -159,6 +167,9 @@
         <member name="T:Telegram.Emprendedores">
             <summary>
             Clase encargada de manejar los emprendedores, hereda de User.
+            Esta clase cumple con OCP, es facil de extender mediante la clase abstracta User.
+            Esta clase cumple con Expert, tiene todos los datos que requiere para cumplir sus funcionalidades.
+            Esta clase cumple con SRP, su unica responsabilidad es conocerse a si mismo.
             </summary>
         </member>
         <member name="F:Telegram.Emprendedores.Listratings">
@@ -188,12 +199,6 @@
             Metodo para añadir habilitaciones a un emprendedor.
             </summary>
             <param name="rating"></param>
-        </member>
-        <member name="M:Telegram.Emprendedores.Buy(Telegram.Offer)">
-            <summary>
-            Metodo encargado de efectuar la compra de parte del emprendedor.
-            </summary>
-            <param name="Offer"></param>
         </member>
         <member name="T:Telegram.AddRatingHandler">
             <summary>
@@ -402,6 +407,25 @@
             <param name="response">La respuesta al mensaje procesado.</param>
             <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
         </member>
+        <member name="T:Telegram.HistorialCompraHandler">
+            <summary>
+            Un "handler" del patrón Chain of Responsibility que implementa el comando /historialcompra, se utiliza como menú para usuarios no registrados.
+            </summary>
+        </member>
+        <member name="M:Telegram.HistorialCompraHandler.#ctor(Telegram.BaseHandler)">
+            <summary>
+            Inicializa una nueva instancia de la clase <see cref="T:Telegram.HistorialCompraHandler"/>. Esta clase procesa el mensaje /start
+            </summary>
+            <param name="next">El próximo "handler".</param>
+        </member>
+        <member name="M:Telegram.HistorialCompraHandler.InternalHandle(Telegram.IMessege,System.String@)">
+            <summary>
+            Procesa el mensaje, responde acorde dependiendo de la posicion del user devolviendo true, o retorna false en caso de no poder procesar el mensaje.
+            </summary>
+            <param name="message">El mensaje a procesar.</param>
+            <param name="response">La respuesta al mensaje procesado.</param>
+            <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "T:Telegram.IHandler" -->
         <member name="P:Telegram.IHandler.Next">
             <summary>
@@ -465,6 +489,8 @@
         <member name="T:Telegram.RegisterHandlerEmprendedores">
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "/emprendedor", es el handler encargado de crear nuevos emprendedores.
+            Se aplica SRP, la unica responsabilidad de este handler es crear nuevos emprendedores.
+            
             </summary>
         </member>
         <member name="M:Telegram.RegisterHandlerEmprendedores.#ctor(Telegram.BaseHandler)">
@@ -484,6 +510,7 @@
         <member name="T:Telegram.RegisterHandlerEmpresa">
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando "/empresa", es el encargado de crear nuevas empresas.
+            Se aplica SRP, la unica responsabilidad de este handler es crear nuevas empresas.
             </summary>
         </member>
         <member name="M:Telegram.RegisterHandlerEmpresa.#ctor(Telegram.BaseHandler)">
@@ -540,7 +567,7 @@
         </member>
         <member name="T:Telegram.SignUpHandler">
             <summary>
-            Debido a las diferencias entre registrarse como una empresa o como un emprendedor, decidimos aplicar polimorfismo, este handler se encarga de mandar al usuario al handler apropiado, ya se RegisterEmpresaHandler o RegisterEmprendedorHandler.
+            Debido a las diferencias entre registrarse como una empresa o como un emprendedor, decidimos aplicar polimorfismo, este handler se encarga de mandar al usuario al handler apropiado, ya sea RegisterEmpresaHandler o RegisterEmprendedorHandler.
             </summary>
             <summary>
             Un "handler" del patrón Chain of Responsibility que implementa el comando /registrarse.
@@ -563,6 +590,7 @@
         <member name="T:Telegram.StartAdminHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que utiliza el comando "/start", este handler se dedica a mostrar el menu a usuarios de tipo admin.
+            Esta clase aplica polimorfismo, responde al comando "/start" solamente si el usuario es de tipo admin.
             </summary>
         </member>
         <member name="M:Telegram.StartAdminHandler.#ctor(Telegram.BaseHandler)">
@@ -582,6 +610,8 @@
         <member name="T:Telegram.StartEmpresaHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que utiliza el comando "/start", este handler se dedica a mostrar el menu a usuarios de tipo empresa.
+            Esta clase aplica polimorfismo, responde al comando "/start" solamente si el usuario es de tipo empresa.
+            
             </summary>
         </member>
         <member name="M:Telegram.StartEmpresaHandler.#ctor(Telegram.BaseHandler)">
@@ -601,6 +631,7 @@
         <member name="T:Telegram.StartEmprendedorHandler">
             <summary>
             Un "handler" del patrón Chain of Responsibility que utiliza el comando /start, este handler es una variacion del StartHandler dedicada a Emprendedor.
+            Esta clase aplica polimorfismo, responde al comando "/start" solamente si el usuario es de tipo emprendedor.
             </summary>
         </member>
         <member name="M:Telegram.StartEmprendedorHandler.#ctor(Telegram.BaseHandler)">
@@ -655,6 +686,9 @@
         <member name="T:Telegram.Listas">
             <summary>
             Clase encargada de guardar todas las listas independientes de otras clases con las cuales no interactuan directamente con los usuarios.
+            Esta clase es un singleton, necesitamos una clase contenedora de las instancias de otros objetos, y solamente es necesaria una unica instancia.
+            Esta clase tambien utiliza creator, para crear multiples objetos como empresas o emprendedores, esto se debe a que Listas contiene instancias de las mismas.
+            
             </summary>
         </member>
         <member name="P:Telegram.Listas.Instance">
@@ -1019,7 +1053,8 @@
         </member>
         <member name="T:Telegram.Offer">
             <summary>
-            Clase que se encarga de controlar las ofertas.
+            Clase que se encarga de controlar las ofertas, en esta clase utilizamos creator ya que offer utiliza de manera muy cercana a materials.
+            Cumple con SRP ya que tiene la unica responsabilidad de crear ofertas.
             </summary>
         </member>
         <member name="F:Telegram.Offer.Ratings">
@@ -1076,21 +1111,10 @@
             <param name="productunit"></param>
             <param name="productprice"></param>
         </member>
-        <member name="M:Telegram.Offer.PrintRatings">
-            <summary>
-            Metodo que imprime las habilitaciones de la empresa.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telegram.Offer.AddRatings(Telegram.Ratings)">
-            <summary>
-            Metodo que añade habilitaciones a la empresa.
-            </summary>
-            <param name="ratings"></param>
-        </member>
         <member name="T:Telegram.Ratings">
             <summary>
-            Clase encargada de controlar las habilitaciones.
+            Clase encargada de controlar las habilitaciones, esta clase cumple con expert ya que contiene toda la información necesaria para cumplir con su función"
+            En un principio era parte del plan hacer una clase abstracta "Elemento" y que Rubros, Ratings y Categories heredaran de la misma para cumplir con LSP, pero debido a problemas con la persistencia esto no fue posible.
             </summary>
         </member>
         <member name="P:Telegram.Ratings.Description">
@@ -1114,7 +1138,8 @@
         </member>
         <member name="T:Telegram.Rubro">
             <summary>
-            Clase encargada de crear y obtener los distintos rubros disponibles.
+            Clase encargada de crear y obtener los distintos rubros disponibles, esta clase cumple con expert ya que contiene toda la información necesaria para cumplir su función
+            En un principio era parte del plan hacer una clase abstracta "Elemento" y que Rubros, Ratings y Categories heredaran de la misma para cumplir con LSP, pero debido a problemas con la persistencia esto no fue posible.
             </summary>
         </member>
         <member name="P:Telegram.Rubro.Description">
@@ -1138,7 +1163,8 @@
         </member>
         <member name="T:Telegram.Search">
             <summary>
-            Clase encargada de buscar Materiales a travez de sus clasificaciones.
+            Clase encargada de buscar Materiales a travez de sus clasificaciones, esta clase utiliza el patrón singleton, esta clase es la encargada de gestionar todos los procesos de busqueda, por lo tanto una sola instancia de ella es necesaria.
+            Esta clase cumple con SRP, su unica responsabilidad es buscar ofertas entre las listas.
             </summary>
         </member>
         <member name="P:Telegram.Search.Instance">
@@ -1181,7 +1207,7 @@
         </member>
         <member name="T:Telegram.Units">
             <summary>
-            Clase que se encarga de las unidades de magnitud para las ofertas.
+            Clase que se encarga de las unidades de magnitud para las ofertas, esta clase cumple expert ya que contiene toda la información necesaria para cumplir su función.
             </summary>
         </member>
         <member name="P:Telegram.Units.Name">
@@ -1190,29 +1216,14 @@
             </summary>
             <value></value>
         </member>
-        <member name="F:Telegram.Units.shortcut">
+        <member name="M:Telegram.Units.#ctor(System.String)">
             <summary>
             Abreviacion de la unidad.
             </summary>
-        </member>
-        <member name="M:Telegram.Units.#ctor(System.String)">
             <summary>
             Constructor de los objetos Unit.
             </summary>
             <param name="name"></param>
-        </member>
-        <member name="M:Telegram.Units.shortcutcreater">
-            <summary>
-            Creador de Abreviacion de unidad.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telegram.Units.shortcutget(System.Int32)">
-            <summary>
-            Transforma las unidades a su abreviacion.
-            </summary>
-            <param name="unitnum"></param>
-            <returns></returns>
         </member>
         <member name="M:Telegram.Units.Deleteunit(Telegram.Units)">
             <summary>
