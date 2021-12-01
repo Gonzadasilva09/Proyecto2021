@@ -109,6 +109,12 @@ namespace Telegram
         /// <param name="ID"></param>
 
         public Dictionary<string, Collection<int>> Utilities = new Dictionary<string, Collection<int>>();
+        /// <summary>
+        /// Diccionario utilizado para almacenar los indices de los ratings vinculados a cierto usuario.
+        /// </summary>
+        /// <param name="ID"></param>
+
+        public Dictionary<string, List<Offer>> Resultados = new Dictionary<string, List<Offer>>();
         /// Diccionario utilizado para almacenar instancias de empresa asociadas a cierta ID.
         /// </summary>
         /// <typeparam name="string"></typeparam>
@@ -150,6 +156,16 @@ namespace Telegram
         {
 
             this.Utilities.Add(ID, new Collection<int>());
+
+        }
+        /// <summary>
+        /// Metodo para agregar Los resultados de busqueda.
+        /// </summary>
+        /// <param name="ID"></param>
+        public void CrearResultados(string ID,List<Offer> Results)
+        {
+
+            this.Resultados.Add(ID,Results);
 
         }
         /// <summary>

@@ -31,7 +31,7 @@ namespace Telegram
         /// </summary>
         /// <param name="category"></param>
         /// <returns></returns>
-        public static List<Offer> SearchxCategory(Category category)
+        public  List<Offer> SearchxCategory(Category category)
         {
             List<Offer> results = new List<Offer>();
             foreach (Offer offer in Catalogo.Instance.AllOffers)
@@ -48,7 +48,7 @@ namespace Telegram
         /// </summary>
         /// <param name="ratings"></param>
         /// <returns></returns>
-        public static List<Offer> SearchxRatings(Ratings ratings)
+        public  List<Offer> SearchxRatings(Ratings ratings)
         {   
             List<Offer> results = new List<Offer>();
             foreach (Offer offer in Catalogo.Instance.AllOffers)
@@ -66,7 +66,7 @@ namespace Telegram
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public static List<Offer> SearchxMaterial(string Name)
+        public List<Offer> SearchxMaterial(string Name)
         {   
             List<Offer> results = new List<Offer>();
             foreach (Offer offer in Catalogo.Instance.AllOffers)

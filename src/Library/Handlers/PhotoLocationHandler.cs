@@ -14,16 +14,16 @@ namespace Telegram
     /// <summary>
     /// Un "handler" del patrón Chain of Responsibility que implementa el comando "hola".
     /// </summary>
-    public class PhotoRouteHandler : BaseHandler
+    public class PhotoUbicationHandler : BaseHandler
     {
         private TelegramBotClient bot;
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "hola".
         /// </summary>
         /// <param name="next">El próximo "handler".</param>
-        public PhotoRouteHandler(BaseHandler next) : base(next)
+        public PhotoUbicationHandler(BaseHandler next) : base(next)
         {
-            this.Keywords = new string[] { "/TrazarRutaHaciaOferta" };
+            this.Keywords = new string[] { "/VerUbicacion" };
         }
 
         /// <summary>
@@ -36,30 +36,32 @@ namespace Telegram
         {
             if (this.CanHandle(message))
             {
-                if (Listas.Instance.HistorialUser[message.IdUser].Contains("/VerUbicacion") && Listas.Instance.HistorialUser[message.IdUser].Contains("/todaslasofertas") && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 4)
+                if (Listas.Instance.HistorialUser[message.IdUser].Contains("/todaslasofertas") && Listas.Instance.HistorialUser[message.IdUser].Contains("/buscaroferta") && Listas.Instance.HistorialUser[message.IdUser].Count == 3)
                 {
+                    Console.WriteLine("handler direccion");
 
                     Listas.Instance.HistorialUser[message.IdUser].Add(message.Mensaje);
 
                     string oferta = Listas.Instance.HistorialUser[message.IdUser][2].Replace("/", string.Empty);
                     int offer = Int32.Parse(oferta) - 1;
+                    Console.WriteLine("handler direccion2");
 
                     foreach (Emprendedores item in Listas.Instance.Listemprendedores)
                     {
                         if (message.IdUser == item.ID)
                         {
-
-                            APILocation.Instance.Route(Catalogo.Instance.AllOffers[offer], item);
+                            Console.WriteLine("handler direccion3");
+                            APILocation.Instance.LocationOffer(Catalogo.Instance.AllOffers[offer]);
                         }
                     }
 
-                    AsyncContext.Run(() => message.SendPhoto("Usted se encuentra en el punto A y la oferta selecionada en el punto B", @"Ruta.png"));
-
+                    AsyncContext.Run(() => message.SendPhoto("Ubicacion de la oferta seleccionada", @"ubicacion.png"));
+                    Console.WriteLine("handler direccion4");
 
                     StringBuilder MensajeCompleto = new StringBuilder("\n");
 
-                    MensajeCompleto.Append("/cancelar");
-
+                    MensajeCompleto.Append("/TrazarRutaHaciaOferta");
+                    
                     response = MensajeCompleto.ToString();
                     return true;
                 }
