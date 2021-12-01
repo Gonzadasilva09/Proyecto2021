@@ -30,6 +30,8 @@ namespace Telegram
 
             catalogo.cargaroffer();
             lista.Listrubro.Remove(rubro);
+            
+           /*Admin admin = new Admin("Fede", "Oficina del admin", rubro, "1964905204");
 
             /*Admin admin = new Admin("Fede", "Oficina del admin", rubro, "1964905204");
 
@@ -82,15 +84,6 @@ namespace Telegram
             Offer offer7 = new Offer("Av. Italia 2420", "Reciclado", "Tapitas plasticas", unit, 10, "1000$", categoria5);
 
             Offer offer8= new Offer("Bv. Jose Batlle y Ordoñez 3224", "Reciclado", "Langostas", unit, 200, "2000USD", categoria3);*/
-
-            
-
-
-            
-
-
-
-        
 
 
             Bot = new TelegramBotClient(TelegramToken);
